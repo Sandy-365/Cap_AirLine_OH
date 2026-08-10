@@ -1,0 +1,918 @@
+[2026-05-02 11:26:48.786] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-02 11:26:49.188] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-05-02 11:26:49.201] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-02 11:26:49.205] [INF] [UserId:] Hosting environment: Development
+[2026-05-02 11:26:49.210] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-05-02 11:26:49.448] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:26:49.573] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:26:49.599] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 33.3258 ms
+[2026-05-02 11:26:49.660] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 215.3661ms
+[2026-05-02 11:26:49.815] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 45
+[2026-05-02 11:26:51.122] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:26:57.602] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:26:57.614] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:27:02.479] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:27:02.512] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 11396.4873 ms
+[2026-05-02 11:27:02.524] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 12712.0033ms
+[2026-05-02 11:27:02.538] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:27:42.889] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:27:42.895] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:42.898] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 3.4259 ms
+[2026-05-02 11:27:42.901] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 11.9681ms
+[2026-05-02 11:27:42.908] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 65
+[2026-05-02 11:27:42.912] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:42.920] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:27:42.922] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:27:43.177] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:27:43.183] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 270.9087 ms
+[2026-05-02 11:27:43.191] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 283.0031ms
+[2026-05-02 11:27:43.204] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:27:52.419] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/login - null null
+[2026-05-02 11:27:52.428] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:52.431] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/login responded 204 in 3.3112 ms
+[2026-05-02 11:27:52.441] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/login - 204 null null 22.2951ms
+[2026-05-02 11:27:52.451] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/login - application/json 56
+[2026-05-02 11:27:52.459] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:52.469] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:27:52.472] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000006, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/login' in the route /identity/admin/{everything}.
+[2026-05-02 11:27:53.779] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/login
+[2026-05-02 11:27:53.805] [INF] [UserId:Anonymous] HTTP POST /identity/admin/login responded 200 in 1346.6211 ms
+[2026-05-02 11:27:53.811] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/login - 200 null application/json; charset=utf-8 1359.6884ms
+[2026-05-02 11:27:53.817] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/login, Response status code: 200
+[2026-05-02 11:27:53.927] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:27:53.930] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/admin/dashboard - null null
+[2026-05-02 11:27:53.930] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:27:53.930] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:27:53.933] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:27:53.936] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:53.940] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:53.945] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:53.949] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:53.954] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:53.955] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 19.0448 ms
+[2026-05-02 11:27:53.957] [INF] [UserId:Anonymous] HTTP OPTIONS /admin/dashboard responded 204 in 17.1174 ms
+[2026-05-02 11:27:53.959] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 14.1131 ms
+[2026-05-02 11:27:53.961] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 12.5219 ms
+[2026-05-02 11:27:53.963] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 9.5072 ms
+[2026-05-02 11:27:53.967] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 39.4015ms
+[2026-05-02 11:27:53.970] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/admin/dashboard - 204 null null 40.0924ms
+[2026-05-02 11:27:53.974] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 43.7019ms
+[2026-05-02 11:27:53.978] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 47.5417ms
+[2026-05-02 11:27:53.981] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 48.2245ms
+[2026-05-02 11:27:53.987] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 66
+[2026-05-02 11:27:53.993] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/admin/dashboard - null null
+[2026-05-02 11:27:53.999] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+[2026-05-02 11:27:54.006] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:27:54.012] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:27:54.017] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:54.022] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:54.026] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:54.031] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:54.036] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:27:54.226] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLM:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:27:54.226] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLN:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:27:54.226] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:27:54.226] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:27:54.226] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLK:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:27:54.228] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLM:00000002, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:27:54.229] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLN:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:27:54.231] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000002, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:27:54.233] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000008, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:27:54.235] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLK:00000002, PreviousRequestId: -
+No authentication is required for the path '/admin/dashboard' in the route /admin/{everything}.
+[2026-05-02 11:27:54.408] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLI:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:27:54.412] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 394.8992 ms
+[2026-05-02 11:27:54.418] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 430.5507ms
+[2026-05-02 11:27:54.425] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:27:54.471] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLN:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:27:54.482] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 446.5729 ms
+[2026-05-02 11:27:54.488] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 476.2615ms
+[2026-05-02 11:27:54.495] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:27:56.346] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLM:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:27:56.349] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2318.5018 ms
+[2026-05-02 11:27:56.353] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2347.2059ms
+[2026-05-02 11:27:56.357] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:27:58.344] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000002, PreviousRequestId: -
+102 unknown status code of request URI: 
+[2026-05-02 11:27:58.352] [WRN] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000002, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+ConnectionToDownstreamServiceError: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.TimeoutDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.MessageInvokerHttpRequester.GetResponse(HttpContext httpContext)
+Setting error response for request: GET /flights
+[2026-05-02 11:27:58.360] [ERR] [UserId:Anonymous] HTTP GET /flights responded 502 in 4334.0187 ms
+[2026-05-02 11:27:58.368] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights - 502 0 null 4368.6396ms
+[2026-05-02 11:27:58.845] [WRN] [UserId:Anonymous] RequestId: 0HNL81UCUROLK:00000002, PreviousRequestId: -
+500 Internal Server Error status code of request URI: http://localhost:5010/api/admin/dashboard
+[2026-05-02 11:27:58.849] [ERR] [UserId:Anonymous] HTTP GET /admin/dashboard responded 500 in 4827.8114 ms
+[2026-05-02 11:27:58.853] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/admin/dashboard - 500 null application/json 4859.7337ms
+[2026-05-02 11:27:58.863] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/dashboard, Response status code: 500
+[2026-05-02 11:29:52.796] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:29:52.803] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:29:52.806] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:29:52.808] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:29:52.813] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.815] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.819] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.823] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.825] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 11.7702 ms
+[2026-05-02 11:29:52.825] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 10.1081 ms
+[2026-05-02 11:29:52.827] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 8.9429 ms
+[2026-05-02 11:29:52.829] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 6.1103 ms
+[2026-05-02 11:29:52.832] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 36.5882ms
+[2026-05-02 11:29:52.836] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 32.384ms
+[2026-05-02 11:29:52.838] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 31.7434ms
+[2026-05-02 11:29:52.842] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 33.7133ms
+[2026-05-02 11:29:52.847] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 64
+[2026-05-02 11:29:52.851] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+[2026-05-02 11:29:52.857] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:29:52.862] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:29:52.866] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.869] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.874] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.878] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:29:52.882] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLK:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:29:52.882] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:29:52.884] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLM:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:29:52.887] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLN:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:29:52.889] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLK:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:29:52.890] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000004, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:29:52.894] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLM:00000004, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:29:52.896] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLN:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:29:52.961] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLK:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:29:52.964] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 97.7802 ms
+[2026-05-02 11:29:52.967] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 120.7345ms
+[2026-05-02 11:29:52.973] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:29:52.985] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLN:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:29:52.995] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 117.3254 ms
+[2026-05-02 11:29:52.999] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 137.8088ms
+[2026-05-02 11:29:53.006] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:29:54.956] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLM:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:29:54.962] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2088.3111 ms
+[2026-05-02 11:29:54.976] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2119.6199ms
+[2026-05-02 11:29:54.986] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:29:56.969] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000004, PreviousRequestId: -
+102 unknown status code of request URI: 
+[2026-05-02 11:29:56.972] [WRN] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000004, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+ConnectionToDownstreamServiceError: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Ocelot.Requester.TimeoutDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.MessageInvokerHttpRequester.GetResponse(HttpContext httpContext)
+Setting error response for request: GET /flights
+[2026-05-02 11:29:56.975] [ERR] [UserId:Anonymous] HTTP GET /flights responded 502 in 4105.5553 ms
+[2026-05-02 11:29:56.977] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights - 502 0 null 4125.6936ms
+[2026-05-02 11:30:58.586] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:30:58.592] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:30:58.595] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 2.5063 ms
+[2026-05-02 11:30:58.599] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 13.0768ms
+[2026-05-02 11:30:58.604] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/flights - application/json 308
+[2026-05-02 11:30:58.610] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:30:58.613] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:30:58.614] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000006, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:31:02.671] [INF] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000006, PreviousRequestId: -
+102 unknown status code of request URI: 
+[2026-05-02 11:31:02.672] [WRN] [UserId:Anonymous] RequestId: 0HNL81UCUROLL:00000006, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+ConnectionToDownstreamServiceError: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Ocelot.Requester.TimeoutDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.MessageInvokerHttpRequester.GetResponse(HttpContext httpContext)
+Setting error response for request: POST /flights
+[2026-05-02 11:31:02.674] [ERR] [UserId:Anonymous] HTTP POST /flights responded 502 in 4063.9484 ms
+[2026-05-02 11:31:02.677] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/flights - 502 0 null 4072.9845ms
+[2026-05-02 11:44:05.375] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-02 11:44:05.876] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-05-02 11:44:06.045] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-02 11:44:06.052] [INF] [UserId:] Hosting environment: Development
+[2026-05-02 11:44:06.064] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-05-02 11:44:43.764] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:44:43.864] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:43.879] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 22.2624 ms
+[2026-05-02 11:44:43.906] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 145.1547ms
+[2026-05-02 11:44:43.927] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 45
+[2026-05-02 11:44:43.942] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.269] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K6:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:44:44.281] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K6:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:44:44.588] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:44:44.600] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:44:44.606] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:44:44.615] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:44:44.620] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.639] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.646] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.655] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.657] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 37.4469 ms
+[2026-05-02 11:44:44.660] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 21.3127 ms
+[2026-05-02 11:44:44.663] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 16.2756 ms
+[2026-05-02 11:44:44.666] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 10.5609 ms
+[2026-05-02 11:44:44.673] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 84.8706ms
+[2026-05-02 11:44:44.678] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 78.1379ms
+[2026-05-02 11:44:44.685] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 79.5501ms
+[2026-05-02 11:44:44.692] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 76.3792ms
+[2026-05-02 11:44:44.705] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:44:44.714] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 64
+[2026-05-02 11:44:44.725] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+[2026-05-02 11:44:44.737] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:44:44.777] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.755] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.769] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.746] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:44:44.960] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K7:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:44:44.960] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KA:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:44:44.960] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K8:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:44:44.961] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:44:44.964] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K7:00000002, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:44:44.968] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KA:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:44:44.971] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K8:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:44:44.975] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000002, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:44:47.058] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K8:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:44:47.071] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K6:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:44:47.073] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KA:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:44:47.105] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K7:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:44:47.136] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 2380.7132 ms
+[2026-05-02 11:44:47.136] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2389.8878 ms
+[2026-05-02 11:44:47.136] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 3195.7317 ms
+[2026-05-02 11:44:47.159] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 2444.4009ms
+[2026-05-02 11:44:47.170] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2465.2938ms
+[2026-05-02 11:44:47.178] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 3252.2165ms
+[2026-05-02 11:44:47.190] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2413.1072 ms
+[2026-05-02 11:44:47.201] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:44:47.209] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:44:47.223] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:44:47.231] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 2493.9603ms
+[2026-05-02 11:44:47.260] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:44:55.410] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:44:55.461] [INF] [UserId:Anonymous] HTTP GET /flights responded 200 in 10692.5921 ms
+[2026-05-02 11:44:55.470] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 10745.5063ms
+[2026-05-02 11:44:55.483] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+[2026-05-02 11:45:13.824] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:45:13.833] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:45:13.836] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 3.1878 ms
+[2026-05-02 11:45:13.843] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 19.0836ms
+[2026-05-02 11:45:13.850] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/flights - application/json 305
+[2026-05-02 11:45:13.856] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:45:13.861] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:45:13.864] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000004, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:45:14.637] [WRN] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000004, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:45:14.650] [INF] [UserId:Anonymous] HTTP POST /flights responded 400 in 794.5884 ms
+[2026-05-02 11:45:14.656] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/flights - 400 null application/json; charset=utf-8 806.0072ms
+[2026-05-02 11:45:14.663] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/flights, Response status code: 400
+[2026-05-02 11:45:19.008] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:45:19.015] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:45:19.017] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 2.7141 ms
+[2026-05-02 11:45:19.036] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 27.7381ms
+[2026-05-02 11:45:19.092] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/flights - application/json 305
+[2026-05-02 11:45:19.099] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:45:19.106] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:45:19.136] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000006, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:45:19.483] [WRN] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000006, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:45:19.501] [INF] [UserId:Anonymous] HTTP POST /flights responded 400 in 401.5223 ms
+[2026-05-02 11:45:19.518] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/flights - 400 null application/json; charset=utf-8 425.9447ms
+[2026-05-02 11:45:19.720] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/flights, Response status code: 400
+[2026-05-02 11:45:29.152] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:45:29.164] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:45:29.167] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 3.6183 ms
+[2026-05-02 11:45:29.176] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 23.5716ms
+[2026-05-02 11:45:29.184] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/flights - application/json 305
+[2026-05-02 11:45:29.192] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:45:29.197] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:45:29.200] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000008, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:45:29.276] [WRN] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000008, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:45:29.290] [INF] [UserId:Anonymous] HTTP POST /flights responded 400 in 97.7871 ms
+[2026-05-02 11:45:29.295] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/flights - 400 null application/json; charset=utf-8 111.2355ms
+[2026-05-02 11:45:29.303] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/flights, Response status code: 400
+[2026-05-02 11:45:33.884] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/flights - application/json 305
+[2026-05-02 11:45:33.957] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:45:33.963] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000009, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:45:33.991] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000009, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:45:34.334] [WRN] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000009, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:45:34.439] [INF] [UserId:Anonymous] HTTP POST /flights responded 400 in 482.9465 ms
+[2026-05-02 11:45:34.454] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/flights - 400 null application/json; charset=utf-8 569.8098ms
+[2026-05-02 11:45:34.476] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/flights, Response status code: 400
+[2026-05-02 11:47:10.337] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:47:10.349] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:47:10.352] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:47:10.363] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:47:10.416] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.426] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.431] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.435] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.438] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 21.7839 ms
+[2026-05-02 11:47:10.440] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 14.4695 ms
+[2026-05-02 11:47:10.441] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 10.5979 ms
+[2026-05-02 11:47:10.444] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 8.6131 ms
+[2026-05-02 11:47:10.447] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 109.6653ms
+[2026-05-02 11:47:10.457] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 107.8699ms
+[2026-05-02 11:47:10.460] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 108.3087ms
+[2026-05-02 11:47:10.463] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 100.4092ms
+[2026-05-02 11:47:10.469] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 66
+[2026-05-02 11:47:10.475] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+[2026-05-02 11:47:10.481] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:47:10.487] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:47:10.492] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.499] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.508] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.515] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.519] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000B, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:47:10.520] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:47:10.522] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:47:10.524] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:47:10.525] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000B, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:47:10.527] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000002, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:47:10.529] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000002, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:47:10.532] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:47:10.577] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:47:10.586] [INF] [UserId:Anonymous] HTTP GET /flights responded 200 in 87.1039 ms
+[2026-05-02 11:47:10.591] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 115.9167ms
+[2026-05-02 11:47:10.599] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+[2026-05-02 11:47:10.601] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:47:10.620] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 105.2517 ms
+[2026-05-02 11:47:10.626] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 138.5786ms
+[2026-05-02 11:47:10.626] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000B, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:47:10.634] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:47:10.638] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 145.7597 ms
+[2026-05-02 11:47:10.647] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 177.7231ms
+[2026-05-02 11:47:10.655] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:47:10.668] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights/schedules - null null
+[2026-05-02 11:47:10.673] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.676] [INF] [UserId:Anonymous] HTTP OPTIONS /flights/schedules responded 204 in 2.9087 ms
+[2026-05-02 11:47:10.680] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights/schedules - 204 null null 12.7859ms
+[2026-05-02 11:47:10.689] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights/schedules - null null
+[2026-05-02 11:47:10.696] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:47:10.700] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:47:10.703] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000004, PreviousRequestId: -
+No authentication is required for the path '/flights/schedules' in the route /flights/{everything}.
+[2026-05-02 11:47:11.054] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights/schedules
+[2026-05-02 11:47:11.078] [INF] [UserId:Anonymous] HTTP GET /flights/schedules responded 200 in 382.0088 ms
+[2026-05-02 11:47:11.083] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights/schedules - 200 null application/json; charset=utf-8 394.029ms
+[2026-05-02 11:47:11.096] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights/schedules, Response status code: 200
+[2026-05-02 11:47:12.600] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:47:12.627] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2119.7590 ms
+[2026-05-02 11:47:12.632] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2151.1813ms
+[2026-05-02 11:47:12.641] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:48:27.580] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:48:27.585] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:48:27.586] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:27.587] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:27.601] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.605] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.608] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.613] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.614] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 12.8843 ms
+[2026-05-02 11:48:27.615] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 9.7458 ms
+[2026-05-02 11:48:27.616] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 8.1018 ms
+[2026-05-02 11:48:27.623] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 10.6463 ms
+[2026-05-02 11:48:27.627] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 47.1922ms
+[2026-05-02 11:48:27.631] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 46.3274ms
+[2026-05-02 11:48:27.636] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 49.1788ms
+[2026-05-02 11:48:27.640] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 52.5166ms
+[2026-05-02 11:48:27.645] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 64
+[2026-05-02 11:48:27.651] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+[2026-05-02 11:48:27.656] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:27.660] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:27.665] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.673] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.677] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.683] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:27.686] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:48:27.689] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:48:27.690] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000D, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:48:27.692] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:48:27.701] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:48:27.702] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000006, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:48:27.704] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000D, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:48:27.708] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:48:27.771] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:48:27.775] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:48:27.782] [INF] [UserId:Anonymous] HTTP GET /flights responded 200 in 109.9815 ms
+[2026-05-02 11:48:27.787] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 136.7577ms
+[2026-05-02 11:48:27.792] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:48:27.796] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+[2026-05-02 11:48:27.798] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 115.2160 ms
+[2026-05-02 11:48:27.798] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 133.1932 ms
+[2026-05-02 11:48:27.808] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 147.703ms
+[2026-05-02 11:48:27.815] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 169.8623ms
+[2026-05-02 11:48:27.822] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:48:27.831] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:48:29.746] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000D, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:48:29.749] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2072.0265 ms
+[2026-05-02 11:48:29.759] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2103.2218ms
+[2026-05-02 11:48:29.769] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:48:30.895] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:48:30.905] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:48:30.908] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:30.908] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:30.912] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:30.915] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:30.931] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:30.939] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:30.940] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 28.3204 ms
+[2026-05-02 11:48:30.942] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 26.7697 ms
+[2026-05-02 11:48:30.944] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 13.5087 ms
+[2026-05-02 11:48:30.946] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 6.8995 ms
+[2026-05-02 11:48:30.949] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 53.9791ms
+[2026-05-02 11:48:30.951] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 46.2488ms
+[2026-05-02 11:48:30.954] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 46.3563ms
+[2026-05-02 11:48:30.958] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 49.7569ms
+[2026-05-02 11:48:30.963] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 75
+[2026-05-02 11:48:30.968] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+[2026-05-02 11:48:30.974] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:30.981] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:48:30.988] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:30.994] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:31.000] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:31.006] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:48:31.009] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000F, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:48:31.012] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:48:31.014] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:48:31.017] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:48:31.020] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000F, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:48:31.022] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000008, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:48:31.025] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000006, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:48:31.027] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000006, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:48:31.054] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:48:31.056] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 56.9702 ms
+[2026-05-02 11:48:31.063] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 88.1135ms
+[2026-05-02 11:48:31.071] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:48:31.078] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:48:31.091] [INF] [UserId:Anonymous] HTTP GET /flights responded 200 in 97.1102 ms
+[2026-05-02 11:48:31.098] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 129.7374ms
+[2026-05-02 11:48:31.099] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:48:31.107] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+[2026-05-02 11:48:31.122] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 116.1004 ms
+[2026-05-02 11:48:31.127] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:0000000F, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:48:31.129] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 147.0304ms
+[2026-05-02 11:48:31.131] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 143.2907 ms
+[2026-05-02 11:48:31.138] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:48:31.144] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 180.587ms
+[2026-05-02 11:48:31.155] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:49:23.874] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:49:23.881] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights - null null
+[2026-05-02 11:49:23.882] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:49:23.886] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:49:23.902] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:23.910] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:23.931] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:23.947] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 16.0355 ms
+[2026-05-02 11:49:23.942] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 39.8147 ms
+[2026-05-02 11:49:23.944] [INF] [UserId:Anonymous] HTTP OPTIONS /flights responded 204 in 34.0984 ms
+[2026-05-02 11:49:23.939] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:23.970] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 88.2619ms
+[2026-05-02 11:49:23.977] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 102.7387ms
+[2026-05-02 11:49:23.986] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights - 204 null null 104.5532ms
+[2026-05-02 11:49:23.989] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 50.0471 ms
+[2026-05-02 11:49:24.070] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 183.8935ms
+[2026-05-02 11:49:24.014] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 75
+[2026-05-02 11:49:24.065] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+[2026-05-02 11:49:23.998] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:49:24.082] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:49:24.095] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:24.102] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:24.108] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:24.115] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:49:24.118] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:49:24.122] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000011, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:49:24.126] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:49:24.129] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:49:24.131] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000A, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:49:24.134] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000011, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+[2026-05-02 11:49:24.137] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000008, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:49:24.142] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000008, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:49:24.220] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9K9:00000011, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+[2026-05-02 11:49:24.240] [INF] [UserId:Anonymous] HTTP GET /flights responded 200 in 137.6489 ms
+[2026-05-02 11:49:24.241] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:49:24.249] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 183.8373ms
+[2026-05-02 11:49:24.261] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+[2026-05-02 11:49:24.268] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 153.6997 ms
+[2026-05-02 11:49:24.276] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000A, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:49:24.277] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 194.3941ms
+[2026-05-02 11:49:24.281] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 185.8219 ms
+[2026-05-02 11:49:24.291] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:49:24.298] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 283.2087ms
+[2026-05-02 11:49:24.319] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:49:26.218] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:49:26.225] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2117.0485 ms
+[2026-05-02 11:49:26.234] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2236.7146ms
+[2026-05-02 11:49:26.253] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:50:09.982] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 11:50:09.983] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:50:09.985] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:50:10.020] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:50:10.026] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:50:10.032] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:50:10.033] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 13.0831 ms
+[2026-05-02 11:50:10.035] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 8.8536 ms
+[2026-05-02 11:50:10.041] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 9.0763 ms
+[2026-05-02 11:50:10.056] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 70.7531ms
+[2026-05-02 11:50:10.053] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 69.9146ms
+[2026-05-02 11:50:10.047] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 64.5525ms
+[2026-05-02 11:50:10.063] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:50:10.068] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:50:10.075] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 71
+[2026-05-02 11:50:10.080] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:50:10.084] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:50:10.090] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:50:10.093] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:50:10.094] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000C, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:50:10.098] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 11:50:10.099] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:0000000A, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:50:10.102] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000C, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:50:10.105] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:0000000A, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 11:50:10.152] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:0000000A, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:50:10.180] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 99.9951 ms
+[2026-05-02 11:50:10.190] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 126.9681ms
+[2026-05-02 11:50:10.198] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:50:10.202] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KC:0000000A, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 11:50:10.206] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 116.3699 ms
+[2026-05-02 11:50:10.212] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 136.8435ms
+[2026-05-02 11:50:10.222] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 11:50:12.142] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000C, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:50:12.153] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2068.7310 ms
+[2026-05-02 11:50:12.166] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2097.4631ms
+[2026-05-02 11:50:12.182] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:52:17.044] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:52:17.052] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:52:17.055] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 3.1388 ms
+[2026-05-02 11:52:17.061] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 16.7212ms
+[2026-05-02 11:52:17.075] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:52:17.084] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:52:17.088] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000E, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:52:17.092] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000E, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 11:52:17.110] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:52:17.119] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:52:17.123] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 4.0645 ms
+[2026-05-02 11:52:17.129] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 18.4628ms
+[2026-05-02 11:52:17.139] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 11:52:17.146] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 11:52:17.148] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:0000000C, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 11:52:17.151] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:0000000C, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 11:52:17.379] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KD:0000000C, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:52:17.401] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 255.8913 ms
+[2026-05-02 11:52:17.408] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 269.6238ms
+[2026-05-02 11:52:17.421] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 11:52:19.140] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KB:0000000E, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 11:52:19.152] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2068.0047 ms
+[2026-05-02 11:52:19.216] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2141.0113ms
+[2026-05-02 11:52:19.239] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:00:01.655] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 12:00:01.659] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:00:01.661] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 1.5824 ms
+[2026-05-02 12:00:01.666] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 11.0234ms
+[2026-05-02 12:00:01.677] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 71
+[2026-05-02 12:00:01.697] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:00:01.703] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KE:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 12:00:01.707] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KE:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 12:00:01.793] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:00:01.855] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:00:01.982] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 126.1906 ms
+[2026-05-02 12:00:01.985] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 192.0457ms
+[2026-05-02 12:00:01.992] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:00:01.994] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:00:02.000] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KF:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:00:02.002] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KF:00000002, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 12:00:02.131] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:00:02.235] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:00:02.241] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 5.8165 ms
+[2026-05-02 12:00:02.251] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 120.2915ms
+[2026-05-02 12:00:02.259] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KE:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 12:00:02.260] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:00:02.263] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 565.9692 ms
+[2026-05-02 12:00:02.267] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:00:02.269] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 592.1192ms
+[2026-05-02 12:00:02.272] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KG:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:00:02.385] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 12:00:02.385] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KG:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 12:00:02.802] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KG:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:00:02.994] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 727.6678 ms
+[2026-05-02 12:00:03.003] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 742.7506ms
+[2026-05-02 12:00:03.012] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:00:04.183] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KF:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:00:04.229] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2234.6601 ms
+[2026-05-02 12:00:04.235] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2243.0576ms
+[2026-05-02 12:00:04.240] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:01:22.846] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 12:01:22.852] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:01:22.854] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 2.0670 ms
+[2026-05-02 12:01:22.858] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 11.8551ms
+[2026-05-02 12:01:22.865] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:01:22.866] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 71
+[2026-05-02 12:01:22.871] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:01:22.872] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:01:22.878] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:01:22.879] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 7.8275 ms
+[2026-05-02 12:01:22.887] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:01:22.892] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KI:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 12:01:22.896] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 31.5803ms
+[2026-05-02 12:01:22.899] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 12.2039 ms
+[2026-05-02 12:01:22.901] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KI:00000001, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 12:01:22.910] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:01:22.916] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 43.0934ms
+[2026-05-02 12:01:22.928] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:01:22.938] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:01:22.942] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KH:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:01:22.949] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:01:22.954] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KH:00000003, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 12:01:22.959] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KJ:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:01:22.962] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KJ:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 12:01:23.023] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KI:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 12:01:23.029] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 151.0814 ms
+[2026-05-02 12:01:23.035] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 168.6161ms
+[2026-05-02 12:01:23.043] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 12:01:23.044] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KJ:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:01:23.057] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 108.0650 ms
+[2026-05-02 12:01:23.064] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 125.1966ms
+[2026-05-02 12:01:23.072] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:01:25.006] [INF] [UserId:Anonymous] RequestId: 0HNL828D4C9KH:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:01:25.019] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2091.2218 ms
+[2026-05-02 12:01:25.047] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2136.3791ms
+[2026-05-02 12:01:25.061] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:07:42.783] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-02 12:07:43.301] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-05-02 12:07:43.481] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-02 12:07:43.636] [INF] [UserId:] Hosting environment: Development
+[2026-05-02 12:07:43.801] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-05-02 12:09:43.880] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 12:09:43.976] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:09:43.993] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 22.1281 ms
+[2026-05-02 12:09:44.028] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 149.751ms
+[2026-05-02 12:09:44.049] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 45
+[2026-05-02 12:09:44.062] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:09:44.429] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I0:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 12:09:44.440] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I0:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 12:09:46.921] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I0:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 12:09:47.045] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 2984.2681 ms
+[2026-05-02 12:09:47.066] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 3017.4828ms
+[2026-05-02 12:09:47.100] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 12:11:08.744] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 12:11:08.750] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:11:08.752] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 3.0842 ms
+[2026-05-02 12:11:08.754] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:11:08.756] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:11:08.756] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 12.8954ms
+[2026-05-02 12:11:08.761] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:11:08.765] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:11:08.772] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 71
+[2026-05-02 12:11:08.773] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 12.2230 ms
+[2026-05-02 12:11:08.775] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 9.4928 ms
+[2026-05-02 12:11:08.780] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:11:08.783] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 29.2178ms
+[2026-05-02 12:11:08.786] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 30.3449ms
+[2026-05-02 12:11:08.795] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:11:08.801] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:11:08.805] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:11:08.809] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:11:08.980] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I2:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:11:08.980] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I0:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 12:11:08.980] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I1:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:11:08.989] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I2:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 12:11:08.999] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I0:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 12:11:09.009] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I1:00000002, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 12:11:09.497] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I0:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 12:11:09.506] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 725.9320 ms
+[2026-05-02 12:11:09.513] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 740.6016ms
+[2026-05-02 12:11:09.524] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 12:11:09.755] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I2:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:11:09.777] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 967.5419 ms
+[2026-05-02 12:11:09.783] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 982.3554ms
+[2026-05-02 12:11:09.793] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:11:11.180] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I1:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:11:11.188] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2382.4895 ms
+[2026-05-02 12:11:11.199] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2404.0092ms
+[2026-05-02 12:11:11.209] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:13:43.993] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - null null
+[2026-05-02 12:13:44.003] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:13:44.086] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:13:44.381] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:13:44.393] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:13:44.402] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:13:44.406] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/analytics/log responded 204 in 24.8192 ms
+[2026-05-02 12:13:44.409] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 16.2962 ms
+[2026-05-02 12:13:44.412] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 204 in 9.5275 ms
+[2026-05-02 12:13:44.421] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/analytics/log - 204 null null 427.9281ms
+[2026-05-02 12:13:44.434] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 431.0846ms
+[2026-05-02 12:13:44.449] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 204 null null 363.6011ms
+[2026-05-02 12:13:44.466] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - application/json 71
+[2026-05-02 12:13:44.479] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:13:44.491] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-02 12:13:44.499] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:13:44.508] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:13:44.522] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-02 12:13:44.529] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I3:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/analytics/log' via the EnableRateLimiting option.
+[2026-05-02 12:13:44.531] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I4:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:13:44.535] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I5:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-02 12:13:44.538] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I3:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/analytics/log' in the route /identity/admin/analytics/log.
+[2026-05-02 12:13:44.542] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I4:00000002, PreviousRequestId: -
+No authentication is required for the path '/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /notification/{everything}.
+[2026-05-02 12:13:44.545] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I5:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c' in the route /identity/admin/{everything}.
+[2026-05-02 12:13:44.762] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I3:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/analytics/log
+[2026-05-02 12:13:44.766] [INF] [UserId:Anonymous] HTTP POST /identity/admin/analytics/log responded 200 in 267.0103 ms
+[2026-05-02 12:13:44.775] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/analytics/log - 200 0 null 309.498ms
+[2026-05-02 12:13:44.786] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I5:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:13:44.786] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/analytics/log, Response status code: 200
+[2026-05-02 12:13:44.804] [INF] [UserId:Anonymous] HTTP GET /identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 282.0134 ms
+[2026-05-02 12:13:44.811] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 320.37ms
+[2026-05-02 12:13:44.821] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200
+[2026-05-02 12:13:46.609] [INF] [UserId:Anonymous] RequestId: 0HNL82MC6N3I4:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/4135411e-969e-4a83-b16b-29ece7904f7c
+[2026-05-02 12:13:46.629] [INF] [UserId:Anonymous] HTTP GET /notification/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 2121.0570 ms
+[2026-05-02 12:13:46.644] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 2 application/json 2165.2792ms
+[2026-05-02 12:13:46.655] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/4135411e-969e-4a83-b16b-29ece7904f7c, Response status code: 200

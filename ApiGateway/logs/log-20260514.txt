@@ -1,0 +1,303 @@
+[2026-05-14 11:24:25.078] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-14 11:24:25.284] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-05-14 11:24:25.294] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-14 11:24:25.298] [INF] [UserId:] Hosting environment: Development
+[2026-05-14 11:24:25.300] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-05-14 11:24:47.751] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[2026-05-14 11:24:51.504] [WRN] [UserId:Anonymous] RequestId: 0HNLHFL75MDRG:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+[2026-05-14 11:24:51.511] [WRN] [UserId:Anonymous] RequestId: 0HNLHFL75MDRG:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+[2026-05-14 11:24:51.523] [INF] [UserId:Anonymous] HTTP GET / responded 404 in 3696.3447 ms
+[2026-05-14 11:24:51.546] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 3798.9019ms
+[2026-05-14 11:24:58.605] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+[2026-05-14 11:24:58.628] [INF] [UserId:Anonymous] HTTP GET /swagger responded 301 in 5.4893 ms
+[2026-05-14 11:24:58.636] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 35.4656ms
+[2026-05-14 11:24:58.648] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+[2026-05-14 11:24:58.827] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 168.0301 ms
+[2026-05-14 11:24:58.833] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 185.4895ms
+[2026-05-14 11:24:58.868] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+[2026-05-14 11:24:58.868] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+[2026-05-14 11:24:58.869] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+[2026-05-14 11:24:58.870] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+[2026-05-14 11:24:58.870] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+[2026-05-14 11:24:58.911] [INF] [UserId:Anonymous] HTTP GET /swagger/index.css responded 200 in 33.9280 ms
+[2026-05-14 11:24:58.911] [INF] [UserId:Anonymous] HTTP GET /swagger/swagger-ui.css responded 200 in 28.0573 ms
+[2026-05-14 11:24:58.921] [INF] [UserId:Anonymous] HTTP GET /swagger/index.js responded 200 in 1.2427 ms
+[2026-05-14 11:24:58.931] [INF] [UserId:Anonymous] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 39.4446 ms
+[2026-05-14 11:24:58.931] [INF] [UserId:Anonymous] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 31.9261 ms
+[2026-05-14 11:24:58.935] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 67.6628ms
+[2026-05-14 11:24:58.941] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 73.5597ms
+[2026-05-14 11:24:58.947] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 76.797ms
+[2026-05-14 11:24:58.955] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 85.3388ms
+[2026-05-14 11:24:58.958] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 88.0682ms
+[2026-05-14 11:24:59.440] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+[2026-05-14 11:24:59.467] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+[2026-05-14 11:24:59.476] [INF] [UserId:Anonymous] HTTP GET /swagger/favicon-32x32.png responded 200 in 2.5930 ms
+[2026-05-14 11:24:59.481] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 14.5459ms
+[2026-05-14 11:24:59.510] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+[2026-05-14 11:24:59.516] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+[2026-05-14 11:24:59.999] [INF] [UserId:Anonymous] Received HTTP response headers after 471.9115ms - 200
+[2026-05-14 11:25:00.005] [INF] [UserId:Anonymous] End processing HTTP request after 502.2383ms - 200
+[2026-05-14 11:25:00.259] [INF] [UserId:Anonymous] HTTP GET /swagger/docs/v1/flights responded 200 in 811.8265 ms
+[2026-05-14 11:25:00.265] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 825.1412ms
+[2026-05-14 11:25:04.728] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+[2026-05-14 11:25:04.743] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:25:04.745] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:25:05.298] [INF] [UserId:Anonymous] Received HTTP response headers after 550.4106ms - 200
+[2026-05-14 11:25:05.317] [INF] [UserId:Anonymous] End processing HTTP request after 574.1419ms - 200
+[2026-05-14 11:25:05.372] [INF] [UserId:Anonymous] HTTP GET /swagger/docs/v1/admin responded 200 in 631.6157 ms
+[2026-05-14 11:25:05.496] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 768.4382ms
+[2026-05-14 11:31:06.102] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-14 11:31:06.790] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-05-14 11:31:07.114] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-14 11:31:07.242] [INF] [UserId:] Hosting environment: Development
+[2026-05-14 11:31:07.544] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-05-14 11:31:26.194] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+[2026-05-14 11:31:26.459] [WRN] [UserId:Anonymous] RequestId: 0HNLHFOTTAPJB:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+[2026-05-14 11:31:26.466] [WRN] [UserId:Anonymous] RequestId: 0HNLHFOTTAPJB:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+[2026-05-14 11:31:26.479] [INF] [UserId:Anonymous] HTTP GET / responded 404 in 179.5008 ms
+[2026-05-14 11:31:26.581] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 390.3889ms
+[2026-05-14 11:31:30.178] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - null null
+[2026-05-14 11:31:30.374] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 181.6227 ms
+[2026-05-14 11:31:30.382] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - 200 null text/html;charset=utf-8 206.1199ms
+[2026-05-14 11:31:31.084] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+[2026-05-14 11:31:31.173] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:31:31.181] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:31:31.733] [INF] [UserId:Anonymous] Received HTTP response headers after 539.4969ms - 200
+[2026-05-14 11:31:31.741] [INF] [UserId:Anonymous] End processing HTTP request after 575.4867ms - 200
+[2026-05-14 11:31:31.861] [ERR] [UserId:Anonymous] HTTP GET /swagger/docs/v1/admin responded 500 in 767.0372 ms
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JObject.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.TryAddInternal(Int32 index, Object content, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2026-05-14 11:31:31.926] [ERR] [UserId:] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JObject.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.TryAddInternal(Int32 index, Object content, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway\Program.cs:line 86
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-05-14 11:31:31.996] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 500 null text/plain; charset=utf-8 911.8345ms
+[2026-05-14 11:31:43.401] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/checkins - null null
+[2026-05-14 11:31:43.411] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5005/swagger/v1/swagger.json
+[2026-05-14 11:31:43.414] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5005/swagger/v1/swagger.json
+[2026-05-14 11:31:44.310] [INF] [UserId:Anonymous] Received HTTP response headers after 893.7113ms - 200
+[2026-05-14 11:31:44.345] [INF] [UserId:Anonymous] End processing HTTP request after 934.6829ms - 200
+[2026-05-14 11:31:44.666] [INF] [UserId:Anonymous] HTTP GET /swagger/docs/v1/checkins responded 200 in 1258.3539 ms
+[2026-05-14 11:31:44.864] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/checkins - 200 null null 1463.294ms
+[2026-05-14 11:31:47.943] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+[2026-05-14 11:31:47.955] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:31:47.958] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:31:47.983] [INF] [UserId:Anonymous] Received HTTP response headers after 20.6826ms - 200
+[2026-05-14 11:31:47.987] [INF] [UserId:Anonymous] End processing HTTP request after 31.9438ms - 200
+[2026-05-14 11:31:47.998] [ERR] [UserId:Anonymous] HTTP GET /swagger/docs/v1/admin responded 500 in 43.8346 ms
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JObject.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.TryAddInternal(Int32 index, Object content, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2026-05-14 11:31:48.009] [ERR] [UserId:] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JObject.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.TryAddInternal(Int32 index, Object content, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway\Program.cs:line 86
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-05-14 11:31:48.024] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 500 null text/plain; charset=utf-8 80.4956ms
+[2026-05-14 11:32:19.164] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - null null
+[2026-05-14 11:32:19.178] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 1.7550 ms
+[2026-05-14 11:32:19.183] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - 200 null text/html;charset=utf-8 19.1924ms
+[2026-05-14 11:32:19.479] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+[2026-05-14 11:32:19.486] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:32:19.491] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:32:19.523] [INF] [UserId:Anonymous] Received HTTP response headers after 28.4115ms - 200
+[2026-05-14 11:32:19.528] [INF] [UserId:Anonymous] End processing HTTP request after 41.3663ms - 200
+[2026-05-14 11:32:19.535] [ERR] [UserId:Anonymous] HTTP GET /swagger/docs/v1/admin responded 500 in 48.6548 ms
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2026-05-14 11:32:19.549] [ERR] [UserId:] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway\Program.cs:line 86
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-05-14 11:32:19.563] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 500 null text/plain; charset=utf-8 83.9384ms
+[2026-05-14 11:32:20.720] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - null null
+[2026-05-14 11:32:20.729] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 0.4951 ms
+[2026-05-14 11:32:20.733] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - 200 null text/html;charset=utf-8 13.2392ms
+[2026-05-14 11:32:20.840] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+[2026-05-14 11:32:20.852] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:32:20.858] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:32:20.886] [INF] [UserId:Anonymous] Received HTTP response headers after 22.7849ms - 200
+[2026-05-14 11:32:20.893] [INF] [UserId:Anonymous] End processing HTTP request after 40.8791ms - 200
+[2026-05-14 11:32:20.902] [ERR] [UserId:Anonymous] HTTP GET /swagger/docs/v1/admin responded 500 in 50.8162 ms
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2026-05-14 11:32:20.933] [ERR] [UserId:] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Can not add property post to Newtonsoft.Json.Linq.JObject. Property with the same name already exists on object.
+   at Newtonsoft.Json.Linq.JObject.ValidateToken(JToken o, JToken existing)
+   at Newtonsoft.Json.Linq.JContainer.InsertItem(Int32 index, JToken item, Boolean skipParentCheck, Boolean copyAnnotations)
+   at Newtonsoft.Json.Linq.JContainer.Add(Object content)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.RenameAndRemovePaths(IEnumerable`1 routes, JToken paths, String basePath)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformOpenApi(JObject openApi, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.TransformSwaggerOrOpenApi(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Transformation.SwaggerJsonTransformer.Transform(String swaggerJson, IEnumerable`1 routes, String serverOverride, SwaggerEndPointOptions endPointOptions)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway\Program.cs:line 86
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-05-14 11:32:20.947] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 500 null text/plain; charset=utf-8 107.2706ms
+[2026-05-14 11:35:19.506] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-14 11:35:19.760] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-05-14 11:35:19.771] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-14 11:35:19.781] [INF] [UserId:] Hosting environment: Development
+[2026-05-14 11:35:19.784] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-05-14 11:38:15.854] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - null null
+[2026-05-14 11:38:16.083] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 155.8938 ms
+[2026-05-14 11:38:16.115] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - 200 null text/html;charset=utf-8 258.0481ms
+[2026-05-14 11:38:16.248] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+[2026-05-14 11:38:16.334] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:38:16.341] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+[2026-05-14 11:38:16.933] [INF] [UserId:Anonymous] Received HTTP response headers after 579.6549ms - 200
+[2026-05-14 11:38:16.940] [INF] [UserId:Anonymous] End processing HTTP request after 613.8879ms - 200
+[2026-05-14 11:38:17.265] [INF] [UserId:Anonymous] HTTP GET /swagger/docs/v1/admin responded 200 in 1009.9247 ms
+[2026-05-14 11:38:17.300] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 1053.198ms
+[2026-05-14 11:38:52.786] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/login - application/json 65
+[2026-05-14 11:38:52.802] [INF] [UserId:Anonymous] CORS policy execution failed.
+[2026-05-14 11:38:52.806] [INF] [UserId:Anonymous] Request origin http://localhost:5000 does not have permission to access the resource.
+[2026-05-14 11:38:53.049] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-14 11:38:53.062] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000003, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/login' in the route /identity/admin/{everything}.
+[2026-05-14 11:38:58.962] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/login
+[2026-05-14 11:38:58.993] [INF] [UserId:Anonymous] HTTP POST /identity/admin/login responded 200 in 6197.3088 ms
+[2026-05-14 11:38:59.002] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/login - 200 null application/json; charset=utf-8 6215.4679ms
+[2026-05-14 11:38:59.013] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/login, Response status code: 200
+[2026-05-14 11:39:28.468] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/admin/dashboard - null null
+[2026-05-14 11:39:28.673] [INF] [UserId:Anonymous] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[2026-05-14 11:39:28.693] [INF] [UserId:Anonymous] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+[2026-05-14 11:39:28.702] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-14 11:39:28.707] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000004, PreviousRequestId: -
+No authentication is required for the path '/admin/dashboard' in the route /admin/{everything}.
+[2026-05-14 11:39:28.957] [WRN] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000004, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/admin/dashboard
+[2026-05-14 11:39:28.963] [INF] [UserId:Anonymous] HTTP GET /admin/dashboard responded 401 in 483.8881 ms
+[2026-05-14 11:39:28.970] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/admin/dashboard - 401 0 null 501.4892ms
+[2026-05-14 11:39:28.981] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/dashboard, Response status code: 401
+[2026-05-14 11:40:31.286] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/admin/dashboard - null null
+[2026-05-14 11:40:31.356] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+[2026-05-14 11:40:31.367] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000005, PreviousRequestId: -
+No authentication is required for the path '/admin/dashboard' in the route /admin/{everything}.
+[2026-05-14 11:40:52.241] [INF] [UserId:Anonymous] RequestId: 0HNLHFSO0D0H2:00000005, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/dashboard
+[2026-05-14 11:40:52.258] [INF] [UserId:Anonymous] HTTP GET /admin/dashboard responded 200 in 20957.9798 ms
+[2026-05-14 11:40:52.264] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/admin/dashboard - 200 null application/json; charset=utf-8 20978.1301ms
+[2026-05-14 11:40:52.271] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/dashboard, Response status code: 200

@@ -1,0 +1,265 @@
+[2026-05-08 08:44:58.944] [INF] [UserId:] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 08:44:59.011] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-08 08:44:59.045] [INF] [UserId:] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-08 08:44:59.153] [INF] [UserId:] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-08 08:44:59.188] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 08:44:59.199] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-08 08:44:59.228] [INF] [UserId:] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-08 08:44:59.256] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-08 08:44:59.295] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-08 08:44:59.415] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-08 08:44:59.516] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-05-08 08:44:59.528] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-08 08:44:59.532] [INF] [UserId:] Hosting environment: Development
+[2026-05-08 08:44:59.535] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService
+[2026-05-08 11:55:17.129] [INF] [UserId:] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 11:55:17.211] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-08 11:55:17.239] [INF] [UserId:] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-08 11:55:17.325] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-08 11:55:17.367] [INF] [UserId:] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 11:55:17.376] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-08 11:55:17.403] [INF] [UserId:] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-08 11:55:17.425] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-08 11:55:17.444] [INF] [UserId:] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-08 11:55:17.602] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-08 11:55:17.736] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-05-08 11:55:17.746] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-08 11:55:17.750] [INF] [UserId:] Hosting environment: Development
+[2026-05-08 11:55:17.752] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService
+[2026-05-08 11:58:42.193] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/swagger/v1/swagger.json - null null
+[2026-05-08 11:58:42.478] [INF] [UserId:Anonymous] HTTP GET /swagger/v1/swagger.json responded 200 in 238.0274 ms
+[2026-05-08 11:58:42.493] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 303.1014ms
+[2026-05-08 11:59:14.516] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/Staff - null null
+[2026-05-08 11:59:14.528] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-08 11:59:17.531] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|SuperAdmin|HR)
+[2026-05-08 11:59:17.543] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was challenged.
+[2026-05-08 11:59:17.550] [INF] [UserId:Anonymous] HTTP GET /api/Staff responded 401 in 3026.1989 ms
+[2026-05-08 11:59:17.556] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/Staff - 401 0 null 3040.2471ms
+[2026-05-08 11:59:40.560] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/swagger/v1/swagger.json - null null
+[2026-05-08 11:59:40.579] [INF] [UserId:Anonymous] HTTP GET /swagger/v1/swagger.json responded 200 in 7.8458 ms
+[2026-05-08 11:59:40.584] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.871ms
+[2026-05-08 12:00:02.227] [INF] [UserId:] Request starting HTTP/1.1 PUT http://localhost:5011/api/Staff/101 - application/json 177
+[2026-05-08 12:00:02.238] [INF] [UserId:Anonymous] CORS policy execution failed.
+[2026-05-08 12:00:02.244] [INF] [UserId:Anonymous] Request origin http://localhost:5000 does not have permission to access the resource.
+[2026-05-08 12:00:02.257] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|SuperAdmin|HR)
+[2026-05-08 12:00:02.263] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was challenged.
+[2026-05-08 12:00:02.268] [INF] [UserId:Anonymous] HTTP PUT /api/Staff/101 responded 401 in 31.6693 ms
+[2026-05-08 12:00:02.276] [INF] [UserId:] Request finished HTTP/1.1 PUT http://localhost:5011/api/Staff/101 - 401 0 null 49.3985ms
+[2026-05-08 12:02:13.222] [INF] [UserId:] Request starting HTTP/1.1 PUT http://localhost:5011/api/Staff/101 - application/json 179
+[2026-05-08 12:02:13.236] [INF] [UserId:Anonymous] CORS policy execution failed.
+[2026-05-08 12:02:13.241] [INF] [UserId:Anonymous] Request origin http://localhost:5000 does not have permission to access the resource.
+[2026-05-08 12:02:13.300] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|SuperAdmin|HR)
+[2026-05-08 12:02:13.307] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was challenged.
+[2026-05-08 12:02:13.311] [INF] [UserId:Anonymous] HTTP PUT /api/Staff/101 responded 401 in 77.0214 ms
+[2026-05-08 12:02:13.318] [INF] [UserId:] Request finished HTTP/1.1 PUT http://localhost:5011/api/Staff/101 - 401 0 null 95.8647ms
+[2026-05-08 12:03:30.814] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - null null
+[2026-05-08 12:03:30.952] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:31.722] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:03:31.904] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:03:33.509] [INF] [UserId:Anonymous] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+[2026-05-08 12:03:33.941] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StaffService.Models.StaffProfile, StaffService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-08 12:03:34.258] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.GetUsers (StaffService) in 2276.2936ms
+[2026-05-08 12:03:34.272] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:03:34.393] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 3441.5056 ms
+[2026-05-08 12:03:34.418] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - 200 null application/json; charset=utf-8 3603.461ms
+[2026-05-08 12:03:42.244] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/auth/users - null null
+[2026-05-08 12:03:42.311] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:03:42.325] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:03:42.620] [INF] [UserId:Anonymous] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+[2026-05-08 12:03:42.638] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StaffService.Models.StaffProfile, StaffService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-08 12:03:42.645] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.GetUsers (StaffService) in 314.4225ms
+[2026-05-08 12:03:42.679] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:03:42.706] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 395.8022 ms
+[2026-05-08 12:03:42.721] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/auth/users - 200 null application/json; charset=utf-8 476.5387ms
+[2026-05-08 12:04:16.505] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5011/api/auth/register - application/json 126
+[2026-05-08 12:04:16.517] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:04:16.521] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.Register (StaffService)'
+[2026-05-08 12:04:16.548] [INF] [UserId:Anonymous] Route matched with {action = "Register", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(StaffService.DTOs.StaffRegisterDto) on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:04:16.988] [INF] [UserId:Anonymous] Executed DbCommand (138ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+WHERE LOWER([s].[Email]) = @__ToLower_0
+[2026-05-08 12:04:17.941] [INF] [UserId:Anonymous] Executed DbCommand (40ms) [Parameters=[@p0='?' (Size = 20), @p1='?' (Size = 100), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 256), @p6='?' (Size = 100), @p7='?' (Size = 20), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (Size = 100), @p13='?' (Size = 4000), @p14='?' (Size = 50), @p15='?' (Size = 50), @p16='?' (Size = 4000), @p17='?' (Size = 20), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (Size = 100), @p22='?' (DbType = DateTime2), @p23='?' (Size = 4000), @p24='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [StaffProfiles] ([AadharNumber], [AssignedAirportCode], [CreatedAt], [DateOfBirth], [Department], [Email], [FirstName], [Gender], [HasChangedPassword], [IsActive], [IsEmailVerified], [IsProfileComplete], [LastName], [Name], [Nationality], [PassportNumber], [PasswordHash], [PhoneNumber], [ResetToken], [ResetTokenExpiry], [Role], [RoleTitle], [UpdatedAt], [VerificationToken], [VerificationTokenExpiry])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+[2026-05-08 12:04:22.951] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-08 12:04:22.979] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.Register (StaffService) in 6424.011ms
+[2026-05-08 12:04:22.984] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.Register (StaffService)'
+[2026-05-08 12:04:22.990] [INF] [UserId:Anonymous] HTTP POST /api/auth/register responded 200 in 6473.8538 ms
+[2026-05-08 12:04:23.003] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5011/api/auth/register - 200 null application/json; charset=utf-8 6498.7545ms
+[2026-05-08 12:04:23.104] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - null null
+[2026-05-08 12:04:23.117] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:04:23.121] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:04:23.124] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:04:23.136] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+[2026-05-08 12:04:23.144] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StaffService.Models.StaffProfile, StaffService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-08 12:04:23.151] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.GetUsers (StaffService) in 22.3144ms
+[2026-05-08 12:04:23.154] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:04:23.158] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 40.4443 ms
+[2026-05-08 12:04:23.165] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - 200 null application/json; charset=utf-8 60.6413ms
+[2026-05-08 12:04:45.804] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5011/api/auth/login - application/json 61
+[2026-05-08 12:04:45.814] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:04:45.817] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:04:45.837] [INF] [UserId:Anonymous] Route matched with {action = "Login", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StaffService.DTOs.StaffLoginDto) on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:04:45.936] [INF] [UserId:Anonymous] Executed DbCommand (78ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+WHERE LOWER([s].[Email]) = @__ToLower_0
+[2026-05-08 12:04:46.456] [INF] [UserId:Anonymous] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-08 12:04:46.464] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.Login (StaffService) in 622.8943ms
+[2026-05-08 12:04:46.470] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:04:46.479] [INF] [UserId:Anonymous] HTTP POST /api/auth/login responded 401 in 665.0176 ms
+[2026-05-08 12:04:46.486] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5011/api/auth/login - 401 null application/json; charset=utf-8 681.9892ms
+[2026-05-08 12:05:10.762] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5011/api/auth/login - application/json 52
+[2026-05-08 12:05:10.770] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:05:10.774] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:05:10.779] [INF] [UserId:Anonymous] Route matched with {action = "Login", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StaffService.DTOs.StaffLoginDto) on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:05:10.793] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+WHERE LOWER([s].[Email]) = @__ToLower_0
+[2026-05-08 12:05:11.149] [INF] [UserId:Anonymous] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-08 12:05:11.153] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.Login (StaffService) in 367.2051ms
+[2026-05-08 12:05:11.170] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:05:11.171] [INF] [UserId:Anonymous] HTTP POST /api/auth/login responded 401 in 400.8622 ms
+[2026-05-08 12:05:11.174] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5011/api/auth/login - 401 null application/json; charset=utf-8 412.0662ms
+[2026-05-08 12:05:16.130] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5011/api/auth/login - application/json 51
+[2026-05-08 12:05:16.140] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:05:16.151] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:05:16.154] [INF] [UserId:Anonymous] Route matched with {action = "Login", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StaffService.DTOs.StaffLoginDto) on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:05:16.164] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+WHERE LOWER([s].[Email]) = @__ToLower_0
+[2026-05-08 12:05:16.566] [INF] [UserId:Anonymous] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-08 12:05:16.570] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.Login (StaffService) in 412.6987ms
+[2026-05-08 12:05:16.580] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:05:16.584] [INF] [UserId:Anonymous] HTTP POST /api/auth/login responded 401 in 443.8611 ms
+[2026-05-08 12:05:16.596] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5011/api/auth/login - 401 null application/json; charset=utf-8 465.4832ms
+[2026-05-08 12:05:25.604] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5011/api/auth/login - application/json 51
+[2026-05-08 12:05:25.616] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:05:25.621] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:05:25.626] [INF] [UserId:Anonymous] Route matched with {action = "Login", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(StaffService.DTOs.StaffLoginDto) on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:05:25.640] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+WHERE LOWER([s].[Email]) = @__ToLower_0
+[2026-05-08 12:05:26.052] [INF] [UserId:Anonymous] Executing UnauthorizedObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-08 12:05:26.061] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.Login (StaffService) in 428.2058ms
+[2026-05-08 12:05:26.066] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.Login (StaffService)'
+[2026-05-08 12:05:26.071] [INF] [UserId:Anonymous] HTTP POST /api/auth/login responded 401 in 455.0230 ms
+[2026-05-08 12:05:26.075] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5011/api/auth/login - 401 null application/json; charset=utf-8 471.2112ms
+[2026-05-08 12:05:30.790] [INF] [UserId:] Request starting HTTP/1.1 DELETE http://localhost:5011/api/auth/users/4 - null null
+[2026-05-08 12:05:30.801] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:05:30.966] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.DeleteUser (StaffService)'
+[2026-05-08 12:05:31.000] [INF] [UserId:Anonymous] Route matched with {action = "DeleteUser", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:05:31.108] [INF] [UserId:Anonymous] Executed DbCommand (81ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+WHERE [s].[Id] = @__id_0
+[2026-05-08 12:05:31.160] [INF] [UserId:Anonymous] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [StaffProfiles]
+OUTPUT 1
+WHERE [Id] = @p0;
+[2026-05-08 12:05:31.180] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-08 12:05:31.185] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.DeleteUser (StaffService) in 179.2184ms
+[2026-05-08 12:05:31.192] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.DeleteUser (StaffService)'
+[2026-05-08 12:05:31.197] [INF] [UserId:Anonymous] HTTP DELETE /api/auth/users/4 responded 200 in 396.0856 ms
+[2026-05-08 12:05:31.204] [INF] [UserId:] Request finished HTTP/1.1 DELETE http://localhost:5011/api/auth/users/4 - 200 null application/json; charset=utf-8 413.8325ms
+[2026-05-08 12:05:31.303] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - null null
+[2026-05-08 12:05:31.312] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:05:31.315] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:05:31.320] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:05:31.331] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+[2026-05-08 12:05:31.338] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StaffService.Models.StaffProfile, StaffService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-08 12:05:31.344] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.GetUsers (StaffService) in 19.4084ms
+[2026-05-08 12:05:31.349] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:05:31.354] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 41.6499 ms
+[2026-05-08 12:05:31.361] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - 200 null application/json; charset=utf-8 57.8539ms
+[2026-05-08 12:06:04.367] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5011/api/auth/register - application/json 108
+[2026-05-08 12:06:04.376] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:06:04.378] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.Register (StaffService)'
+[2026-05-08 12:06:04.380] [INF] [UserId:Anonymous] Route matched with {action = "Register", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(StaffService.DTOs.StaffRegisterDto) on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:06:04.391] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+WHERE LOWER([s].[Email]) = @__ToLower_0
+[2026-05-08 12:06:04.818] [INF] [UserId:Anonymous] Executed DbCommand (41ms) [Parameters=[@p0='?' (Size = 20), @p1='?' (Size = 100), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 100), @p5='?' (Size = 256), @p6='?' (Size = 100), @p7='?' (Size = 20), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean), @p11='?' (DbType = Boolean), @p12='?' (Size = 100), @p13='?' (Size = 4000), @p14='?' (Size = 50), @p15='?' (Size = 50), @p16='?' (Size = 4000), @p17='?' (Size = 20), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (Size = 100), @p22='?' (DbType = DateTime2), @p23='?' (Size = 4000), @p24='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [StaffProfiles] ([AadharNumber], [AssignedAirportCode], [CreatedAt], [DateOfBirth], [Department], [Email], [FirstName], [Gender], [HasChangedPassword], [IsActive], [IsEmailVerified], [IsProfileComplete], [LastName], [Name], [Nationality], [PassportNumber], [PasswordHash], [PhoneNumber], [ResetToken], [ResetTokenExpiry], [Role], [RoleTitle], [UpdatedAt], [VerificationToken], [VerificationTokenExpiry])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24);
+[2026-05-08 12:06:12.437] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-08 12:06:12.448] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.Register (StaffService) in 8064.0889ms
+[2026-05-08 12:06:12.452] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.Register (StaffService)'
+[2026-05-08 12:06:12.465] [INF] [UserId:Anonymous] HTTP POST /api/auth/register responded 200 in 8089.0140 ms
+[2026-05-08 12:06:12.477] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5011/api/auth/register - 200 null application/json; charset=utf-8 8110.6617ms
+[2026-05-08 12:06:12.553] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - null null
+[2026-05-08 12:06:12.562] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:06:12.566] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:06:12.571] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-05-08 12:06:12.582] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AadharNumber], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[DateOfBirth], [s].[Department], [s].[Email], [s].[FirstName], [s].[Gender], [s].[HasChangedPassword], [s].[IsActive], [s].[IsEmailVerified], [s].[IsProfileComplete], [s].[LastName], [s].[Name], [s].[Nationality], [s].[PassportNumber], [s].[PasswordHash], [s].[PhoneNumber], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+[2026-05-08 12:06:12.590] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StaffService.Models.StaffProfile, StaffService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-08 12:06:12.594] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.GetUsers (StaffService) in 17.7383ms
+[2026-05-08 12:06:12.599] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-05-08 12:06:12.603] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 40.8695 ms
+[2026-05-08 12:06:12.609] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - 200 null application/json; charset=utf-8 56.7227ms

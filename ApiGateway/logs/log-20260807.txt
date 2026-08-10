@@ -1,0 +1,90 @@
+2026-08-07 15:46:54.708 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-07 15:46:54.872 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-07 15:46:54.874 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-07 15:46:54.874 +05:30 [INF] Hosting environment: Development
+2026-08-07 15:46:54.875 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-07 15:51:13.194 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-07 15:51:13.351 +05:30 [WRN] RequestId: 0HNNKDMDOMTSD:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-07 15:51:13.353 +05:30 [WRN] RequestId: 0HNNKDMDOMTSD:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-07 15:51:13.369 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 177.5212ms
+2026-08-07 15:51:16.678 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2026-08-07 15:51:16.699 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 20.2807ms
+2026-08-07 15:51:16.713 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-07 15:51:16.872 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 158.663ms
+2026-08-07 15:51:17.024 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-07 15:51:17.112 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 15:51:17.116 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 15:51:17.611 +05:30 [INF] Received HTTP response headers after 488.9767ms - 200
+2026-08-07 15:51:17.615 +05:30 [INF] End processing HTTP request after 508.4617ms - 200
+2026-08-07 15:51:17.804 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 780.3939ms
+2026-08-07 15:51:56.515 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/login - application/json 65
+2026-08-07 15:51:56.528 +05:30 [INF] CORS policy execution failed.
+2026-08-07 15:51:56.531 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-07 15:51:56.636 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+2026-08-07 15:51:56.646 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000005, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/login' in the route /identity/admin/{everything}.
+2026-08-07 15:51:59.178 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000005, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/login
+2026-08-07 15:51:59.223 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/login - 200 null application/json; charset=utf-8 2708.1796ms
+2026-08-07 15:51:59.231 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/login, Response status code: 200
+2026-08-07 15:53:54.581 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/register - application/json 178
+2026-08-07 15:53:54.586 +05:30 [INF] CORS policy execution failed.
+2026-08-07 15:53:54.587 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-07 15:53:54.791 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+2026-08-07 15:53:54.793 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000006, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/register' in the route /identity/admin/{everything}.
+2026-08-07 15:54:00.023 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/register
+2026-08-07 15:54:00.053 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/register - 200 null application/json; charset=utf-8 5471.5714ms
+2026-08-07 15:54:00.067 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/register, Response status code: 200
+2026-08-07 15:55:03.135 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/users - null null
+2026-08-07 15:55:03.147 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-07 15:55:03.149 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000007, PreviousRequestId: -
+No authentication is required for the path '/admin/users' in the route /admin/{everything}.
+2026-08-07 15:55:03.308 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000007, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/users
+2026-08-07 15:55:03.322 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/users - 200 null application/json; charset=utf-8 187.1003ms
+2026-08-07 15:55:03.334 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/users, Response status code: 200
+2026-08-07 15:56:06.372 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/login - application/json 71
+2026-08-07 15:56:06.391 +05:30 [INF] CORS policy execution failed.
+2026-08-07 15:56:06.393 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-07 15:56:06.399 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+2026-08-07 15:56:06.401 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000008, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/login' in the route /identity/admin/{everything}.
+2026-08-07 15:56:06.694 +05:30 [INF] RequestId: 0HNNKDMDOMTSD:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/login
+2026-08-07 15:56:06.710 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/login - 200 null application/json; charset=utf-8 338.3418ms
+2026-08-07 15:56:06.724 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/login, Response status code: 200
+2026-08-07 16:00:58.124 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-07 16:00:58.136 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 12.1319ms
+2026-08-07 16:00:58.455 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-07 16:00:58.468 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 16:00:58.470 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 16:00:58.499 +05:30 [INF] Received HTTP response headers after 25.5827ms - 200
+2026-08-07 16:00:58.501 +05:30 [INF] End processing HTTP request after 32.9316ms - 200
+2026-08-07 16:00:58.517 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 62.2574ms
+2026-08-07 16:06:11.231 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-07 16:06:11.240 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 8.5639ms
+2026-08-07 16:06:11.542 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-07 16:06:11.555 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 16:06:11.562 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 16:06:12.067 +05:30 [INF] Received HTTP response headers after 499.765ms - 200
+2026-08-07 16:06:12.073 +05:30 [INF] End processing HTTP request after 517.9922ms - 200
+2026-08-07 16:06:12.098 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 555.3555ms
+2026-08-07 16:13:52.593 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-07 16:13:52.600 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 7.3223ms
+2026-08-07 16:13:52.727 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-07 16:13:52.733 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 16:13:52.736 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-07 16:13:53.211 +05:30 [INF] Received HTTP response headers after 471.8085ms - 200
+2026-08-07 16:13:53.213 +05:30 [INF] End processing HTTP request after 480.4068ms - 200
+2026-08-07 16:13:53.222 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 494.9192ms

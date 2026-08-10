@@ -1,0 +1,440 @@
+[2026-04-12 00:04:55.979] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 00:04:56.122] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 00:04:56.125] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 00:04:56.127] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 00:04:56.129] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 02:23:04.088] [INF] [UserId:] Application is shutting down...
+[2026-04-12 02:35:45.818] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 02:35:45.925] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 02:35:45.928] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 02:35:45.930] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 02:35:45.931] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 07:57:45.541] [INF] [UserId:] Application is shutting down...
+[2026-04-12 10:17:46.678] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 10:17:46.764] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 10:17:46.767] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 10:17:46.769] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 10:17:46.770] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 10:43:25.352] [INF] [UserId:] Application is shutting down...
+[2026-04-12 10:44:22.130] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 10:44:22.300] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 10:44:22.305] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 10:44:22.308] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 10:44:22.312] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 10:54:19.741] [INF] [UserId:] Application is shutting down...
+[2026-04-12 10:55:17.814] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 10:55:18.040] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 10:55:18.048] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 10:55:18.055] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 10:55:18.057] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 15:04:47.571] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 31
+[2026-04-12 15:04:47.662] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-12 15:04:47.667] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-12 15:04:50.551] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-12 15:04:50.601] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-12 15:04:51.757] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=18, Amount=15169
+[2026-04-12 15:04:51.773] [INF] [UserId:Anonymous] Validating booking 18 against http://localhost:5003
+[2026-04-12 15:04:51.783] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/18
+[2026-04-12 15:04:51.791] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/18
+[2026-04-12 15:04:52.063] [INF] [UserId:Anonymous] Received HTTP response headers after 262.9181ms - 200
+[2026-04-12 15:04:52.071] [INF] [UserId:Anonymous] End processing HTTP request after 292.6284ms - 200
+[2026-04-12 15:04:52.085] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=18, Amount=15169, AmountInPaise=1516900
+[2026-04-12 15:04:53.102] [INF] [UserId:Anonymous] Razorpay Order created: order_ScX7tdtcOgrxb5
+[2026-04-12 15:04:53.115] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-12 15:04:53.163] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 2551.5657ms
+[2026-04-12 15:04:53.170] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-12 15:04:53.184] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 5554.8014 ms
+[2026-04-12 15:04:53.193] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 5627.6933ms
+[2026-04-12 15:05:36.358] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/verify - application/json 278
+[2026-04-12 15:05:36.367] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-12 15:05:36.376] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-12 15:05:36.392] [INF] [UserId:Anonymous] Route matched with {action = "VerifyPayment", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyPayment(PaymentService.DTOs.VerifySignatureDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-12 15:05:36.417] [INF] [UserId:Anonymous] VerifySignatureAsync called for BookingId=18
+[2026-04-12 15:05:36.421] [INF] [UserId:Anonymous] Razorpay signature verified successfully for BookingId=18
+[2026-04-12 15:05:39.375] [INF] [UserId:Anonymous] Executed DbCommand (195ms) [Parameters=[@p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [BookingId], [CreatedAt], [PaymentMethod], [Status], [TransactionId], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[2026-04-12 15:05:39.476] [INF] [UserId:Anonymous] Payment record saved: PaymentId=5, Amount=15169
+[2026-04-12 15:05:39.908] [INF] [UserId:Anonymous] PaymentSuccessEvent published for BookingId=18
+[2026-04-12 15:05:39.916] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PaymentService.DTOs.PaymentDto'.
+[2026-04-12 15:05:39.921] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService) in 3525.3975ms
+[2026-04-12 15:05:39.926] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-12 15:05:39.930] [INF] [UserId:Anonymous] HTTP POST /api/payments/verify responded 200 in 3564.8392 ms
+[2026-04-12 15:05:39.944] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/verify - 200 null application/json; charset=utf-8 3586.4306ms
+[2026-04-12 16:28:05.681] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 16:28:06.063] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 16:28:06.189] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 16:28:06.192] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 16:28:06.194] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 16:30:58.019] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 16:30:58.525] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 16:30:58.969] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 16:30:58.973] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 16:30:58.976] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 16:41:39.071] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 16:41:47.081] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 16:41:47.559] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 16:41:48.161] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 16:41:48.315] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 18:56:25.176] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 18:56:25.495] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 18:56:25.561] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 18:56:25.564] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 18:56:25.568] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 19:03:10.602] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 19:03:11.037] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 19:03:11.182] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 19:03:11.188] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 19:03:11.193] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 19:20:26.466] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 19:20:27.647] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 19:20:28.245] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 19:20:28.649] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 19:20:29.109] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 19:23:27.915] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 31
+[2026-04-12 19:23:27.990] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-12 19:23:27.996] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-12 19:23:31.526] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-12 19:23:31.562] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-12 19:23:32.760] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=19, Amount=30369
+[2026-04-12 19:23:32.770] [INF] [UserId:Anonymous] Validating booking 19 against http://localhost:5003
+[2026-04-12 19:23:32.778] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/19
+[2026-04-12 19:23:32.784] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/19
+[2026-04-12 19:23:32.924] [INF] [UserId:Anonymous] Received HTTP response headers after 132.0679ms - 200
+[2026-04-12 19:23:32.928] [INF] [UserId:Anonymous] End processing HTTP request after 153.0584ms - 200
+[2026-04-12 19:23:32.934] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=19, Amount=30369, AmountInPaise=3036900
+[2026-04-12 19:23:34.070] [INF] [UserId:Anonymous] Razorpay Order created: order_ScbX8g1yRGOavM
+[2026-04-12 19:23:34.081] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-12 19:23:34.122] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 2541.6573ms
+[2026-04-12 19:23:34.129] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-12 19:23:34.140] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 6175.6991 ms
+[2026-04-12 19:23:34.150] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 6236.1054ms
+[2026-04-12 19:24:18.980] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 31
+[2026-04-12 19:24:18.987] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-12 19:24:18.994] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-12 19:24:18.996] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-12 19:24:19.003] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=19, Amount=30369
+[2026-04-12 19:24:19.006] [INF] [UserId:Anonymous] Validating booking 19 against http://localhost:5003
+[2026-04-12 19:24:19.009] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/19
+[2026-04-12 19:24:19.012] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/19
+[2026-04-12 19:24:19.056] [INF] [UserId:Anonymous] Received HTTP response headers after 41.4746ms - 200
+[2026-04-12 19:24:19.064] [INF] [UserId:Anonymous] End processing HTTP request after 54.5216ms - 200
+[2026-04-12 19:24:19.078] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=19, Amount=30369, AmountInPaise=3036900
+[2026-04-12 19:24:19.154] [INF] [UserId:Anonymous] Razorpay Order created: order_ScbXw80Bka6vvj
+[2026-04-12 19:24:19.158] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-12 19:24:19.162] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 161.1657ms
+[2026-04-12 19:24:19.168] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-12 19:24:19.170] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 184.4131 ms
+[2026-04-12 19:24:19.174] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 195.1787ms
+[2026-04-12 19:25:12.887] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/verify - application/json 278
+[2026-04-12 19:25:12.897] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-12 19:25:12.907] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-12 19:25:12.922] [INF] [UserId:Anonymous] Route matched with {action = "VerifyPayment", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyPayment(PaymentService.DTOs.VerifySignatureDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-12 19:25:12.948] [INF] [UserId:Anonymous] VerifySignatureAsync called for BookingId=19
+[2026-04-12 19:25:12.953] [INF] [UserId:Anonymous] Razorpay signature verified successfully for BookingId=19
+[2026-04-12 19:25:15.493] [INF] [UserId:Anonymous] Executed DbCommand (193ms) [Parameters=[@p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [BookingId], [CreatedAt], [PaymentMethod], [Status], [TransactionId], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[2026-04-12 19:25:15.587] [INF] [UserId:Anonymous] Payment record saved: PaymentId=6, Amount=30369
+[2026-04-12 19:25:15.888] [INF] [UserId:Anonymous] PaymentSuccessEvent published for BookingId=19
+[2026-04-12 19:25:15.892] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PaymentService.DTOs.PaymentDto'.
+[2026-04-12 19:25:15.899] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService) in 2971.1697ms
+[2026-04-12 19:25:15.915] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-12 19:25:15.923] [INF] [UserId:Anonymous] HTTP POST /api/payments/verify responded 200 in 3028.0130 ms
+[2026-04-12 19:25:15.934] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/verify - 200 null application/json; charset=utf-8 3047.6118ms
+[2026-04-12 19:37:51.742] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 19:37:55.664] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 19:37:56.639] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 19:37:57.531] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 19:37:58.545] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 20:08:27.157] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 20:08:27.276] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 20:08:27.280] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 20:08:27.282] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 20:08:27.283] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 21:14:33.763] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 21:14:33.941] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 21:14:33.949] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 21:14:33.953] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 21:14:33.956] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-12 21:24:37.654] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:37.706] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:24:37.729] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:24:37.786] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:24:37.801] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:37.807] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:24:37.827] [INF] [UserId:] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:24:37.842] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:24:37.859] [ERR] [UserId:] Failed executing DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:24:42.928] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:42.932] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:24:42.936] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:24:42.947] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:24:42.954] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:42.961] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:24:42.974] [INF] [UserId:] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:24:42.978] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:24:42.986] [ERR] [UserId:] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:24:48.082] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:48.085] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:24:48.089] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:24:48.097] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:24:48.104] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:48.109] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:24:48.114] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:24:48.117] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:24:48.123] [ERR] [UserId:] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:24:53.138] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:53.142] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:24:53.147] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:24:53.157] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:24:53.166] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:53.171] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:24:53.176] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:24:53.179] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:24:53.183] [ERR] [UserId:] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:24:58.204] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:58.207] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:24:58.210] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:24:58.223] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:24:58.227] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:24:58.234] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:24:58.242] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:24:58.244] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:24:58.249] [ERR] [UserId:] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:25:03.274] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:03.285] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:25:03.290] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:25:03.297] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:25:03.302] [INF] [UserId:] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:03.308] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:25:03.312] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:25:03.314] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:25:03.319] [ERR] [UserId:] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:25:08.340] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:08.343] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:25:08.347] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:25:08.355] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:25:08.361] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:08.365] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:25:08.368] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:25:08.371] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:25:08.375] [ERR] [UserId:] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:25:13.394] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:13.397] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:25:13.403] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:25:13.412] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:25:13.421] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:13.426] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:25:13.432] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:25:13.436] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:25:13.440] [ERR] [UserId:] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:25:18.458] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:18.461] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:25:18.465] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:25:18.476] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:25:18.489] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:18.498] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:25:18.505] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:25:18.511] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:25:18.517] [ERR] [UserId:] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:25:23.531] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:23.534] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-12 21:25:23.538] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-12 21:25:23.545] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-12 21:25:23.551] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-12 21:25:23.556] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-12 21:25:23.561] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-12 21:25:23.563] [INF] [UserId:] Applying migration '20260412155145_AddUpdatedAtToBaseEntity'.
+[2026-04-12 21:25:23.568] [ERR] [UserId:] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Payments] ADD [UpdatedAt] datetime2 NULL;
+[2026-04-12 21:25:28.654] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 21:25:28.730] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-12 21:25:28.737] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 21:25:28.739] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 21:25:28.742] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService

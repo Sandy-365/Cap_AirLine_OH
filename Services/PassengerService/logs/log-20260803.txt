@@ -1,0 +1,55 @@
+2026-08-03 17:07:44.644 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-03 17:07:44.828 +05:30 [INF] Now listening on: http://localhost:5007
+2026-08-03 17:07:44.836 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-03 17:07:44.839 +05:30 [INF] Hosting environment: Development
+2026-08-03 17:07:44.841 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\PassengerService
+2026-08-03 17:21:07.851 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-03 17:21:07.935 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-03 17:21:07.993 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-03 17:21:08.108 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-03 17:21:08.130 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-03 17:21:08.138 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-03 17:21:08.162 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-03 17:21:08.175 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-03 17:21:08.184 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-03 17:21:08.287 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-03 17:21:08.357 +05:30 [INF] Now listening on: http://localhost:5007
+2026-08-03 17:21:08.361 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-03 17:21:08.363 +05:30 [INF] Hosting environment: Development
+2026-08-03 17:21:08.365 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\PassengerService
+2026-08-03 17:25:05.504 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-03 17:25:05.792 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 290.5045ms
+2026-08-03 17:52:28.986 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/users - null null
+2026-08-03 17:52:29.005 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-03 17:52:29.204 +05:30 [INF] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUsers (PassengerService)'
+2026-08-03 17:52:29.260 +05:30 [INF] Route matched with {action = "GetUsers", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+2026-08-03 17:52:30.629 +05:30 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM [PassengerProfiles] AS [p]
+LEFT JOIN [SavedPassengers] AS [s] ON [p].[Id] = [s].[PassengerProfileId]
+ORDER BY [p].[Id]
+2026-08-03 17:52:31.072 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PassengerService.DTOs.PassengerProfileResponseDto, PassengerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-03 17:52:31.321 +05:30 [INF] Executed action PassengerService.Controllers.PassengerAuthController.GetUsers (PassengerService) in 2044.7155ms
+2026-08-03 17:52:31.333 +05:30 [INF] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUsers (PassengerService)'
+2026-08-03 17:52:31.367 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/users - 200 null application/json; charset=utf-8 2381.2391ms
+2026-08-03 17:53:45.699 +05:30 [INF] Application is shutting down...

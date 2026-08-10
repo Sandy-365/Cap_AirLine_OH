@@ -1,0 +1,12 @@
+2026-08-10 09:37:08.773 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-10 09:37:09.115 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-10 09:37:09.118 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-10 09:37:09.119 +05:30 [INF] Hosting environment: Development
+2026-08-10 09:37:09.120 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-10 09:38:31.501 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-10 09:38:31.629 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-10 09:38:31.634 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-10 09:38:32.191 +05:30 [INF] Received HTTP response headers after 548.5895ms - 200
+2026-08-10 09:38:32.200 +05:30 [INF] End processing HTTP request after 576.6339ms - 200
+2026-08-10 09:38:32.427 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 927.7273ms
+2026-08-10 09:54:41.654 +05:30 [INF] Application is shutting down...

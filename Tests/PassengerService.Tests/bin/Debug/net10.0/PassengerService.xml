@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PassengerService</name>
+    </assembly>
+    <members>
+        <member name="M:PassengerService.Controllers.PassengerAuthController.Login(PassengerService.DTOs.PassengerLoginDto)">
+            <summary>
+            Authenticates passenger credentials and returns JWT token. 
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengerAuthController.Register(PassengerService.DTOs.PassengerRegisterDto)">
+            <summary>
+            Registers a new passenger account with email, password, and optional profile fields.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengerAuthController.ResetPassword(PassengerService.DTOs.PassengerResetPasswordDto)">
+            <summary>
+            Resets passenger password using a valid OTP token. 
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.GetUsers">
+            <summary>
+            Retrieves all passengers.
+            [Allowed Roles: Admin, SuperAdmin, HR, Staff]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.GetUser(System.Int32)">
+            <summary>
+            Retrieves a passenger profile by ID.
+            [Allowed Roles: Passenger (own profile), Admin, SuperAdmin, Staff]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.UpdateProfile(System.Int32,PassengerService.DTOs.PassengerUpdateProfileDto)">
+            <summary>
+            Updates a passenger's profile information.
+            [Allowed Roles: Passenger (own profile), Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.UpdateUserStatus(System.Int32,PassengerService.DTOs.PassengerUpdateStatusDto)">
+            <summary>
+            Activates or deactivates a passenger account.
+            [Allowed Roles: Admin, SuperAdmin, HR]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.DeleteUser(System.Int32)">
+            <summary>
+            Permanently deletes a passenger profile.
+            [Allowed Roles: Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.GetBalance(System.Int32)">
+            <summary>
+            Retrieves a passenger's total reward points balance.
+            [Allowed Roles: Passenger (own balance), Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.GetHistory(System.Int32)">
+            <summary>
+            Fetches the complete reward transaction history for a passenger.
+            [Allowed Roles: Passenger (own history), Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.EarnPoints(PassengerService.DTOs.EarnPointsRequest)">
+            <summary>
+            Awards reward points to a passenger.
+            [Allowed Roles: Admin, SuperAdmin, Staff]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengersController.RedeemPoints(PassengerService.DTOs.RedeemPointsRequest)">
+            <summary>
+            Deducts reward points from a passenger's balance for redemption.
+            [Allowed Roles: Passenger (own points), Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="T:PassengerService.Migrations.InitialCreatePassengerDB">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.InitialCreatePassengerDB.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.InitialCreatePassengerDB.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.InitialCreatePassengerDB.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PassengerService.Migrations.AddProfileFields">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddProfileFields.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddProfileFields.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddProfileFields.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PassengerService.Migrations.FixPendingChanges">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.FixPendingChanges.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.FixPendingChanges.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.FixPendingChanges.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PassengerService.Migrations.AddProfileImageToPassenger">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddProfileImageToPassenger.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddProfileImageToPassenger.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddProfileImageToPassenger.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PassengerService.Migrations.UpdateSavedPassengerFields">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.UpdateSavedPassengerFields.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.UpdateSavedPassengerFields.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PassengerService.Migrations.UpdateSavedPassengerFields.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.PassengerProfileRepository.GetByIdAsync(System.Int32)" -->
+        <member name="M:PassengerService.Repositories.implementations.PassengerProfileRepository.GetByEmailAsync(System.String)">
+            <summary>
+            Looks up a passenger profile by email address (case-insensitive). Returns null if not found.
+            </summary>
+            
+            <param name="email"></param>
+            
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.PassengerProfileRepository.GetAllAsync" -->
+        <member name="M:PassengerService.Repositories.implementations.PassengerProfileRepository.AddAsync(PassengerService.Models.PassengerProfile)">
+            <summary>
+            Inserts a new passenger profile into the database and persists changes.
+            </summary>
+            
+            <param name="profile"></param>
+            
+            <returns></returns>
+        </member>
+        <member name="M:PassengerService.Repositories.implementations.PassengerProfileRepository.UpdateAsync(PassengerService.Models.PassengerProfile)">
+            <summary>
+            Updates an existing passenger profile in the database and persists changes.
+            </summary>
+            
+            <param name="profile"></param>
+            
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.AddAsync(PassengerService.Models.Reward)" -->
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.GetByUserIdAsync(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.GetTotalPointsAsync(System.Int32)" -->
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.GetAllAsync" -->
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.RegisterAsync(PassengerService.DTOs.PassengerRegisterDto)">
+            <summary>
+            Creates or updates a passenger profile with hashed password, OTP token, and profile fields. 
+            Sends verification OTP email. Handles re-registration of unverified accounts.
+            </summary>
+            
+            <param name="dto"> PassengerRegisterDto dto </param>
+            
+            <returns></returns>
+            
+            <exception cref="T:System.InvalidOperationException"></exception>
+            
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.PassengerAuthService.VerifyAsync(PassengerService.DTOs.PassengerVerifyDto)" -->
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.ResendVerificationAsync(System.String)">
+            <summary>
+            Generates fresh OTP for unverified accounts and sends via email.
+            No-ops for verified or non-existent accounts.
+            </summary>
+            
+            <param name="email"></param>
+            
+            <returns></returns>
+            
+        </member>
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.LoginAsync(PassengerService.DTOs.PassengerLoginDto)">
+            <summary>
+            Authenticates passenger by verifying credentials, email verification, and account status.
+            Returns JWT token and profile data.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+            <exception cref="T:System.UnauthorizedAccessException"></exception>
+        </member>
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.ForgotPasswordAsync(System.String)">
+            <summary>
+            Generates password reset OTP and emails it. Silent for non-existent emails.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.ResetPasswordAsync(PassengerService.DTOs.PassengerResetPasswordDto)">
+            <summary>
+            Validates reset OTP and updates password hash. Clears reset token after success.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.GetUserAsync(System.Int32)">
+             <summary>
+            Verifies current password and updates to new password hash. 
+            Throws if current password is incorrect
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.PassengerAuthService.UpdateProfileAsync(System.Int32,PassengerService.DTOs.PassengerUpdateProfileDto)" -->
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.ChangePasswordAsync(PassengerService.DTOs.PassengerChangePasswordDto)">
+             <summary>
+            Verifies current password and updates to new password hash. Throws if current password is incorrect.
+             </summary>
+             <param name="dto"></param>
+             <returns></returns>
+             <exception cref="T:System.InvalidOperationException"></exception>
+             <exception cref="T:System.UnauthorizedAccessException"></exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.PassengerAuthService.GetAllPassengersAsync" -->
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.UpdateUserStatusAsync(System.Int32,System.Boolean)">
+            <summary>
+            Toggles passenger account active status and updates timestamp.
+            </summary>
+            <param name="id"></param>
+            <param name="isActive"></param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.DeleteUserAsync(System.Int32)">
+            <summary>
+            oft-deletes a passenger by marking account as inactive.
+            </summary>
+            
+            <param name="id"></param>
+            
+            <returns></returns>
+            
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+            
+        </member>
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.SendOtpEmailAsync(System.String,System.String,System.String)">
+            <summary>
+            Sends verification OTP email to passenger using configured SMTP settings.
+            </summary>
+            <param name="toEmail"></param>
+            <param name="name"></param>
+            <param name="otp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PassengerService.Services.implementations.PassengerAuthService.SendResetEmailAsync(System.String,System.String,System.String)">
+            <summary>
+            Sends password reset OTP email to passenger using configured SMTP settings.
+            </summary>
+            <param name="toEmail"></param>
+            <param name="name"></param>
+            <param name="otp"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.RewardServiceImpl.EarnPointsAsync(System.Int32,System.Int32,System.String,System.Nullable{System.Int32})" -->
+        <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.RewardServiceImpl.GetBalanceAsync(System.Int32)" -->
+        <member name="M:PassengerService.Services.implementations.RewardServiceImpl.GetHistoryAsync(System.Int32)">
+            <summary>
+            Returns all reward transactions for a user, showing 
+            points earned and redeemed with transaction types.
+            </summary>
+            
+            <param name="userId"></param>
+            
+            <returns>Task of IEnumerable of RewardDto</returns>
+            
+        </member>
+        <member name="M:PassengerService.Services.implementations.RewardServiceImpl.RedeemPointsAsync(System.Int32,System.Int32)">
+            <summary>
+             Deducts points from user balance after validating sufficient points. Creates a negative-point redemption transaction.
+            </summary>
+            
+            <param name="userId"></param>
+            <param name="points"></param>
+            
+            <returns>Task of RewardDto</returns>
+            
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

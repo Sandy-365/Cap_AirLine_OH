@@ -1,0 +1,229 @@
+[2026-04-13 00:24:34.151] [INF] [UserId:] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 00:24:34.229] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-13 00:24:34.302] [INF] [UserId:] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-13 00:24:34.427] [INF] [UserId:] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-13 00:24:34.462] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 00:24:34.472] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-13 00:24:34.515] [INF] [UserId:] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-13 00:24:34.537] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-13 00:24:34.555] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-13 00:24:34.694] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-13 00:24:34.800] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-04-13 00:24:34.807] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-13 00:24:34.810] [INF] [UserId:] Hosting environment: Development
+[2026-04-13 00:24:34.813] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService
+[2026-04-13 00:27:00.294] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 00:27:00.359] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-13 00:27:00.389] [INF] [UserId:] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-13 00:27:00.467] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-13 00:27:00.489] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 00:27:00.496] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-13 00:27:00.526] [INF] [UserId:] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-13 00:27:00.542] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-13 00:27:00.556] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-13 00:27:00.648] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-13 00:27:00.718] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-04-13 00:27:00.723] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-13 00:27:00.725] [INF] [UserId:] Hosting environment: Development
+[2026-04-13 00:27:00.727] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService
+[2026-04-13 07:46:48.933] [INF] [UserId:] Application is shutting down...
+[2026-04-13 11:25:11.991] [INF] [UserId:] Executed DbCommand (162ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 11:25:13.973] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-13 11:25:14.901] [INF] [UserId:] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-13 11:25:17.114] [INF] [UserId:] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-13 11:25:17.986] [INF] [UserId:] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 11:25:18.452] [INF] [UserId:] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-13 11:25:18.846] [INF] [UserId:] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-13 11:25:19.312] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-13 11:25:19.911] [INF] [UserId:] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-13 11:25:20.958] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-13 11:25:22.132] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-04-13 11:25:22.734] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-13 11:25:23.212] [INF] [UserId:] Hosting environment: Development
+[2026-04-13 11:25:23.792] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService
+[2026-04-13 23:11:30.582] [INF] [UserId:] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 23:11:30.770] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-13 23:11:30.815] [INF] [UserId:] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-13 23:11:30.979] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-13 23:11:31.032] [INF] [UserId:] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 23:11:31.058] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-13 23:11:31.085] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-13 23:11:31.110] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-13 23:11:31.129] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-13 23:11:31.291] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-13 23:11:31.404] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-04-13 23:11:31.414] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-13 23:11:31.417] [INF] [UserId:] Hosting environment: Development
+[2026-04-13 23:11:31.424] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService
+[2026-04-13 23:18:53.593] [INF] [UserId:] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 23:18:54.155] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-13 23:18:54.447] [INF] [UserId:] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-13 23:18:55.010] [INF] [UserId:] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-13 23:18:55.611] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 23:18:56.190] [INF] [UserId:] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-13 23:18:56.843] [INF] [UserId:] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-13 23:18:57.745] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-13 23:18:58.444] [INF] [UserId:] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-13 23:19:00.290] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-13 23:19:01.279] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-04-13 23:19:02.232] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-13 23:19:02.821] [INF] [UserId:] Hosting environment: Development
+[2026-04-13 23:19:03.421] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService
+[2026-04-13 23:20:51.099] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/auth/users - null null
+[2026-04-13 23:20:51.186] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-13 23:20:54.181] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-04-13 23:20:54.215] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-04-13 23:20:54.899] [INF] [UserId:Anonymous] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[Department], [s].[Email], [s].[FirstName], [s].[IsActive], [s].[IsEmailVerified], [s].[LastName], [s].[Name], [s].[PasswordHash], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+[2026-04-13 23:20:55.153] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StaffService.Models.StaffProfile, StaffService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-13 23:20:55.232] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.GetUsers (StaffService) in 1004.0808ms
+[2026-04-13 23:20:55.246] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-04-13 23:20:55.259] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 4115.8576 ms
+[2026-04-13 23:20:55.272] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/auth/users - 200 null application/json; charset=utf-8 4174.5129ms
+[2026-04-13 23:21:28.612] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - null null
+[2026-04-13 23:21:28.634] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-13 23:21:28.782] [INF] [UserId:Anonymous] Executing endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-04-13 23:21:28.787] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "StaffAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller StaffService.Controllers.StaffAuthController (StaffService).
+[2026-04-13 23:21:28.900] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AssignedAirportCode], [s].[CreatedAt], [s].[Department], [s].[Email], [s].[FirstName], [s].[IsActive], [s].[IsEmailVerified], [s].[LastName], [s].[Name], [s].[PasswordHash], [s].[ResetToken], [s].[ResetTokenExpiry], [s].[Role], [s].[RoleTitle], [s].[UpdatedAt], [s].[VerificationToken], [s].[VerificationTokenExpiry]
+FROM [StaffProfiles] AS [s]
+[2026-04-13 23:21:28.907] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[StaffService.Models.StaffProfile, StaffService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-13 23:21:28.911] [INF] [UserId:Anonymous] Executed action StaffService.Controllers.StaffAuthController.GetUsers (StaffService) in 115.896ms
+[2026-04-13 23:21:28.916] [INF] [UserId:Anonymous] Executed endpoint 'StaffService.Controllers.StaffAuthController.GetUsers (StaffService)'
+[2026-04-13 23:21:28.918] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 286.1523 ms
+[2026-04-13 23:21:28.923] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5011/api/auth/users?roles=HR,FinancialAdmin,Staff,Dealer,GroundStaff - 200 null application/json; charset=utf-8 310.3345ms
+[2026-04-13 23:25:01.809] [INF] [UserId:] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 23:25:02.210] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-13 23:25:02.529] [INF] [UserId:] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-13 23:25:03.266] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-13 23:25:03.374] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-13 23:25:03.453] [INF] [UserId:] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-13 23:25:03.905] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-13 23:25:04.108] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-13 23:25:04.175] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-13 23:25:04.625] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-13 23:25:04.846] [INF] [UserId:] Now listening on: http://localhost:5011
+[2026-04-13 23:25:05.382] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-13 23:25:05.415] [INF] [UserId:] Hosting environment: Development
+[2026-04-13 23:25:05.440] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\StaffService

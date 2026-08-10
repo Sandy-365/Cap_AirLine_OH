@@ -1,0 +1,347 @@
+[2026-04-23 09:43:07.568] [INF] [UserId:] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 09:43:07.663] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-23 09:43:07.704] [INF] [UserId:] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-23 09:43:07.831] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-23 09:43:07.854] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 09:43:07.860] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-23 09:43:07.880] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-23 09:43:07.896] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-23 09:43:07.905] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-23 09:43:08.451] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-23 09:43:08.552] [INF] [UserId:] Now listening on: http://localhost:5007
+[2026-04-23 09:43:08.563] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-23 09:43:08.565] [INF] [UserId:] Hosting environment: Development
+[2026-04-23 09:43:08.568] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PassengerService
+[2026-04-23 09:46:44.583] [INF] [UserId:] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 09:46:44.720] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-23 09:46:45.600] [INF] [UserId:] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-23 09:46:45.860] [INF] [UserId:] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-23 09:46:47.430] [INF] [UserId:] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 09:46:48.786] [INF] [UserId:] Executed DbCommand (131ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-23 09:46:49.865] [INF] [UserId:] Executed DbCommand (215ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-23 09:46:50.033] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-23 09:46:50.348] [INF] [UserId:] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-23 09:46:52.963] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-23 09:46:53.220] [INF] [UserId:] Now listening on: http://localhost:5007
+[2026-04-23 09:46:53.723] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-23 09:46:53.875] [INF] [UserId:] Hosting environment: Development
+[2026-04-23 09:46:54.297] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PassengerService
+[2026-04-23 09:47:58.970] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5007/api/auth/login - application/json 60
+[2026-04-23 09:47:59.044] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-23 09:47:59.049] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:02.866] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.Login (PassengerService)'
+[2026-04-23 09:48:02.915] [INF] [UserId:Anonymous] Route matched with {action = "Login", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(PassengerService.DTOs.PassengerLoginDto) on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 09:48:04.281] [INF] [UserId:Anonymous] Executed DbCommand (248ms) [Parameters=[@ToLower='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Aadhar], [p0].[CreatedAt], [p0].[DateOfBirth], [p0].[DietaryRequirements], [p0].[Email], [p0].[FirstName], [p0].[Gender], [p0].[IsActive], [p0].[IsEmailVerified], [p0].[LastName], [p0].[MedicalAlerts], [p0].[MedicalNeeds], [p0].[Name], [p0].[Nationality], [p0].[PassportNumber], [p0].[PasswordHash], [p0].[Phone], [p0].[ProfileImage], [p0].[ResetToken], [p0].[ResetTokenExpiry], [p0].[Role], [p0].[UpdatedAt], [p0].[VerificationToken], [p0].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry]
+    FROM [PassengerProfiles] AS [p]
+    WHERE LOWER([p].[Email]) = @ToLower
+) AS [p0]
+LEFT JOIN [SavedPassengers] AS [s] ON [p0].[Id] = [s].[PassengerProfileId]
+ORDER BY [p0].[Id]
+[2026-04-23 09:48:05.387] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.PassengerAuthResponseDto'.
+[2026-04-23 09:48:05.432] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.Login (PassengerService) in 2499.7741ms
+[2026-04-23 09:48:05.441] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.Login (PassengerService)'
+[2026-04-23 09:48:05.456] [INF] [UserId:Anonymous] HTTP POST /api/auth/login responded 200 in 6441.2299 ms
+[2026-04-23 09:48:05.482] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5007/api/auth/login - 200 null application/json; charset=utf-8 6513.6656ms
+[2026-04-23 09:48:05.757] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 09:48:05.765] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - null null
+[2026-04-23 09:48:05.779] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:05.780] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:05.851] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 09:48:05.856] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:48:05.865] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32) on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 09:48:05.868] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 09:48:06.047] [INF] [UserId:Anonymous] Executed DbCommand (13ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 09:48:06.061] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 09:48:06.086] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 202.2375ms
+[2026-04-23 09:48:06.102] [INF] [UserId:Anonymous] Executed DbCommand (15ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Aadhar], [p0].[CreatedAt], [p0].[DateOfBirth], [p0].[DietaryRequirements], [p0].[Email], [p0].[FirstName], [p0].[Gender], [p0].[IsActive], [p0].[IsEmailVerified], [p0].[LastName], [p0].[MedicalAlerts], [p0].[MedicalNeeds], [p0].[Name], [p0].[Nationality], [p0].[PassportNumber], [p0].[PasswordHash], [p0].[Phone], [p0].[ProfileImage], [p0].[ResetToken], [p0].[ResetTokenExpiry], [p0].[Role], [p0].[UpdatedAt], [p0].[VerificationToken], [p0].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry]
+    FROM [PassengerProfiles] AS [p]
+    WHERE [p].[Id] = @id
+) AS [p0]
+LEFT JOIN [SavedPassengers] AS [s] ON [p0].[Id] = [s].[PassengerProfileId]
+ORDER BY [p0].[Id]
+[2026-04-23 09:48:06.184] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:48:06.233] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 464.3535 ms
+[2026-04-23 09:48:06.259] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.PassengerProfileResponseDto'.
+[2026-04-23 09:48:06.264] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 506.1316ms
+[2026-04-23 09:48:06.328] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService) in 457.4896ms
+[2026-04-23 09:48:06.351] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 09:48:06.356] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/5 responded 200 in 579.5913 ms
+[2026-04-23 09:48:06.361] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - 200 null application/json; charset=utf-8 595.3358ms
+[2026-04-23 09:53:24.680] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 09:53:24.681] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - null null
+[2026-04-23 09:53:24.691] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:53:24.694] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:53:24.699] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 09:53:24.700] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:53:24.701] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32) on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 09:53:24.705] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 09:53:24.894] [INF] [UserId:Anonymous] Executed DbCommand (17ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 09:53:24.903] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 09:53:24.908] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 196.5042ms
+[2026-04-23 09:53:24.909] [INF] [UserId:Anonymous] Executed DbCommand (14ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Aadhar], [p0].[CreatedAt], [p0].[DateOfBirth], [p0].[DietaryRequirements], [p0].[Email], [p0].[FirstName], [p0].[Gender], [p0].[IsActive], [p0].[IsEmailVerified], [p0].[LastName], [p0].[MedicalAlerts], [p0].[MedicalNeeds], [p0].[Name], [p0].[Nationality], [p0].[PassportNumber], [p0].[PasswordHash], [p0].[Phone], [p0].[ProfileImage], [p0].[ResetToken], [p0].[ResetTokenExpiry], [p0].[Role], [p0].[UpdatedAt], [p0].[VerificationToken], [p0].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry]
+    FROM [PassengerProfiles] AS [p]
+    WHERE [p].[Id] = @id
+) AS [p0]
+LEFT JOIN [SavedPassengers] AS [s] ON [p0].[Id] = [s].[PassengerProfileId]
+ORDER BY [p0].[Id]
+[2026-04-23 09:53:24.917] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:53:24.924] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 233.2957 ms
+[2026-04-23 09:53:24.932] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.PassengerProfileResponseDto'.
+[2026-04-23 09:53:24.936] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 256.2867ms
+[2026-04-23 09:53:24.941] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService) in 233.4685ms
+[2026-04-23 09:53:24.972] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 09:53:24.975] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/5 responded 200 in 281.1386 ms
+[2026-04-23 09:53:24.979] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - 200 null application/json; charset=utf-8 297.7138ms
+[2026-04-23 09:54:05.686] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 09:54:05.687] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - null null
+[2026-04-23 09:54:05.720] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:05.712] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:05.726] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 09:54:05.730] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:54:05.735] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32) on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 09:54:05.737] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 09:54:05.747] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Aadhar], [p0].[CreatedAt], [p0].[DateOfBirth], [p0].[DietaryRequirements], [p0].[Email], [p0].[FirstName], [p0].[Gender], [p0].[IsActive], [p0].[IsEmailVerified], [p0].[LastName], [p0].[MedicalAlerts], [p0].[MedicalNeeds], [p0].[Name], [p0].[Nationality], [p0].[PassportNumber], [p0].[PasswordHash], [p0].[Phone], [p0].[ProfileImage], [p0].[ResetToken], [p0].[ResetTokenExpiry], [p0].[Role], [p0].[UpdatedAt], [p0].[VerificationToken], [p0].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry]
+    FROM [PassengerProfiles] AS [p]
+    WHERE [p].[Id] = @id
+) AS [p0]
+LEFT JOIN [SavedPassengers] AS [s] ON [p0].[Id] = [s].[PassengerProfileId]
+ORDER BY [p0].[Id]
+[2026-04-23 09:54:05.756] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 09:54:05.772] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.PassengerProfileResponseDto'.
+[2026-04-23 09:54:05.776] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 09:54:05.794] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 49.9333ms
+[2026-04-23 09:54:05.783] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService) in 43.8436ms
+[2026-04-23 09:54:05.806] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:54:05.816] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 104.2208 ms
+[2026-04-23 09:54:05.811] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 09:54:05.827] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 141.2311ms
+[2026-04-23 09:54:05.832] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/5 responded 200 in 111.2761 ms
+[2026-04-23 09:54:05.847] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - 200 null application/json; charset=utf-8 159.3063ms
+[2026-04-23 09:54:54.634] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 09:54:54.649] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:54.655] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:54:54.660] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 09:54:54.669] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 09:54:54.674] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 09:54:54.676] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 12.7487ms
+[2026-04-23 09:54:54.680] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 09:54:54.682] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 33.4338 ms
+[2026-04-23 09:54:54.685] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 50.7472ms
+[2026-04-23 09:55:22.937] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/users - null null
+[2026-04-23 09:55:22.942] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUsers (PassengerService)'
+[2026-04-23 09:55:22.955] [INF] [UserId:Anonymous] Route matched with {action = "GetUsers", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers() on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 09:55:23.013] [INF] [UserId:Anonymous] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM [PassengerProfiles] AS [p]
+LEFT JOIN [SavedPassengers] AS [s] ON [p].[Id] = [s].[PassengerProfileId]
+ORDER BY [p].[Id]
+[2026-04-23 09:55:23.029] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PassengerService.DTOs.PassengerProfileResponseDto, PassengerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-23 09:55:23.034] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.GetUsers (PassengerService) in 74.9202ms
+[2026-04-23 09:55:23.038] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUsers (PassengerService)'
+[2026-04-23 09:55:23.040] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 200 in 98.1943 ms
+[2026-04-23 09:55:23.043] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/users - 200 null application/json; charset=utf-8 105.5113ms
+[2026-04-23 10:04:11.118] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - null null
+[2026-04-23 10:04:11.129] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:11.136] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 10:04:11.139] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32) on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 10:04:11.387] [INF] [UserId:Anonymous] Executed DbCommand (53ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Aadhar], [p0].[CreatedAt], [p0].[DateOfBirth], [p0].[DietaryRequirements], [p0].[Email], [p0].[FirstName], [p0].[Gender], [p0].[IsActive], [p0].[IsEmailVerified], [p0].[LastName], [p0].[MedicalAlerts], [p0].[MedicalNeeds], [p0].[Name], [p0].[Nationality], [p0].[PassportNumber], [p0].[PasswordHash], [p0].[Phone], [p0].[ProfileImage], [p0].[ResetToken], [p0].[ResetTokenExpiry], [p0].[Role], [p0].[UpdatedAt], [p0].[VerificationToken], [p0].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry]
+    FROM [PassengerProfiles] AS [p]
+    WHERE [p].[Id] = @id
+) AS [p0]
+LEFT JOIN [SavedPassengers] AS [s] ON [p0].[Id] = [s].[PassengerProfileId]
+ORDER BY [p0].[Id]
+[2026-04-23 10:04:11.438] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.PassengerProfileResponseDto'.
+[2026-04-23 10:04:11.442] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService) in 297.6133ms
+[2026-04-23 10:04:11.452] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 10:04:11.457] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/5 responded 200 in 328.2124 ms
+[2026-04-23 10:04:11.462] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - 200 null application/json; charset=utf-8 343.7546ms
+[2026-04-23 10:04:15.302] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 10:04:15.308] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:15.310] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:04:15.312] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 10:04:15.333] [INF] [UserId:Anonymous] Executed DbCommand (13ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 10:04:15.337] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 10:04:15.342] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 25.5714ms
+[2026-04-23 10:04:15.345] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:04:15.348] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 40.2512 ms
+[2026-04-23 10:04:15.355] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 52.9181ms
+[2026-04-23 10:04:20.523] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - null null
+[2026-04-23 10:04:20.536] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:20.540] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 10:04:20.544] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32) on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 10:04:20.563] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Aadhar], [p0].[CreatedAt], [p0].[DateOfBirth], [p0].[DietaryRequirements], [p0].[Email], [p0].[FirstName], [p0].[Gender], [p0].[IsActive], [p0].[IsEmailVerified], [p0].[LastName], [p0].[MedicalAlerts], [p0].[MedicalNeeds], [p0].[Name], [p0].[Nationality], [p0].[PassportNumber], [p0].[PasswordHash], [p0].[Phone], [p0].[ProfileImage], [p0].[ResetToken], [p0].[ResetTokenExpiry], [p0].[Role], [p0].[UpdatedAt], [p0].[VerificationToken], [p0].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry]
+    FROM [PassengerProfiles] AS [p]
+    WHERE [p].[Id] = @id
+) AS [p0]
+LEFT JOIN [SavedPassengers] AS [s] ON [p0].[Id] = [s].[PassengerProfileId]
+ORDER BY [p0].[Id]
+[2026-04-23 10:04:20.567] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 10:04:20.621] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.PassengerProfileResponseDto'.
+[2026-04-23 10:04:20.623] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:20.629] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService) in 74.7597ms
+[2026-04-23 10:04:20.631] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:04:20.633] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 10:04:20.637] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/5 responded 200 in 102.0475 ms
+[2026-04-23 10:04:20.635] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 10:04:20.644] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - 200 null application/json; charset=utf-8 120.2455ms
+[2026-04-23 10:04:20.653] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 10:04:20.663] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 10:04:20.666] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 19.4519ms
+[2026-04-23 10:04:20.671] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:04:20.675] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 51.9643 ms
+[2026-04-23 10:04:20.678] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 110.1487ms
+[2026-04-23 10:05:46.848] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 10:05:46.858] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:05:46.862] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:05:46.864] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 10:05:46.874] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 10:05:46.880] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 10:05:46.883] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 13.6775ms
+[2026-04-23 10:05:46.886] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:05:46.888] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 30.1132 ms
+[2026-04-23 10:05:46.892] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 44.3215ms
+[2026-04-23 10:13:11.329] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 10:13:11.382] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-23 10:13:11.405] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-23 10:13:11.486] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-23 10:13:11.504] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 10:13:11.509] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-23 10:13:11.528] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-23 10:13:11.538] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-23 10:13:11.547] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-23 10:13:11.853] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-23 10:13:11.907] [INF] [UserId:] Now listening on: http://localhost:5007
+[2026-04-23 10:13:11.910] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-23 10:13:11.913] [INF] [UserId:] Hosting environment: Development
+[2026-04-23 10:13:11.915] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PassengerService
+[2026-04-23 10:16:32.898] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - null null
+[2026-04-23 10:16:32.968] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-23 10:16:32.973] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:16:33.453] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - null null
+[2026-04-23 10:16:33.482] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:16:36.792] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 10:16:36.799] [INF] [UserId:Anonymous] Executing endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:16:36.842] [INF] [UserId:Anonymous] Route matched with {action = "GetBalance", controller = "Passengers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[PassengerService.DTOs.RewardBalanceDto]] GetBalance(Int32) on controller PassengerService.Controllers.PassengersController (PassengerService).
+[2026-04-23 10:16:36.844] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "PassengerAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32) on controller PassengerService.Controllers.PassengerAuthController (PassengerService).
+[2026-04-23 10:16:37.513] [INF] [UserId:Anonymous] Executed DbCommand (194ms) [Parameters=[@userId='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COALESCE(SUM([r].[Points]), 0)
+FROM [Rewards] AS [r]
+WHERE [r].[UserId] = @userId
+[2026-04-23 10:16:37.518] [INF] [UserId:Anonymous] Executed DbCommand (157ms) [Parameters=[@id='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p0].[Id], [p0].[Aadhar], [p0].[CreatedAt], [p0].[DateOfBirth], [p0].[DietaryRequirements], [p0].[Email], [p0].[FirstName], [p0].[Gender], [p0].[IsActive], [p0].[IsEmailVerified], [p0].[LastName], [p0].[MedicalAlerts], [p0].[MedicalNeeds], [p0].[Name], [p0].[Nationality], [p0].[PassportNumber], [p0].[PasswordHash], [p0].[Phone], [p0].[ProfileImage], [p0].[ResetToken], [p0].[ResetTokenExpiry], [p0].[Role], [p0].[UpdatedAt], [p0].[VerificationToken], [p0].[VerificationTokenExpiry], [s].[Id], [s].[Aadhar], [s].[Age], [s].[CreatedAt], [s].[DietaryRequirements], [s].[Gender], [s].[MedicalAlerts], [s].[MedicalNeeds], [s].[Name], [s].[Nationality], [s].[PassengerProfileId], [s].[PassportNumber], [s].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [p].[Id], [p].[Aadhar], [p].[CreatedAt], [p].[DateOfBirth], [p].[DietaryRequirements], [p].[Email], [p].[FirstName], [p].[Gender], [p].[IsActive], [p].[IsEmailVerified], [p].[LastName], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[PasswordHash], [p].[Phone], [p].[ProfileImage], [p].[ResetToken], [p].[ResetTokenExpiry], [p].[Role], [p].[UpdatedAt], [p].[VerificationToken], [p].[VerificationTokenExpiry]
+    FROM [PassengerProfiles] AS [p]
+    WHERE [p].[Id] = @id
+) AS [p0]
+LEFT JOIN [SavedPassengers] AS [s] ON [p0].[Id] = [s].[PassengerProfileId]
+ORDER BY [p0].[Id]
+[2026-04-23 10:16:37.584] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.RewardBalanceDto'.
+[2026-04-23 10:16:37.630] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengersController.GetBalance (PassengerService) in 777.6071ms
+[2026-04-23 10:16:37.635] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengersController.GetBalance (PassengerService)'
+[2026-04-23 10:16:37.643] [INF] [UserId:Anonymous] HTTP GET /api/passengers/rewards/5/balance responded 200 in 4708.3438 ms
+[2026-04-23 10:16:37.656] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/passengers/rewards/5/balance - 200 null application/json; charset=utf-8 4760.3591ms
+[2026-04-23 10:16:37.814] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PassengerService.DTOs.PassengerProfileResponseDto'.
+[2026-04-23 10:16:37.862] [INF] [UserId:Anonymous] Executed action PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService) in 1009.9285ms
+[2026-04-23 10:16:37.866] [INF] [UserId:Anonymous] Executed endpoint 'PassengerService.Controllers.PassengerAuthController.GetUser (PassengerService)'
+[2026-04-23 10:16:37.869] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/5 responded 200 in 4390.1557 ms
+[2026-04-23 10:16:37.874] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/user/5 - 200 null application/json; charset=utf-8 4421.0366ms

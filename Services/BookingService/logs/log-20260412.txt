@@ -1,0 +1,25 @@
+[2026-04-12 00:06:45.568] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-04-12 00:06:47.642] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-12 00:06:57.232] [INF] [UserId:Anonymous] Executing endpoint '405 HTTP Method Not Supported'
+[2026-04-12 00:06:57.325] [INF] [UserId:Anonymous] Executed endpoint '405 HTTP Method Not Supported'
+[2026-04-12 00:06:57.335] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 405 in 9864.1735 ms
+[2026-04-12 00:06:57.352] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 405 0 null 11793.4878ms
+[2026-04-12 00:10:53.852] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-04-12 00:10:55.022] [INF] [UserId:Anonymous] Executing endpoint '405 HTTP Method Not Supported'
+[2026-04-12 00:10:55.309] [INF] [UserId:Anonymous] Executed endpoint '405 HTTP Method Not Supported'
+[2026-04-12 00:10:55.742] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 405 in 842.8685 ms
+[2026-04-12 00:10:56.257] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 405 0 null 2404.5205ms
+[2026-04-12 02:11:58.220] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-04-12 02:11:58.356] [INF] [UserId:Anonymous] Executing endpoint '405 HTTP Method Not Supported'
+[2026-04-12 02:11:58.376] [INF] [UserId:Anonymous] Executed endpoint '405 HTTP Method Not Supported'
+[2026-04-12 02:11:58.407] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 405 in 59.4208 ms
+[2026-04-12 02:11:58.418] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 405 0 null 197.9738ms
+[2026-04-12 02:22:47.934] [INF] [UserId:] Application is shutting down...
+[2026-04-12 02:34:38.357] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-04-12 02:34:38.501] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-04-12 02:34:38.505] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-04-12 02:35:29.265] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-12 02:35:29.315] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-04-12 02:35:29.318] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-12 02:35:29.319] [INF] [UserId:] Hosting environment: Development
+[2026-04-12 02:35:29.320] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService

@@ -1,0 +1,630 @@
+2026-08-06 09:01:16.142 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 09:01:16.319 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-06 09:01:16.322 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 09:01:16.323 +05:30 [INF] Hosting environment: Development
+2026-08-06 09:01:16.324 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-06 09:05:06.967 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-06 09:05:07.049 +05:30 [WRN] RequestId: 0HNNJDEQRPP8F:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-06 09:05:07.050 +05:30 [WRN] RequestId: 0HNNJDEQRPP8F:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-06 09:05:07.059 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 93.8513ms
+2026-08-06 09:05:13.166 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2026-08-06 09:05:13.193 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 27.1487ms
+2026-08-06 09:05:13.213 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 09:05:13.330 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 117.0961ms
+2026-08-06 09:05:13.356 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 09:05:13.356 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 09:05:13.359 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 09:05:13.359 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 09:05:13.359 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 09:05:13.380 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 19.8922ms
+2026-08-06 09:05:13.392 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 35.0499ms
+2026-08-06 09:05:13.393 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 36.5596ms
+2026-08-06 09:05:13.406 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 46.7252ms
+2026-08-06 09:05:13.437 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 77.8989ms
+2026-08-06 09:05:13.854 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 09:05:13.881 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 09:05:13.900 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 18.362ms
+2026-08-06 09:05:13.936 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 09:05:13.940 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 09:05:14.265 +05:30 [INF] Received HTTP response headers after 319.9314ms - 200
+2026-08-06 09:05:14.269 +05:30 [INF] End processing HTTP request after 339.2758ms - 200
+2026-08-06 09:05:14.420 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 565.9467ms
+2026-08-06 09:05:50.905 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/login - application/json 65
+2026-08-06 09:05:50.920 +05:30 [INF] CORS policy execution failed.
+2026-08-06 09:05:50.926 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-06 09:05:51.059 +05:30 [INF] RequestId: 0HNNJDEQRPP8H:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 09:05:51.066 +05:30 [INF] RequestId: 0HNNJDEQRPP8H:00000003, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/login' in the route /identity/admin/{everything}.
+2026-08-06 09:05:52.460 +05:30 [INF] RequestId: 0HNNJDEQRPP8H:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/login
+2026-08-06 09:05:52.510 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/login - 200 null application/json; charset=utf-8 1604.9985ms
+2026-08-06 09:05:52.526 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/login, Response status code: 200
+2026-08-06 09:07:05.021 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/booking-report - null null
+2026-08-06 09:07:05.200 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-08-06 09:07:05.207 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-08-06 09:07:05.213 +05:30 [INF] RequestId: 0HNNJDEQRPP8H:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 09:07:05.215 +05:30 [INF] RequestId: 0HNNJDEQRPP8H:00000004, PreviousRequestId: -
+No authentication is required for the path '/admin/booking-report' in the route /admin/{everything}.
+2026-08-06 09:07:05.358 +05:30 [WRN] RequestId: 0HNNJDEQRPP8H:00000004, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/admin/booking-report
+2026-08-06 09:07:05.361 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/booking-report - 401 0 null 340.4505ms
+2026-08-06 09:07:05.369 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/booking-report, Response status code: 401
+2026-08-06 09:07:35.372 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/dashboard - null null
+2026-08-06 09:07:35.395 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-08-06 09:07:35.417 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-08-06 09:07:35.423 +05:30 [INF] RequestId: 0HNNJDEQRPP8H:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 09:07:35.428 +05:30 [INF] RequestId: 0HNNJDEQRPP8H:00000005, PreviousRequestId: -
+No authentication is required for the path '/admin/dashboard' in the route /admin/{everything}.
+2026-08-06 09:07:35.500 +05:30 [WRN] RequestId: 0HNNJDEQRPP8H:00000005, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/admin/dashboard
+2026-08-06 09:07:35.504 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/dashboard - 401 0 null 132.1042ms
+2026-08-06 09:07:35.511 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/dashboard, Response status code: 401
+2026-08-06 09:14:31.160 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/booking-report - null null
+2026-08-06 09:14:31.219 +05:30 [INF] RequestId: 0HNNJDEQRPP8K:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 09:14:31.221 +05:30 [INF] RequestId: 0HNNJDEQRPP8K:00000001, PreviousRequestId: -
+No authentication is required for the path '/admin/booking-report' in the route /admin/{everything}.
+2026-08-06 09:14:32.812 +05:30 [INF] RequestId: 0HNNJDEQRPP8K:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/booking-report
+2026-08-06 09:14:32.825 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/booking-report - 200 null application/json; charset=utf-8 1664.4552ms
+2026-08-06 09:14:32.836 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/booking-report, Response status code: 200
+2026-08-06 09:14:45.452 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/dashboard - null null
+2026-08-06 09:14:45.458 +05:30 [INF] RequestId: 0HNNJDEQRPP8K:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 09:14:45.460 +05:30 [INF] RequestId: 0HNNJDEQRPP8K:00000002, PreviousRequestId: -
+No authentication is required for the path '/admin/dashboard' in the route /admin/{everything}.
+2026-08-06 09:14:51.999 +05:30 [INF] RequestId: 0HNNJDEQRPP8K:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/dashboard
+2026-08-06 09:14:52.008 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/dashboard - 200 null application/json; charset=utf-8 6556.3507ms
+2026-08-06 09:14:52.020 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/dashboard, Response status code: 200
+2026-08-06 09:48:23.952 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/identity/admin/users - null null
+2026-08-06 09:48:23.966 +05:30 [INF] RequestId: 0HNNJDEQRPP8L:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 09:48:23.968 +05:30 [INF] RequestId: 0HNNJDEQRPP8L:00000001, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/users' in the route /identity/admin/{everything}.
+2026-08-06 09:48:24.575 +05:30 [INF] RequestId: 0HNNJDEQRPP8L:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/users
+2026-08-06 09:48:24.592 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/identity/admin/users - 200 null application/json; charset=utf-8 640.1678ms
+2026-08-06 09:48:24.609 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/admin/users, Response status code: 200
+2026-08-06 10:04:25.781 +05:30 [INF] Application is shutting down...
+2026-08-06 15:30:22.563 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:30:22.714 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-06 15:30:22.716 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:30:22.717 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:30:22.717 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-06 15:31:07.189 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-06 15:31:07.264 +05:30 [WRN] RequestId: 0HNNJK6H50GEP:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-06 15:31:07.265 +05:30 [WRN] RequestId: 0HNNJK6H50GEP:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-06 15:31:07.273 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 85.9733ms
+2026-08-06 15:31:15.597 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2026-08-06 15:31:15.621 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 23.5921ms
+2026-08-06 15:31:15.644 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:31:15.889 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 245.4611ms
+2026-08-06 15:31:16.323 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:31:16.405 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:31:16.409 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:31:16.899 +05:30 [INF] Received HTTP response headers after 484.0427ms - 200
+2026-08-06 15:31:16.902 +05:30 [INF] End processing HTTP request after 503.2171ms - 200
+2026-08-06 15:31:17.056 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 733.6821ms
+2026-08-06 15:37:53.882 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:37:53.914 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 31.7294ms
+2026-08-06 15:37:54.036 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:37:54.043 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:37:54.046 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:37:54.069 +05:30 [INF] Received HTTP response headers after 21.2176ms - 200
+2026-08-06 15:37:54.071 +05:30 [INF] End processing HTTP request after 28.4646ms - 200
+2026-08-06 15:37:54.079 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 42.8901ms
+2026-08-06 15:38:01.939 +05:30 [INF] Application is shutting down...
+2026-08-06 15:41:36.784 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:41:36.860 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-06 15:41:36.862 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:41:36.863 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:41:36.863 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-06 15:42:32.862 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:42:33.030 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 169.917ms
+2026-08-06 15:42:33.056 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 15:42:33.056 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 15:42:33.057 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 15:42:33.057 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 15:42:33.058 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 15:42:33.084 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 25.0941ms
+2026-08-06 15:42:33.091 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 34.9146ms
+2026-08-06 15:42:33.091 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 35.0931ms
+2026-08-06 15:42:33.106 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 48.9245ms
+2026-08-06 15:42:33.106 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 48.9745ms
+2026-08-06 15:42:33.400 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:42:33.409 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 15:42:33.418 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 8.8493ms
+2026-08-06 15:42:33.460 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:42:33.464 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:42:33.827 +05:30 [INF] Received HTTP response headers after 356.2937ms - 200
+2026-08-06 15:42:33.830 +05:30 [INF] End processing HTTP request after 376.457ms - 200
+2026-08-06 15:42:33.985 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 585.3291ms
+2026-08-06 15:43:27.348 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/admin/login - application/json 65
+2026-08-06 15:43:27.356 +05:30 [INF] CORS policy execution failed.
+2026-08-06 15:43:27.363 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-06 15:43:27.510 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 15:43:27.517 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000003, PreviousRequestId: -
+No authentication is required for the path '/identity/admin/login' in the route /identity/admin/{everything}.
+2026-08-06 15:43:28.720 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/auth/login
+2026-08-06 15:43:28.746 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/admin/login - 200 null application/json; charset=utf-8 1398.5273ms
+2026-08-06 15:43:28.751 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/admin/login, Response status code: 200
+2026-08-06 15:43:51.197 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/booking-report - null null
+2026-08-06 15:43:51.331 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 15:43:51.335 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000004, PreviousRequestId: -
+No authentication is required for the path '/admin/booking-report' in the route /admin/{everything}.
+2026-08-06 15:43:52.579 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/booking-report
+2026-08-06 15:43:52.594 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/booking-report - 200 null application/json; charset=utf-8 1396.9864ms
+2026-08-06 15:43:52.604 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/booking-report, Response status code: 200
+2026-08-06 15:44:04.637 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/dashboard - null null
+2026-08-06 15:44:04.652 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 15:44:04.654 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000005, PreviousRequestId: -
+No authentication is required for the path '/admin/dashboard' in the route /admin/{everything}.
+2026-08-06 15:44:10.005 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000005, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/dashboard
+2026-08-06 15:44:10.133 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/dashboard - 200 null application/json; charset=utf-8 5496.177ms
+2026-08-06 15:44:10.139 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/dashboard, Response status code: 200
+2026-08-06 15:44:20.408 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/revenue-report - null null
+2026-08-06 15:44:20.413 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 15:44:20.416 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000006, PreviousRequestId: -
+No authentication is required for the path '/admin/revenue-report' in the route /admin/{everything}.
+2026-08-06 15:44:20.539 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/revenue-report
+2026-08-06 15:44:20.544 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/revenue-report - 200 null application/json; charset=utf-8 136.2054ms
+2026-08-06 15:44:20.550 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/revenue-report, Response status code: 200
+2026-08-06 15:44:38.766 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/users - null null
+2026-08-06 15:44:38.773 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 15:44:38.775 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000007, PreviousRequestId: -
+No authentication is required for the path '/admin/users' in the route /admin/{everything}.
+2026-08-06 15:44:39.130 +05:30 [INF] RequestId: 0HNNJKCTFSOQE:00000007, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/admin/users
+2026-08-06 15:44:39.136 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/users - 200 null application/json; charset=utf-8 369.6732ms
+2026-08-06 15:44:39.142 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/users, Response status code: 200
+2026-08-06 15:51:37.059 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:51:37.067 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 7.762ms
+2026-08-06 15:51:37.482 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:51:37.495 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:51:37.499 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:51:37.531 +05:30 [INF] Received HTTP response headers after 23.4588ms - 200
+2026-08-06 15:51:37.533 +05:30 [INF] End processing HTTP request after 37.6921ms - 200
+2026-08-06 15:51:37.546 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 63.4998ms
+2026-08-06 15:52:09.330 +05:30 [INF] Application is shutting down...
+2026-08-06 15:52:16.159 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:52:16.298 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-06 15:52:16.302 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:52:16.305 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:52:16.307 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-06 15:52:27.207 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:52:27.419 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 214.4881ms
+2026-08-06 15:52:27.472 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 15:52:27.472 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 15:52:27.479 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 15:52:27.479 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 15:52:27.480 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 15:52:27.541 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 69.1744ms
+2026-08-06 15:52:27.542 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 69.803ms
+2026-08-06 15:52:27.548 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 68.3949ms
+2026-08-06 15:52:27.559 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 80.2518ms
+2026-08-06 15:52:27.559 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 80.2682ms
+2026-08-06 15:52:27.806 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:52:27.809 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 15:52:27.815 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 5.7496ms
+2026-08-06 15:52:27.865 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:52:27.868 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:52:28.266 +05:30 [INF] Received HTTP response headers after 392.7186ms - 200
+2026-08-06 15:52:28.269 +05:30 [INF] End processing HTTP request after 409.2486ms - 200
+2026-08-06 15:52:28.416 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 610.042ms
+2026-08-06 15:52:43.283 +05:30 [INF] Application is shutting down...
+2026-08-06 15:52:56.729 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:52:56.810 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-06 15:52:56.812 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:52:56.813 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:52:56.814 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-06 15:53:54.667 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:53:54.843 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 178.2087ms
+2026-08-06 15:53:54.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 15:53:54.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 15:53:54.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 15:53:54.900 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 15:53:54.907 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 15:53:54.985 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 86.0898ms
+2026-08-06 15:53:54.985 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 77.572ms
+2026-08-06 15:53:54.985 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 85.8108ms
+2026-08-06 15:53:55.000 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 99.8136ms
+2026-08-06 15:53:55.000 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 100.0191ms
+2026-08-06 15:53:55.217 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:53:55.224 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 15:53:55.234 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 10.0919ms
+2026-08-06 15:53:55.306 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:53:55.311 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:53:55.703 +05:30 [INF] Received HTTP response headers after 386.757ms - 200
+2026-08-06 15:53:55.706 +05:30 [INF] End processing HTTP request after 408.2362ms - 200
+2026-08-06 15:53:55.827 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 609.8072ms
+2026-08-06 15:57:02.639 +05:30 [INF] Application is shutting down...
+2026-08-06 15:57:09.484 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:57:09.579 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-06 15:57:09.583 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:57:09.585 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:57:09.587 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-06 15:57:21.245 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:57:21.421 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 178.5821ms
+2026-08-06 15:57:21.447 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 15:57:21.447 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 15:57:21.447 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 15:57:21.448 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 15:57:21.448 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 15:57:21.477 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 29.0253ms
+2026-08-06 15:57:21.494 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 47.4768ms
+2026-08-06 15:57:21.494 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 47.5122ms
+2026-08-06 15:57:21.531 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 83.1328ms
+2026-08-06 15:57:21.531 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 83.885ms
+2026-08-06 15:57:21.786 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:57:21.793 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 15:57:21.800 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 6.7999ms
+2026-08-06 15:57:21.848 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:57:21.854 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:57:22.205 +05:30 [INF] Received HTTP response headers after 344.5309ms - 200
+2026-08-06 15:57:22.208 +05:30 [INF] End processing HTTP request after 365.2873ms - 200
+2026-08-06 15:57:22.339 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 553.3428ms
+2026-08-06 15:57:24.041 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:57:24.052 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 10.7019ms
+2026-08-06 15:57:24.322 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:57:24.339 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:57:24.345 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:57:24.385 +05:30 [INF] Received HTTP response headers after 35.3986ms - 200
+2026-08-06 15:57:24.388 +05:30 [INF] End processing HTTP request after 49.2431ms - 200
+2026-08-06 15:57:24.398 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 75.8542ms
+2026-08-06 15:58:15.346 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:58:15.356 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 9.3613ms
+2026-08-06 15:58:15.484 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:58:15.490 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:58:15.492 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:58:15.784 +05:30 [INF] Received HTTP response headers after 289.44ms - 200
+2026-08-06 15:58:15.786 +05:30 [INF] End processing HTTP request after 296.6143ms - 200
+2026-08-06 15:58:15.797 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 312.8979ms
+2026-08-06 15:58:17.721 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:58:17.726 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 4.9869ms
+2026-08-06 15:58:17.807 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:58:17.811 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:58:17.812 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:58:17.835 +05:30 [INF] Received HTTP response headers after 20.9512ms - 200
+2026-08-06 15:58:17.838 +05:30 [INF] End processing HTTP request after 27.7142ms - 200
+2026-08-06 15:58:17.844 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 37.6047ms
+2026-08-06 15:58:30.841 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 15:58:30.852 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 10.9343ms
+2026-08-06 15:58:30.891 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 15:58:30.891 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 15:58:30.893 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 15:58:30.893 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 15:58:30.896 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 15:58:30.900 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 9.3107ms
+2026-08-06 15:58:30.904 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 12.9562ms
+2026-08-06 15:58:30.909 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 16.2279ms
+2026-08-06 15:58:30.917 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 23.444ms
+2026-08-06 15:58:30.918 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 22.0165ms
+2026-08-06 15:58:31.327 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 15:58:31.337 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:58:31.342 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 15:58:31.377 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 15:58:31.385 +05:30 [INF] Received HTTP response headers after 36.5612ms - 200
+2026-08-06 15:58:31.395 +05:30 [INF] End processing HTTP request after 57.9296ms - 200
+2026-08-06 15:58:31.393 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 16.1877ms
+2026-08-06 15:58:31.401 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 74.0558ms
+2026-08-06 16:02:27.126 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 16:02:27.130 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 4.1405ms
+2026-08-06 16:02:27.502 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 16:02:27.516 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:02:27.521 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:02:28.205 +05:30 [INF] Received HTTP response headers after 680.5024ms - 200
+2026-08-06 16:02:28.206 +05:30 [INF] End processing HTTP request after 691.2303ms - 200
+2026-08-06 16:02:28.210 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 707.6966ms
+2026-08-06 16:03:15.501 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-06 16:03:15.508 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 7.3598ms
+2026-08-06 16:03:15.837 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 16:03:15.842 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:03:15.844 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:03:15.869 +05:30 [INF] Received HTTP response headers after 22.0358ms - 200
+2026-08-06 16:03:15.870 +05:30 [INF] End processing HTTP request after 28.5626ms - 200
+2026-08-06 16:03:15.875 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 37.8132ms
+2026-08-06 16:03:22.940 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/users - null null
+2026-08-06 16:03:23.078 +05:30 [INF] RequestId: 0HNNJKL685CIP:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/admin/{everything}' via the EnableRateLimiting option.
+2026-08-06 16:03:23.085 +05:30 [INF] RequestId: 0HNNJKL685CIP:00000005, PreviousRequestId: -
+No authentication is required for the path '/admin/users' in the route /admin/{everything}.
+2026-08-06 16:03:23.218 +05:30 [WRN] RequestId: 0HNNJKL685CIP:00000005, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/admin/users
+2026-08-06 16:03:23.252 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/users - 401 0 null 312.2826ms
+2026-08-06 16:03:23.259 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/admin/users, Response status code: 401
+2026-08-06 16:03:28.675 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-06 16:03:28.685 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:03:28.690 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:03:29.097 +05:30 [INF] Received HTTP response headers after 401.5581ms - 200
+2026-08-06 16:03:29.100 +05:30 [INF] End processing HTTP request after 414.8374ms - 200
+2026-08-06 16:03:29.134 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 459.0361ms
+2026-08-06 16:11:32.061 +05:30 [INF] Application is shutting down...
+2026-08-06 16:14:51.413 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 16:14:51.512 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-06 16:14:51.577 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 16:14:51.579 +05:30 [INF] Hosting environment: Development
+2026-08-06 16:14:51.580 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-06 16:15:07.338 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-06 16:15:07.677 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 340.1513ms
+2026-08-06 16:15:07.700 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 16:15:07.700 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 16:15:07.701 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 16:15:07.701 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 16:15:07.702 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 16:15:08.050 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 349.2722ms
+2026-08-06 16:15:08.211 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 510.4736ms
+2026-08-06 16:15:08.212 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 510.8866ms
+2026-08-06 16:15:08.311 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 609.764ms
+2026-08-06 16:15:08.321 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 618.8317ms
+2026-08-06 16:15:08.628 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 16:15:08.635 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-06 16:15:08.648 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 19.4525ms
+2026-08-06 16:15:08.730 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:15:08.735 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:15:09.407 +05:30 [INF] Received HTTP response headers after 634.0039ms - 200
+2026-08-06 16:15:09.416 +05:30 [INF] End processing HTTP request after 694.1786ms - 200
+2026-08-06 16:15:09.721 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 1086.4514ms
+2026-08-06 16:16:14.540 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-06 16:16:14.551 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-06 16:16:14.556 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-06 16:16:14.887 +05:30 [INF] Received HTTP response headers after 328.6039ms - 200
+2026-08-06 16:16:14.890 +05:30 [INF] End processing HTTP request after 339.0521ms - 200
+2026-08-06 16:16:14.903 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 363.1302ms
+2026-08-06 16:18:48.563 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-06 16:18:48.575 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:18:48.577 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:18:48.606 +05:30 [INF] Received HTTP response headers after 27.3497ms - 200
+2026-08-06 16:18:48.609 +05:30 [INF] End processing HTTP request after 34.3023ms - 200
+2026-08-06 16:18:48.641 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 78.3992ms
+2026-08-06 16:18:52.522 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/bookings - null null
+2026-08-06 16:18:52.527 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/swagger/v1/swagger.json
+2026-08-06 16:18:52.528 +05:30 [INF] Sending HTTP request GET http://localhost:5003/swagger/v1/swagger.json
+2026-08-06 16:18:52.946 +05:30 [INF] Received HTTP response headers after 414.0704ms - 200
+2026-08-06 16:18:52.949 +05:30 [INF] End processing HTTP request after 421.7973ms - 200
+2026-08-06 16:18:52.967 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/bookings - 200 null null 443.2653ms
+2026-08-06 16:19:02.159 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 16:19:02.165 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:19:02.166 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:19:02.203 +05:30 [INF] Received HTTP response headers after 32.313ms - 200
+2026-08-06 16:19:02.206 +05:30 [INF] End processing HTTP request after 41.2495ms - 200
+2026-08-06 16:19:02.211 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 52.1795ms
+2026-08-06 16:19:37.135 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-06 16:19:37.142 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:19:37.145 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:19:37.166 +05:30 [INF] Received HTTP response headers after 18.7428ms - 200
+2026-08-06 16:19:37.168 +05:30 [INF] End processing HTTP request after 26.0502ms - 200
+2026-08-06 16:19:37.178 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 43.2864ms
+2026-08-06 16:20:30.989 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 16:20:30.998 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:20:31.002 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:20:31.026 +05:30 [INF] Received HTTP response headers after 21.0636ms - 200
+2026-08-06 16:20:31.030 +05:30 [INF] End processing HTTP request after 32.1098ms - 200
+2026-08-06 16:20:31.037 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 47.9754ms
+2026-08-06 16:25:29.038 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - null null
+2026-08-06 16:25:29.047 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - 200 null text/html;charset=utf-8 8.6509ms
+2026-08-06 16:25:29.299 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 16:25:29.309 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:25:29.310 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:25:29.640 +05:30 [INF] Received HTTP response headers after 327.5645ms - 200
+2026-08-06 16:25:29.642 +05:30 [INF] End processing HTTP request after 333.052ms - 200
+2026-08-06 16:25:29.647 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 348.367ms
+2026-08-06 16:26:21.659 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - null null
+2026-08-06 16:26:21.675 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - 200 null text/html;charset=utf-8 15.892ms
+2026-08-06 16:26:21.723 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 16:26:21.724 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 16:26:21.727 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 16:26:21.727 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 16:26:21.728 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 16:26:21.733 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 9.9897ms
+2026-08-06 16:26:21.739 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 15.7397ms
+2026-08-06 16:26:21.752 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 24.088ms
+2026-08-06 16:26:21.753 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 26.0238ms
+2026-08-06 16:26:21.758 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 29.6673ms
+2026-08-06 16:26:22.141 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 16:26:22.146 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 16:26:22.203 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 57.4439ms
+2026-08-06 16:26:22.195 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:26:22.265 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:26:22.297 +05:30 [INF] Received HTTP response headers after 29.6517ms - 200
+2026-08-06 16:26:22.316 +05:30 [INF] End processing HTTP request after 121.0548ms - 200
+2026-08-06 16:26:22.325 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 183.4719ms
+2026-08-06 16:37:45.790 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - null null
+2026-08-06 16:37:45.810 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Admin+API+-+v1 - 200 null text/html;charset=utf-8 19.5345ms
+2026-08-06 16:37:45.838 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-06 16:37:45.841 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-06 16:37:45.841 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-06 16:37:45.841 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-06 16:37:45.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-06 16:37:45.846 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 7.8327ms
+2026-08-06 16:37:45.855 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 14.0929ms
+2026-08-06 16:37:45.859 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 17.2985ms
+2026-08-06 16:37:45.866 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 24.7261ms
+2026-08-06 16:37:45.875 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 30.8809ms
+2026-08-06 16:37:46.376 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - null null
+2026-08-06 16:37:46.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-06 16:37:46.388 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:37:46.392 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-06 16:37:46.391 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 3.2108ms
+2026-08-06 16:37:46.932 +05:30 [INF] Received HTTP response headers after 521.8354ms - 200
+2026-08-06 16:37:46.935 +05:30 [INF] End processing HTTP request after 546.2005ms - 200
+2026-08-06 16:37:46.948 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/admin - 200 null null 571.7452ms
+2026-08-06 16:50:33.769 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-06 16:50:33.781 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:50:33.798 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 16:50:34.249 +05:30 [INF] Received HTTP response headers after 448.328ms - 200
+2026-08-06 16:50:34.253 +05:30 [INF] End processing HTTP request after 471.4837ms - 200
+2026-08-06 16:50:34.261 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 491.8497ms
+2026-08-06 16:56:16.984 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-06 16:56:16.995 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-06 16:56:16.998 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-06 16:56:17.428 +05:30 [INF] Received HTTP response headers after 423.2881ms - 200
+2026-08-06 16:56:17.431 +05:30 [INF] End processing HTTP request after 436.604ms - 200
+2026-08-06 16:56:17.440 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 455.8456ms
+2026-08-06 17:00:51.142 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/bookings - null null
+2026-08-06 17:00:51.936 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/swagger/v1/swagger.json
+2026-08-06 17:00:52.569 +05:30 [INF] Sending HTTP request GET http://localhost:5003/swagger/v1/swagger.json
+2026-08-06 17:00:56.792 +05:30 [INF] HTTP request failed after 4118.5958ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5003)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-06 17:00:56.930 +05:30 [INF] HTTP request failed after 4994.1833ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5003)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-06 17:00:56.944 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5003)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-06 17:00:56.959 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/bookings - 500 null text/plain; charset=utf-8 5817.3359ms
+2026-08-06 17:01:05.549 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Bookings+API+-+v1 - null null
+2026-08-06 17:01:05.556 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Bookings+API+-+v1 - 200 null text/html;charset=utf-8 6.456ms
+2026-08-06 17:01:06.094 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/bookings - null null
+2026-08-06 17:01:06.105 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/swagger/v1/swagger.json
+2026-08-06 17:01:06.107 +05:30 [INF] Sending HTTP request GET http://localhost:5003/swagger/v1/swagger.json
+2026-08-06 17:01:06.493 +05:30 [INF] Received HTTP response headers after 384.1235ms - 200
+2026-08-06 17:01:06.495 +05:30 [INF] End processing HTTP request after 390.2894ms - 200
+2026-08-06 17:01:06.503 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/bookings - 200 null null 409.0449ms
+2026-08-06 17:07:16.413 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/checkins - null null
+2026-08-06 17:07:18.509 +05:30 [INF] Start processing HTTP request GET http://localhost:5005/swagger/v1/swagger.json
+2026-08-06 17:07:18.559 +05:30 [INF] Sending HTTP request GET http://localhost:5005/swagger/v1/swagger.json
+2026-08-06 17:07:23.044 +05:30 [INF] Received HTTP response headers after 4300.798ms - 200
+2026-08-06 17:07:23.045 +05:30 [INF] End processing HTTP request after 4535.7915ms - 200
+2026-08-06 17:07:23.048 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/checkins - 200 null null 6634.8415ms
+2026-08-06 17:10:57.357 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - null null
+2026-08-06 17:10:57.362 +05:30 [INF] Start processing HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-06 17:10:57.364 +05:30 [INF] Sending HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-06 17:10:57.910 +05:30 [INF] Received HTTP response headers after 544.1495ms - 200
+2026-08-06 17:10:57.913 +05:30 [INF] End processing HTTP request after 550.6236ms - 200
+2026-08-06 17:10:57.917 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - 200 null null 559.7082ms
+2026-08-06 17:13:19.895 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/staff - null null
+2026-08-06 17:13:20.892 +05:30 [INF] Start processing HTTP request GET http://localhost:5011/swagger/v1/swagger.json
+2026-08-06 17:13:21.903 +05:30 [INF] Sending HTTP request GET http://localhost:5011/swagger/v1/swagger.json
+2026-08-06 17:13:24.336 +05:30 [INF] Received HTTP response headers after 265.2846ms - 200
+2026-08-06 17:13:24.338 +05:30 [INF] End processing HTTP request after 3446.1345ms - 200
+2026-08-06 17:13:24.342 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/staff - 200 null null 4446.8783ms
+2026-08-06 17:15:56.976 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Staff+API+-+v1 - null null
+2026-08-06 17:15:56.988 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Staff+API+-+v1 - 200 null text/html;charset=utf-8 11.8674ms
+2026-08-06 17:15:57.301 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/staff - null null
+2026-08-06 17:15:57.312 +05:30 [INF] Start processing HTTP request GET http://localhost:5011/swagger/v1/swagger.json
+2026-08-06 17:15:57.317 +05:30 [INF] Sending HTTP request GET http://localhost:5011/swagger/v1/swagger.json
+2026-08-06 17:15:57.684 +05:30 [INF] Received HTTP response headers after 353.686ms - 200
+2026-08-06 17:15:57.687 +05:30 [INF] End processing HTTP request after 375.0105ms - 200
+2026-08-06 17:15:57.693 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/staff - 200 null null 392.4219ms
+2026-08-06 17:16:51.513 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-06 17:16:51.526 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-06 17:16:51.530 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-06 17:16:51.595 +05:30 [INF] Received HTTP response headers after 60.1734ms - 200
+2026-08-06 17:16:51.598 +05:30 [INF] End processing HTTP request after 71.6582ms - 200
+2026-08-06 17:16:51.603 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 89.9438ms
+2026-08-06 17:16:54.946 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-06 17:16:54.960 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 17:16:54.966 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-06 17:16:55.032 +05:30 [INF] Received HTTP response headers after 57.7386ms - 200
+2026-08-06 17:16:55.036 +05:30 [INF] End processing HTTP request after 75.8053ms - 200
+2026-08-06 17:16:55.054 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 107.3336ms
+2026-08-06 17:17:21.096 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/staff - null null
+2026-08-06 17:17:21.105 +05:30 [INF] Start processing HTTP request GET http://localhost:5011/swagger/v1/swagger.json
+2026-08-06 17:17:21.113 +05:30 [INF] Sending HTTP request GET http://localhost:5011/swagger/v1/swagger.json
+2026-08-06 17:17:21.176 +05:30 [INF] Received HTTP response headers after 56.0436ms - 200
+2026-08-06 17:17:21.187 +05:30 [INF] End processing HTTP request after 82.2837ms - 200
+2026-08-06 17:17:21.197 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/staff - 200 null null 101.0467ms

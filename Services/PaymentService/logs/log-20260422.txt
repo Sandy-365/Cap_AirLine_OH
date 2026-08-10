@@ -1,0 +1,290 @@
+[2026-04-22 01:08:32.443] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 33
+[2026-04-22 01:08:32.831] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 01:08:32.846] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:08:44.048] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 01:08:44.094] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 01:08:47.180] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=23, Amount=16953.5
+[2026-04-22 01:08:47.239] [INF] [UserId:Anonymous] Validating booking 23 against http://localhost:5003
+[2026-04-22 01:08:47.250] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/23
+[2026-04-22 01:08:47.258] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/23
+[2026-04-22 01:08:47.577] [INF] [UserId:Anonymous] Received HTTP response headers after 307.4856ms - 200
+[2026-04-22 01:08:47.583] [INF] [UserId:Anonymous] End processing HTTP request after 337.4659ms - 200
+[2026-04-22 01:08:47.589] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=23, Amount=16953.5, AmountInPaise=1695350
+[2026-04-22 01:08:50.069] [INF] [UserId:Anonymous] Razorpay Order created: order_SgGDpEcqXUQvMy
+[2026-04-22 01:08:50.177] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 01:08:50.210] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 6103.3599ms
+[2026-04-22 01:08:50.215] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 01:08:50.223] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 17450.3759 ms
+[2026-04-22 01:08:50.237] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 17819.2218ms
+[2026-04-22 01:09:13.479] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/verify - application/json 280
+[2026-04-22 01:09:13.491] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:09:13.502] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 01:09:13.520] [INF] [UserId:Anonymous] Route matched with {action = "VerifyPayment", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyPayment(PaymentService.DTOs.VerifySignatureDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 01:09:13.551] [INF] [UserId:Anonymous] VerifySignatureAsync called for BookingId=23
+[2026-04-22 01:09:13.554] [INF] [UserId:Anonymous] Razorpay signature verified successfully for BookingId=23
+[2026-04-22 01:09:14.382] [INF] [UserId:Anonymous] Executed DbCommand (180ms) [Parameters=[@p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [BookingId], [CreatedAt], [PaymentMethod], [Status], [TransactionId], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[2026-04-22 01:09:14.453] [INF] [UserId:Anonymous] Payment record saved: PaymentId=9, Amount=16953.5
+[2026-04-22 01:09:14.747] [INF] [UserId:Anonymous] PaymentSuccessEvent published for BookingId=23
+[2026-04-22 01:09:14.754] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PaymentService.DTOs.PaymentDto'.
+[2026-04-22 01:09:14.771] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService) in 1246.5563ms
+[2026-04-22 01:09:14.777] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 01:09:14.780] [INF] [UserId:Anonymous] HTTP POST /api/payments/verify responded 200 in 1291.7903 ms
+[2026-04-22 01:09:14.794] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/verify - 200 null application/json; charset=utf-8 1314.5425ms
+[2026-04-22 01:45:12.488] [INF] [UserId:] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 01:45:12.557] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 01:45:12.653] [INF] [UserId:] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 01:45:12.723] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 01:45:12.741] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 01:45:12.747] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 01:45:12.769] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 01:45:12.786] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 01:45:12.799] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 01:45:12.873] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 01:45:12.958] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-22 01:45:12.963] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 01:45:12.965] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 01:45:12.967] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-22 01:49:04.747] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 32
+[2026-04-22 01:49:04.815] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 01:49:04.826] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:49:08.502] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 01:49:08.531] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 01:49:09.924] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=34, Amount=5784.5
+[2026-04-22 01:49:09.930] [INF] [UserId:Anonymous] Validating booking 34 against http://localhost:5003
+[2026-04-22 01:49:09.936] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/34
+[2026-04-22 01:49:09.940] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/34
+[2026-04-22 01:49:10.027] [INF] [UserId:Anonymous] Received HTTP response headers after 81.6328ms - 200
+[2026-04-22 01:49:10.030] [INF] [UserId:Anonymous] End processing HTTP request after 96.9285ms - 200
+[2026-04-22 01:49:10.035] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=34, Amount=5784.5, AmountInPaise=578450
+[2026-04-22 01:49:11.705] [INF] [UserId:Anonymous] Razorpay Order created: order_SgGuTbYYBYkSK7
+[2026-04-22 01:49:11.716] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 01:49:11.743] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 3205.024ms
+[2026-04-22 01:49:11.746] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 01:49:11.754] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 6961.5870 ms
+[2026-04-22 01:49:11.761] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 7017.6974ms
+[2026-04-22 01:49:43.776] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/verify - application/json 279
+[2026-04-22 01:49:43.883] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:49:43.899] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 01:49:43.921] [INF] [UserId:Anonymous] Route matched with {action = "VerifyPayment", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyPayment(PaymentService.DTOs.VerifySignatureDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 01:49:44.426] [INF] [UserId:Anonymous] VerifySignatureAsync called for BookingId=34
+[2026-04-22 01:49:44.508] [INF] [UserId:Anonymous] Razorpay signature verified successfully for BookingId=34
+[2026-04-22 01:49:46.669] [INF] [UserId:Anonymous] Executed DbCommand (287ms) [Parameters=[@p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [BookingId], [CreatedAt], [PaymentMethod], [Status], [TransactionId], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[2026-04-22 01:49:46.962] [INF] [UserId:Anonymous] Payment record saved: PaymentId=10, Amount=5784.5
+[2026-04-22 01:49:47.711] [INF] [UserId:Anonymous] PaymentSuccessEvent published for BookingId=34
+[2026-04-22 01:49:47.781] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PaymentService.DTOs.PaymentDto'.
+[2026-04-22 01:49:47.790] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService) in 3863.3226ms
+[2026-04-22 01:49:47.942] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 01:49:48.047] [INF] [UserId:Anonymous] HTTP POST /api/payments/verify responded 200 in 4165.6703 ms
+[2026-04-22 01:49:48.677] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/verify - 200 null application/json; charset=utf-8 4901.4261ms
+[2026-04-22 02:11:20.494] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 32
+[2026-04-22 02:11:20.504] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:11:20.518] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 02:11:20.522] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 02:11:20.543] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=35, Amount=4884.5
+[2026-04-22 02:11:20.546] [INF] [UserId:Anonymous] Validating booking 35 against http://localhost:5003
+[2026-04-22 02:11:20.552] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/35
+[2026-04-22 02:11:20.555] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/35
+[2026-04-22 02:11:20.599] [INF] [UserId:Anonymous] Received HTTP response headers after 40.7533ms - 200
+[2026-04-22 02:11:20.603] [INF] [UserId:Anonymous] End processing HTTP request after 50.9138ms - 200
+[2026-04-22 02:11:20.614] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=35, Amount=4884.5, AmountInPaise=488450
+[2026-04-22 02:11:20.821] [INF] [UserId:Anonymous] Razorpay Order created: order_SgHHsZ8KwXqvtB
+[2026-04-22 02:11:20.826] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 02:11:20.829] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 296.3247ms
+[2026-04-22 02:11:20.833] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 02:11:20.835] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 333.8988 ms
+[2026-04-22 02:11:20.841] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 347.1717ms
+[2026-04-22 02:11:41.738] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/verify - application/json 279
+[2026-04-22 02:11:41.742] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:11:41.745] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 02:11:41.747] [INF] [UserId:Anonymous] Route matched with {action = "VerifyPayment", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyPayment(PaymentService.DTOs.VerifySignatureDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 02:11:41.753] [INF] [UserId:Anonymous] VerifySignatureAsync called for BookingId=35
+[2026-04-22 02:11:41.755] [INF] [UserId:Anonymous] Razorpay signature verified successfully for BookingId=35
+[2026-04-22 02:11:42.196] [INF] [UserId:Anonymous] Executed DbCommand (25ms) [Parameters=[@p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [BookingId], [CreatedAt], [PaymentMethod], [Status], [TransactionId], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[2026-04-22 02:11:42.202] [INF] [UserId:Anonymous] Payment record saved: PaymentId=11, Amount=4884.5
+[2026-04-22 02:11:42.262] [INF] [UserId:Anonymous] PaymentSuccessEvent published for BookingId=35
+[2026-04-22 02:11:42.265] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PaymentService.DTOs.PaymentDto'.
+[2026-04-22 02:11:42.270] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService) in 518.1748ms
+[2026-04-22 02:11:42.274] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 02:11:42.276] [INF] [UserId:Anonymous] HTTP POST /api/payments/verify responded 200 in 534.2120 ms
+[2026-04-22 02:11:42.281] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/verify - 200 null application/json; charset=utf-8 543.1674ms
+[2026-04-22 10:06:24.229] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 10:06:24.272] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 10:06:24.291] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 10:06:24.350] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 10:06:24.366] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 10:06:24.371] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 10:06:24.388] [INF] [UserId:] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 10:06:24.402] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 10:06:24.412] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 10:06:24.478] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 10:06:24.534] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-22 10:06:24.537] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 10:06:24.538] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 10:06:24.538] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-22 10:32:21.590] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 33
+[2026-04-22 10:32:21.663] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 10:32:21.669] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:32:25.002] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 10:32:25.037] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 10:32:26.223] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=36, Amount=13084.5
+[2026-04-22 10:32:26.231] [INF] [UserId:Anonymous] Validating booking 36 against http://localhost:5003
+[2026-04-22 10:32:26.242] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/36
+[2026-04-22 10:32:26.246] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/36
+[2026-04-22 10:32:26.358] [INF] [UserId:Anonymous] Received HTTP response headers after 101.1703ms - 200
+[2026-04-22 10:32:26.364] [INF] [UserId:Anonymous] End processing HTTP request after 126.8571ms - 200
+[2026-04-22 10:32:26.370] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=36, Amount=13084.5, AmountInPaise=1308450
+[2026-04-22 10:32:27.730] [INF] [UserId:Anonymous] Razorpay Order created: order_SgPpDbaldOBxf6
+[2026-04-22 10:32:27.738] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 10:32:27.778] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 2730.7531ms
+[2026-04-22 10:32:27.784] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 10:32:27.793] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 6153.0086 ms
+[2026-04-22 10:32:27.801] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 6214.3736ms
+[2026-04-22 10:32:50.571] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/verify - application/json 280
+[2026-04-22 10:32:50.585] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:32:50.596] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 10:32:50.616] [INF] [UserId:Anonymous] Route matched with {action = "VerifyPayment", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyPayment(PaymentService.DTOs.VerifySignatureDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 10:32:50.647] [INF] [UserId:Anonymous] VerifySignatureAsync called for BookingId=36
+[2026-04-22 10:32:50.650] [INF] [UserId:Anonymous] Razorpay signature verified successfully for BookingId=36
+[2026-04-22 10:32:51.313] [INF] [UserId:Anonymous] Executed DbCommand (178ms) [Parameters=[@p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [BookingId], [CreatedAt], [PaymentMethod], [Status], [TransactionId], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[2026-04-22 10:32:51.369] [INF] [UserId:Anonymous] Payment record saved: PaymentId=12, Amount=13084.5
+[2026-04-22 10:32:51.641] [INF] [UserId:Anonymous] PaymentSuccessEvent published for BookingId=36
+[2026-04-22 10:32:51.644] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PaymentService.DTOs.PaymentDto'.
+[2026-04-22 10:32:51.651] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService) in 1028.8516ms
+[2026-04-22 10:32:51.655] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 10:32:51.658] [INF] [UserId:Anonymous] HTTP POST /api/payments/verify responded 200 in 1074.6242 ms
+[2026-04-22 10:32:51.664] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/verify - 200 null application/json; charset=utf-8 1093.6277ms
+[2026-04-22 10:49:00.001] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/create-order - application/json 33
+[2026-04-22 10:49:00.058] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:49:00.070] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 10:49:00.073] [INF] [UserId:Anonymous] Route matched with {action = "CreateOrder", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateOrder(PaymentService.DTOs.CreateOrderDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 10:49:00.086] [INF] [UserId:Anonymous] CreateOrderAsync called for BookingId=37, Amount=28084.5
+[2026-04-22 10:49:00.089] [INF] [UserId:Anonymous] Validating booking 37 against http://localhost:5003
+[2026-04-22 10:49:00.093] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings/37
+[2026-04-22 10:49:00.096] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings/37
+[2026-04-22 10:49:00.133] [INF] [UserId:Anonymous] Received HTTP response headers after 33.9636ms - 200
+[2026-04-22 10:49:00.135] [INF] [UserId:Anonymous] End processing HTTP request after 42.4387ms - 200
+[2026-04-22 10:49:00.145] [INF] [UserId:Anonymous] Creating Razorpay order: BookingId=37, Amount=28084.5, AmountInPaise=2808450
+[2026-04-22 10:49:00.524] [INF] [UserId:Anonymous] Razorpay Order created: order_SgQ6hYJXPX8FqL
+[2026-04-22 10:49:00.534] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 10:49:00.543] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService) in 464.6421ms
+[2026-04-22 10:49:00.569] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.CreateOrder (PaymentService)'
+[2026-04-22 10:49:00.600] [INF] [UserId:Anonymous] HTTP POST /api/payments/create-order responded 200 in 544.1960 ms
+[2026-04-22 10:49:00.603] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/create-order - 200 null application/json; charset=utf-8 602.0413ms
+[2026-04-22 10:49:21.873] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5004/api/payments/verify - application/json 280
+[2026-04-22 10:49:21.878] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:49:21.881] [INF] [UserId:Anonymous] Executing endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 10:49:21.884] [INF] [UserId:Anonymous] Route matched with {action = "VerifyPayment", controller = "Payments"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyPayment(PaymentService.DTOs.VerifySignatureDto) on controller PaymentService.Controllers.PaymentsController (PaymentService).
+[2026-04-22 10:49:21.889] [INF] [UserId:Anonymous] VerifySignatureAsync called for BookingId=37
+[2026-04-22 10:49:21.892] [INF] [UserId:Anonymous] Razorpay signature verified successfully for BookingId=37
+[2026-04-22 10:49:22.206] [INF] [UserId:Anonymous] Executed DbCommand (25ms) [Parameters=[@p0='?' (Precision = 10) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (Size = 50), @p4='?' (Size = 4000), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Payments] ([Amount], [BookingId], [CreatedAt], [PaymentMethod], [Status], [TransactionId], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+[2026-04-22 10:49:22.213] [INF] [UserId:Anonymous] Payment record saved: PaymentId=13, Amount=28084.5
+[2026-04-22 10:49:22.273] [INF] [UserId:Anonymous] PaymentSuccessEvent published for BookingId=37
+[2026-04-22 10:49:22.275] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'PaymentService.DTOs.PaymentDto'.
+[2026-04-22 10:49:22.279] [INF] [UserId:Anonymous] Executed action PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService) in 390.8817ms
+[2026-04-22 10:49:22.283] [INF] [UserId:Anonymous] Executed endpoint 'PaymentService.Controllers.PaymentsController.VerifyPayment (PaymentService)'
+[2026-04-22 10:49:22.286] [INF] [UserId:Anonymous] HTTP POST /api/payments/verify responded 200 in 408.2173 ms
+[2026-04-22 10:49:22.293] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5004/api/payments/verify - 200 null application/json; charset=utf-8 419.9628ms
+[2026-04-22 14:52:25.431] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 14:52:25.482] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 14:52:25.504] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 14:52:25.584] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 14:52:25.607] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 14:52:25.615] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 14:52:25.635] [INF] [UserId:] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 14:52:25.647] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 14:52:25.671] [INF] [UserId:] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 14:52:25.751] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 14:52:25.818] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-22 14:52:25.821] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 14:52:25.822] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 14:52:25.825] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService
+[2026-04-22 21:32:17.515] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 21:32:17.635] [INF] [UserId:] Now listening on: http://localhost:5004
+[2026-04-22 21:32:17.638] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 21:32:17.640] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 21:32:17.641] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\PaymentService

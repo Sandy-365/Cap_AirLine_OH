@@ -1,0 +1,1056 @@
+[2026-05-04 09:31:06.748] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 09:31:06.987] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 09:31:07.119] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 09:31:10.162] [INF] [UserId:] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 09:31:10.195] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-04 09:31:10.250] [INF] [UserId:] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-04 09:31:10.440] [INF] [UserId:] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-04 09:31:10.474] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 09:31:10.516] [INF] [UserId:] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-04 09:31:10.574] [INF] [UserId:] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-04 09:31:10.612] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-04 09:31:10.703] [INF] [UserId:] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-04 09:31:11.869] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-04 09:31:12.039] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-04 09:31:12.053] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-04 09:31:12.060] [INF] [UserId:] Hosting environment: Development
+[2026-05-04 09:31:12.099] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-04 10:16:01.175] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:16:01.285] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:16:01.300] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:16:06.400] [INF] [UserId:] Executed DbCommand (107ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:16:06.428] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-04 10:16:06.468] [INF] [UserId:] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-04 10:16:06.591] [INF] [UserId:] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-04 10:16:06.687] [INF] [UserId:] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:16:06.737] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-04 10:16:06.814] [INF] [UserId:] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-04 10:16:06.835] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-04 10:16:06.854] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-04 10:16:07.384] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-04 10:16:07.465] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-04 10:16:07.473] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-04 10:16:07.475] [INF] [UserId:] Hosting environment: Development
+[2026-05-04 10:16:07.481] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-04 10:18:22.232] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-05-04 10:18:22.349] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-04 10:18:25.973] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-04 10:18:26.017] [INF] [UserId:Anonymous] Route matched with {action = "GetBookings", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookings() on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:18:26.812] [INF] [UserId:Anonymous] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+[2026-05-04 10:18:27.061] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:18:27.206] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookings (BookingService) in 1166.0817ms
+[2026-05-04 10:18:27.219] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-04 10:18:27.234] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 200 in 4916.2175 ms
+[2026-05-04 10:18:27.259] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 200 null application/json; charset=utf-8 5033.0237ms
+[2026-05-04 10:21:50.159] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:21:50.179] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:21:50.342] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:21:50.366] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:21:50.943] [INF] [UserId:Anonymous] Executed DbCommand (156ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:21:50.956] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:21:50.962] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:21:50.978] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 605.3266ms
+[2026-05-04 10:21:50.983] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:21:50.987] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 812.4984 ms
+[2026-05-04 10:21:50.993] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 834.2141ms
+[2026-05-04 10:23:59.052] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/schedule/97 - null null
+[2026-05-04 10:23:59.066] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:23:59.080] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingsBySchedule (BookingService)'
+[2026-05-04 10:23:59.097] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingsBySchedule", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingsBySchedule(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:23:59.433] [INF] [UserId:Anonymous] Executed DbCommand (41ms) [Parameters=[@__scheduleId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[ScheduleId] = @__scheduleId_0
+ORDER BY [b].[Id]
+[2026-05-04 10:23:59.446] [INF] [UserId:Anonymous] Retrieved 0 bookings for schedule 97
+[2026-05-04 10:23:59.451] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:23:59.458] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingsBySchedule (BookingService) in 357.123ms
+[2026-05-04 10:23:59.462] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingsBySchedule (BookingService)'
+[2026-05-04 10:23:59.467] [INF] [UserId:Anonymous] HTTP GET /api/bookings/schedule/97 responded 200 in 402.9438 ms
+[2026-05-04 10:23:59.474] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/schedule/97 - 200 null application/json; charset=utf-8 422.7579ms
+[2026-05-04 10:31:03.254] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:31:03.306] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:31:03.313] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:31:04.222] [INF] [UserId:] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:31:04.239] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-04 10:31:04.271] [INF] [UserId:] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-04 10:31:04.409] [INF] [UserId:] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-04 10:31:04.476] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:31:04.489] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-04 10:31:04.538] [INF] [UserId:] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-04 10:31:04.580] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-04 10:31:04.601] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-04 10:31:04.978] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-04 10:31:05.349] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-04 10:31:05.457] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-04 10:31:05.779] [INF] [UserId:] Hosting environment: Development
+[2026-05-04 10:31:05.947] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-04 10:34:52.473] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:34:52.545] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:34:52.547] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:34:53.317] [INF] [UserId:] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:34:53.341] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-04 10:34:53.393] [INF] [UserId:] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-04 10:34:53.516] [INF] [UserId:] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-04 10:34:53.562] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:34:53.574] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-04 10:34:53.600] [INF] [UserId:] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-04 10:34:53.620] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-04 10:34:53.633] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-04 10:34:54.004] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-04 10:34:54.095] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-04 10:34:54.100] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-04 10:34:54.107] [INF] [UserId:] Hosting environment: Development
+[2026-05-04 10:34:54.111] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-04 10:38:49.100] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - null null
+[2026-05-04 10:38:49.174] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-04 10:38:49.178] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:38:49.321] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 10:38:49.362] [INF] [UserId:Anonymous] Route matched with {action = "GetOccupiedSeats", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOccupiedSeats(Int32, System.Nullable`1[System.Int32]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:38:50.167] [INF] [UserId:Anonymous] Executed DbCommand (70ms) [Parameters=[@__flightId_0='?' (DbType = Int32), @__scheduleId_Value_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[FlightId] = @__flightId_0 AND [b].[Status] <> N'Cancelled' AND [b].[ScheduleId] = @__scheduleId_Value_1
+ORDER BY [b].[Id]
+[2026-05-04 10:38:50.194] [INF] [UserId:Anonymous] Retrieved occupied seats for flight 6
+[2026-05-04 10:38:50.207] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:38:50.246] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService) in 873.7082ms
+[2026-05-04 10:38:50.251] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 10:38:50.259] [INF] [UserId:Anonymous] HTTP GET /api/bookings/occupied-seats responded 200 in 1112.3607 ms
+[2026-05-04 10:38:50.274] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - 200 null application/json; charset=utf-8 1176.2338ms
+[2026-05-04 10:39:07.734] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 187
+[2026-05-04 10:39:07.742] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:39:07.749] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:39:07.763] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:39:07.845] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 10:39:07.854] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:39:07.859] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:39:07.934] [INF] [UserId:Anonymous] Received HTTP response headers after 70.3188ms - 200
+[2026-05-04 10:39:07.937] [INF] [UserId:Anonymous] End processing HTTP request after 83.5784ms - 200
+[2026-05-04 10:39:07.948] [ERR] [UserId:Anonymous] Error creating booking
+Shared.Exceptions.FlightAlreadyDepartedException: Flight 6 has already departed at 2026-05-04 07:00:00
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.ValidateFlightOrScheduleAsync(CreateBookingDto dto, String flightServiceUrl) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 188
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.HandleAsync(CreateBookingCommand command) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 79
+   at BookingService.Controllers.BookingsController.CreateBooking(CreateBookingDto dto) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\Controllers\BookingsController.cs:line 74
+[2026-05-04 10:39:07.992] [INF] [UserId:Anonymous] Executing ObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:39:08.011] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 242.825ms
+[2026-05-04 10:39:08.015] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:39:08.017] [ERR] [UserId:Anonymous] HTTP POST /api/bookings responded 500 in 275.9983 ms
+[2026-05-04 10:39:08.021] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 500 null application/json; charset=utf-8 287.6519ms
+[2026-05-04 10:39:38.548] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 187
+[2026-05-04 10:39:38.559] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:39:38.570] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:39:38.573] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:39:38.614] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 10:39:38.618] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:39:38.625] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:39:38.665] [INF] [UserId:Anonymous] Received HTTP response headers after 35.3311ms - 200
+[2026-05-04 10:39:38.668] [INF] [UserId:Anonymous] End processing HTTP request after 50.9968ms - 200
+[2026-05-04 10:39:38.677] [ERR] [UserId:Anonymous] Error creating booking
+Shared.Exceptions.FlightAlreadyDepartedException: Flight 6 has already departed at 2026-05-04 07:00:00
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.ValidateFlightOrScheduleAsync(CreateBookingDto dto, String flightServiceUrl) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 188
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.HandleAsync(CreateBookingCommand command) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 79
+   at BookingService.Controllers.BookingsController.CreateBooking(CreateBookingDto dto) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\Controllers\BookingsController.cs:line 74
+[2026-05-04 10:39:38.681] [INF] [UserId:Anonymous] Executing ObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:39:38.684] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 107.1542ms
+[2026-05-04 10:39:38.688] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:39:38.690] [ERR] [UserId:Anonymous] HTTP POST /api/bookings responded 500 in 133.4146 ms
+[2026-05-04 10:39:38.693] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 500 null application/json; charset=utf-8 145.1288ms
+[2026-05-04 10:40:33.869] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 187
+[2026-05-04 10:40:33.886] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:40:33.905] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:40:33.910] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:40:33.918] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 10:40:33.921] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:40:33.924] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:40:33.972] [INF] [UserId:Anonymous] Received HTTP response headers after 43.7122ms - 200
+[2026-05-04 10:40:33.987] [INF] [UserId:Anonymous] End processing HTTP request after 66.2843ms - 200
+[2026-05-04 10:40:34.010] [ERR] [UserId:Anonymous] Error creating booking
+Shared.Exceptions.FlightAlreadyDepartedException: Flight 6 has already departed at 2026-05-04 07:00:00
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.ValidateFlightOrScheduleAsync(CreateBookingDto dto, String flightServiceUrl) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 188
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.HandleAsync(CreateBookingCommand command) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 79
+   at BookingService.Controllers.BookingsController.CreateBooking(CreateBookingDto dto) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\Controllers\BookingsController.cs:line 74
+[2026-05-04 10:40:34.018] [INF] [UserId:Anonymous] Executing ObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:40:34.024] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 107.0848ms
+[2026-05-04 10:40:34.035] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:40:34.039] [ERR] [UserId:Anonymous] HTTP POST /api/bookings responded 500 in 152.3046 ms
+[2026-05-04 10:40:34.044] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 500 null application/json; charset=utf-8 174.7723ms
+[2026-05-04 10:41:39.611] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - null null
+[2026-05-04 10:41:39.620] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:41:39.622] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 10:41:39.624] [INF] [UserId:Anonymous] Route matched with {action = "GetOccupiedSeats", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOccupiedSeats(Int32, System.Nullable`1[System.Int32]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:41:39.736] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__flightId_0='?' (DbType = Int32), @__scheduleId_Value_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[FlightId] = @__flightId_0 AND [b].[Status] <> N'Cancelled' AND [b].[ScheduleId] = @__scheduleId_Value_1
+ORDER BY [b].[Id]
+[2026-05-04 10:41:39.741] [INF] [UserId:Anonymous] Retrieved occupied seats for flight 6
+[2026-05-04 10:41:39.742] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:41:39.745] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService) in 117.8058ms
+[2026-05-04 10:41:39.747] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 10:41:39.750] [INF] [UserId:Anonymous] HTTP GET /api/bookings/occupied-seats responded 200 in 130.6250 ms
+[2026-05-04 10:41:39.753] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - 200 null application/json; charset=utf-8 142.3044ms
+[2026-05-04 10:41:50.275] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 190
+[2026-05-04 10:41:50.280] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:41:50.282] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:41:50.284] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:41:50.289] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 10:41:50.291] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:41:50.294] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:41:50.329] [INF] [UserId:Anonymous] Received HTTP response headers after 32.8299ms - 200
+[2026-05-04 10:41:50.333] [INF] [UserId:Anonymous] End processing HTTP request after 42.2134ms - 200
+[2026-05-04 10:41:50.343] [ERR] [UserId:Anonymous] Error creating booking
+Shared.Exceptions.FlightAlreadyDepartedException: Flight 6 has already departed at 2026-05-04 07:00:00
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.ValidateFlightOrScheduleAsync(CreateBookingDto dto, String flightServiceUrl) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 188
+   at BookingService.CQRS.Handlers.CreateBookingCommandHandler.HandleAsync(CreateBookingCommand command) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\CQRS\Handlers\CreateBookingCommandHandler.cs:line 79
+   at BookingService.Controllers.BookingsController.CreateBooking(CreateBookingDto dto) in D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService\Controllers\BookingsController.cs:line 74
+[2026-05-04 10:41:50.348] [INF] [UserId:Anonymous] Executing ObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:41:50.354] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 65.5286ms
+[2026-05-04 10:41:50.357] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:41:50.361] [ERR] [UserId:Anonymous] HTTP POST /api/bookings responded 500 in 80.8626 ms
+[2026-05-04 10:41:50.366] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 500 null application/json; charset=utf-8 91.238ms
+[2026-05-04 10:44:32.807] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:44:32.869] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:44:32.873] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-04 10:44:33.672] [INF] [UserId:] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:44:33.733] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-04 10:44:33.796] [INF] [UserId:] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-04 10:44:33.916] [INF] [UserId:] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-04 10:44:34.000] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-04 10:44:34.010] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-04 10:44:34.070] [INF] [UserId:] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-04 10:44:34.087] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-04 10:44:34.121] [INF] [UserId:] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-04 10:44:34.513] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-04 10:44:34.884] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-04 10:44:34.968] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-04 10:44:35.001] [INF] [UserId:] Hosting environment: Development
+[2026-05-04 10:44:35.008] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-04 10:44:48.174] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 190
+[2026-05-04 10:44:48.944] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-04 10:44:49.109] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:44:49.554] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:44:49.765] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:44:50.293] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 10:44:50.430] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:44:50.600] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:44:54.724] [INF] [UserId:Anonymous] Received HTTP response headers after 4020.3737ms - 200
+[2026-05-04 10:44:55.021] [INF] [UserId:Anonymous] End processing HTTP request after 4593.6652ms - 200
+[2026-05-04 10:44:57.087] [INF] [UserId:Anonymous] Executed DbCommand (70ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([BaggageWeight], [CancelledPassengers], [ConfirmedPassengers], [CreatedAt], [FlightId], [PNR], [PaymentStatus], [ScheduleId], [SeatClass], [Status], [TotalAmount], [TotalPassengers], [UpdatedAt], [UserEmail], [UserId], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+[2026-05-04 10:44:57.214] [INF] [UserId:Anonymous] Start processing HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 10:44:57.275] [INF] [UserId:Anonymous] Sending HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 10:44:57.982] [INF] [UserId:Anonymous] Received HTTP response headers after 655.0539ms - 200
+[2026-05-04 10:44:58.025] [INF] [UserId:Anonymous] End processing HTTP request after 811.1938ms - 200
+[2026-05-04 10:44:58.082] [INF] [UserId:Anonymous] Booking 38 created with PNR: HHNZ1W
+[2026-05-04 10:44:58.295] [INF] [UserId:Anonymous] Executing CreatedAtActionResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 10:44:58.475] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 8396.7477ms
+[2026-05-04 10:44:58.534] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:44:58.577] [INF] [UserId:Anonymous] HTTP POST /api/bookings responded 201 in 9692.1741 ms
+[2026-05-04 10:44:58.668] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 201 null application/json; charset=utf-8 10494.9663ms
+[2026-05-04 10:45:00.589] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - null null
+[2026-05-04 10:45:00.615] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:45:00.641] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 10:45:00.670] [INF] [UserId:Anonymous] Route matched with {action = "GetOccupiedSeats", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOccupiedSeats(Int32, System.Nullable`1[System.Int32]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:45:01.643] [INF] [UserId:Anonymous] Executed DbCommand (33ms) [Parameters=[@__flightId_0='?' (DbType = Int32), @__scheduleId_Value_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[FlightId] = @__flightId_0 AND [b].[Status] <> N'Cancelled' AND [b].[ScheduleId] = @__scheduleId_Value_1
+ORDER BY [b].[Id]
+[2026-05-04 10:45:01.687] [INF] [UserId:Anonymous] Retrieved occupied seats for flight 6
+[2026-05-04 10:45:01.689] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:45:01.696] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService) in 1022.3074ms
+[2026-05-04 10:45:01.708] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 10:45:01.711] [INF] [UserId:Anonymous] HTTP GET /api/bookings/occupied-seats responded 200 in 1103.8885 ms
+[2026-05-04 10:45:01.715] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - 200 null application/json; charset=utf-8 1125.7514ms
+[2026-05-04 10:45:31.223] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 187
+[2026-05-04 10:45:31.233] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:45:31.247] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:45:31.253] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:45:31.287] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 10:45:31.292] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:45:31.296] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 10:45:31.361] [INF] [UserId:Anonymous] Received HTTP response headers after 61.5562ms - 200
+[2026-05-04 10:45:31.366] [INF] [UserId:Anonymous] End processing HTTP request after 73.3223ms - 200
+[2026-05-04 10:45:31.387] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([BaggageWeight], [CancelledPassengers], [ConfirmedPassengers], [CreatedAt], [FlightId], [PNR], [PaymentStatus], [ScheduleId], [SeatClass], [Status], [TotalAmount], [TotalPassengers], [UpdatedAt], [UserEmail], [UserId], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+[2026-05-04 10:45:31.393] [INF] [UserId:Anonymous] Start processing HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 10:45:31.395] [INF] [UserId:Anonymous] Sending HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 10:45:31.456] [INF] [UserId:Anonymous] Received HTTP response headers after 58.2009ms - 200
+[2026-05-04 10:45:31.460] [INF] [UserId:Anonymous] End processing HTTP request after 67.8033ms - 200
+[2026-05-04 10:45:31.472] [INF] [UserId:Anonymous] Booking 39 created with PNR: TTS66X
+[2026-05-04 10:45:31.524] [INF] [UserId:Anonymous] Executing CreatedAtActionResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 10:45:31.531] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 273.6659ms
+[2026-05-04 10:45:31.544] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 10:45:31.547] [INF] [UserId:Anonymous] HTTP POST /api/bookings responded 201 in 316.5728 ms
+[2026-05-04 10:45:31.551] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 201 null application/json; charset=utf-8 327.6145ms
+[2026-05-04 10:45:31.605] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings/39/passengers - application/json 258
+[2026-05-04 10:45:31.611] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:45:31.613] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService)'
+[2026-05-04 10:45:31.625] [INF] [UserId:Anonymous] Route matched with {action = "AddPassengersToBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddPassengersToBooking(Int32, System.Collections.Generic.List`1[BookingService.DTOs.CreatePassengerDto]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:45:31.687] [INF] [UserId:Anonymous] Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:45:31.771] [INF] [UserId:Anonymous] Executed DbCommand (23ms) [Parameters=[@__aadharCardNo_0='?' (Size = 12), @__scheduleId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Passengers] AS [p]
+        INNER JOIN [Bookings] AS [b] ON [p].[BookingId] = [b].[Id]
+        WHERE [p].[AadharCardNo] = @__aadharCardNo_0 AND [b].[ScheduleId] = @__scheduleId_1 AND [b].[Status] <> N'Cancelled' AND [b].[Status] <> N'PaymentFailed' AND [p].[Status] <> N'Cancelled') THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-05-04 10:45:31.910] [INF] [UserId:Anonymous] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 12), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 500), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p8='?' (Size = 20), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 100), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Passengers] ([AadharCardNo], [Age], [BookingId], [CancellationReason], [CancelledAt], [CreatedAt], [DietaryRequirements], [Fare], [Gender], [MedicalAlerts], [MedicalNeeds], [Name], [Nationality], [PassportNumber], [SeatNumber], [Status], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+[2026-05-04 10:45:31.945] [INF] [UserId:Anonymous] Executed DbCommand (12ms) [Parameters=[@p16='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Bookings] SET [BaggageWeight] = @p0, [CancelledPassengers] = @p1, [ConfirmedPassengers] = @p2, [CreatedAt] = @p3, [FlightId] = @p4, [PNR] = @p5, [PaymentStatus] = @p6, [ScheduleId] = @p7, [SeatClass] = @p8, [Status] = @p9, [TotalAmount] = @p10, [TotalPassengers] = @p11, [UpdatedAt] = @p12, [UserEmail] = @p13, [UserId] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+[2026-05-04 10:45:31.953] [INF] [UserId:Anonymous] Passenger 30 created for booking 39
+[2026-05-04 10:45:31.958] [INF] [UserId:Anonymous] Executing CreatedAtActionResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.DTOs.PassengerResponseDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:45:31.969] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService) in 340.3024ms
+[2026-05-04 10:45:31.978] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService)'
+[2026-05-04 10:45:31.981] [INF] [UserId:Anonymous] HTTP POST /api/bookings/39/passengers responded 201 in 370.3794 ms
+[2026-05-04 10:45:31.988] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings/39/passengers - 201 null application/json; charset=utf-8 383.2183ms
+[2026-05-04 10:45:32.162] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/39 - null null
+[2026-05-04 10:45:32.193] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:45:32.204] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:45:32.226] [INF] [UserId:Anonymous] Route matched with {action = "GetBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:45:32.267] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:45:32.280] [INF] [UserId:Anonymous] Retrieved booking 39
+[2026-05-04 10:45:32.291] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 10:45:32.298] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBooking (BookingService) in 44.5256ms
+[2026-05-04 10:45:32.360] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:45:32.367] [INF] [UserId:Anonymous] HTTP GET /api/bookings/39 responded 200 in 174.5012 ms
+[2026-05-04 10:45:32.374] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/39 - 200 null application/json; charset=utf-8 211.7736ms
+[2026-05-04 10:45:39.917] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/39 - null null
+[2026-05-04 10:45:39.929] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:45:39.932] [INF] [UserId:Anonymous] Route matched with {action = "GetBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:45:39.943] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:45:39.950] [INF] [UserId:Anonymous] Retrieved booking 39
+[2026-05-04 10:45:39.955] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 10:45:39.960] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBooking (BookingService) in 23.5764ms
+[2026-05-04 10:45:39.964] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:45:39.970] [INF] [UserId:Anonymous] HTTP GET /api/bookings/39 responded 200 in 41.1361 ms
+[2026-05-04 10:45:39.976] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/39 - 200 null application/json; charset=utf-8 58.7164ms
+[2026-05-04 10:46:07.618] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:46:07.629] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[@p16='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Bookings] SET [BaggageWeight] = @p0, [CancelledPassengers] = @p1, [ConfirmedPassengers] = @p2, [CreatedAt] = @p3, [FlightId] = @p4, [PNR] = @p5, [PaymentStatus] = @p6, [ScheduleId] = @p7, [SeatClass] = @p8, [Status] = @p9, [TotalAmount] = @p10, [TotalPassengers] = @p11, [UpdatedAt] = @p12, [UserEmail] = @p13, [UserId] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+[2026-05-04 10:46:07.633] [INF] [UserId:] Saga confirmed booking 39 successfully
+[2026-05-04 10:46:10.487] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:46:10.492] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:46:10.495] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:46:10.512] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:46:10.541] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:46:10.554] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:46:10.560] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:46:10.575] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 55.055ms
+[2026-05-04 10:46:10.579] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:46:10.583] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 90.4554 ms
+[2026-05-04 10:46:10.597] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 109.9319ms
+[2026-05-04 10:46:21.916] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:46:21.924] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:46:21.927] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:46:21.930] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:46:21.939] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:46:21.944] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:46:21.946] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:46:21.950] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 16.3331ms
+[2026-05-04 10:46:21.953] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:46:21.956] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 31.7828 ms
+[2026-05-04 10:46:21.960] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 44.6262ms
+[2026-05-04 10:48:24.323] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/39 - null null
+[2026-05-04 10:48:24.331] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:24.334] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:48:24.336] [INF] [UserId:Anonymous] Route matched with {action = "GetBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:24.348] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:24.352] [INF] [UserId:Anonymous] Retrieved booking 39
+[2026-05-04 10:48:24.354] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 10:48:24.357] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBooking (BookingService) in 16.2365ms
+[2026-05-04 10:48:24.361] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:48:24.363] [INF] [UserId:Anonymous] HTTP GET /api/bookings/39 responded 200 in 31.3293 ms
+[2026-05-04 10:48:24.366] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/39 - 200 null application/json; charset=utf-8 43.3319ms
+[2026-05-04 10:48:24.470] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/39/passengers - null null
+[2026-05-04 10:48:24.476] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:24.487] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService)'
+[2026-05-04 10:48:24.509] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingPassengers", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingPassengers(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:24.552] [INF] [UserId:Anonymous] Executed DbCommand (14ms) [Parameters=[@__bookingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Passengers] AS [p]
+WHERE [p].[BookingId] = @__bookingId_0
+[2026-05-04 10:48:24.570] [INF] [UserId:Anonymous] Retrieved 1 passengers for booking 39
+[2026-05-04 10:48:24.573] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.DTOs.PassengerResponseDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:48:24.578] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService) in 57.3551ms
+[2026-05-04 10:48:24.585] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService)'
+[2026-05-04 10:48:24.591] [INF] [UserId:Anonymous] HTTP GET /api/bookings/39/passengers responded 200 in 114.8625 ms
+[2026-05-04 10:48:24.604] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/39/passengers - 200 null application/json; charset=utf-8 134.2826ms
+[2026-05-04 10:48:28.943] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:48:28.955] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:28.959] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:48:28.962] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:28.971] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:48:28.977] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:48:28.980] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:48:28.983] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 16.9244ms
+[2026-05-04 10:48:28.989] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:48:28.992] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 36.6922 ms
+[2026-05-04 10:48:28.997] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 54.0049ms
+[2026-05-04 10:48:34.976] [INF] [UserId:] Request starting HTTP/1.1 DELETE http://localhost:5003/api/bookings/23 - null null
+[2026-05-04 10:48:34.982] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:34.984] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:34.998] [INF] [UserId:Anonymous] Route matched with {action = "DeleteBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:35.008] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:35.019] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:35.080] [INF] [UserId:Anonymous] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Passengers]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [Passengers]
+OUTPUT 1
+WHERE [Id] = @p1;
+DELETE FROM [Passengers]
+OUTPUT 1
+WHERE [Id] = @p2;
+DELETE FROM [Bookings]
+OUTPUT 1
+WHERE [Id] = @p3;
+[2026-05-04 10:48:35.117] [INF] [UserId:Anonymous] Booking 23 permanently deleted from database
+[2026-05-04 10:48:35.127] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:48:35.146] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.DeleteBooking (BookingService) in 145.5055ms
+[2026-05-04 10:48:35.164] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:35.173] [INF] [UserId:Anonymous] HTTP DELETE /api/bookings/23 responded 200 in 190.6811 ms
+[2026-05-04 10:48:35.180] [INF] [UserId:] Request finished HTTP/1.1 DELETE http://localhost:5003/api/bookings/23 - 200 null application/json; charset=utf-8 203.8931ms
+[2026-05-04 10:48:37.762] [INF] [UserId:] Request starting HTTP/1.1 DELETE http://localhost:5003/api/bookings/24 - null null
+[2026-05-04 10:48:37.778] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:37.784] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:37.790] [INF] [UserId:Anonymous] Route matched with {action = "DeleteBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:37.805] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:37.819] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:37.848] [INF] [UserId:Anonymous] Executed DbCommand (19ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Bookings]
+OUTPUT 1
+WHERE [Id] = @p0;
+[2026-05-04 10:48:37.860] [INF] [UserId:Anonymous] Booking 24 permanently deleted from database
+[2026-05-04 10:48:37.863] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:48:37.866] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.DeleteBooking (BookingService) in 68.3577ms
+[2026-05-04 10:48:37.868] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:37.873] [INF] [UserId:Anonymous] HTTP DELETE /api/bookings/24 responded 200 in 95.5522 ms
+[2026-05-04 10:48:37.878] [INF] [UserId:] Request finished HTTP/1.1 DELETE http://localhost:5003/api/bookings/24 - 200 null application/json; charset=utf-8 116.0451ms
+[2026-05-04 10:48:40.214] [INF] [UserId:] Request starting HTTP/1.1 DELETE http://localhost:5003/api/bookings/25 - null null
+[2026-05-04 10:48:40.219] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:40.223] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:40.230] [INF] [UserId:Anonymous] Route matched with {action = "DeleteBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:40.241] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:40.252] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:40.268] [INF] [UserId:Anonymous] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Bookings]
+OUTPUT 1
+WHERE [Id] = @p0;
+[2026-05-04 10:48:40.272] [INF] [UserId:Anonymous] Booking 25 permanently deleted from database
+[2026-05-04 10:48:40.275] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:48:40.277] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.DeleteBooking (BookingService) in 43.2985ms
+[2026-05-04 10:48:40.281] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:40.285] [INF] [UserId:Anonymous] HTTP DELETE /api/bookings/25 responded 200 in 66.0679 ms
+[2026-05-04 10:48:40.289] [INF] [UserId:] Request finished HTTP/1.1 DELETE http://localhost:5003/api/bookings/25 - 200 null application/json; charset=utf-8 74.7421ms
+[2026-05-04 10:48:43.150] [INF] [UserId:] Request starting HTTP/1.1 DELETE http://localhost:5003/api/bookings/38 - null null
+[2026-05-04 10:48:43.158] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:43.160] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:43.163] [INF] [UserId:Anonymous] Route matched with {action = "DeleteBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:43.176] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:43.187] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:43.200] [INF] [UserId:Anonymous] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Bookings]
+OUTPUT 1
+WHERE [Id] = @p0;
+[2026-05-04 10:48:43.204] [INF] [UserId:Anonymous] Booking 38 permanently deleted from database
+[2026-05-04 10:48:43.207] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 10:48:43.209] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.DeleteBooking (BookingService) in 38.8997ms
+[2026-05-04 10:48:43.213] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.DeleteBooking (BookingService)'
+[2026-05-04 10:48:43.217] [INF] [UserId:Anonymous] HTTP DELETE /api/bookings/38 responded 200 in 59.3190 ms
+[2026-05-04 10:48:43.220] [INF] [UserId:] Request finished HTTP/1.1 DELETE http://localhost:5003/api/bookings/38 - 200 null application/json; charset=utf-8 69.6417ms
+[2026-05-04 10:48:45.596] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/37 - null null
+[2026-05-04 10:48:45.605] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:45.610] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:48:45.617] [INF] [UserId:Anonymous] Route matched with {action = "GetBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:45.631] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:45.637] [INF] [UserId:Anonymous] Retrieved booking 37
+[2026-05-04 10:48:45.640] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 10:48:45.645] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBooking (BookingService) in 19.1693ms
+[2026-05-04 10:48:45.651] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:48:45.654] [INF] [UserId:Anonymous] HTTP GET /api/bookings/37 responded 200 in 48.4988 ms
+[2026-05-04 10:48:45.662] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/37 - 200 null application/json; charset=utf-8 65.7466ms
+[2026-05-04 10:48:45.744] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/37/passengers - null null
+[2026-05-04 10:48:45.749] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:45.751] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService)'
+[2026-05-04 10:48:45.754] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingPassengers", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingPassengers(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:45.762] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__bookingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Passengers] AS [p]
+WHERE [p].[BookingId] = @__bookingId_0
+[2026-05-04 10:48:45.767] [INF] [UserId:Anonymous] Retrieved 1 passengers for booking 37
+[2026-05-04 10:48:45.769] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.DTOs.PassengerResponseDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:48:45.773] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService) in 15.3772ms
+[2026-05-04 10:48:45.779] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService)'
+[2026-05-04 10:48:45.783] [INF] [UserId:Anonymous] HTTP GET /api/bookings/37/passengers responded 200 in 33.5793 ms
+[2026-05-04 10:48:45.787] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/37/passengers - 200 null application/json; charset=utf-8 42.3605ms
+[2026-05-04 10:48:49.699] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:48:49.711] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:49.715] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:48:49.720] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:49.733] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:48:49.749] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:48:49.753] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:48:49.758] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 32.2094ms
+[2026-05-04 10:48:49.764] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:48:49.766] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 54.8844 ms
+[2026-05-04 10:48:49.796] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 96.4553ms
+[2026-05-04 10:48:53.946] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/37 - null null
+[2026-05-04 10:48:53.952] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:53.955] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:48:53.957] [INF] [UserId:Anonymous] Route matched with {action = "GetBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:53.966] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 10:48:53.971] [INF] [UserId:Anonymous] Retrieved booking 37
+[2026-05-04 10:48:53.973] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 10:48:53.975] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBooking (BookingService) in 14.2194ms
+[2026-05-04 10:48:53.980] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 10:48:53.983] [INF] [UserId:Anonymous] HTTP GET /api/bookings/37 responded 200 in 31.2436 ms
+[2026-05-04 10:48:53.987] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/37 - 200 null application/json; charset=utf-8 40.3156ms
+[2026-05-04 10:48:54.087] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/37/passengers - null null
+[2026-05-04 10:48:54.100] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:54.102] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService)'
+[2026-05-04 10:48:54.104] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingPassengers", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingPassengers(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:54.112] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__bookingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Passengers] AS [p]
+WHERE [p].[BookingId] = @__bookingId_0
+[2026-05-04 10:48:54.117] [INF] [UserId:Anonymous] Retrieved 1 passengers for booking 37
+[2026-05-04 10:48:54.119] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.DTOs.PassengerResponseDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:48:54.121] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService) in 13.1688ms
+[2026-05-04 10:48:54.126] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingPassengers (BookingService)'
+[2026-05-04 10:48:54.128] [INF] [UserId:Anonymous] HTTP GET /api/bookings/37/passengers responded 200 in 28.2733 ms
+[2026-05-04 10:48:54.133] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/37/passengers - 200 null application/json; charset=utf-8 45.5473ms
+[2026-05-04 10:48:59.090] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:48:59.101] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:48:59.104] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:48:59.107] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:48:59.119] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:48:59.126] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:48:59.130] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:48:59.134] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 19.7329ms
+[2026-05-04 10:48:59.145] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:48:59.151] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 50.3766 ms
+[2026-05-04 10:48:59.155] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 65.1426ms
+[2026-05-04 10:53:53.613] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:53:53.746] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:53:53.765] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:53:53.799] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:53:53.812] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:53:53.819] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:53:53.821] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:53:53.824] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 19.0168ms
+[2026-05-04 10:53:53.832] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:53:53.834] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 89.1785 ms
+[2026-05-04 10:53:53.841] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 227.5248ms
+[2026-05-04 10:54:01.917] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-04 10:54:01.946] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 10:54:01.981] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:54:01.993] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 10:54:02.014] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-04 10:54:02.025] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-04 10:54:02.031] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 10:54:02.035] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 26.0537ms
+[2026-05-04 10:54:02.038] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-04 10:54:02.042] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 96.2164 ms
+[2026-05-04 10:54:02.046] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 129.0782ms
+[2026-05-04 11:00:35.502] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - null null
+[2026-05-04 11:00:35.513] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:00:35.515] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 11:00:35.519] [INF] [UserId:Anonymous] Route matched with {action = "GetOccupiedSeats", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOccupiedSeats(Int32, System.Nullable`1[System.Int32]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:00:35.731] [INF] [UserId:Anonymous] Executed DbCommand (38ms) [Parameters=[@__flightId_0='?' (DbType = Int32), @__scheduleId_Value_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[FlightId] = @__flightId_0 AND [b].[Status] <> N'Cancelled' AND [b].[ScheduleId] = @__scheduleId_Value_1
+ORDER BY [b].[Id]
+[2026-05-04 11:00:35.735] [INF] [UserId:Anonymous] Retrieved occupied seats for flight 6
+[2026-05-04 11:00:35.738] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 11:00:35.742] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService) in 218.9318ms
+[2026-05-04 11:00:35.746] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 11:00:35.749] [INF] [UserId:Anonymous] HTTP GET /api/bookings/occupied-seats responded 200 in 235.8767 ms
+[2026-05-04 11:00:35.754] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - 200 null application/json; charset=utf-8 251.9638ms
+[2026-05-04 11:03:08.376] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 190
+[2026-05-04 11:03:08.384] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:03:08.388] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 11:03:08.392] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:03:08.399] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 11:03:08.403] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 11:03:08.406] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 11:03:08.457] [INF] [UserId:Anonymous] Received HTTP response headers after 47.3257ms - 200
+[2026-05-04 11:03:08.461] [INF] [UserId:Anonymous] End processing HTTP request after 58.1314ms - 200
+[2026-05-04 11:03:08.487] [INF] [UserId:Anonymous] Executed DbCommand (18ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([BaggageWeight], [CancelledPassengers], [ConfirmedPassengers], [CreatedAt], [FlightId], [PNR], [PaymentStatus], [ScheduleId], [SeatClass], [Status], [TotalAmount], [TotalPassengers], [UpdatedAt], [UserEmail], [UserId], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+[2026-05-04 11:03:08.494] [INF] [UserId:Anonymous] Start processing HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 11:03:08.497] [INF] [UserId:Anonymous] Sending HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 11:03:08.570] [INF] [UserId:Anonymous] Received HTTP response headers after 69.1711ms - 200
+[2026-05-04 11:03:08.574] [INF] [UserId:Anonymous] End processing HTTP request after 80.493ms - 200
+[2026-05-04 11:03:08.581] [INF] [UserId:Anonymous] Booking 40 created with PNR: ODFIPY
+[2026-05-04 11:03:08.642] [INF] [UserId:Anonymous] Executing CreatedAtActionResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 11:03:08.646] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 248.2497ms
+[2026-05-04 11:03:08.649] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 11:03:08.651] [INF] [UserId:Anonymous] HTTP POST /api/bookings responded 201 in 267.4383 ms
+[2026-05-04 11:03:08.655] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 201 null application/json; charset=utf-8 278.6237ms
+[2026-05-04 11:03:08.702] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings/40/passengers - application/json 258
+[2026-05-04 11:03:08.708] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:03:08.710] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService)'
+[2026-05-04 11:03:08.712] [INF] [UserId:Anonymous] Route matched with {action = "AddPassengersToBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddPassengersToBooking(Int32, System.Collections.Generic.List`1[BookingService.DTOs.CreatePassengerDto]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:03:08.726] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 11:03:08.739] [INF] [UserId:Anonymous] Executed DbCommand (8ms) [Parameters=[@__aadharCardNo_0='?' (Size = 12), @__scheduleId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Passengers] AS [p]
+        INNER JOIN [Bookings] AS [b] ON [p].[BookingId] = [b].[Id]
+        WHERE [p].[AadharCardNo] = @__aadharCardNo_0 AND [b].[ScheduleId] = @__scheduleId_1 AND [b].[Status] <> N'Cancelled' AND [b].[Status] <> N'PaymentFailed' AND [p].[Status] <> N'Cancelled') THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-05-04 11:03:08.755] [INF] [UserId:Anonymous] Executed DbCommand (11ms) [Parameters=[@p0='?' (Size = 12), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 500), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p8='?' (Size = 20), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 100), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Passengers] ([AadharCardNo], [Age], [BookingId], [CancellationReason], [CancelledAt], [CreatedAt], [DietaryRequirements], [Fare], [Gender], [MedicalAlerts], [MedicalNeeds], [Name], [Nationality], [PassportNumber], [SeatNumber], [Status], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+[2026-05-04 11:03:08.778] [INF] [UserId:Anonymous] Executed DbCommand (16ms) [Parameters=[@p16='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Bookings] SET [BaggageWeight] = @p0, [CancelledPassengers] = @p1, [ConfirmedPassengers] = @p2, [CreatedAt] = @p3, [FlightId] = @p4, [PNR] = @p5, [PaymentStatus] = @p6, [ScheduleId] = @p7, [SeatClass] = @p8, [Status] = @p9, [TotalAmount] = @p10, [TotalPassengers] = @p11, [UpdatedAt] = @p12, [UserEmail] = @p13, [UserId] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+[2026-05-04 11:03:08.784] [INF] [UserId:Anonymous] Passenger 31 created for booking 40
+[2026-05-04 11:03:08.789] [INF] [UserId:Anonymous] Executing CreatedAtActionResult, writing value of type 'System.Collections.Generic.List`1[[BookingService.DTOs.PassengerResponseDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-04 11:03:08.796] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService) in 79.5911ms
+[2026-05-04 11:03:08.802] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService)'
+[2026-05-04 11:03:08.804] [INF] [UserId:Anonymous] HTTP POST /api/bookings/40/passengers responded 201 in 95.6118 ms
+[2026-05-04 11:03:08.813] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings/40/passengers - 201 null application/json; charset=utf-8 110.4103ms
+[2026-05-04 11:03:08.940] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/40 - null null
+[2026-05-04 11:03:08.952] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:03:08.955] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 11:03:08.958] [INF] [UserId:Anonymous] Route matched with {action = "GetBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:03:08.968] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 11:03:08.974] [INF] [UserId:Anonymous] Retrieved booking 40
+[2026-05-04 11:03:08.976] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 11:03:08.979] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBooking (BookingService) in 18.0076ms
+[2026-05-04 11:03:08.985] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 11:03:08.987] [INF] [UserId:Anonymous] HTTP GET /api/bookings/40 responded 200 in 34.7816 ms
+[2026-05-04 11:03:08.995] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/40 - 200 null application/json; charset=utf-8 55.0385ms
+[2026-05-04 11:06:51.032] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/40 - null null
+[2026-05-04 11:06:51.038] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 11:06:51.041] [INF] [UserId:Anonymous] Route matched with {action = "GetBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooking(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:06:51.050] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 11:06:51.054] [INF] [UserId:Anonymous] Retrieved booking 40
+[2026-05-04 11:06:51.056] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 11:06:51.058] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBooking (BookingService) in 13.7896ms
+[2026-05-04 11:06:51.061] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBooking (BookingService)'
+[2026-05-04 11:06:51.063] [INF] [UserId:Anonymous] HTTP GET /api/bookings/40 responded 200 in 25.6335 ms
+[2026-05-04 11:06:51.068] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/40 - 200 null application/json; charset=utf-8 35.2738ms
+[2026-05-04 11:07:20.917] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 11:07:20.934] [INF] [UserId:] Executed DbCommand (9ms) [Parameters=[@p16='?' (DbType = Int32), @p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Bookings] SET [BaggageWeight] = @p0, [CancelledPassengers] = @p1, [ConfirmedPassengers] = @p2, [CreatedAt] = @p3, [FlightId] = @p4, [PNR] = @p5, [PaymentStatus] = @p6, [ScheduleId] = @p7, [SeatClass] = @p8, [Status] = @p9, [TotalAmount] = @p10, [TotalPassengers] = @p11, [UpdatedAt] = @p12, [UserEmail] = @p13, [UserId] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16;
+[2026-05-04 11:07:20.941] [INF] [UserId:] Saga confirmed booking 40 successfully
+[2026-05-04 11:07:30.585] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - null null
+[2026-05-04 11:07:30.589] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:07:30.591] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 11:07:30.593] [INF] [UserId:Anonymous] Route matched with {action = "GetOccupiedSeats", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOccupiedSeats(Int32, System.Nullable`1[System.Int32]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:07:30.605] [INF] [UserId:Anonymous] Executed DbCommand (8ms) [Parameters=[@__flightId_0='?' (DbType = Int32), @__scheduleId_Value_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[FlightId] = @__flightId_0 AND [b].[Status] <> N'Cancelled' AND [b].[ScheduleId] = @__scheduleId_Value_1
+ORDER BY [b].[Id]
+[2026-05-04 11:07:30.610] [INF] [UserId:Anonymous] Retrieved occupied seats for flight 6
+[2026-05-04 11:07:30.612] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 11:07:30.614] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService) in 18.3631ms
+[2026-05-04 11:07:30.616] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 11:07:30.618] [INF] [UserId:Anonymous] HTTP GET /api/bookings/occupied-seats responded 200 in 29.1442 ms
+[2026-05-04 11:07:30.621] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - 200 null application/json; charset=utf-8 35.5673ms
+[2026-05-04 11:07:47.041] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings - application/json 187
+[2026-05-04 11:07:47.046] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:07:47.049] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 11:07:47.053] [INF] [UserId:Anonymous] Route matched with {action = "CreateBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateBooking(BookingService.DTOs.CreateBookingDto) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:07:47.057] [INF] [UserId:Anonymous] Starting booking creation for User 5, Flight 6, Schedule 98
+[2026-05-04 11:07:47.059] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 11:07:47.062] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights/schedules/98
+[2026-05-04 11:07:47.092] [INF] [UserId:Anonymous] Received HTTP response headers after 28.082ms - 200
+[2026-05-04 11:07:47.095] [INF] [UserId:Anonymous] End processing HTTP request after 35.9225ms - 200
+[2026-05-04 11:07:47.116] [INF] [UserId:Anonymous] Executed DbCommand (11ms) [Parameters=[@p0='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 4000), @p14='?' (DbType = Int32), @p15='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Bookings] ([BaggageWeight], [CancelledPassengers], [ConfirmedPassengers], [CreatedAt], [FlightId], [PNR], [PaymentStatus], [ScheduleId], [SeatClass], [Status], [TotalAmount], [TotalPassengers], [UpdatedAt], [UserEmail], [UserId], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+[2026-05-04 11:07:47.123] [INF] [UserId:Anonymous] Start processing HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 11:07:47.126] [INF] [UserId:Anonymous] Sending HTTP request POST http://localhost:5002/api/flights/schedules/98/book-seat
+[2026-05-04 11:07:47.166] [INF] [UserId:Anonymous] Received HTTP response headers after 37.9945ms - 200
+[2026-05-04 11:07:47.168] [INF] [UserId:Anonymous] End processing HTTP request after 45.0225ms - 200
+[2026-05-04 11:07:47.173] [INF] [UserId:Anonymous] Booking 41 created with PNR: BIDIRN
+[2026-05-04 11:07:47.230] [INF] [UserId:Anonymous] Executing CreatedAtActionResult, writing value of type 'BookingService.DTOs.BookingDto'.
+[2026-05-04 11:07:47.238] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.CreateBooking (BookingService) in 181.351ms
+[2026-05-04 11:07:47.250] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.CreateBooking (BookingService)'
+[2026-05-04 11:07:47.253] [INF] [UserId:Anonymous] HTTP POST /api/bookings responded 201 in 206.8675 ms
+[2026-05-04 11:07:47.257] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings - 201 null application/json; charset=utf-8 216.0117ms
+[2026-05-04 11:07:47.300] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5003/api/bookings/41/passengers - application/json 258
+[2026-05-04 11:07:47.305] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:07:47.307] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService)'
+[2026-05-04 11:07:47.309] [INF] [UserId:Anonymous] Route matched with {action = "AddPassengersToBooking", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddPassengersToBooking(Int32, System.Collections.Generic.List`1[BookingService.DTOs.CreatePassengerDto]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:07:47.318] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b0].[Id], [b0].[BaggageWeight], [b0].[CancelledPassengers], [b0].[ConfirmedPassengers], [b0].[CreatedAt], [b0].[FlightId], [b0].[PNR], [b0].[PaymentStatus], [b0].[ScheduleId], [b0].[SeatClass], [b0].[Status], [b0].[TotalAmount], [b0].[TotalPassengers], [b0].[UpdatedAt], [b0].[UserEmail], [b0].[UserId], [b0].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+    FROM [Bookings] AS [b]
+    WHERE [b].[Id] = @__id_0
+) AS [b0]
+LEFT JOIN [Passengers] AS [p] ON [b0].[Id] = [p].[BookingId]
+ORDER BY [b0].[Id]
+[2026-05-04 11:07:47.334] [INF] [UserId:Anonymous] Executed DbCommand (12ms) [Parameters=[@__aadharCardNo_0='?' (Size = 12), @__scheduleId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Passengers] AS [p]
+        INNER JOIN [Bookings] AS [b] ON [p].[BookingId] = [b].[Id]
+        WHERE [p].[AadharCardNo] = @__aadharCardNo_0 AND [b].[ScheduleId] = @__scheduleId_1 AND [b].[Status] <> N'Cancelled' AND [b].[Status] <> N'PaymentFailed' AND [p].[Status] <> N'Cancelled') THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-05-04 11:07:47.341] [WRN] [UserId:Anonymous] Validation error: Validation failed for 'AadharCardNo': This Aadhar card number is already registered for this flight/schedule
+[2026-05-04 11:07:47.343] [INF] [UserId:Anonymous] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType8`3[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 11:07:47.348] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService) in 35.2308ms
+[2026-05-04 11:07:47.350] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.AddPassengersToBooking (BookingService)'
+[2026-05-04 11:07:47.353] [INF] [UserId:Anonymous] HTTP POST /api/bookings/41/passengers responded 400 in 48.6927 ms
+[2026-05-04 11:07:47.357] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5003/api/bookings/41/passengers - 400 null application/json; charset=utf-8 57.3487ms
+[2026-05-04 11:08:22.014] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - null null
+[2026-05-04 11:08:22.018] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-04 11:08:22.020] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 11:08:22.023] [INF] [UserId:Anonymous] Route matched with {action = "GetOccupiedSeats", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOccupiedSeats(Int32, System.Nullable`1[System.Int32]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-04 11:08:22.030] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__flightId_0='?' (DbType = Int32), @__scheduleId_Value_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[FlightId] = @__flightId_0 AND [b].[Status] <> N'Cancelled' AND [b].[ScheduleId] = @__scheduleId_Value_1
+ORDER BY [b].[Id]
+[2026-05-04 11:08:22.034] [INF] [UserId:Anonymous] Retrieved occupied seats for flight 6
+[2026-05-04 11:08:22.036] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-04 11:08:22.040] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService) in 14.3981ms
+[2026-05-04 11:08:22.043] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-04 11:08:22.045] [INF] [UserId:Anonymous] HTTP GET /api/bookings/occupied-seats responded 200 in 26.5117 ms
+[2026-05-04 11:08:22.048] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=98 - 200 null application/json; charset=utf-8 33.4833ms

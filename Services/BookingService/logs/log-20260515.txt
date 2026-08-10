@@ -1,0 +1,307 @@
+[2026-05-15 09:07:43.912] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 09:07:43.960] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 09:07:43.963] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 09:07:49.206] [INF] [UserId:] Executed DbCommand (226ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 09:07:49.228] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-15 09:07:49.339] [INF] [UserId:] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-15 09:07:49.497] [INF] [UserId:] Executed DbCommand (76ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-15 09:07:49.604] [INF] [UserId:] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 09:07:49.664] [INF] [UserId:] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-15 09:07:49.733] [INF] [UserId:] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-15 09:07:49.751] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-15 09:07:49.841] [INF] [UserId:] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-15 09:07:50.303] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-15 09:07:50.406] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-15 09:07:50.419] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-15 09:07:50.420] [INF] [UserId:] Hosting environment: Development
+[2026-05-15 09:07:50.422] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-15 09:29:26.748] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-15 09:29:27.144] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-15 09:29:27.271] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 09:29:32.866] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 09:29:32.905] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 09:29:34.041] [INF] [UserId:Anonymous] Executed DbCommand (165ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-15 09:29:34.256] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-15 09:29:34.268] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 09:29:34.352] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 1433.0674ms
+[2026-05-15 09:29:34.359] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 09:29:34.371] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 7344.8424 ms
+[2026-05-15 09:29:34.392] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 7665.4874ms
+[2026-05-15 09:30:06.633] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-05-15 09:30:06.647] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 09:30:06.669] [INF] [UserId:Anonymous] Route matched with {action = "GetBookings", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookings() on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 09:30:06.883] [INF] [UserId:Anonymous] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+[2026-05-15 09:30:06.894] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 09:30:06.936] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookings (BookingService) in 261.703ms
+[2026-05-15 09:30:06.942] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 09:30:06.946] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 200 in 304.2795 ms
+[2026-05-15 09:30:06.954] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 200 null application/json; charset=utf-8 321.0005ms
+[2026-05-15 10:11:38.952] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=99 - null null
+[2026-05-15 10:11:38.968] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 10:11:38.982] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-15 10:11:38.998] [INF] [UserId:Anonymous] Route matched with {action = "GetOccupiedSeats", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetOccupiedSeats(Int32, System.Nullable`1[System.Int32]) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 10:11:39.560] [INF] [UserId:Anonymous] Executed DbCommand (66ms) [Parameters=[@__flightId_0='?' (DbType = Int32), @__scheduleId_Value_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName], [p].[Id], [p].[AadharCardNo], [p].[Age], [p].[BookingId], [p].[CancellationReason], [p].[CancelledAt], [p].[CreatedAt], [p].[DietaryRequirements], [p].[Fare], [p].[Gender], [p].[MedicalAlerts], [p].[MedicalNeeds], [p].[Name], [p].[Nationality], [p].[PassportNumber], [p].[SeatNumber], [p].[Status], [p].[UpdatedAt]
+FROM [Bookings] AS [b]
+LEFT JOIN [Passengers] AS [p] ON [b].[Id] = [p].[BookingId]
+WHERE [b].[FlightId] = @__flightId_0 AND [b].[Status] <> N'Cancelled' AND [b].[ScheduleId] = @__scheduleId_Value_1
+ORDER BY [b].[Id]
+[2026-05-15 10:11:39.568] [INF] [UserId:Anonymous] Retrieved occupied seats for flight 6
+[2026-05-15 10:11:39.571] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-05-15 10:11:39.575] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService) in 572.1328ms
+[2026-05-15 10:11:39.578] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetOccupiedSeats (BookingService)'
+[2026-05-15 10:11:39.582] [INF] [UserId:Anonymous] HTTP GET /api/bookings/occupied-seats responded 200 in 617.5592 ms
+[2026-05-15 10:11:39.588] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/occupied-seats?flightId=6&scheduleId=99 - 200 null application/json; charset=utf-8 636.2197ms
+[2026-05-15 12:17:35.604] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 12:17:35.654] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 12:17:35.656] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 12:17:38.037] [INF] [UserId:] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 12:17:38.060] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-15 12:17:38.815] [INF] [UserId:] Executed DbCommand (723ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-15 12:17:40.076] [INF] [UserId:] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-15 12:17:40.157] [INF] [UserId:] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 12:17:40.189] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-15 12:17:40.333] [INF] [UserId:] Executed DbCommand (137ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-15 12:17:40.354] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-15 12:17:40.433] [INF] [UserId:] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-15 12:17:44.905] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-15 12:17:49.307] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-15 12:17:51.764] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-15 12:17:52.664] [INF] [UserId:] Hosting environment: Development
+[2026-05-15 12:17:53.825] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-15 12:20:10.001] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-15 12:20:10.124] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-15 12:20:10.139] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 12:20:15.797] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 12:20:15.951] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 12:20:17.402] [INF] [UserId:Anonymous] Executed DbCommand (195ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-15 12:20:17.668] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-15 12:20:17.703] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 12:20:17.846] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 1693.6243ms
+[2026-05-15 12:20:17.874] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 12:20:17.888] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 7818.0014 ms
+[2026-05-15 12:20:17.916] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 7919.0635ms
+[2026-05-15 12:20:25.370] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-05-15 12:20:25.477] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 12:20:25.519] [INF] [UserId:Anonymous] Route matched with {action = "GetBookings", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookings() on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 12:20:25.701] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+[2026-05-15 12:20:25.719] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 12:20:25.771] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookings (BookingService) in 245.67ms
+[2026-05-15 12:20:25.781] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 12:20:25.787] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 200 in 317.9097 ms
+[2026-05-15 12:20:25.795] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 200 null application/json; charset=utf-8 425.0057ms
+[2026-05-15 12:28:13.646] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-15 12:28:13.656] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 12:28:13.673] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 12:28:13.676] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 12:28:13.958] [INF] [UserId:Anonymous] Executed DbCommand (26ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-15 12:28:13.965] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-15 12:28:13.968] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 12:28:13.973] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 290.4435ms
+[2026-05-15 12:28:13.978] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 12:28:13.981] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 327.4824 ms
+[2026-05-15 12:28:13.987] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 341.0022ms
+[2026-05-15 13:42:30.550] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 13:42:30.615] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 13:42:30.619] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 13:42:33.355] [INF] [UserId:] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 13:42:33.378] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-15 13:42:33.457] [INF] [UserId:] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-15 13:42:33.612] [INF] [UserId:] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-15 13:42:33.732] [INF] [UserId:] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 13:42:33.769] [INF] [UserId:] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-15 13:42:33.836] [INF] [UserId:] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-15 13:42:33.853] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-15 13:42:33.955] [INF] [UserId:] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-15 13:42:34.570] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-15 13:42:34.697] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-15 13:42:34.701] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-15 13:42:34.702] [INF] [UserId:] Hosting environment: Development
+[2026-05-15 13:42:34.705] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-15 13:47:51.240] [WRN] [UserId:] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 13:47:51.437] [WRN] [UserId:] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 13:47:51.469] [WRN] [UserId:] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+[2026-05-15 13:47:52.570] [INF] [UserId:] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 13:47:52.606] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-15 13:47:52.724] [INF] [UserId:] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-15 13:47:52.863] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-15 13:47:53.011] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-15 13:47:53.048] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-15 13:47:53.105] [INF] [UserId:] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-15 13:47:53.131] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-15 13:47:53.178] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-15 13:47:53.532] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-15 13:47:53.708] [INF] [UserId:] Now listening on: http://localhost:5003
+[2026-05-15 13:47:53.748] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-15 13:47:53.767] [INF] [UserId:] Hosting environment: Development
+[2026-05-15 13:47:53.781] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\BookingService
+[2026-05-15 13:48:55.215] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-15 13:48:55.298] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-15 13:48:55.310] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 13:48:58.452] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 13:48:58.492] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 13:48:59.321] [INF] [UserId:Anonymous] Executed DbCommand (176ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-15 13:48:59.542] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-15 13:48:59.552] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 13:48:59.625] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 1123.1178ms
+[2026-05-15 13:48:59.631] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 13:48:59.639] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 4375.1831 ms
+[2026-05-15 13:48:59.655] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 4443.058ms
+[2026-05-15 13:49:13.205] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-05-15 13:49:13.250] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 13:49:13.279] [INF] [UserId:Anonymous] Route matched with {action = "GetBookings", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookings() on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 13:49:13.484] [INF] [UserId:Anonymous] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+[2026-05-15 13:49:13.643] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 13:49:13.761] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookings (BookingService) in 471.1183ms
+[2026-05-15 13:49:13.803] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 13:49:13.810] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 200 in 567.5656 ms
+[2026-05-15 13:49:13.825] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 200 null application/json; charset=utf-8 619.7151ms
+[2026-05-15 14:10:06.290] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-15 14:10:06.299] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 14:10:06.311] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 14:10:06.314] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 14:10:06.578] [INF] [UserId:Anonymous] Executed DbCommand (34ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-15 14:10:06.584] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-15 14:10:06.587] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 14:10:06.590] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 271.0613ms
+[2026-05-15 14:10:06.596] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 14:10:06.598] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 301.0835 ms
+[2026-05-15 14:10:06.602] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 312.0601ms
+[2026-05-15 14:10:38.575] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-05-15 14:10:38.583] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 14:10:38.590] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 14:10:38.594] [INF] [UserId:Anonymous] Route matched with {action = "GetBookings", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookings() on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 14:10:38.615] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+[2026-05-15 14:10:38.658] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 14:10:38.677] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookings (BookingService) in 70.8336ms
+[2026-05-15 14:10:38.687] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 14:10:38.699] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 200 in 115.4010 ms
+[2026-05-15 14:10:38.712] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 200 null application/json; charset=utf-8 136.9365ms
+[2026-05-15 14:21:35.039] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - null null
+[2026-05-15 14:21:35.056] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-15 14:21:35.065] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 14:21:35.070] [INF] [UserId:Anonymous] Route matched with {action = "GetBookingHistory", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingHistory(Int32) on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 14:21:35.266] [INF] [UserId:Anonymous] Executed DbCommand (20ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+WHERE [b].[UserId] = @__userId_0
+[2026-05-15 14:21:35.278] [INF] [UserId:Anonymous] Retrieved booking history for user 5
+[2026-05-15 14:21:35.285] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingHistoryDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 14:21:35.291] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookingHistory (BookingService) in 215.1316ms
+[2026-05-15 14:21:35.295] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookingHistory (BookingService)'
+[2026-05-15 14:21:35.298] [INF] [UserId:Anonymous] HTTP GET /api/bookings/history/5 responded 200 in 241.9467 ms
+[2026-05-15 14:21:35.305] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings/history/5 - 200 null application/json; charset=utf-8 265.1996ms
+[2026-05-15 14:22:45.099] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+[2026-05-15 14:22:45.110] [INF] [UserId:Anonymous] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 14:22:45.118] [INF] [UserId:Anonymous] Route matched with {action = "GetBookings", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookings() on controller BookingService.Controllers.BookingsController (BookingService).
+[2026-05-15 14:22:45.142] [INF] [UserId:Anonymous] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+[2026-05-15 14:22:45.160] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[BookingService.Models.Booking, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[BookingService.DTOs.BookingDto, BookingService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-05-15 14:22:45.173] [INF] [UserId:Anonymous] Executed action BookingService.Controllers.BookingsController.GetBookings (BookingService) in 44.5337ms
+[2026-05-15 14:22:45.180] [INF] [UserId:Anonymous] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+[2026-05-15 14:22:45.183] [INF] [UserId:Anonymous] HTTP GET /api/bookings responded 200 in 73.7757 ms
+[2026-05-15 14:22:45.188] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 200 null application/json; charset=utf-8 88.7867ms

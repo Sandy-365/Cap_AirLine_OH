@@ -1,0 +1,566 @@
+[2026-04-10 12:06:50.969] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-10 12:06:52.434] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-04-10 12:06:52.989] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-10 12:06:53.474] [INF] [UserId:] Hosting environment: Development
+[2026-04-10 12:06:54.024] [INF] [UserId:] Content root path: D:\AryanProject\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-04-10 12:06:57.842] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+[2026-04-10 12:06:59.519] [INF] [UserId:Anonymous] HTTP GET /swagger responded 301 in 80.5594 ms
+[2026-04-10 12:07:00.912] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 3088.1525ms
+[2026-04-10 12:07:02.458] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+[2026-04-10 12:07:04.170] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 490.1877 ms
+[2026-04-10 12:07:05.078] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 2620.5008ms
+[2026-04-10 12:07:18.946] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+[2026-04-10 12:07:18.956] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+[2026-04-10 12:07:18.957] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+[2026-04-10 12:07:18.958] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+[2026-04-10 12:07:18.961] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+[2026-04-10 12:07:19.094] [INF] [UserId:Anonymous] HTTP GET /swagger/index.css responded 200 in 99.5330 ms
+[2026-04-10 12:07:19.094] [INF] [UserId:Anonymous] HTTP GET /swagger/swagger-ui.css responded 200 in 109.9391 ms
+[2026-04-10 12:07:19.128] [INF] [UserId:Anonymous] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 121.1167 ms
+[2026-04-10 12:07:19.130] [INF] [UserId:Anonymous] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 130.5666 ms
+[2026-04-10 12:07:19.147] [INF] [UserId:Anonymous] HTTP GET /swagger/index.js responded 200 in 0.8286 ms
+[2026-04-10 12:07:19.152] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 196.9711ms
+[2026-04-10 12:07:19.155] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 208.7624ms
+[2026-04-10 12:07:19.160] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 202.4706ms
+[2026-04-10 12:07:19.163] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 206.0113ms
+[2026-04-10 12:07:19.167] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 206.1185ms
+[2026-04-10 12:07:20.144] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/identity - null null
+[2026-04-10 12:07:20.229] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+[2026-04-10 12:07:20.237] [INF] [UserId:Anonymous] HTTP GET /swagger/favicon-32x32.png responded 200 in 1.7489 ms
+[2026-04-10 12:07:20.242] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 12.8295ms
+[2026-04-10 12:07:20.243] [INF] [UserId:Anonymous] Start processing HTTP request GET http://identity-service:5001/swagger/v1/swagger.json
+[2026-04-10 12:07:20.255] [INF] [UserId:Anonymous] Sending HTTP request GET http://identity-service:5001/swagger/v1/swagger.json
+[2026-04-10 12:07:21.650] [INF] [UserId:Anonymous] HTTP request failed after 1386.8166ms
+System.Net.Http.HttpRequestException: No such host is known. (identity-service:5001)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+[2026-04-10 12:07:21.666] [INF] [UserId:Anonymous] HTTP request failed after 1429.1297ms
+System.Net.Http.HttpRequestException: No such host is known. (identity-service:5001)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+[2026-04-10 12:07:21.708] [ERR] [UserId:Anonymous] HTTP GET /swagger/docs/v1/identity responded 500 in 1559.0007 ms
+System.Net.Http.HttpRequestException: No such host is known. (identity-service:5001)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+[2026-04-10 12:07:21.731] [ERR] [UserId:] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: No such host is known. (identity-service:5001)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Program.<>c.<<<Main>$>b__0_2>d.MoveNext() in D:\AryanProject\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway\Program.cs:line 83
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-04-10 12:07:21.772] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/identity - 500 null text/plain; charset=utf-8 1628.2754ms
+[2026-04-10 12:21:06.136] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-10 12:21:06.930] [INF] [UserId:] Now listening on: http://localhost:5000
+[2026-04-10 12:21:07.449] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-10 12:21:07.904] [INF] [UserId:] Hosting environment: Development
+[2026-04-10 12:21:08.718] [INF] [UserId:] Content root path: D:\AryanProject\AirlineManagementSystem-main\AirlineManagementSystem\ApiGateway
+[2026-04-10 12:21:22.185] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+[2026-04-10 12:21:26.195] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 1062.8656 ms
+[2026-04-10 12:21:28.131] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 5944.5668ms
+[2026-04-10 12:21:58.012] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+[2026-04-10 12:21:58.045] [INF] [UserId:Anonymous] HTTP GET /swagger/index.html responded 200 in 3.6471 ms
+[2026-04-10 12:21:58.079] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 68.1783ms
+[2026-04-10 12:21:58.313] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/identity - null null
+[2026-04-10 12:21:58.500] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5001/swagger/v1/swagger.json
+[2026-04-10 12:21:58.526] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5001/swagger/v1/swagger.json
+[2026-04-10 12:21:59.395] [INF] [UserId:Anonymous] Received HTTP response headers after 662.3705ms - 200
+[2026-04-10 12:21:59.400] [INF] [UserId:Anonymous] End processing HTTP request after 909.7034ms - 200
+[2026-04-10 12:21:59.617] [INF] [UserId:Anonymous] HTTP GET /swagger/docs/v1/identity responded 200 in 1298.3773 ms
+[2026-04-10 12:21:59.623] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/identity - 200 null null 1310.1428ms
+[2026-04-10 12:22:38.957] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/register - null null
+[2026-04-10 12:22:38.976] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:22:38.986] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/register responded 204 in 15.7891 ms
+[2026-04-10 12:22:38.994] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/register - 204 null null 36.3819ms
+[2026-04-10 12:22:39.010] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/register - application/json 92
+[2026-04-10 12:22:39.030] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:22:43.133] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V3:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:22:43.141] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V3:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/register' in the route /identity/{everything}.
+[2026-04-10 12:22:44.510] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V3:00000002, PreviousRequestId: -
+102 unknown status code of request URI: 
+[2026-04-10 12:22:44.526] [WRN] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V3:00000002, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+ConnectionToDownstreamServiceError: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: No such host is known. (identity-service:5001)
+ ---> System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.TimeoutDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.MessageInvokerHttpRequester.GetResponse(HttpContext httpContext)
+Setting error response for request: POST /identity/register
+[2026-04-10 12:22:44.537] [ERR] [UserId:Anonymous] HTTP POST /identity/register responded 502 in 5508.3076 ms
+[2026-04-10 12:22:44.544] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/register - 502 0 null 5534.1496ms
+[2026-04-10 12:31:23.373] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/register - null null
+[2026-04-10 12:31:23.376] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:23.376] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/register responded 204 in 0.5047 ms
+[2026-04-10 12:31:23.377] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/register - 204 null null 3.6202ms
+[2026-04-10 12:31:23.380] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/register - application/json 92
+[2026-04-10 12:31:23.381] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:23.446] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:31:23.447] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/register' in the route /identity/{everything}.
+[2026-04-10 12:31:29.474] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5001/api/auth/register
+[2026-04-10 12:31:29.487] [INF] [UserId:Anonymous] HTTP POST /identity/register responded 200 in 6106.1372 ms
+[2026-04-10 12:31:29.487] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/register - 200 null application/json; charset=utf-8 6107.2953ms
+[2026-04-10 12:31:29.489] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/register, Response status code: 200
+[2026-04-10 12:31:50.726] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/register-verify - null null
+[2026-04-10 12:31:50.727] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:50.728] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/register-verify responded 204 in 0.7732 ms
+[2026-04-10 12:31:50.729] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/register-verify - 204 null null 2.7997ms
+[2026-04-10 12:31:50.734] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/register-verify - application/json 54
+[2026-04-10 12:31:50.735] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:50.750] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:31:50.750] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/register-verify' in the route /identity/{everything}.
+[2026-04-10 12:31:51.122] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5001/api/auth/register-verify
+[2026-04-10 12:31:51.123] [INF] [UserId:Anonymous] HTTP POST /identity/register-verify responded 200 in 388.6644 ms
+[2026-04-10 12:31:51.124] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/register-verify - 200 null application/json; charset=utf-8 390.2111ms
+[2026-04-10 12:31:51.124] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/register-verify, Response status code: 200
+[2026-04-10 12:31:51.241] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/bookings/history/1 - null null
+[2026-04-10 12:31:51.241] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.242] [INF] [UserId:Anonymous] HTTP OPTIONS /bookings/history/1 responded 204 in 0.2570 ms
+[2026-04-10 12:31:51.242] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/bookings/history/1 - 204 null null 0.7974ms
+[2026-04-10 12:31:51.245] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/reward/1/balance - null null
+[2026-04-10 12:31:51.246] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.246] [INF] [UserId:Anonymous] HTTP OPTIONS /reward/1/balance responded 204 in 0.2141 ms
+[2026-04-10 12:31:51.246] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/reward/1/balance - 204 null null 0.6922ms
+[2026-04-10 12:31:51.247] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:31:51.247] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.247] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/1 responded 204 in 0.3120 ms
+[2026-04-10 12:31:51.248] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - 204 null null 0.9346ms
+[2026-04-10 12:31:51.248] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:31:51.249] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.249] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/1 responded 204 in 0.3237 ms
+[2026-04-10 12:31:51.249] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - 204 null null 1.0137ms
+[2026-04-10 12:31:51.251] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:31:51.251] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/bookings/history/1 - null null
+[2026-04-10 12:31:51.251] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.252] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.252] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/user/1 responded 204 in 0.4489 ms
+[2026-04-10 12:31:51.252] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - 204 null null 1.3435ms
+[2026-04-10 12:31:51.255] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:31:51.255] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/reward/1/balance - null null
+[2026-04-10 12:31:51.255] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.255] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.256] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:31:51.256] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.258] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:31:51.258] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:31:51.415] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V8:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:31:51.415] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V7:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:31:51.415] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:31:51.415] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:31:51.415] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V8:00000001, PreviousRequestId: -
+No authentication is required for the path '/identity/user/1' in the route /identity/{everything}.
+[2026-04-10 12:31:51.416] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000008, PreviousRequestId: -
+No authentication is required for the path '/notification/user/1' in the route /notification/{everything}.
+[2026-04-10 12:31:51.415] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/reward/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:31:51.416] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000002, PreviousRequestId: -
+No authentication is required for the path '/bookings/history/1' in the route /bookings/{everything}.
+[2026-04-10 12:31:51.416] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V7:00000001, PreviousRequestId: -
+No authentication is required for the path '/notification/user/1' in the route /notification/{everything}.
+[2026-04-10 12:31:51.416] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000002, PreviousRequestId: -
+No authentication is required for the path '/reward/1/balance' in the route /reward/{everything}.
+[2026-04-10 12:31:51.670] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V8:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5001/api/auth/user/1
+[2026-04-10 12:31:51.670] [INF] [UserId:Anonymous] HTTP GET /identity/user/1 responded 200 in 412.3322 ms
+[2026-04-10 12:31:51.671] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/user/1 - 200 null application/json; charset=utf-8 412.8664ms
+[2026-04-10 12:31:51.671] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/user/1, Response status code: 200
+[2026-04-10 12:31:56.055] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/1
+[2026-04-10 12:31:56.056] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V7:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/1
+[2026-04-10 12:31:56.075] [INF] [UserId:Anonymous] HTTP GET /notification/user/1 responded 200 in 4820.2057 ms
+[2026-04-10 12:31:56.075] [INF] [UserId:Anonymous] HTTP GET /notification/user/1 responded 200 in 4818.6764 ms
+[2026-04-10 12:31:56.075] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/1 - 200 null application/json; charset=utf-8 4820.8894ms
+[2026-04-10 12:31:56.076] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/1 - 200 null application/json; charset=utf-8 4819.5526ms
+[2026-04-10 12:31:56.076] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/1, Response status code: 200
+[2026-04-10 12:31:56.076] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/1, Response status code: 200
+[2026-04-10 12:31:56.403] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/rewards/1/balance
+[2026-04-10 12:31:56.422] [INF] [UserId:Anonymous] HTTP GET /reward/1/balance responded 200 in 5166.2607 ms
+[2026-04-10 12:31:56.422] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/reward/1/balance - 200 null application/json; charset=utf-8 5167.5975ms
+[2026-04-10 12:31:56.422] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/reward/1/balance, Response status code: 200
+[2026-04-10 12:31:56.867] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/bookings/history/1
+[2026-04-10 12:31:56.889] [INF] [UserId:Anonymous] HTTP GET /bookings/history/1 responded 200 in 5637.9095 ms
+[2026-04-10 12:31:56.890] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/bookings/history/1 - 200 null application/json; charset=utf-8 5639.091ms
+[2026-04-10 12:31:56.890] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/bookings/history/1, Response status code: 200
+[2026-04-10 12:32:10.144] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:32:10.145] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:10.145] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/1 responded 204 in 0.3584 ms
+[2026-04-10 12:32:10.146] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - 204 null null 1.3779ms
+[2026-04-10 12:32:10.155] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:32:10.155] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:10.156] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:32:10.156] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:10.156] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/user/1 responded 204 in 0.2064 ms
+[2026-04-10 12:32:10.157] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - 204 null null 0.7505ms
+[2026-04-10 12:32:10.157] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:10.157] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000004, PreviousRequestId: -
+No authentication is required for the path '/notification/user/1' in the route /notification/{everything}.
+[2026-04-10 12:32:10.160] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:32:10.160] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:10.161] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:10.161] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/user/1' in the route /identity/{everything}.
+[2026-04-10 12:32:10.183] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5001/api/auth/user/1
+[2026-04-10 12:32:10.184] [INF] [UserId:Anonymous] HTTP GET /identity/user/1 responded 200 in 23.1793 ms
+[2026-04-10 12:32:10.184] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/user/1 - 200 null application/json; charset=utf-8 23.8249ms
+[2026-04-10 12:32:10.184] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/user/1, Response status code: 200
+[2026-04-10 12:32:10.198] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/1
+[2026-04-10 12:32:10.199] [INF] [UserId:Anonymous] HTTP GET /notification/user/1 responded 200 in 43.9028 ms
+[2026-04-10 12:32:10.199] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/1 - 200 null application/json; charset=utf-8 44.3803ms
+[2026-04-10 12:32:10.199] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/1, Response status code: 200
+[2026-04-10 12:32:16.413] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/flights/schedules - null null
+[2026-04-10 12:32:16.413] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:16.414] [INF] [UserId:Anonymous] HTTP OPTIONS /flights/schedules responded 204 in 0.5172 ms
+[2026-04-10 12:32:16.414] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/flights/schedules - 204 null null 1.17ms
+[2026-04-10 12:32:16.417] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/flights/schedules - null null
+[2026-04-10 12:32:16.417] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:16.418] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:16.418] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000006, PreviousRequestId: -
+No authentication is required for the path '/flights/schedules' in the route /flights/{everything}.
+[2026-04-10 12:32:20.984] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights/schedules
+[2026-04-10 12:32:21.001] [INF] [UserId:Anonymous] HTTP GET /flights/schedules responded 200 in 4583.5928 ms
+[2026-04-10 12:32:21.001] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/flights/schedules - 200 null application/json; charset=utf-8 4584.0716ms
+[2026-04-10 12:32:21.001] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights/schedules, Response status code: 200
+[2026-04-10 12:32:22.291] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/bookings/history/1 - null null
+[2026-04-10 12:32:22.291] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.292] [INF] [UserId:Anonymous] HTTP OPTIONS /bookings/history/1 responded 204 in 0.3939 ms
+[2026-04-10 12:32:22.292] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/bookings/history/1 - 204 null null 1.017ms
+[2026-04-10 12:32:22.292] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/reward/1/balance - null null
+[2026-04-10 12:32:22.293] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.293] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:32:22.293] [INF] [UserId:Anonymous] HTTP OPTIONS /reward/1/balance responded 204 in 0.3062 ms
+[2026-04-10 12:32:22.294] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.294] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/1 responded 204 in 0.2319 ms
+[2026-04-10 12:32:22.294] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/reward/1/balance - 204 null null 1.2847ms
+[2026-04-10 12:32:22.294] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - 204 null null 1.0259ms
+[2026-04-10 12:32:22.294] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:32:22.295] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.295] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/1 responded 204 in 0.3756 ms
+[2026-04-10 12:32:22.295] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:32:22.296] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - 204 null null 2.1421ms
+[2026-04-10 12:32:22.296] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.297] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/user/1 responded 204 in 0.4505 ms
+[2026-04-10 12:32:22.297] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - 204 null null 1.6495ms
+[2026-04-10 12:32:22.305] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/bookings/history/1 - null null
+[2026-04-10 12:32:22.306] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.307] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V8:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:22.307] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V8:00000003, PreviousRequestId: -
+No authentication is required for the path '/bookings/history/1' in the route /bookings/{everything}.
+[2026-04-10 12:32:22.308] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/reward/1/balance - null null
+[2026-04-10 12:32:22.308] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.309] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:32:22.309] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V7:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/reward/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:22.309] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V7:00000003, PreviousRequestId: -
+No authentication is required for the path '/reward/1/balance' in the route /reward/{everything}.
+[2026-04-10 12:32:22.310] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.310] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:22.310] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:0000000A, PreviousRequestId: -
+No authentication is required for the path '/notification/user/1' in the route /notification/{everything}.
+[2026-04-10 12:32:22.311] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:32:22.311] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.312] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:32:22.313] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:22.313] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000006, PreviousRequestId: -
+No authentication is required for the path '/notification/user/1' in the route /notification/{everything}.
+[2026-04-10 12:32:22.313] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:32:22.314] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:32:22.314] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000008, PreviousRequestId: -
+No authentication is required for the path '/identity/user/1' in the route /identity/{everything}.
+[2026-04-10 12:32:22.335] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V6:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/1
+[2026-04-10 12:32:22.341] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V5:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5001/api/auth/user/1
+[2026-04-10 12:32:22.341] [INF] [UserId:Anonymous] HTTP GET /identity/user/1 responded 200 in 28.2997 ms
+[2026-04-10 12:32:22.341] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/user/1 - 200 null application/json; charset=utf-8 29.0923ms
+[2026-04-10 12:32:22.342] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/user/1, Response status code: 200
+[2026-04-10 12:32:22.342] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V4:0000000A, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/1
+[2026-04-10 12:32:22.344] [INF] [UserId:Anonymous] HTTP GET /notification/user/1 responded 200 in 34.9683 ms
+[2026-04-10 12:32:22.344] [INF] [UserId:Anonymous] HTTP GET /notification/user/1 responded 200 in 33.3154 ms
+[2026-04-10 12:32:22.345] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/1 - 200 null application/json; charset=utf-8 35.5252ms
+[2026-04-10 12:32:22.345] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/1 - 200 null application/json; charset=utf-8 34.1161ms
+[2026-04-10 12:32:22.345] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/1, Response status code: 200
+[2026-04-10 12:32:22.345] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/1, Response status code: 200
+[2026-04-10 12:32:22.490] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V8:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5003/api/bookings/history/1
+[2026-04-10 12:32:22.491] [INF] [UserId:Anonymous] HTTP GET /bookings/history/1 responded 200 in 184.9388 ms
+[2026-04-10 12:32:22.491] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/bookings/history/1 - 200 null application/json; charset=utf-8 185.5225ms
+[2026-04-10 12:32:22.491] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/bookings/history/1, Response status code: 200
+[2026-04-10 12:32:22.498] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V7:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/rewards/1/balance
+[2026-04-10 12:32:22.499] [INF] [UserId:Anonymous] HTTP GET /reward/1/balance responded 200 in 190.6843 ms
+[2026-04-10 12:32:22.499] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/reward/1/balance - 200 null application/json; charset=utf-8 191.2089ms
+[2026-04-10 12:32:22.499] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/reward/1/balance, Response status code: 200
+[2026-04-10 12:35:32.422] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/reward/1/balance - null null
+[2026-04-10 12:35:32.422] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:35:32.422] [INF] [UserId:Anonymous] HTTP OPTIONS /reward/1/balance responded 204 in 0.2180 ms
+[2026-04-10 12:35:32.423] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/reward/1/balance - 204 null null 0.8224ms
+[2026-04-10 12:35:32.424] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:35:32.424] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:35:32.424] [INF] [UserId:Anonymous] HTTP OPTIONS /notification/user/1 responded 204 in 0.1284 ms
+[2026-04-10 12:35:32.424] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/notification/user/1 - 204 null null 0.4164ms
+[2026-04-10 12:35:32.426] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/reward/1/balance - null null
+[2026-04-10 12:35:32.427] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:35:32.428] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VA:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/reward/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:35:32.428] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VA:00000002, PreviousRequestId: -
+No authentication is required for the path '/reward/1/balance' in the route /reward/{everything}.
+[2026-04-10 12:35:32.428] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/notification/user/1 - null null
+[2026-04-10 12:35:32.428] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:35:32.429] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V9:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/notification/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:35:32.429] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V9:00000002, PreviousRequestId: -
+No authentication is required for the path '/notification/user/1' in the route /notification/{everything}.
+[2026-04-10 12:35:32.430] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:35:32.430] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:35:32.430] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/user/1 responded 204 in 0.1361 ms
+[2026-04-10 12:35:32.430] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/user/1 - 204 null null 0.6155ms
+[2026-04-10 12:35:32.433] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5000/identity/user/1 - null null
+[2026-04-10 12:35:32.433] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:35:32.434] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VB:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:35:32.434] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VB:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/user/1' in the route /identity/{everything}.
+[2026-04-10 12:35:32.452] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VB:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5001/api/auth/user/1
+[2026-04-10 12:35:32.453] [INF] [UserId:Anonymous] HTTP GET /identity/user/1 responded 200 in 19.2186 ms
+[2026-04-10 12:35:32.453] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/identity/user/1 - 200 null application/json; charset=utf-8 19.9062ms
+[2026-04-10 12:35:32.453] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/identity/user/1, Response status code: 200
+[2026-04-10 12:35:32.454] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9V9:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5009/api/notifications/user/1
+[2026-04-10 12:35:32.454] [INF] [UserId:Anonymous] HTTP GET /notification/user/1 responded 200 in 25.8277 ms
+[2026-04-10 12:35:32.454] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/notification/user/1 - 200 null application/json; charset=utf-8 26.2544ms
+[2026-04-10 12:35:32.456] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/notification/user/1, Response status code: 200
+[2026-04-10 12:35:32.471] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VA:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/rewards/1/balance
+[2026-04-10 12:35:32.472] [INF] [UserId:Anonymous] HTTP GET /reward/1/balance responded 200 in 45.2264 ms
+[2026-04-10 12:35:32.472] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5000/reward/1/balance - 200 null application/json; charset=utf-8 45.7172ms
+[2026-04-10 12:35:32.472] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/reward/1/balance, Response status code: 200
+[2026-04-10 12:38:23.844] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/login - null null
+[2026-04-10 12:38:23.844] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:38:23.844] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/login responded 204 in 0.3563 ms
+[2026-04-10 12:38:23.845] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/login - 204 null null 1.0058ms
+[2026-04-10 12:38:23.852] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/login - application/json 54
+[2026-04-10 12:38:23.853] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:38:23.853] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VC:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:38:23.854] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VC:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/login' in the route /identity/{everything}.
+[2026-04-10 12:38:23.908] [WRN] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VC:00000002, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5001/api/auth/login
+[2026-04-10 12:38:23.909] [INF] [UserId:Anonymous] HTTP POST /identity/login responded 401 in 56.9547 ms
+[2026-04-10 12:38:23.910] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/login - 401 null application/json; charset=utf-8 57.8549ms
+[2026-04-10 12:38:23.910] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/login, Response status code: 401
+[2026-04-10 12:40:51.852] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/login - null null
+[2026-04-10 12:40:51.853] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:40:51.853] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/login responded 204 in 0.3455 ms
+[2026-04-10 12:40:51.854] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/login - 204 null null 1.605ms
+[2026-04-10 12:40:51.859] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/login - application/json 54
+[2026-04-10 12:40:51.860] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:40:51.861] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VD:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:40:51.861] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VD:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/login' in the route /identity/{everything}.
+[2026-04-10 12:40:51.957] [WRN] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VD:00000002, PreviousRequestId: -
+500 Internal Server Error status code of request URI: http://localhost:5001/api/auth/login
+[2026-04-10 12:40:51.957] [ERR] [UserId:Anonymous] HTTP POST /identity/login responded 500 in 97.5944 ms
+[2026-04-10 12:40:51.957] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/login - 500 null text/plain; charset=utf-8 98.138ms
+[2026-04-10 12:40:51.958] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/login, Response status code: 500
+[2026-04-10 12:41:08.811] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/login - null null
+[2026-04-10 12:41:08.811] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:41:08.811] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/login responded 204 in 0.3107 ms
+[2026-04-10 12:41:08.812] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/login - 204 null null 0.8212ms
+[2026-04-10 12:41:08.818] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/login - application/json 54
+[2026-04-10 12:41:08.819] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:41:08.820] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VD:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:41:08.820] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VD:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/login' in the route /identity/{everything}.
+[2026-04-10 12:41:08.846] [WRN] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VD:00000004, PreviousRequestId: -
+500 Internal Server Error status code of request URI: http://localhost:5001/api/auth/login
+[2026-04-10 12:41:08.847] [ERR] [UserId:Anonymous] HTTP POST /identity/login responded 500 in 28.7316 ms
+[2026-04-10 12:41:08.848] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/login - 500 null text/plain; charset=utf-8 29.5411ms
+[2026-04-10 12:41:08.848] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/login, Response status code: 500
+[2026-04-10 12:43:29.209] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/login - null null
+[2026-04-10 12:43:29.210] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:43:29.210] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/login responded 204 in 0.2212 ms
+[2026-04-10 12:43:29.210] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/login - 204 null null 1.1972ms
+[2026-04-10 12:43:29.214] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/login - application/json 54
+[2026-04-10 12:43:29.214] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:43:29.215] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:43:29.216] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/login' in the route /identity/{everything}.
+[2026-04-10 12:43:33.319] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000002, PreviousRequestId: -
+102 unknown status code of request URI: 
+[2026-04-10 12:43:33.319] [WRN] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000002, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+ConnectionToDownstreamServiceError: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5001)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Ocelot.Requester.TimeoutDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.MessageInvokerHttpRequester.GetResponse(HttpContext httpContext)
+Setting error response for request: POST /identity/login
+[2026-04-10 12:43:33.320] [ERR] [UserId:Anonymous] HTTP POST /identity/login responded 502 in 4105.2212 ms
+[2026-04-10 12:43:33.320] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/login - 502 0 null 4106.0139ms
+[2026-04-10 12:45:40.462] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/login - null null
+[2026-04-10 12:45:40.462] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:45:40.462] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/login responded 204 in 0.1777 ms
+[2026-04-10 12:45:40.463] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/login - 204 null null 0.835ms
+[2026-04-10 12:45:40.465] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/login - application/json 54
+[2026-04-10 12:45:40.465] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:45:40.470] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:45:40.470] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/login' in the route /identity/{everything}.
+[2026-04-10 12:45:41.831] [WRN] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000004, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5001/api/auth/login
+[2026-04-10 12:45:41.860] [INF] [UserId:Anonymous] HTTP POST /identity/login responded 401 in 1394.9518 ms
+[2026-04-10 12:45:41.861] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/login - 401 null application/json; charset=utf-8 1395.7654ms
+[2026-04-10 12:45:41.861] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/login, Response status code: 401
+[2026-04-10 12:46:53.165] [INF] [UserId:] Request starting HTTP/1.1 OPTIONS http://localhost:5000/identity/register - null null
+[2026-04-10 12:46:53.165] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:46:53.165] [INF] [UserId:Anonymous] HTTP OPTIONS /identity/register responded 204 in 0.2448 ms
+[2026-04-10 12:46:53.165] [INF] [UserId:] Request finished HTTP/1.1 OPTIONS http://localhost:5000/identity/register - 204 null null 0.7034ms
+[2026-04-10 12:46:53.169] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5000/identity/register - application/json 83
+[2026-04-10 12:46:53.170] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-10 12:46:53.171] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/{everything}' via the EnableRateLimiting option.
+[2026-04-10 12:46:53.171] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000006, PreviousRequestId: -
+No authentication is required for the path '/identity/register' in the route /identity/{everything}.
+[2026-04-10 12:46:57.244] [INF] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000006, PreviousRequestId: -
+102 unknown status code of request URI: 
+[2026-04-10 12:46:57.245] [WRN] [UserId:Anonymous] RequestId: 0HNKMPM9LT9VE:00000006, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+ConnectionToDownstreamServiceError: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5001)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Ocelot.Requester.TimeoutDelegatingHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Ocelot.Requester.MessageInvokerHttpRequester.GetResponse(HttpContext httpContext)
+Setting error response for request: POST /identity/register
+[2026-04-10 12:46:57.245] [ERR] [UserId:Anonymous] HTTP POST /identity/register responded 502 in 4075.8025 ms
+[2026-04-10 12:46:57.246] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5000/identity/register - 502 0 null 4076.8761ms

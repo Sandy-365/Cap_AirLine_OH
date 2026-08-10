@@ -1,0 +1,913 @@
+[2026-04-22 01:10:23.548] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-101&flightId=6&departureTime=2026-04-20T07:00:00 - application/json 46
+[2026-04-22 01:10:23.778] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 01:10:23.784] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:10:24.054] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 01:10:24.141] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 01:10:26.305] [INF] [UserId:Anonymous] Executed DbCommand (102ms) [Parameters=[@__passengerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[PassengerId] = @__passengerId_0
+[2026-04-22 01:10:29.102] [INF] [UserId:Anonymous] Executed DbCommand (57ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (DbType = Boolean), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 10), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CheckIns] ([BoardingPass], [BookingId], [CheckInTime], [CreatedAt], [FlightId], [Gate], [IsCheckedIn], [PassengerId], [QRCode], [SeatNumber], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+[2026-04-22 01:10:29.665] [INF] [UserId:Anonymous] Online Check-in completed for Passenger 0
+[2026-04-22 01:10:29.691] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInDto'.
+[2026-04-22 01:10:29.725] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 5514.8268ms
+[2026-04-22 01:10:29.738] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 01:10:29.754] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 200 in 6031.9322 ms
+[2026-04-22 01:10:29.784] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-101&flightId=6&departureTime=2026-04-20T07:00:00 - 200 null application/json; charset=utf-8 6247.8769ms
+[2026-04-22 01:10:29.844] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - null null
+[2026-04-22 01:10:29.867] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:10:29.879] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 01:10:29.907] [INF] [UserId:Anonymous] Route matched with {action = "GenerateBoardingPass", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateBoardingPass(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 01:10:30.359] [INF] [UserId:Anonymous] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[Id] = @__p_0
+[2026-04-22 01:10:30.407] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.BoardingPassDto'.
+[2026-04-22 01:10:30.426] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService) in 512.0344ms
+[2026-04-22 01:10:30.481] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 01:10:30.492] [INF] [UserId:Anonymous] HTTP GET /api/checkins/4/boarding-pass responded 200 in 636.3667 ms
+[2026-04-22 01:10:30.504] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - 200 null application/json; charset=utf-8 659.2826ms
+[2026-04-22 01:10:40.765] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/booking/23/boarding-passes - null null
+[2026-04-22 01:10:40.780] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:10:40.798] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 01:10:40.824] [INF] [UserId:Anonymous] Route matched with {action = "GetBoardingPassesByBooking", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBoardingPassesByBooking(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 01:10:40.887] [INF] [UserId:Anonymous] Executed DbCommand (8ms) [Parameters=[@__bookingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[BookingId] = @__bookingId_0
+[2026-04-22 01:10:40.899] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[CheckInService.Models.CheckIn, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CheckInService.DTOs.BoardingPassDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-22 01:10:40.917] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService) in 87.8015ms
+[2026-04-22 01:10:40.930] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 01:10:40.933] [INF] [UserId:Anonymous] HTTP GET /api/checkins/booking/23/boarding-passes responded 200 in 158.8714 ms
+[2026-04-22 01:10:40.942] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/booking/23/boarding-passes - 200 null application/json; charset=utf-8 176.437ms
+[2026-04-22 01:23:13.923] [INF] [UserId:] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 01:23:13.985] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 01:23:14.016] [INF] [UserId:] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 01:23:14.097] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 01:23:14.116] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 01:23:14.120] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 01:23:14.140] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 01:23:14.157] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 01:23:14.175] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 01:23:14.279] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 01:23:14.379] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 01:23:14.381] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 01:23:14.381] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 01:23:14.382] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 01:45:29.715] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 01:45:29.771] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 01:45:29.803] [INF] [UserId:] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 01:45:29.891] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 01:45:29.922] [INF] [UserId:] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 01:45:29.948] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 01:45:29.976] [INF] [UserId:] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 01:45:29.994] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 01:45:30.011] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 01:45:30.129] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 01:45:30.222] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 01:45:30.227] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 01:45:30.228] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 01:45:30.229] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 01:50:23.075] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep&flightNumber=AI-101&flightId=6&departureTime=2026-04-20T07:00:00 - application/json 46
+[2026-04-22 01:50:23.195] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 01:50:23.201] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 01:50:29.393] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 01:50:29.502] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 01:50:30.126] [INF] [UserId:Anonymous] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 01:50:30.203] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 683.0945ms
+[2026-04-22 01:50:30.212] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 01:50:30.222] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 400 in 7068.2870 ms
+[2026-04-22 01:50:30.236] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep&flightNumber=AI-101&flightId=6&departureTime=2026-04-20T07:00:00 - 400 null application/json; charset=utf-8 7163.6347ms
+[2026-04-22 02:11:54.600] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - application/json 46
+[2026-04-22 02:11:54.620] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:11:54.632] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:11:54.635] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:11:54.652] [INF] [UserId:Anonymous] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 02:11:54.656] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 14.7806ms
+[2026-04-22 02:11:54.664] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:11:54.667] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 400 in 49.3255 ms
+[2026-04-22 02:11:54.672] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - 400 null application/json; charset=utf-8 71.4707ms
+[2026-04-22 02:13:07.864] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - application/json 46
+[2026-04-22 02:13:07.879] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:13:07.907] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:13:07.948] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:13:07.969] [INF] [UserId:Anonymous] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 02:13:07.974] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 18.7987ms
+[2026-04-22 02:13:07.989] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:13:07.997] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 400 in 121.1900 ms
+[2026-04-22 02:13:08.021] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - 400 null application/json; charset=utf-8 156.8772ms
+[2026-04-22 02:15:53.941] [INF] [UserId:] Application is shutting down...
+[2026-04-22 02:16:19.098] [INF] [UserId:] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 02:16:19.194] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 02:16:19.291] [INF] [UserId:] Executed DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 02:16:19.388] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 02:16:19.434] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 02:16:19.445] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 02:16:19.468] [INF] [UserId:] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 02:16:19.482] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 02:16:19.497] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 02:16:19.580] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 02:16:19.661] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 02:16:19.664] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 02:16:19.666] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 02:16:19.667] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 02:16:25.434] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - application/json 46
+[2026-04-22 02:16:25.563] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 02:16:25.570] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:16:25.794] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:16:25.873] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:16:26.066] [INF] [UserId:Anonymous] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 02:16:26.132] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 230.463ms
+[2026-04-22 02:16:26.152] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:16:26.166] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 400 in 646.1472 ms
+[2026-04-22 02:16:26.188] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - 400 null application/json; charset=utf-8 759.9159ms
+[2026-04-22 02:16:34.464] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - application/json 46
+[2026-04-22 02:16:34.504] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:16:34.517] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:16:34.526] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:16:34.549] [INF] [UserId:Anonymous] Executing BadRequestObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 02:16:34.556] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 21.8773ms
+[2026-04-22 02:16:34.562] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:16:34.569] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 400 in 66.7548 ms
+[2026-04-22 02:16:34.579] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-20T10:30:00 - 400 null application/json; charset=utf-8 115.4761ms
+[2026-04-22 02:18:48.935] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T05:00:00 - application/json 46
+[2026-04-22 02:18:48.944] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:18:48.960] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:18:48.964] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:18:50.039] [INF] [UserId:Anonymous] Executed DbCommand (249ms) [Parameters=[@__passengerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[PassengerId] = @__passengerId_0
+[2026-04-22 02:18:50.234] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInDto'.
+[2026-04-22 02:18:50.319] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 1349.561ms
+[2026-04-22 02:18:50.384] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:18:50.426] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 200 in 1484.7207 ms
+[2026-04-22 02:18:50.448] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T05:00:00 - 200 null application/json; charset=utf-8 1513.1966ms
+[2026-04-22 02:18:52.516] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - null null
+[2026-04-22 02:18:52.627] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:18:52.632] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 02:18:52.661] [INF] [UserId:Anonymous] Route matched with {action = "GenerateBoardingPass", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateBoardingPass(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:18:52.960] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[Id] = @__p_0
+[2026-04-22 02:18:52.976] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.BoardingPassDto'.
+[2026-04-22 02:18:53.033] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService) in 356.7729ms
+[2026-04-22 02:18:53.048] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 02:18:53.052] [INF] [UserId:Anonymous] HTTP GET /api/checkins/4/boarding-pass responded 200 in 439.2822 ms
+[2026-04-22 02:18:53.057] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - 200 null application/json; charset=utf-8 540.9611ms
+[2026-04-22 02:18:58.327] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/booking/35/boarding-passes - null null
+[2026-04-22 02:18:58.338] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:18:58.344] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 02:18:58.365] [INF] [UserId:Anonymous] Route matched with {action = "GetBoardingPassesByBooking", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBoardingPassesByBooking(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:18:58.476] [INF] [UserId:Anonymous] Executed DbCommand (66ms) [Parameters=[@__bookingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[BookingId] = @__bookingId_0
+[2026-04-22 02:18:58.502] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[CheckInService.Models.CheckIn, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CheckInService.DTOs.BoardingPassDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-22 02:18:58.518] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService) in 146.8753ms
+[2026-04-22 02:18:58.523] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 02:18:58.526] [INF] [UserId:Anonymous] HTTP GET /api/checkins/booking/35/boarding-passes responded 200 in 189.0741 ms
+[2026-04-22 02:18:58.532] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/booking/35/boarding-passes - 200 null application/json; charset=utf-8 205.7741ms
+[2026-04-22 02:22:03.924] [INF] [UserId:] Application is shutting down...
+[2026-04-22 02:22:10.743] [INF] [UserId:] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 02:22:10.787] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 02:22:10.811] [INF] [UserId:] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 02:22:10.898] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 02:22:10.918] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 02:22:10.950] [INF] [UserId:] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 02:22:11.005] [INF] [UserId:] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 02:22:11.023] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 02:22:11.038] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 02:22:11.106] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 02:22:11.175] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 02:22:11.178] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 02:22:11.180] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 02:22:11.181] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 02:22:19.318] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T05:00:00 - application/json 46
+[2026-04-22 02:22:19.404] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 02:22:19.411] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:22:19.568] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:22:19.610] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:22:20.289] [INF] [UserId:Anonymous] Executed DbCommand (43ms) [Parameters=[@__passengerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[PassengerId] = @__passengerId_0
+[2026-04-22 02:22:20.469] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInDto'.
+[2026-04-22 02:22:20.507] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 881.0781ms
+[2026-04-22 02:22:20.518] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 02:22:20.529] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 200 in 1155.3370 ms
+[2026-04-22 02:22:20.547] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T05:00:00 - 200 null application/json; charset=utf-8 1236.4098ms
+[2026-04-22 02:22:20.590] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - null null
+[2026-04-22 02:22:20.605] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 02:22:20.627] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 02:22:20.648] [INF] [UserId:Anonymous] Route matched with {action = "GenerateBoardingPass", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateBoardingPass(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 02:22:20.879] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[Id] = @__p_0
+[2026-04-22 02:22:20.885] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.BoardingPassDto'.
+[2026-04-22 02:22:20.895] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService) in 240.2189ms
+[2026-04-22 02:22:20.899] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 02:22:20.901] [INF] [UserId:Anonymous] HTTP GET /api/checkins/4/boarding-pass responded 200 in 304.4925 ms
+[2026-04-22 02:22:20.906] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - 200 null application/json; charset=utf-8 316.6464ms
+[2026-04-22 10:07:16.717] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 10:07:16.764] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 10:07:16.784] [INF] [UserId:] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 10:07:16.849] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 10:07:16.863] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 10:07:16.869] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 10:07:16.888] [INF] [UserId:] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 10:07:16.899] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 10:07:16.908] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 10:07:16.965] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 10:07:17.024] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 10:07:17.027] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 10:07:17.028] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 10:07:17.028] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 10:33:02.551] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T10:35:00 - application/json 45
+[2026-04-22 10:33:02.647] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 10:33:02.651] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:33:06.622] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 10:33:06.671] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:33:08.344] [INF] [UserId:Anonymous] Executed DbCommand (240ms) [Parameters=[@__passengerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[PassengerId] = @__passengerId_0
+[2026-04-22 10:33:08.562] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInDto'.
+[2026-04-22 10:33:08.609] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 1924.0845ms
+[2026-04-22 10:33:08.615] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 10:33:08.624] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 200 in 6025.4590 ms
+[2026-04-22 10:33:08.643] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T10:35:00 - 200 null application/json; charset=utf-8 6094.3021ms
+[2026-04-22 10:33:08.690] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - null null
+[2026-04-22 10:33:08.718] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:33:08.725] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 10:33:08.740] [INF] [UserId:Anonymous] Route matched with {action = "GenerateBoardingPass", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateBoardingPass(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:33:08.933] [INF] [UserId:Anonymous] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[Id] = @__p_0
+[2026-04-22 10:33:08.941] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.BoardingPassDto'.
+[2026-04-22 10:33:08.950] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService) in 203.2923ms
+[2026-04-22 10:33:08.954] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 10:33:08.957] [INF] [UserId:Anonymous] HTTP GET /api/checkins/4/boarding-pass responded 200 in 246.3244 ms
+[2026-04-22 10:33:08.962] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/4/boarding-pass - 200 null application/json; charset=utf-8 272.2196ms
+[2026-04-22 10:33:11.802] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/booking/36/boarding-passes - null null
+[2026-04-22 10:33:11.810] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:33:11.823] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 10:33:11.839] [INF] [UserId:Anonymous] Route matched with {action = "GetBoardingPassesByBooking", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBoardingPassesByBooking(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:33:11.883] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[@__bookingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[BookingId] = @__bookingId_0
+[2026-04-22 10:33:11.891] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[CheckInService.Models.CheckIn, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CheckInService.DTOs.BoardingPassDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-22 10:33:11.901] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService) in 56.107ms
+[2026-04-22 10:33:11.905] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 10:33:11.908] [INF] [UserId:Anonymous] HTTP GET /api/checkins/booking/36/boarding-passes responded 200 in 100.2368 ms
+[2026-04-22 10:33:11.917] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/booking/36/boarding-passes - 200 null application/json; charset=utf-8 114.995ms
+[2026-04-22 10:39:30.271] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T10:41:00&fare=13084.5 - application/json 62
+[2026-04-22 10:39:30.312] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:39:30.318] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 10:39:30.321] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:39:30.344] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__passengerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[PassengerId] = @__passengerId_0
+[2026-04-22 10:39:32.082] [INF] [UserId:Anonymous] Executed DbCommand (41ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (DbType = Boolean), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 10), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CheckIns] ([BoardingPass], [BookingId], [CheckInTime], [CreatedAt], [FlightId], [Gate], [IsCheckedIn], [PassengerId], [QRCode], [SeatNumber], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+[2026-04-22 10:39:32.624] [INF] [UserId:Anonymous] Online Check-in completed for Passenger 28
+[2026-04-22 10:39:32.644] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInDto'.
+[2026-04-22 10:39:32.648] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 2321.9804ms
+[2026-04-22 10:39:32.654] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 10:39:32.656] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 200 in 2344.6942 ms
+[2026-04-22 10:39:32.661] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Sandeep%20Kumar&flightNumber=AI-202&flightId=7&departureTime=2026-04-22T10:41:00&fare=13084.5 - 200 null application/json; charset=utf-8 2390.2065ms
+[2026-04-22 10:39:32.704] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/5/boarding-pass - null null
+[2026-04-22 10:39:32.709] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:39:32.711] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 10:39:32.713] [INF] [UserId:Anonymous] Route matched with {action = "GenerateBoardingPass", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateBoardingPass(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:39:32.724] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[Id] = @__p_0
+[2026-04-22 10:39:32.728] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.BoardingPassDto'.
+[2026-04-22 10:39:32.731] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService) in 14.3666ms
+[2026-04-22 10:39:32.735] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 10:39:32.738] [INF] [UserId:Anonymous] HTTP GET /api/checkins/5/boarding-pass responded 200 in 29.0306 ms
+[2026-04-22 10:39:32.741] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/5/boarding-pass - 200 null application/json; charset=utf-8 37.505ms
+[2026-04-22 10:39:34.419] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/booking/36/boarding-passes - null null
+[2026-04-22 10:39:34.429] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:39:34.435] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 10:39:34.440] [INF] [UserId:Anonymous] Route matched with {action = "GetBoardingPassesByBooking", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBoardingPassesByBooking(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:39:34.453] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__bookingId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[BookingId] = @__bookingId_0
+[2026-04-22 10:39:34.458] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[CheckInService.Models.CheckIn, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CheckInService.DTOs.BoardingPassDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-22 10:39:34.462] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService) in 15.3013ms
+[2026-04-22 10:39:34.466] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetBoardingPassesByBooking (CheckInService)'
+[2026-04-22 10:39:34.469] [INF] [UserId:Anonymous] HTTP GET /api/checkins/booking/36/boarding-passes responded 200 in 39.7894 ms
+[2026-04-22 10:39:34.474] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/booking/36/boarding-passes - 200 null application/json; charset=utf-8 54.5187ms
+[2026-04-22 10:43:59.980] [INF] [UserId:] Application is shutting down...
+[2026-04-22 10:44:28.671] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 10:44:28.714] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 10:44:28.734] [INF] [UserId:] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 10:44:28.787] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 10:44:28.804] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 10:44:28.809] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 10:44:28.824] [INF] [UserId:] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 10:44:28.835] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 10:44:28.843] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 10:44:28.949] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 10:44:29.152] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 10:44:29.156] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 10:44:29.157] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 10:44:29.159] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 10:49:34.805] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Happy%20Singh&flightNumber=AI-101&flightId=6&departureTime=2026-04-22T10:55:00&fare=28084.5 - application/json 62
+[2026-04-22 10:49:34.980] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 10:49:35.090] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:49:35.277] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 10:49:35.318] [INF] [UserId:Anonymous] Route matched with {action = "OnlineCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] OnlineCheckIn(CheckInService.DTOs.OnlineCheckInDto, System.String, System.String, Int32, System.DateTime, System.Decimal) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:49:36.136] [INF] [UserId:Anonymous] Executed DbCommand (71ms) [Parameters=[@__passengerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[PassengerId] = @__passengerId_0
+[2026-04-22 10:49:36.765] [INF] [UserId:Anonymous] Executed DbCommand (15ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (DbType = Boolean), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 10), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CheckIns] ([BoardingPass], [BookingId], [CheckInTime], [CreatedAt], [FlightId], [Gate], [IsCheckedIn], [PassengerId], [QRCode], [SeatNumber], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+[2026-04-22 10:49:37.262] [INF] [UserId:Anonymous] Online Check-in completed for Passenger 29
+[2026-04-22 10:49:37.282] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInDto'.
+[2026-04-22 10:49:37.308] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService) in 1978.3276ms
+[2026-04-22 10:49:37.313] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.OnlineCheckIn (CheckInService)'
+[2026-04-22 10:49:37.323] [INF] [UserId:Anonymous] HTTP POST /api/checkins/online responded 200 in 2428.2419 ms
+[2026-04-22 10:49:37.335] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/online?passengerName=Happy%20Singh&flightNumber=AI-101&flightId=6&departureTime=2026-04-22T10:55:00&fare=28084.5 - 200 null application/json; charset=utf-8 2535.2071ms
+[2026-04-22 10:49:37.382] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/6/boarding-pass - null null
+[2026-04-22 10:49:37.401] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 10:49:37.409] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 10:49:37.426] [INF] [UserId:Anonymous] Route matched with {action = "GenerateBoardingPass", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GenerateBoardingPass(Int32) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 10:49:37.627] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[Id] = @__p_0
+[2026-04-22 10:49:37.642] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.BoardingPassDto'.
+[2026-04-22 10:49:37.650] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService) in 218.2722ms
+[2026-04-22 10:49:37.653] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GenerateBoardingPass (CheckInService)'
+[2026-04-22 10:49:37.657] [INF] [UserId:Anonymous] HTTP GET /api/checkins/6/boarding-pass responded 200 in 264.0707 ms
+[2026-04-22 10:49:37.662] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/6/boarding-pass - 200 null application/json; charset=utf-8 280.2966ms
+[2026-04-22 11:20:59.731] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:20:59.768] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:20:59.787] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:20:59.795] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:20:59.797] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 31.6751 ms
+[2026-04-22 11:20:59.802] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 70.4699ms
+[2026-04-22 11:22:22.645] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:22:22.648] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:22:22.650] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:22:22.652] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:22:22.653] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 4.8030 ms
+[2026-04-22 11:22:22.656] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 10.7368ms
+[2026-04-22 11:24:39.114] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:24:39.342] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:24:39.377] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:24:39.384] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:24:39.403] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 61.5324 ms
+[2026-04-22 11:24:39.454] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 338.2474ms
+[2026-04-22 11:24:57.299] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:24:57.317] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:24:57.325] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:24:57.332] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:24:57.341] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 24.6424 ms
+[2026-04-22 11:24:57.349] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 50.1551ms
+[2026-04-22 11:29:17.992] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:29:18.004] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:29:18.011] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:29:18.016] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:29:18.019] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 15.0115 ms
+[2026-04-22 11:29:18.027] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 35.0735ms
+[2026-04-22 11:29:37.195] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:29:37.205] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:29:37.208] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:29:37.214] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:29:37.218] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 13.7397 ms
+[2026-04-22 11:29:37.228] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 33.0056ms
+[2026-04-22 11:29:38.668] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:29:38.690] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:29:38.692] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:29:38.698] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:29:38.701] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 11.4698 ms
+[2026-04-22 11:29:38.705] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 37.4719ms
+[2026-04-22 11:29:39.890] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:29:39.915] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:29:39.927] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:29:39.964] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:29:39.981] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 65.6327 ms
+[2026-04-22 11:29:39.993] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 103.0168ms
+[2026-04-22 11:30:58.605] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:30:58.613] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:30:58.616] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:30:58.620] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:30:58.622] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 9.7994 ms
+[2026-04-22 11:30:58.626] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 21.155ms
+[2026-04-22 11:31:39.314] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:31:39.322] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:31:39.326] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:31:39.333] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:31:39.338] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 15.7503 ms
+[2026-04-22 11:31:39.344] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 30.0046ms
+[2026-04-22 11:34:17.440] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 11:34:17.451] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 11:34:17.452] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 11:34:17.458] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 11:34:17.461] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 10.1274 ms
+[2026-04-22 11:34:17.466] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 25.1973ms
+[2026-04-22 12:15:55.489] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:15:55.512] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:15:55.514] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 12:15:55.518] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 12:15:55.521] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 9.3217 ms
+[2026-04-22 12:15:55.527] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 37.4273ms
+[2026-04-22 12:19:55.142] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:19:55.159] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:19:55.164] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 12:19:55.212] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 12:19:55.215] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 56.5942 ms
+[2026-04-22 12:19:55.218] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 75.5508ms
+[2026-04-22 12:20:18.977] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:20:18.988] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:20:18.995] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (GroundStaff|Admin)
+[2026-04-22 12:20:18.998] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was forbidden.
+[2026-04-22 12:20:19.009] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 403 in 21.6231 ms
+[2026-04-22 12:20:19.016] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 403 0 null 38.93ms
+[2026-04-22 12:22:16.302] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 12:22:16.341] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 12:22:16.361] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 12:22:16.408] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 12:22:16.421] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 12:22:16.423] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 12:22:16.441] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 12:22:16.450] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 12:22:16.459] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 12:22:16.514] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 12:22:16.567] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 12:22:16.568] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 12:22:16.569] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 12:22:16.569] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 12:22:24.484] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:22:24.559] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 12:22:24.564] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:22:24.708] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:22:24.745] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:22:25.197] [INF] [UserId:Anonymous] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:22:25.457] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 12:22:25.499] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 747.3431ms
+[2026-04-22 12:22:25.501] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:22:25.507] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 980.0787 ms
+[2026-04-22 12:22:25.517] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 1037.1168ms
+[2026-04-22 12:22:39.598] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:22:39.602] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:22:39.609] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:22:39.609] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:22:39.734] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:22:39.737] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 12:22:39.738] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 128.4225ms
+[2026-04-22 12:22:39.738] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:22:39.741] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 141.8144 ms
+[2026-04-22 12:22:39.742] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 144.2214ms
+[2026-04-22 12:23:00.908] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:23:00.911] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:23:00.920] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:23:00.920] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:23:00.934] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:23:00.935] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 12:23:00.935] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 15.2069ms
+[2026-04-22 12:23:00.935] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:23:00.935] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 27.3563 ms
+[2026-04-22 12:23:00.936] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 27.9436ms
+[2026-04-22 12:28:14.084] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins - null null
+[2026-04-22 12:28:14.087] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:28:14.088] [INF] [UserId:Anonymous] HTTP GET /api/checkins responded 404 in 1.9767 ms
+[2026-04-22 12:28:14.089] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins - 404 0 null 4.3271ms
+[2026-04-22 12:28:14.093] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5005/api/checkins, Response status code: 404
+[2026-04-22 12:28:27.898] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins - null null
+[2026-04-22 12:28:27.898] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:28:27.899] [INF] [UserId:Anonymous] HTTP GET /api/checkins responded 404 in 0.7718 ms
+[2026-04-22 12:28:27.902] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins - 404 0 null 3.4009ms
+[2026-04-22 12:28:27.902] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5005/api/checkins, Response status code: 404
+[2026-04-22 12:29:50.528] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins - null null
+[2026-04-22 12:29:50.529] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:29:50.529] [INF] [UserId:Anonymous] HTTP GET /api/checkins responded 404 in 0.8579 ms
+[2026-04-22 12:29:50.530] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins - 404 0 null 1.3576ms
+[2026-04-22 12:29:50.530] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5005/api/checkins, Response status code: 404
+[2026-04-22 12:33:26.915] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins - null null
+[2026-04-22 12:33:26.915] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:33:26.916] [INF] [UserId:Anonymous] HTTP GET /api/checkins responded 404 in 0.6117 ms
+[2026-04-22 12:33:26.916] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins - 404 0 null 1.127ms
+[2026-04-22 12:33:26.916] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5005/api/checkins, Response status code: 404
+[2026-04-22 12:33:47.783] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:33:47.784] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:33:47.784] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:33:47.784] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:33:48.073] [INF] [UserId:Anonymous] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:33:48.074] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 12:33:48.075] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 290.6759ms
+[2026-04-22 12:33:48.075] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:33:48.075] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 291.8216 ms
+[2026-04-22 12:33:48.076] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 292.5004ms
+[2026-04-22 12:33:52.205] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins - null null
+[2026-04-22 12:33:52.205] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:33:52.206] [INF] [UserId:Anonymous] HTTP GET /api/checkins responded 404 in 0.6950 ms
+[2026-04-22 12:33:52.206] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins - 404 0 null 1.1057ms
+[2026-04-22 12:33:52.206] [INF] [UserId:] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5005/api/checkins, Response status code: 404
+[2026-04-22 12:36:10.010] [INF] [UserId:] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 12:36:10.057] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 12:36:10.077] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 12:36:10.128] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 12:36:10.140] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 12:36:10.142] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 12:36:10.156] [INF] [UserId:] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 12:36:10.164] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 12:36:10.172] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 12:36:10.227] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 12:36:10.285] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 12:36:10.286] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 12:36:10.287] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 12:36:10.287] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 12:36:14.733] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/ - null null
+[2026-04-22 12:36:14.767] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 12:36:14.769] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:36:14.842] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 12:36:14.856] [INF] [UserId:Anonymous] Route matched with {action = "GetAll", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:36:15.098] [INF] [UserId:Anonymous] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:36:15.178] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+OrderedIterator`2[[CheckInService.DTOs.CheckInDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 12:36:15.210] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetAll (CheckInService) in 350.6807ms
+[2026-04-22 12:36:15.211] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 12:36:15.214] [INF] [UserId:Anonymous] HTTP GET /api/checkins/ responded 200 in 461.3566 ms
+[2026-04-22 12:36:15.219] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/ - 200 null application/json; charset=utf-8 487.5587ms
+[2026-04-22 12:36:32.455] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:36:32.460] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:36:32.466] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:36:32.479] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:36:32.609] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:36:32.611] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 12:36:32.617] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 138.0987ms
+[2026-04-22 12:36:32.618] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:36:32.618] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 160.6535 ms
+[2026-04-22 12:36:32.618] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 163.6565ms
+[2026-04-22 12:36:39.956] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/ - null null
+[2026-04-22 12:36:39.959] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:36:39.967] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 12:36:39.967] [INF] [UserId:Anonymous] Route matched with {action = "GetAll", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:36:39.978] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:36:39.979] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+OrderedIterator`2[[CheckInService.DTOs.CheckInDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 12:36:39.980] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetAll (CheckInService) in 12.8504ms
+[2026-04-22 12:36:39.980] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 12:36:39.980] [INF] [UserId:Anonymous] HTTP GET /api/checkins/ responded 200 in 23.5100 ms
+[2026-04-22 12:36:39.981] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/ - 200 null application/json; charset=utf-8 24.1368ms
+[2026-04-22 12:37:16.371] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 12:37:16.372] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 12:37:16.373] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:37:16.373] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 12:37:16.379] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 12:37:16.379] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 12:37:16.380] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 6.3467ms
+[2026-04-22 12:37:16.380] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 12:37:16.380] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 7.6979 ms
+[2026-04-22 12:37:16.380] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 9.6868ms
+[2026-04-22 14:45:06.770] [INF] [UserId:] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 14:45:06.824] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 14:45:06.847] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 14:45:06.917] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 14:45:06.932] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 14:45:06.938] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 14:45:06.957] [INF] [UserId:] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 14:45:06.970] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 14:45:06.980] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 14:45:07.057] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 14:45:07.124] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 14:45:07.127] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 14:45:07.129] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 14:45:07.130] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 21:32:24.899] [INF] [UserId:] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 21:32:24.948] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-22 21:32:24.972] [INF] [UserId:] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-22 21:32:25.034] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-22 21:32:25.048] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-22 21:32:25.052] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-22 21:32:25.066] [INF] [UserId:] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-22 21:32:25.078] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-22 21:32:25.087] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-22 21:32:25.151] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-22 21:32:25.217] [INF] [UserId:] Now listening on: http://localhost:5005
+[2026-04-22 21:32:25.221] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-22 21:32:25.223] [INF] [UserId:] Hosting environment: Development
+[2026-04-22 21:32:25.224] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\CheckInService
+[2026-04-22 21:36:32.874] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 21:36:32.990] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-22 21:36:33.008] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 21:36:37.840] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 21:36:37.927] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 21:36:38.792] [INF] [UserId:Anonymous] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 21:36:39.219] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 21:36:39.283] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 1327.6734ms
+[2026-04-22 21:36:39.290] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 21:36:39.300] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 6352.3408 ms
+[2026-04-22 21:36:39.321] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 6451.5177ms
+[2026-04-22 21:36:54.626] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/ - null null
+[2026-04-22 21:36:54.633] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 21:36:54.642] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 21:36:54.661] [INF] [UserId:Anonymous] Route matched with {action = "GetAll", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 21:36:54.676] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 21:36:54.693] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+OrderedIterator`2[[CheckInService.DTOs.CheckInDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 21:36:54.731] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetAll (CheckInService) in 66.228ms
+[2026-04-22 21:36:54.741] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 21:36:54.744] [INF] [UserId:Anonymous] HTTP GET /api/checkins/ responded 200 in 113.5152 ms
+[2026-04-22 21:36:54.749] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/ - 200 null application/json; charset=utf-8 123.1573ms
+[2026-04-22 21:37:27.728] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5005/api/checkins/staff - application/json 147
+[2026-04-22 21:37:27.742] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 21:37:27.754] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.StaffCheckIn (CheckInService)'
+[2026-04-22 21:37:27.778] [INF] [UserId:Anonymous] Route matched with {action = "StaffCheckIn", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] StaffCheckIn(CheckInService.DTOs.StaffCheckInDto) on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 21:37:28.150] [INF] [UserId:Anonymous] Executed DbCommand (121ms) [Parameters=[@__passengerId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+WHERE [c].[PassengerId] = @__passengerId_0
+[2026-04-22 21:37:29.500] [INF] [UserId:Anonymous] Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 10), @p6='?' (DbType = Boolean), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 10), @p10='?' (DbType = DateTime2), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [CheckIns] ([BoardingPass], [BookingId], [CheckInTime], [CreatedAt], [FlightId], [Gate], [IsCheckedIn], [PassengerId], [QRCode], [SeatNumber], [UpdatedAt], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+[2026-04-22 21:37:29.893] [INF] [UserId:Anonymous] Staff Check-in completed for Passenger 26. Reward event published.
+[2026-04-22 21:37:29.898] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInDto'.
+[2026-04-22 21:37:29.906] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.StaffCheckIn (CheckInService) in 2123.4204ms
+[2026-04-22 21:37:29.921] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.StaffCheckIn (CheckInService)'
+[2026-04-22 21:37:29.926] [INF] [UserId:Anonymous] HTTP POST /api/checkins/staff responded 200 in 2185.4476 ms
+[2026-04-22 21:37:29.931] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5005/api/checkins/staff - 200 null application/json; charset=utf-8 2203.6394ms
+[2026-04-22 21:37:30.041] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/ - null null
+[2026-04-22 21:37:30.047] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 21:37:30.051] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 21:37:30.053] [INF] [UserId:Anonymous] Route matched with {action = "GetAll", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 21:37:30.067] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 21:37:30.081] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+OrderedIterator`2[[CheckInService.DTOs.CheckInDto, CheckInService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-04-22 21:37:30.086] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetAll (CheckInService) in 24.6269ms
+[2026-04-22 21:37:30.097] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetAll (CheckInService)'
+[2026-04-22 21:37:30.104] [INF] [UserId:Anonymous] HTTP GET /api/checkins/ responded 200 in 56.9220 ms
+[2026-04-22 21:37:30.109] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/ - 200 null application/json; charset=utf-8 67.6892ms
+[2026-04-22 21:37:42.664] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5005/api/checkins/summary - null null
+[2026-04-22 21:37:42.691] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-22 21:37:42.694] [INF] [UserId:Anonymous] Executing endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 21:37:42.698] [INF] [UserId:Anonymous] Route matched with {action = "GetSummary", controller = "CheckIns"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummary() on controller CheckInService.Controllers.CheckInsController (CheckInService).
+[2026-04-22 21:37:42.709] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[BoardingPass], [c].[BookingId], [c].[CheckInTime], [c].[CreatedAt], [c].[FlightId], [c].[Gate], [c].[IsCheckedIn], [c].[PassengerId], [c].[QRCode], [c].[SeatNumber], [c].[UpdatedAt], [c].[UserId]
+FROM [CheckIns] AS [c]
+[2026-04-22 21:37:42.722] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'CheckInService.DTOs.CheckInSummaryDto'.
+[2026-04-22 21:37:42.725] [INF] [UserId:Anonymous] Executed action CheckInService.Controllers.CheckInsController.GetSummary (CheckInService) in 20.6752ms
+[2026-04-22 21:37:42.733] [INF] [UserId:Anonymous] Executed endpoint 'CheckInService.Controllers.CheckInsController.GetSummary (CheckInService)'
+[2026-04-22 21:37:42.739] [INF] [UserId:Anonymous] HTTP GET /api/checkins/summary responded 200 in 47.9088 ms
+[2026-04-22 21:37:42.748] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5005/api/checkins/summary - 200 null application/json; charset=utf-8 84.5707ms

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PaymentService</name>
+    </assembly>
+    <members>
+        <member name="M:PaymentService.Controllers.PaymentsController.GetPayment(System.Int32)">
+            <summary>
+            Retrieves payment transaction details by payment ID.
+            [Allowed Roles: Passenger, Dealer, Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:PaymentService.Controllers.PaymentsController.ProcessPayment(PaymentService.DTOs.ProcessPaymentDto)">
+            <summary>
+            Processes or creates a new payment for a booking using Razorpay gateway integration.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:PaymentService.Controllers.PaymentsController.Refund(System.Int32)">
+            <summary>
+            Initiates a refund for a processed payment transaction.
+            [Allowed Roles: Admin, SuperAdmin, FinancialAdmin]
+            </summary>
+        </member>
+        <member name="T:PaymentService.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:PaymentService.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaymentService.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaymentService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PaymentService.Migrations.AddUpdatedAtToBaseEntity">
+            <inheritdoc />
+        </member>
+        <member name="M:PaymentService.Migrations.AddUpdatedAtToBaseEntity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaymentService.Migrations.AddUpdatedAtToBaseEntity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaymentService.Migrations.AddUpdatedAtToBaseEntity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

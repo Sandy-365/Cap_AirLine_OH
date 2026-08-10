@@ -1,0 +1,716 @@
+2026-08-06 09:01:24.749 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 09:01:24.793 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 09:01:24.820 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 09:01:24.876 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 09:01:24.889 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 09:01:24.893 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 09:01:24.908 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 09:01:24.919 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 09:01:24.928 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 09:01:25.179 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 09:01:25.246 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 09:01:25.309 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 09:01:25.311 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 09:01:25.311 +05:30 [INF] Hosting environment: Development
+2026-08-06 09:01:25.312 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 09:05:14.050 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 09:05:14.255 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 207.6645ms
+2026-08-06 09:05:51.120 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/auth/login - application/json 65
+2026-08-06 09:05:51.133 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-06 09:05:51.138 +05:30 [INF] CORS policy execution failed.
+2026-08-06 09:05:51.139 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-06 09:05:51.194 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminAuthController.Login (AdminService)'
+2026-08-06 09:05:51.240 +05:30 [INF] Route matched with {action = "Login", controller = "AdminAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AdminService.DTOs.AdminLoginDto) on controller AdminService.Controllers.AdminAuthController (AdminService).
+2026-08-06 09:05:51.571 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[CreatedAt], [a].[Department], [a].[Email], [a].[FirstName], [a].[IsActive], [a].[IsEmailVerified], [a].[LastName], [a].[Name], [a].[PasswordHash], [a].[ResetToken], [a].[ResetTokenExpiry], [a].[Role], [a].[UpdatedAt], [a].[VerificationToken], [a].[VerificationTokenExpiry]
+FROM [AdminProfiles] AS [a]
+WHERE LOWER([a].[Email]) = @__ToLower_0
+2026-08-06 09:05:52.438 +05:30 [INF] Executing OkObjectResult, writing value of type 'AdminService.DTOs.AdminAuthResponseDto'.
+2026-08-06 09:05:52.465 +05:30 [INF] Executed action AdminService.Controllers.AdminAuthController.Login (AdminService) in 1212.0595ms
+2026-08-06 09:05:52.471 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminAuthController.Login (AdminService)'
+2026-08-06 09:05:52.497 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/auth/login - 200 null application/json; charset=utf-8 1376.2845ms
+2026-08-06 09:07:05.229 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/booking-report - null null
+2026-08-06 09:07:05.324 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-08-06 09:07:05.329 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-08-06 09:07:05.340 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|Admin|HR|FinancialAdmin)
+2026-08-06 09:07:05.355 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-06 09:07:05.357 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/booking-report - 401 0 null 128.2739ms
+2026-08-06 09:07:35.437 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - null null
+2026-08-06 09:07:35.463 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-08-06 09:07:35.477 +05:30 [INF] Bearer was not authenticated. Failure message: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'D7NhmWpqLQvR1vdk27Ui1xw39oNj7zOOnCZplvD9szM'. , KeyId: 
+'. Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'. 
+Exceptions caught:
+ '[PII of type 'System.Text.StringBuilder' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+2026-08-06 09:07:35.488 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|Admin|HR|FinancialAdmin)
+2026-08-06 09:07:35.491 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-06 09:07:35.498 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - 401 0 null 60.9744ms
+2026-08-06 09:14:31.235 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/booking-report - null null
+2026-08-06 09:14:31.276 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminController.GetBookingReport (AdminService)'
+2026-08-06 09:14:31.302 +05:30 [INF] Route matched with {action = "GetBookingReport", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingReport(System.DateTime, System.DateTime) on controller AdminService.Controllers.AdminController (AdminService).
+2026-08-06 09:14:31.342 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 09:14:31.346 +05:30 [INF] Sending HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 09:14:32.773 +05:30 [INF] Received HTTP response headers after 1421.2618ms - 200
+2026-08-06 09:14:32.777 +05:30 [INF] End processing HTTP request after 1436.443ms - 200
+2026-08-06 09:14:32.805 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[AdminService.DTOs.BookingReportDto, AdminService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-06 09:14:32.812 +05:30 [INF] Executed action AdminService.Controllers.AdminController.GetBookingReport (AdminService) in 1503.3264ms
+2026-08-06 09:14:32.815 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminController.GetBookingReport (AdminService)'
+2026-08-06 09:14:32.820 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/booking-report - 200 null application/json; charset=utf-8 1585.8145ms
+2026-08-06 09:14:45.465 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - null null
+2026-08-06 09:14:45.484 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminController.GetDashboard (AdminService)'
+2026-08-06 09:14:45.514 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller AdminService.Controllers.AdminController (AdminService).
+2026-08-06 09:14:45.556 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 09:14:45.559 +05:30 [INF] Sending HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 09:14:45.704 +05:30 [INF] Received HTTP response headers after 143.5334ms - 200
+2026-08-06 09:14:45.706 +05:30 [INF] End processing HTTP request after 149.9646ms - 200
+2026-08-06 09:14:45.732 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/api/flights
+2026-08-06 09:14:45.734 +05:30 [INF] Sending HTTP request GET http://localhost:5002/api/flights
+2026-08-06 09:14:46.269 +05:30 [INF] Received HTTP response headers after 533.632ms - 200
+2026-08-06 09:14:46.274 +05:30 [INF] End processing HTTP request after 541.8855ms - 200
+2026-08-06 09:14:46.294 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/api/auth/users
+2026-08-06 09:14:46.296 +05:30 [INF] Sending HTTP request GET http://localhost:5010/api/auth/users
+2026-08-06 09:14:46.301 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/auth/users - null null
+2026-08-06 09:14:46.306 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|HR)
+2026-08-06 09:14:46.308 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-06 09:14:46.309 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/auth/users - 401 0 null 8.2428ms
+2026-08-06 09:14:46.310 +05:30 [INF] Received HTTP response headers after 11.5791ms - 401
+2026-08-06 09:14:46.316 +05:30 [INF] End processing HTTP request after 22.2809ms - 401
+2026-08-06 09:14:46.318 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/api/auth/users
+2026-08-06 09:14:46.320 +05:30 [INF] Sending HTTP request GET http://localhost:5007/api/auth/users
+2026-08-06 09:14:47.814 +05:30 [INF] Received HTTP response headers after 1492.7241ms - 200
+2026-08-06 09:14:47.818 +05:30 [INF] End processing HTTP request after 1499.7296ms - 200
+2026-08-06 09:14:47.865 +05:30 [INF] Start processing HTTP request GET http://localhost:5011/api/auth/users
+2026-08-06 09:14:47.875 +05:30 [INF] Sending HTTP request GET http://localhost:5011/api/auth/users
+2026-08-06 09:14:51.944 +05:30 [INF] HTTP request failed after 4057.7787ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5011)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-06 09:14:51.954 +05:30 [INF] HTTP request failed after 4088.5552ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5011)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-06 09:14:51.987 +05:30 [INF] Executing OkObjectResult, writing value of type 'AdminService.DTOs.DashboardDto'.
+2026-08-06 09:14:51.998 +05:30 [INF] Executed action AdminService.Controllers.AdminController.GetDashboard (AdminService) in 6466.5457ms
+2026-08-06 09:14:52.004 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminController.GetDashboard (AdminService)'
+2026-08-06 09:14:52.007 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - 200 null application/json; charset=utf-8 6542.5245ms
+2026-08-06 09:48:23.988 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/auth/users - null null
+2026-08-06 09:48:24.006 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminAuthController.GetUsers (AdminService)'
+2026-08-06 09:48:24.065 +05:30 [INF] Route matched with {action = "GetUsers", controller = "AdminAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(System.String) on controller AdminService.Controllers.AdminAuthController (AdminService).
+2026-08-06 09:48:24.507 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedAt], [a].[Department], [a].[Email], [a].[FirstName], [a].[IsActive], [a].[IsEmailVerified], [a].[LastName], [a].[Name], [a].[PasswordHash], [a].[ResetToken], [a].[ResetTokenExpiry], [a].[Role], [a].[UpdatedAt], [a].[VerificationToken], [a].[VerificationTokenExpiry]
+FROM [AdminProfiles] AS [a]
+2026-08-06 09:48:24.536 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminService.Models.AdminProfile, AdminService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-06 09:48:24.574 +05:30 [INF] Executed action AdminService.Controllers.AdminAuthController.GetUsers (AdminService) in 502.9265ms
+2026-08-06 09:48:24.582 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminAuthController.GetUsers (AdminService)'
+2026-08-06 09:48:24.591 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/auth/users - 200 null application/json; charset=utf-8 602.7776ms
+2026-08-06 10:04:28.811 +05:30 [INF] Application is shutting down...
+2026-08-06 15:30:26.766 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:30:26.822 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 15:30:26.853 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 15:30:26.920 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 15:30:26.936 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:30:26.942 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 15:30:26.967 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 15:30:26.979 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 15:30:26.990 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 15:30:27.263 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 15:30:27.335 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:30:27.390 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 15:30:27.393 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:30:27.394 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:30:27.395 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 15:31:16.592 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:31:16.886 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 299.3219ms
+2026-08-06 15:37:54.053 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:37:54.068 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.8756ms
+2026-08-06 15:38:08.460 +05:30 [INF] Application is shutting down...
+2026-08-06 15:41:46.910 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:41:46.956 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 15:41:46.979 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 15:41:47.084 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 15:41:47.099 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:41:47.104 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 15:41:47.125 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 15:41:47.140 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 15:41:47.150 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 15:41:47.412 +05:30 [INF] Executed DbCommand (27ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 15:41:47.477 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:41:47.537 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 15:41:47.540 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:41:47.541 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:41:47.542 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 15:42:33.584 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:42:33.816 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 233.3663ms
+2026-08-06 15:43:27.583 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5010/api/auth/login - application/json 65
+2026-08-06 15:43:27.604 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-06 15:43:27.609 +05:30 [INF] CORS policy execution failed.
+2026-08-06 15:43:27.613 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-06 15:43:27.667 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminAuthController.Login (AdminService)'
+2026-08-06 15:43:27.712 +05:30 [INF] Route matched with {action = "Login", controller = "AdminAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AdminService.DTOs.AdminLoginDto) on controller AdminService.Controllers.AdminAuthController (AdminService).
+2026-08-06 15:43:27.932 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[CreatedAt], [a].[Department], [a].[Email], [a].[FirstName], [a].[IsActive], [a].[IsEmailVerified], [a].[LastName], [a].[Name], [a].[PasswordHash], [a].[ResetToken], [a].[ResetTokenExpiry], [a].[Role], [a].[UpdatedAt], [a].[VerificationToken], [a].[VerificationTokenExpiry]
+FROM [AdminProfiles] AS [a]
+WHERE LOWER([a].[Email]) = @__ToLower_0
+2026-08-06 15:43:28.700 +05:30 [INF] Executing OkObjectResult, writing value of type 'AdminService.DTOs.AdminAuthResponseDto'.
+2026-08-06 15:43:28.724 +05:30 [INF] Executed action AdminService.Controllers.AdminAuthController.Login (AdminService) in 1001.8873ms
+2026-08-06 15:43:28.727 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminAuthController.Login (AdminService)'
+2026-08-06 15:43:28.737 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5010/api/auth/login - 200 null application/json; charset=utf-8 1154.0994ms
+2026-08-06 15:43:51.358 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/booking-report - null null
+2026-08-06 15:43:51.449 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminController.GetBookingReport (AdminService)'
+2026-08-06 15:43:51.465 +05:30 [INF] Route matched with {action = "GetBookingReport", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookingReport(System.DateTime, System.DateTime) on controller AdminService.Controllers.AdminController (AdminService).
+2026-08-06 15:43:51.492 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 15:43:51.497 +05:30 [INF] Sending HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 15:43:52.533 +05:30 [INF] Received HTTP response headers after 1029.8749ms - 200
+2026-08-06 15:43:52.537 +05:30 [INF] End processing HTTP request after 1046.734ms - 200
+2026-08-06 15:43:52.571 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[AdminService.DTOs.BookingReportDto, AdminService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-06 15:43:52.579 +05:30 [INF] Executed action AdminService.Controllers.AdminController.GetBookingReport (AdminService) in 1110.395ms
+2026-08-06 15:43:52.584 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminController.GetBookingReport (AdminService)'
+2026-08-06 15:43:52.591 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/booking-report - 200 null application/json; charset=utf-8 1233.2775ms
+2026-08-06 15:44:04.658 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - null null
+2026-08-06 15:44:04.685 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminController.GetDashboard (AdminService)'
+2026-08-06 15:44:04.702 +05:30 [INF] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller AdminService.Controllers.AdminController (AdminService).
+2026-08-06 15:44:04.716 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 15:44:04.721 +05:30 [INF] Sending HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 15:44:04.876 +05:30 [INF] Received HTTP response headers after 153.0989ms - 200
+2026-08-06 15:44:04.883 +05:30 [INF] End processing HTTP request after 167.3286ms - 200
+2026-08-06 15:44:04.918 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/api/flights
+2026-08-06 15:44:04.921 +05:30 [INF] Sending HTTP request GET http://localhost:5002/api/flights
+2026-08-06 15:44:05.519 +05:30 [INF] Received HTTP response headers after 596.21ms - 200
+2026-08-06 15:44:05.522 +05:30 [INF] End processing HTTP request after 604.1672ms - 200
+2026-08-06 15:44:05.535 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/api/auth/users
+2026-08-06 15:44:05.544 +05:30 [INF] Sending HTTP request GET http://localhost:5010/api/auth/users
+2026-08-06 15:44:05.550 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/auth/users - null null
+2026-08-06 15:44:05.555 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/auth/users - 404 0 null 4.9156ms
+2026-08-06 15:44:05.555 +05:30 [INF] Received HTTP response headers after 10.0174ms - 404
+2026-08-06 15:44:05.560 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5010/api/auth/users, Response status code: 404
+2026-08-06 15:44:05.561 +05:30 [INF] End processing HTTP request after 26.1008ms - 404
+2026-08-06 15:44:05.565 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/api/auth/users
+2026-08-06 15:44:05.566 +05:30 [INF] Sending HTTP request GET http://localhost:5007/api/auth/users
+2026-08-06 15:44:05.772 +05:30 [INF] Received HTTP response headers after 203.9241ms - 404
+2026-08-06 15:44:05.776 +05:30 [INF] End processing HTTP request after 211.3105ms - 404
+2026-08-06 15:44:05.778 +05:30 [INF] Start processing HTTP request GET http://localhost:5011/api/auth/users
+2026-08-06 15:44:05.781 +05:30 [INF] Sending HTTP request GET http://localhost:5011/api/auth/users
+2026-08-06 15:44:09.905 +05:30 [INF] HTTP request failed after 4116.9556ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5011)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-06 15:44:09.940 +05:30 [INF] HTTP request failed after 4162.0511ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5011)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-06 15:44:09.963 +05:30 [INF] Executing OkObjectResult, writing value of type 'AdminService.DTOs.DashboardDto'.
+2026-08-06 15:44:09.995 +05:30 [INF] Executed action AdminService.Controllers.AdminController.GetDashboard (AdminService) in 5288.6918ms
+2026-08-06 15:44:10.130 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminController.GetDashboard (AdminService)'
+2026-08-06 15:44:10.133 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - 200 null application/json; charset=utf-8 5474.4109ms
+2026-08-06 15:44:20.420 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/revenue-report - null null
+2026-08-06 15:44:20.429 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminController.GetRevenueReport (AdminService)'
+2026-08-06 15:44:20.442 +05:30 [INF] Route matched with {action = "GetRevenueReport", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRevenueReport(System.DateTime, System.DateTime) on controller AdminService.Controllers.AdminController (AdminService).
+2026-08-06 15:44:20.457 +05:30 [INF] Start processing HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 15:44:20.460 +05:30 [INF] Sending HTTP request GET http://localhost:5003/api/bookings
+2026-08-06 15:44:20.522 +05:30 [INF] Received HTTP response headers after 60.6927ms - 200
+2026-08-06 15:44:20.524 +05:30 [INF] End processing HTTP request after 66.8285ms - 200
+2026-08-06 15:44:20.527 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+OrderedIterator`2[[AdminService.DTOs.RevenueReportDto, AdminService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.DateTime, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-06 15:44:20.539 +05:30 [INF] Executed action AdminService.Controllers.AdminController.GetRevenueReport (AdminService) in 86.6642ms
+2026-08-06 15:44:20.542 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminController.GetRevenueReport (AdminService)'
+2026-08-06 15:44:20.544 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/revenue-report - 200 null application/json; charset=utf-8 124.0615ms
+2026-08-06 15:44:38.777 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/users - null null
+2026-08-06 15:44:38.782 +05:30 [INF] Executing endpoint 'AdminService.Controllers.AdminController.GetUsers (AdminService)'
+2026-08-06 15:44:38.807 +05:30 [INF] Route matched with {action = "GetUsers", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(System.String) on controller AdminService.Controllers.AdminController (AdminService).
+2026-08-06 15:44:39.100 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreatedAt], [a].[Department], [a].[Email], [a].[FirstName], [a].[IsActive], [a].[IsEmailVerified], [a].[LastName], [a].[Name], [a].[PasswordHash], [a].[ResetToken], [a].[ResetTokenExpiry], [a].[Role], [a].[UpdatedAt], [a].[VerificationToken], [a].[VerificationTokenExpiry]
+FROM [AdminProfiles] AS [a]
+2026-08-06 15:44:39.108 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminService.Models.AdminProfile, AdminService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-06 15:44:39.129 +05:30 [INF] Executed action AdminService.Controllers.AdminController.GetUsers (AdminService) in 314.8501ms
+2026-08-06 15:44:39.133 +05:30 [INF] Executed endpoint 'AdminService.Controllers.AdminController.GetUsers (AdminService)'
+2026-08-06 15:44:39.136 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/users - 200 null application/json; charset=utf-8 358.9438ms
+2026-08-06 15:51:37.515 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:51:37.530 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.0229ms
+2026-08-06 15:51:43.165 +05:30 [INF] Application is shutting down...
+2026-08-06 15:51:52.624 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:51:52.674 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 15:51:52.694 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 15:51:52.794 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 15:51:52.807 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:51:52.810 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 15:51:52.830 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 15:51:52.843 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 15:51:52.852 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 15:51:53.091 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 15:51:53.151 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:51:53.202 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 15:51:53.204 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:51:53.205 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:51:53.206 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 15:52:27.998 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:52:28.256 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 259.8824ms
+2026-08-06 15:52:57.597 +05:30 [INF] Application is shutting down...
+2026-08-06 15:53:04.490 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:53:04.529 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 15:53:04.547 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 15:53:04.644 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 15:53:04.659 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:53:04.663 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 15:53:04.681 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 15:53:04.693 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 15:53:04.704 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 15:53:04.929 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 15:53:04.990 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:53:05.039 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 15:53:05.041 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:53:05.042 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:53:05.043 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 15:53:55.454 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:53:55.691 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 242.547ms
+2026-08-06 15:56:55.117 +05:30 [INF] Application is shutting down...
+2026-08-06 15:57:02.702 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:57:02.750 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 15:57:02.768 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 15:57:02.858 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 15:57:02.870 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:57:02.874 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 15:57:02.886 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 15:57:02.897 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 15:57:02.905 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 15:57:03.135 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 15:57:03.194 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:57:03.241 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 15:57:03.243 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:57:03.244 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:57:03.245 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 15:57:21.975 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:57:22.193 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 220.3344ms
+2026-08-06 15:57:24.361 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:57:24.384 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.6568ms
+2026-08-06 15:58:04.651 +05:30 [INF] Application is shutting down...
+2026-08-06 15:58:11.478 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:58:11.520 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 15:58:11.542 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 15:58:11.654 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 15:58:11.667 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 15:58:11.672 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 15:58:11.690 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 15:58:11.707 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 15:58:11.718 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 15:58:11.944 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 15:58:12.005 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 15:58:12.058 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 15:58:12.060 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 15:58:12.061 +05:30 [INF] Hosting environment: Development
+2026-08-06 15:58:12.061 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 15:58:15.548 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:58:15.783 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 236.6528ms
+2026-08-06 15:58:17.818 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:58:17.835 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.7661ms
+2026-08-06 15:58:31.350 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 15:58:31.384 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.9341ms
+2026-08-06 16:02:19.297 +05:30 [INF] Application is shutting down...
+2026-08-06 16:02:27.195 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 16:02:27.240 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 16:02:27.262 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 16:02:27.374 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 16:02:27.389 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 16:02:27.395 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 16:02:27.412 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 16:02:27.430 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 16:02:27.441 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 16:02:27.705 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 16:02:27.773 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 16:02:27.826 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 16:02:27.831 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 16:02:27.832 +05:30 [INF] Hosting environment: Development
+2026-08-06 16:02:27.833 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 16:02:28.077 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 16:02:28.204 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 129.9298ms
+2026-08-06 16:03:15.851 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 16:03:15.869 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 17.9345ms
+2026-08-06 16:03:23.129 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/users - null null
+2026-08-06 16:03:23.140 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-06 16:03:23.203 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|Admin|HR|FinancialAdmin)
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|HR)
+2026-08-06 16:03:23.211 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-06 16:03:23.212 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/users - 401 0 null 83.0573ms
+2026-08-06 16:19:02.177 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 16:19:02.202 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.2184ms
+2026-08-06 16:20:31.015 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 16:20:31.026 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.9279ms
+2026-08-06 16:25:09.650 +05:30 [INF] Application is shutting down...
+2026-08-06 16:25:18.425 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 16:25:18.484 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 16:25:18.570 +05:30 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 16:25:18.739 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 16:25:18.759 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 16:25:18.765 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 16:25:18.791 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 16:25:18.810 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 16:25:18.824 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 16:25:19.157 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-08-06 16:25:19.232 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 16:25:19.304 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 16:25:19.309 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 16:25:19.310 +05:30 [INF] Hosting environment: Development
+2026-08-06 16:25:19.312 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 16:25:29.381 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 16:25:29.638 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 258.8041ms
+2026-08-06 16:26:22.274 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 16:26:22.296 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.1217ms
+2026-08-06 16:31:15.929 +05:30 [INF] Application is shutting down...
+2026-08-06 16:37:39.039 +05:30 [INF] Applying migrations for AdminDbContext...
+2026-08-06 16:37:39.999 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 16:37:40.015 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-06 16:37:40.127 +05:30 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-06 16:37:40.286 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-06 16:37:40.306 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-06 16:37:40.312 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-06 16:37:40.351 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-06 16:37:40.381 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-06 16:37:40.398 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-06 16:37:40.402 +05:30 [INF] AdminDbContext migrations applied successfully.
+2026-08-06 16:37:40.492 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-06 16:37:40.647 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-06 16:37:40.655 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-06 16:37:40.656 +05:30 [INF] Hosting environment: Development
+2026-08-06 16:37:40.657 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\AdminService
+2026-08-06 16:37:46.482 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-06 16:37:46.932 +05:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 403.1288 ms
+2026-08-06 16:37:46.945 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 463.742ms

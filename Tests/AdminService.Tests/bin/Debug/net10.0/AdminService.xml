@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AdminService</name>
+    </assembly>
+    <members>
+        <member name="M:AdminService.Controllers.AdminAuthController.Login(AdminService.DTOs.AdminLoginDto)">
+            <summary>
+            Authenticates an admin user and returns a JWT token.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminAuthController.ForgotPassword(AdminService.DTOs.AdminForgotPasswordDto)">
+            <summary>
+            Generates a password reset OTP token and sends it via email.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminAuthController.ResetPassword(AdminService.DTOs.AdminResetPasswordDto)">
+            <summary>
+            Resets an admin's password using a valid OTP token. 
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="T:AdminService.Controllers.AdminController">
+            <summary>
+            Admin controller for admin operations
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.Register(AdminService.DTOs.AdminRegisterDto)">
+            <summary>
+            Handles admin user registration. Creates a new admin profile.
+            [Allowed Roles: SuperAdmin Only]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.GetDashboard">
+            <summary>
+            Aggregates dashboard metrics (total bookings, revenue, active flights, total users).
+            [Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.GetBookingReport(System.DateTime,System.DateTime)">
+            <summary>
+            Fetches booking data from the BookingService and filters results by the specified date range.
+            [Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.GetRevenueReport(System.DateTime,System.DateTime)">
+            <summary>
+            Retrieves confirmed bookings from BookingService, groups them by date, and calculates daily revenue.
+            [Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.GetUsers(System.String)">
+            <summary>
+            Retrieves all admin users, optionally filtered by roles.
+            [Allowed Roles: SuperAdmin, HR]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.GetUser(System.Guid)">
+            <summary>
+            Retrieves an admin user profile by ID. Returns 404 if the user doesn't exist.
+            [Allowed Roles: SuperAdmin (any user), Admin / HR / FinancialAdmin (own profile only)]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.UpdateProfile(System.Guid,AdminService.DTOs.AdminUpdateProfileDto)">
+            <summary>
+            Updates an admin user's profile information (name and email). 
+            [Allowed Roles: SuperAdmin (any user), Admin / HR / FinancialAdmin (own profile only)]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.UpdateUserStatus(System.Guid,AdminService.DTOs.AdminUpdateStatusDto)">
+            <summary>
+            Activates or deactivates an admin user account.
+            [Allowed Roles: SuperAdmin, HR]
+            </summary>
+        </member>
+        <member name="M:AdminService.Controllers.AdminController.DeleteUser(System.Guid)">
+            <summary>
+            Permanently deletes an admin user profile.
+            [Allowed Roles: SuperAdmin Only]
+            </summary>
+        </member>
+        <member name="T:AdminService.Migrations.AdminGuidMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.AdminGuidMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.AdminGuidMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.AdminGuidMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AdminService.Migrations.AddVisitorLogs">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.AddVisitorLogs.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.AddVisitorLogs.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.AddVisitorLogs.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AdminService.Migrations.MakeIdentityOptional">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.MakeIdentityOptional.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.MakeIdentityOptional.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Migrations.MakeIdentityOptional.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.RegisterAsync(AdminService.DTOs.AdminRegisterDto)">
+            <summary>
+             Core registration logic that creates or updates an admin profile in the database.
+             Validates allowed roles,generates OTP tokens, and sends appropriate emails
+             (welcome for admin-provisioned, OTP for self-registration).
+            </summary>
+            
+            <param name="dto">  AdminRegisterDto dto - registration details </param>
+            
+            <returns>   Task  </returns>
+            
+            <exception cref="T:System.InvalidOperationException"></exception>
+            
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.VerifyAsync(AdminService.DTOs.AdminVerifyDto)">
+            <summary>
+            Validates the OTP token against the stored verification token and expiry. 
+            Marks the account as verified, clears the token, and generates a JWT authentication token.
+            </summary>
+            
+            <param name="dto">  AdminVerifyDto dto - email and OTP token    </param>
+            
+            <returns>Task of AdminAuthResponseDto</returns>
+            
+            <exception cref="T:System.InvalidOperationException"></exception>
+            
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.ResendVerificationAsync(System.String)">
+            <summary>
+            Generates a new OTP token for unverified accounts and sends it via email. 
+            No-ops if the account is already verified or doesn't exist.
+            </summary>
+            
+            <param name="email"> string email </param>
+            <returns>   Task    </returns>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.LoginAsync(AdminService.DTOs.AdminLoginDto)">
+            <summary>
+            Authenticates admin credentials by verifying email, 
+            password hash, email verification status, and account active status. 
+            Returns user profile data and JWT token on success.
+            </summary>
+            
+            <param name="dto"></param>
+            
+            <returns></returns>
+            
+            <exception cref="T:System.UnauthorizedAccessException"></exception>
+            
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.ForgotPasswordAsync(System.String)">
+            <summary>
+            Generates a password reset OTP token with 15-minute expiry
+            and emails it to the user. 
+            Silently succeeds if the email doesn't exist for security.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.ResetPasswordAsync(AdminService.DTOs.AdminResetPasswordDto)">
+            <summary>
+            Validates the reset OTP token and updates the user's password hash.
+            Clears the reset token after successful password change.
+            </summary>
+            <param name="dto">     AdminResetPasswordDto dto - email, OTP token, new password </param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.GetUserAsync(System.Guid)">
+            <summary>
+            Retrieves a single admin profile by ID from the database. Returns null if not found.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.UpdateProfileAsync(System.Guid,AdminService.DTOs.AdminUpdateProfileDto)">
+            <summary>
+            Updates an admin profile's name and email fields and timestamps the modification. 
+            Throws KeyNotFoundException if the user doesn't exist.
+            </summary>
+            <param name="id"></param>
+            <param name="dto">   AdminUpdateProfileDto dto - updated name and email </param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.GetAllAdminsAsync(System.String[])">
+            <summary>
+            Retrieves all admin profiles from the database.
+            Optionally filters results by one or more roles when 
+            the roles parameter is provided.
+            </summary>
+            <param name="roles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.UpdateUserStatusAsync(System.Guid,System.Boolean)">
+            <summary>
+            Toggles an admin user's active status (activate/deactivate) 
+            and updates the modification timestamp.
+            Throws KeyNotFoundException if the user doesn't exist.
+            </summary>
+            <param name="id"></param>
+            <param name="isActive"></param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.DeleteUserAsync(System.Guid)">
+            <summary>
+            Permanently removes an admin profile from the database.
+            Throws KeyNotFoundException if the user doesn't exist.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.SendWelcomeEmailAsync(System.String,System.String,System.String)">
+            <summary>
+            Sends a welcome email to admin-provisioned users containing
+            their temporary credentials.
+            Configured via EmailSettings in app configuration.
+            </summary>
+            <param name="toEmail"></param>
+            <param name="name"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.SendOtpEmailAsync(System.String,System.String,System.String)">
+            <summary>
+            Sends an OTP verification email to a newly 
+            registered admin user with the 6-digit verification code.
+            </summary>
+            <param name="toEmail"></param>
+            <param name="name"></param>
+            <param name="otp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Services.AdminAuthService.SendResetEmailAsync(System.String,System.String,System.String)">
+            <summary>
+            Sends a password reset OTP email to an admin user requesting password recovery.
+            </summary>
+            <param name="toEmail"></param>
+            <param name="name"></param>
+            <param name="otp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Services.AdminServiceImpl.GetDashboardAsync">
+            <summary>
+            Aggregates dashboard data by making HTTP calls to BookingService, FlightService, 
+            AdminAuth, PassengerAuth, and StaffAuth services.
+            Counts total bookings, active flights, and users across all decentralized auth services.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:AdminService.Services.AdminServiceImpl.GetBookingReportAsync(System.DateTime,System.DateTime)">
+            <summary>
+            Fetches all bookings from BookingService and filters 
+            them client-side by the provided date range. 
+            Returns an empty list if the service call fails.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AdminService.Services.AdminServiceImpl.GetRevenueReportAsync(System.DateTime,System.DateTime)">
+            <summary>
+            Retrieves bookings from BookingService, filters by date range and confirmed status,
+            then groups by date to calculate daily revenue totals and booking counts.
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

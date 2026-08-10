@@ -1,0 +1,570 @@
+[2026-05-08 08:44:59.176] [INF] [UserId:] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 08:44:59.256] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-08 08:44:59.293] [INF] [UserId:] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-08 08:44:59.410] [INF] [UserId:] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-08 08:44:59.464] [INF] [UserId:] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 08:44:59.483] [INF] [UserId:] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-08 08:44:59.519] [INF] [UserId:] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-08 08:44:59.539] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-08 08:44:59.570] [INF] [UserId:] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-08 08:45:00.149] [INF] [UserId:] Executed DbCommand (172ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-05-08 08:45:00.272] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-08 08:45:00.390] [INF] [UserId:] Now listening on: http://localhost:5010
+[2026-05-08 08:45:00.396] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-08 08:45:00.398] [INF] [UserId:] Hosting environment: Development
+[2026-05-08 08:45:00.403] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\AdminService
+[2026-05-08 08:47:15.973] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 45
+[2026-05-08 08:47:16.073] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-08 08:47:16.082] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 08:47:21.263] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:21.322] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 08:47:22.326] [INF] [UserId:Anonymous] Executed DbCommand (54ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 08:47:23.525] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 08:47:23.904] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 2556.4096ms
+[2026-05-08 08:47:23.989] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:24.045] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 8008.4353 ms
+[2026-05-08 08:47:24.184] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 8215.4898ms
+[2026-05-08 08:47:28.068] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 08:47:28.084] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 08:47:28.109] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:28.114] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 08:47:28.390] [INF] [UserId:Anonymous] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 08:47:28.398] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 08:47:28.402] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 281.4185ms
+[2026-05-08 08:47:28.405] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:28.408] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 325.9815 ms
+[2026-05-08 08:47:28.415] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 346.6807ms
+[2026-05-08 08:47:28.917] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 45
+[2026-05-08 08:47:28.927] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 08:47:28.937] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:28.942] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 08:47:28.964] [INF] [UserId:Anonymous] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 08:47:28.972] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 08:47:28.980] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 31.3275ms
+[2026-05-08 08:47:28.984] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:28.987] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 62.0549 ms
+[2026-05-08 08:47:28.993] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 75.2508ms
+[2026-05-08 08:47:49.472] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 45
+[2026-05-08 08:47:49.487] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 08:47:49.490] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:49.495] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 08:47:49.641] [INF] [UserId:Anonymous] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 08:47:49.718] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 08:47:49.722] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 104.7477ms
+[2026-05-08 08:47:49.757] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 08:47:49.771] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 283.9117 ms
+[2026-05-08 08:47:49.783] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 311.297ms
+[2026-05-08 09:16:59.760] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 45
+[2026-05-08 09:16:59.769] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 09:16:59.773] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 09:16:59.777] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 09:17:00.161] [INF] [UserId:Anonymous] Executed DbCommand (60ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 09:17:00.247] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 09:17:00.253] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 468.6518ms
+[2026-05-08 09:17:00.258] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 09:17:00.262] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 493.5614 ms
+[2026-05-08 09:17:00.269] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 508.6464ms
+[2026-05-08 09:39:13.983] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 09:39:13.989] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 09:39:13.993] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 09:39:13.995] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 09:39:14.227] [INF] [UserId:Anonymous] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 09:39:14.235] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 09:39:14.242] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 243.4258ms
+[2026-05-08 09:39:14.249] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 09:39:14.254] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 264.4847 ms
+[2026-05-08 09:39:14.263] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 280.6261ms
+[2026-05-08 11:55:15.890] [INF] [UserId:] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 11:55:15.986] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-05-08 11:55:16.043] [INF] [UserId:] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-05-08 11:55:16.159] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-05-08 11:55:16.185] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-05-08 11:55:16.194] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-05-08 11:55:16.229] [INF] [UserId:] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-05-08 11:55:16.250] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-05-08 11:55:16.273] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-05-08 11:55:16.832] [INF] [UserId:] Executed DbCommand (138ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AdminProfiles] AS [a]
+        WHERE LOWER([a].[Email]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-05-08 11:55:16.957] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-05-08 11:55:17.038] [INF] [UserId:] Now listening on: http://localhost:5010
+[2026-05-08 11:55:17.044] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-05-08 11:55:17.046] [INF] [UserId:] Hosting environment: Development
+[2026-05-08 11:55:17.047] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\AdminService
+[2026-05-08 11:55:44.170] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+[2026-05-08 11:55:44.466] [INF] [UserId:Anonymous] HTTP GET /swagger/v1/swagger.json responded 200 in 237.6674 ms
+[2026-05-08 11:55:44.485] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 317.2721ms
+[2026-05-08 11:58:12.583] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+[2026-05-08 11:58:12.600] [INF] [UserId:Anonymous] HTTP GET /swagger/v1/swagger.json responded 200 in 12.0995 ms
+[2026-05-08 11:58:12.604] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.5619ms
+[2026-05-08 11:58:24.521] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - null null
+[2026-05-08 11:58:24.547] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-05-08 11:58:27.376] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|Admin|HR|FinancialAdmin)
+[2026-05-08 11:58:27.387] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was challenged.
+[2026-05-08 11:58:27.394] [INF] [UserId:Anonymous] HTTP GET /api/admin/dashboard responded 401 in 2853.7497 ms
+[2026-05-08 11:58:27.401] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - 401 0 null 2879.4039ms
+[2026-05-08 11:59:25.590] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+[2026-05-08 11:59:25.602] [INF] [UserId:Anonymous] HTTP GET /swagger/v1/swagger.json responded 200 in 7.2511 ms
+[2026-05-08 11:59:25.612] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 21.2166ms
+[2026-05-08 12:03:14.545] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 66
+[2026-05-08 12:03:14.555] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-08 12:03:14.561] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - null null
+[2026-05-08 12:03:14.563] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:14.568] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:14.576] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:14.753] [INF] [UserId:Anonymous] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04-05-2026 05:48:21', Current time (UTC): '08-05-2026 06:33:14'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[2026-05-08 12:03:14.753] [INF] [UserId:Anonymous] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04-05-2026 05:48:21', Current time (UTC): '08-05-2026 06:33:14'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[2026-05-08 12:03:14.753] [INF] [UserId:Anonymous] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04-05-2026 05:48:21', Current time (UTC): '08-05-2026 06:33:14'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[2026-05-08 12:03:14.811] [INF] [UserId:Anonymous] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04-05-2026 05:48:21', Current time (UTC): '08-05-2026 06:33:14'.
+[2026-05-08 12:03:14.821] [INF] [UserId:Anonymous] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04-05-2026 05:48:21', Current time (UTC): '08-05-2026 06:33:14'.
+[2026-05-08 12:03:14.828] [INF] [UserId:Anonymous] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '04-05-2026 05:48:21', Current time (UTC): '08-05-2026 06:33:14'.
+[2026-05-08 12:03:14.847] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|Admin|HR|FinancialAdmin)
+[2026-05-08 12:03:14.857] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|Admin|HR|FinancialAdmin)
+[2026-05-08 12:03:14.881] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was challenged.
+[2026-05-08 12:03:14.881] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was challenged.
+[2026-05-08 12:03:14.886] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 401 in 318.9843 ms
+[2026-05-08 12:03:14.891] [INF] [UserId:Anonymous] HTTP GET /api/admin/dashboard responded 401 in 315.3567 ms
+[2026-05-08 12:03:14.901] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c - 401 0 null 346.0667ms
+[2026-05-08 12:03:14.905] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - 401 0 null 344.663ms
+[2026-05-08 12:03:14.941] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:15.012] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:03:15.034] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 34
+[2026-05-08 12:03:15.047] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:15.054] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:15.060] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:03:15.933] [INF] [UserId:Anonymous] Executed DbCommand (60ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:03:15.933] [INF] [UserId:Anonymous] Executed DbCommand (75ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:03:16.037] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:03:16.037] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:03:16.055] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 980.2271ms
+[2026-05-08 12:03:16.055] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 1017.1324ms
+[2026-05-08 12:03:16.062] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:16.067] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:16.077] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 1029.9323 ms
+[2026-05-08 12:03:16.077] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 1515.9458 ms
+[2026-05-08 12:03:16.095] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 1060.3863ms
+[2026-05-08 12:03:16.098] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 1553.0508ms
+[2026-05-08 12:03:22.683] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/auth/login - application/json 56
+[2026-05-08 12:03:22.695] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:22.699] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.AdminAuthController.Login (AdminService)'
+[2026-05-08 12:03:22.721] [INF] [UserId:Anonymous] Route matched with {action = "Login", controller = "AdminAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AdminService.DTOs.AdminLoginDto) on controller AdminService.Controllers.AdminAuthController (AdminService).
+[2026-05-08 12:03:23.020] [INF] [UserId:Anonymous] Executed DbCommand (24ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[CreatedAt], [a].[Department], [a].[Email], [a].[FirstName], [a].[IsActive], [a].[IsEmailVerified], [a].[LastName], [a].[Name], [a].[PasswordHash], [a].[ResetToken], [a].[ResetTokenExpiry], [a].[Role], [a].[UpdatedAt], [a].[VerificationToken], [a].[VerificationTokenExpiry]
+FROM [AdminProfiles] AS [a]
+WHERE LOWER([a].[Email]) = @__ToLower_0
+[2026-05-08 12:03:23.889] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'AdminService.DTOs.AdminAuthResponseDto'.
+[2026-05-08 12:03:23.908] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.AdminAuthController.Login (AdminService) in 1180.789ms
+[2026-05-08 12:03:23.913] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.AdminAuthController.Login (AdminService)'
+[2026-05-08 12:03:23.916] [INF] [UserId:Anonymous] HTTP POST /api/auth/login responded 200 in 1220.9805 ms
+[2026-05-08 12:03:23.924] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/auth/login - 200 null application/json; charset=utf-8 1241.8193ms
+[2026-05-08 12:03:24.236] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - null null
+[2026-05-08 12:03:24.246] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:24.348] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.AdminController.GetDashboard (AdminService)'
+[2026-05-08 12:03:24.368] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 66
+[2026-05-08 12:03:24.374] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-08 12:03:24.403] [INF] [UserId:Anonymous] Route matched with {action = "GetDashboard", controller = "Admin"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDashboard() on controller AdminService.Controllers.AdminController (AdminService).
+[2026-05-08 12:03:24.406] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:24.412] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:24.419] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:24.425] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.AdminAuthController.GetUser (AdminService)'
+[2026-05-08 12:03:24.428] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:03:24.446] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5003/api/bookings
+[2026-05-08 12:03:24.463] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "AdminAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller AdminService.Controllers.AdminAuthController (AdminService).
+[2026-05-08 12:03:24.470] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5003/api/bookings
+[2026-05-08 12:03:24.488] [INF] [UserId:Anonymous] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:03:24.517] [INF] [UserId:Anonymous] Executed DbCommand (15ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[CreatedAt], [a].[Department], [a].[Email], [a].[FirstName], [a].[IsActive], [a].[IsEmailVerified], [a].[LastName], [a].[Name], [a].[PasswordHash], [a].[ResetToken], [a].[ResetTokenExpiry], [a].[Role], [a].[UpdatedAt], [a].[VerificationToken], [a].[VerificationTokenExpiry]
+FROM [AdminProfiles] AS [a]
+WHERE [a].[Id] = @__id_0
+[2026-05-08 12:03:24.542] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:03:24.579] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 121.3687ms
+[2026-05-08 12:03:24.571] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'AdminService.Models.AdminProfile'.
+[2026-05-08 12:03:24.639] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:24.690] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 283.7266 ms
+[2026-05-08 12:03:24.747] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.AdminAuthController.GetUser (AdminService) in 273.1912ms
+[2026-05-08 12:03:24.790] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 422.4509ms
+[2026-05-08 12:03:24.800] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.AdminAuthController.GetUser (AdminService)'
+[2026-05-08 12:03:24.955] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 543.5346 ms
+[2026-05-08 12:03:25.231] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 857.1311ms
+[2026-05-08 12:03:30.665] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c - null null
+[2026-05-08 12:03:30.804] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:30.819] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 62
+[2026-05-08 12:03:30.918] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.AdminAuthController.GetUser (AdminService)'
+[2026-05-08 12:03:30.928] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:03:30.931] [INF] [UserId:Anonymous] Route matched with {action = "GetUser", controller = "AdminAuth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(System.Guid) on controller AdminService.Controllers.AdminAuthController (AdminService).
+[2026-05-08 12:03:30.936] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:31.071] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:03:31.080] [INF] [UserId:Anonymous] Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[CreatedAt], [a].[Department], [a].[Email], [a].[FirstName], [a].[IsActive], [a].[IsEmailVerified], [a].[LastName], [a].[Name], [a].[PasswordHash], [a].[ResetToken], [a].[ResetTokenExpiry], [a].[Role], [a].[UpdatedAt], [a].[VerificationToken], [a].[VerificationTokenExpiry]
+FROM [AdminProfiles] AS [a]
+WHERE [a].[Id] = @__id_0
+[2026-05-08 12:03:31.370] [INF] [UserId:Anonymous] Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:03:31.414] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'AdminService.Models.AdminProfile'.
+[2026-05-08 12:03:31.438] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.AdminAuthController.GetUser (AdminService) in 411.0998ms
+[2026-05-08 12:03:31.434] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:03:31.761] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.AdminAuthController.GetUser (AdminService)'
+[2026-05-08 12:03:31.775] [INF] [UserId:Anonymous] HTTP GET /api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c responded 200 in 972.6747 ms
+[2026-05-08 12:03:31.780] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/api/auth/user/4135411e-969e-4a83-b16b-29ece7904f7c - 200 null application/json; charset=utf-8 1115.1386ms
+[2026-05-08 12:03:31.769] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 429.7443ms
+[2026-05-08 12:03:31.969] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:03:31.972] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 1043.6723 ms
+[2026-05-08 12:03:31.987] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 1167.198ms
+[2026-05-08 12:03:33.506] [INF] [UserId:Anonymous] Received HTTP response headers after 9013.047ms - 200
+[2026-05-08 12:03:33.541] [INF] [UserId:Anonymous] End processing HTTP request after 9098.3223ms - 200
+[2026-05-08 12:03:33.598] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5002/api/flights
+[2026-05-08 12:03:33.600] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5002/api/flights
+[2026-05-08 12:03:33.745] [INF] [UserId:Anonymous] Received HTTP response headers after 143.4654ms - 200
+[2026-05-08 12:03:33.749] [INF] [UserId:Anonymous] End processing HTTP request after 151.7072ms - 200
+[2026-05-08 12:03:33.818] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5010/api/auth/users
+[2026-05-08 12:03:33.863] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5010/api/auth/users
+[2026-05-08 12:03:33.905] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5010/api/auth/users - null null
+[2026-05-08 12:03:34.136] [INF] [UserId:Anonymous] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (SuperAdmin|HR)
+[2026-05-08 12:03:34.254] [INF] [UserId:Anonymous] AuthenticationScheme: Bearer was challenged.
+[2026-05-08 12:03:34.268] [INF] [UserId:Anonymous] HTTP GET /api/auth/users responded 401 in 132.9166 ms
+[2026-05-08 12:03:34.395] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/api/auth/users - 401 0 null 490.6476ms
+[2026-05-08 12:03:34.396] [INF] [UserId:Anonymous] Received HTTP response headers after 496.9182ms - 401
+[2026-05-08 12:03:34.425] [INF] [UserId:Anonymous] End processing HTTP request after 607.9616ms - 401
+[2026-05-08 12:03:34.430] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5007/api/auth/users
+[2026-05-08 12:03:34.434] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5007/api/auth/users
+[2026-05-08 12:03:42.058] [INF] [UserId:Anonymous] Received HTTP response headers after 7620.0387ms - 200
+[2026-05-08 12:03:42.139] [INF] [UserId:Anonymous] End processing HTTP request after 7708.5823ms - 200
+[2026-05-08 12:03:42.213] [INF] [UserId:Anonymous] Start processing HTTP request GET http://localhost:5011/api/auth/users
+[2026-05-08 12:03:42.224] [INF] [UserId:Anonymous] Sending HTTP request GET http://localhost:5011/api/auth/users
+[2026-05-08 12:03:42.645] [INF] [UserId:Anonymous] Received HTTP response headers after 409.6353ms - 200
+[2026-05-08 12:03:42.664] [INF] [UserId:Anonymous] End processing HTTP request after 451.6138ms - 200
+[2026-05-08 12:03:42.723] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'AdminService.DTOs.DashboardDto'.
+[2026-05-08 12:03:42.747] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.AdminController.GetDashboard (AdminService) in 18331.4997ms
+[2026-05-08 12:03:43.452] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.AdminController.GetDashboard (AdminService)'
+[2026-05-08 12:03:43.465] [INF] [UserId:Anonymous] HTTP GET /api/admin/dashboard responded 200 in 19219.4902 ms
+[2026-05-08 12:03:43.471] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5010/api/admin/dashboard - 499 null application/json; charset=utf-8 19233.6704ms
+[2026-05-08 12:09:45.713] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 45
+[2026-05-08 12:09:45.720] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:09:45.725] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:09:45.727] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:09:45.746] [INF] [UserId:Anonymous] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:09:45.752] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:09:45.756] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 23.2724ms
+[2026-05-08 12:09:45.760] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:09:45.763] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 43.6011 ms
+[2026-05-08 12:09:45.767] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 53.7335ms
+[2026-05-08 12:10:21.869] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 45
+[2026-05-08 12:10:21.879] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:10:21.883] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:21.887] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:10:21.906] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:10:21.913] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:10:21.916] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 21.5294ms
+[2026-05-08 12:10:21.921] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:21.924] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 45.7601 ms
+[2026-05-08 12:10:21.931] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 62.2419ms
+[2026-05-08 12:10:24.776] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:10:24.781] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:10:24.785] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:24.787] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:10:24.857] [INF] [UserId:Anonymous] Executed DbCommand (64ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:10:24.862] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:10:24.864] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 73.6778ms
+[2026-05-08 12:10:24.867] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:24.869] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 87.9631 ms
+[2026-05-08 12:10:24.872] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 95.9504ms
+[2026-05-08 12:10:41.564] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:10:41.571] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:10:41.576] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:41.579] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:10:41.595] [INF] [UserId:Anonymous] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:10:41.601] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:10:41.605] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 21.859ms
+[2026-05-08 12:10:41.609] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:41.611] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 40.2561 ms
+[2026-05-08 12:10:41.616] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 52.4094ms
+[2026-05-08 12:10:45.614] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:10:45.620] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:10:45.625] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:45.628] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:10:45.649] [INF] [UserId:Anonymous] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:10:45.656] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:10:45.658] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 24.0543ms
+[2026-05-08 12:10:45.662] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:45.666] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 46.1463 ms
+[2026-05-08 12:10:45.672] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 58.5059ms
+[2026-05-08 12:10:51.687] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:10:51.695] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:10:51.698] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:51.702] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:10:51.751] [INF] [UserId:Anonymous] Executed DbCommand (39ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:10:51.759] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:10:51.762] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 52.84ms
+[2026-05-08 12:10:51.766] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:51.770] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 74.8294 ms
+[2026-05-08 12:10:51.777] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 89.2159ms
+[2026-05-08 12:10:58.866] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:10:58.871] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:10:58.875] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:58.878] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:10:58.898] [INF] [UserId:Anonymous] Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:10:58.904] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:10:58.908] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 25.4772ms
+[2026-05-08 12:10:58.910] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:10:58.914] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 42.8745 ms
+[2026-05-08 12:10:58.919] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 52.9209ms
+[2026-05-08 12:11:00.907] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:11:00.913] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:11:00.915] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:11:00.918] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:11:00.939] [INF] [UserId:Anonymous] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:11:00.946] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:11:00.948] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 25.0052ms
+[2026-05-08 12:11:00.953] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:11:00.955] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 42.5777 ms
+[2026-05-08 12:11:00.962] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 55.1291ms
+[2026-05-08 12:11:07.461] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:11:07.468] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:11:07.472] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:11:07.475] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:11:07.505] [INF] [UserId:Anonymous] Executed DbCommand (21ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:11:07.511] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:11:07.514] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 34.0265ms
+[2026-05-08 12:11:07.519] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:11:07.522] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 53.7491 ms
+[2026-05-08 12:11:07.528] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 67.1662ms
+[2026-05-08 12:12:02.257] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:12:02.271] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:12:02.274] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:02.280] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:12:02.344] [INF] [UserId:Anonymous] Executed DbCommand (51ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:12:02.357] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:12:02.362] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 72.6454ms
+[2026-05-08 12:12:02.366] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:02.371] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 100.7488 ms
+[2026-05-08 12:12:02.378] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 120.6421ms
+[2026-05-08 12:12:05.367] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:12:05.395] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:12:05.399] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:05.528] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:12:05.667] [INF] [UserId:Anonymous] Executed DbCommand (91ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:12:05.917] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:12:05.920] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 349.0066ms
+[2026-05-08 12:12:05.922] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:05.929] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 533.8541 ms
+[2026-05-08 12:12:05.945] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 578.025ms
+[2026-05-08 12:12:08.437] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:12:08.449] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:12:08.454] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:08.459] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:12:08.481] [INF] [UserId:Anonymous] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:12:08.490] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:12:08.497] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 27.2674ms
+[2026-05-08 12:12:08.503] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:08.509] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 59.7479 ms
+[2026-05-08 12:12:08.519] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 82.4775ms
+[2026-05-08 12:12:12.976] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:12:12.995] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:12:13.000] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:13.006] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:12:13.030] [INF] [UserId:Anonymous] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:12:13.041] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:12:13.048] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 32.4184ms
+[2026-05-08 12:12:13.058] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:13.068] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 73.4810 ms
+[2026-05-08 12:12:13.078] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 101.7246ms
+[2026-05-08 12:12:19.751] [INF] [UserId:] Request starting HTTP/1.1 POST http://localhost:5010/api/analytics/log - application/json 36
+[2026-05-08 12:12:19.759] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-05-08 12:12:19.762] [INF] [UserId:Anonymous] Executing endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:19.766] [INF] [UserId:Anonymous] Route matched with {action = "LogActivity", controller = "VisitorAnalytics"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LogActivity(AdminService.DTOs.VisitorLogDto) on controller AdminService.Controllers.VisitorAnalyticsController (AdminService).
+[2026-05-08 12:12:19.787] [INF] [UserId:Anonymous] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 100), @p2='?' (Size = 255), @p3='?' (Size = 255), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [VisitorLogs] ([FlightId], [Identity], [PageUrl], [SearchTerm], [Timestamp])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+[2026-05-08 12:12:19.795] [INF] [UserId:Anonymous] Executing StatusCodeResult, setting HTTP status code 200
+[2026-05-08 12:12:19.798] [INF] [UserId:Anonymous] Executed action AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService) in 25.3201ms
+[2026-05-08 12:12:19.802] [INF] [UserId:Anonymous] Executed endpoint 'AdminService.Controllers.VisitorAnalyticsController.LogActivity (AdminService)'
+[2026-05-08 12:12:19.811] [INF] [UserId:Anonymous] HTTP POST /api/analytics/log responded 200 in 51.9772 ms
+[2026-05-08 12:12:20.104] [INF] [UserId:] Request finished HTTP/1.1 POST http://localhost:5010/api/analytics/log - 200 0 null 352.7811ms

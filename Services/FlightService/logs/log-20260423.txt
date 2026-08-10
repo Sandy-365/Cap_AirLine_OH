@@ -1,0 +1,898 @@
+[2026-04-23 00:00:00.818] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:46:50.078] [INF] [UserId:] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 09:46:50.479] [INF] [UserId:] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[2026-04-23 09:46:50.523] [INF] [UserId:] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[2026-04-23 09:46:50.767] [INF] [UserId:] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[2026-04-23 09:46:51.340] [INF] [UserId:] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[2026-04-23 09:46:51.589] [INF] [UserId:] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[2026-04-23 09:46:51.739] [INF] [UserId:] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[2026-04-23 09:46:52.338] [INF] [UserId:] No migrations were applied. The database is already up to date.
+[2026-04-23 09:46:52.410] [INF] [UserId:] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[2026-04-23 09:46:53.828] [INF] [UserId:] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-04-23 09:46:53.903] [INF] [UserId:] ScheduleCompletionWorker started.
+[2026-04-23 09:46:54.030] [INF] [UserId:] Now listening on: http://localhost:5002
+[2026-04-23 09:46:54.091] [INF] [UserId:] Application started. Press Ctrl+C to shut down.
+[2026-04-23 09:46:54.349] [INF] [UserId:] Hosting environment: Development
+[2026-04-23 09:46:54.500] [INF] [UserId:] Content root path: D:\FINAL_Project\AirlineManagementSystem-main\AirlineManagementSystem\Services\FlightService
+[2026-04-23 09:46:55.459] [INF] [UserId:] Executed DbCommand (115ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:46:56.379] [INF] [UserId:] Executed DbCommand (167ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+[2026-04-23 09:46:56.413] [INF] [UserId:] Schedule 90 (Flight 6) marked as Completed
+[2026-04-23 09:47:56.633] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:48:12.482] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 09:48:12.498] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 09:48:12.501] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:48:12.502] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 09:48:12.504] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 09:48:12.586] [WRN] [UserId:Anonymous] Failed to determine the https port for redirect.
+[2026-04-23 09:48:12.590] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:12.591] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:12.591] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:12.591] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:12.591] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:48:17.150] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:48:17.150] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:48:17.150] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:48:17.150] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:48:17.150] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:48:17.183] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:48:17.183] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:48:17.183] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:48:17.183] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:48:17.183] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:48:17.259] [INF] [UserId:Anonymous] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:48:17.291] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:48:17.293] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:48:17.294] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:48:17.298] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:48:17.305] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:48:17.306] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:48:17.310] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:48:17.312] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:48:17.317] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:48:17.360] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 153.9277ms
+[2026-04-23 09:48:17.360] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 163.7657ms
+[2026-04-23 09:48:17.360] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 166.6282ms
+[2026-04-23 09:48:17.360] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 146.7421ms
+[2026-04-23 09:48:17.360] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 159.3259ms
+[2026-04-23 09:48:17.365] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:48:17.368] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:48:17.373] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:48:17.375] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:48:17.378] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:48:17.386] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 4837.5778 ms
+[2026-04-23 09:48:17.386] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 4835.4551 ms
+[2026-04-23 09:48:17.386] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 4834.2219 ms
+[2026-04-23 09:48:17.386] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 4834.2562 ms
+[2026-04-23 09:48:17.388] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 4839.9056 ms
+[2026-04-23 09:48:17.400] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 4921.9834ms
+[2026-04-23 09:48:17.400] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 4921.5032ms
+[2026-04-23 09:48:17.400] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 4921.527ms
+[2026-04-23 09:48:17.403] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 4925.1392ms
+[2026-04-23 09:48:17.407] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 4909.8323ms
+[2026-04-23 09:48:56.660] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:49:56.703] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:50:56.740] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:51:56.763] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:52:56.785] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:53:25.160] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 09:53:25.172] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:53:25.209] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:53:25.256] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:53:25.234] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 09:53:25.238] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 09:53:25.238] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:53:25.288] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:53:25.262] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:53:25.268] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:53:25.286] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:53:25.333] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:53:25.356] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:53:25.318] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:53:25.326] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:53:25.216] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 09:53:25.439] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:53:25.407] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:53:25.300] [INF] [UserId:Anonymous] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:53:25.441] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:53:25.464] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:53:25.539] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:53:25.522] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:53:25.550] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:53:25.538] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:53:25.484] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:53:25.550] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 259.8863ms
+[2026-04-23 09:53:25.534] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:53:25.561] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:53:25.564] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:53:25.568] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:53:25.580] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:53:25.584] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 198.6075ms
+[2026-04-23 09:53:25.587] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 43.8178ms
+[2026-04-23 09:53:25.601] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 115.4934ms
+[2026-04-23 09:53:25.604] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 200.6693ms
+[2026-04-23 09:53:25.607] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 436.3286 ms
+[2026-04-23 09:53:25.610] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:53:25.617] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:53:25.620] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:53:25.622] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:53:25.626] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 466.1079ms
+[2026-04-23 09:53:25.628] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 342.0075 ms
+[2026-04-23 09:53:25.630] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 190.6388 ms
+[2026-04-23 09:53:25.632] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 363.7040 ms
+[2026-04-23 09:53:25.634] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 377.5079 ms
+[2026-04-23 09:53:25.653] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 415.5561ms
+[2026-04-23 09:53:25.656] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 440.5331ms
+[2026-04-23 09:53:25.668] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 434.8359ms
+[2026-04-23 09:53:25.682] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 473.4336ms
+[2026-04-23 09:53:56.808] [INF] [UserId:] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:54:06.475] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:54:06.479] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 09:54:06.482] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:06.482] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 09:54:06.484] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 09:54:06.486] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 09:54:06.487] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:06.489] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:06.493] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:06.498] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:06.503] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:06.505] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:06.507] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:06.509] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:06.511] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:06.513] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:06.515] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:06.523] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:06.524] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:54:06.539] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:54:06.527] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:06.535] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:54:06.525] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:06.539] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:06.543] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 23.4427ms
+[2026-04-23 09:54:06.550] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:06.551] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:54:06.560] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:06.561] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:06.565] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:06.569] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:06.572] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 41.3601ms
+[2026-04-23 09:54:06.575] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 40.7956ms
+[2026-04-23 09:54:06.581] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:06.583] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 101.1711 ms
+[2026-04-23 09:54:06.586] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 40.6595ms
+[2026-04-23 09:54:06.589] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:06.592] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:06.595] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 40.1687ms
+[2026-04-23 09:54:06.600] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 124.8987ms
+[2026-04-23 09:54:06.602] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:06.605] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 117.6829 ms
+[2026-04-23 09:54:06.607] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 113.2630 ms
+[2026-04-23 09:54:06.610] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:06.618] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 115.9269 ms
+[2026-04-23 09:54:06.623] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 143.2892ms
+[2026-04-23 09:54:06.626] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 144.0691ms
+[2026-04-23 09:54:06.628] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 130.2164 ms
+[2026-04-23 09:54:06.634] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 148.1667ms
+[2026-04-23 09:54:06.653] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 168.8457ms
+[2026-04-23 09:54:24.010] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 09:54:24.015] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:54:24.018] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:24.025] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:24.029] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:24.038] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:24.034] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:24.047] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:24.052] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:24.063] [INF] [UserId:Anonymous] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:54:24.083] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:54:24.080] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:24.087] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 35.1732ms
+[2026-04-23 09:54:24.091] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 48.5806ms
+[2026-04-23 09:54:24.104] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:24.097] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:24.122] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 97.2306 ms
+[2026-04-23 09:54:24.119] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 101.0547 ms
+[2026-04-23 09:54:24.125] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 109.3853ms
+[2026-04-23 09:54:24.396] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 386.024ms
+[2026-04-23 09:54:31.355] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:54:31.388] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 09:54:31.407] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 09:54:31.458] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:31.422] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:31.422] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 09:54:31.451] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:31.418] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 09:54:31.484] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:31.493] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:31.497] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:31.498] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:31.502] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:31.504] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:31.507] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:31.509] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:31.521] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:31.512] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:31.526] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:31.522] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:31.523] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:54:31.510] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:31.530] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:54:31.538] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:31.538] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:31.557] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:31.550] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:54:31.551] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:31.552] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 35.9396ms
+[2026-04-23 09:54:31.586] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:31.569] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 36.5407ms
+[2026-04-23 09:54:31.577] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 52.5676ms
+[2026-04-23 09:54:31.583] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:31.542] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:54:31.591] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 132.7875 ms
+[2026-04-23 09:54:31.595] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:31.599] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:31.621] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 125.0064 ms
+[2026-04-23 09:54:31.626] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 203.4056ms
+[2026-04-23 09:54:31.614] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 207.0683ms
+[2026-04-23 09:54:31.619] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 116.6916 ms
+[2026-04-23 09:54:31.658] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 239.8608ms
+[2026-04-23 09:54:31.606] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 86.9731ms
+[2026-04-23 09:54:31.669] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:31.602] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 56.7564ms
+[2026-04-23 09:54:31.672] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 249.9426 ms
+[2026-04-23 09:54:31.675] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:31.697] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 246.5305 ms
+[2026-04-23 09:54:31.684] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 328.5195ms
+[2026-04-23 09:54:31.734] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 346.0722ms
+[2026-04-23 09:54:56.851] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:54:59.133] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:54:59.148] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 09:54:59.150] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:59.155] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:59.159] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:59.175] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 09:54:59.180] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:59.181] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 09:54:59.188] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:59.191] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 09:54:59.195] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:59.196] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:59.201] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:59.207] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:54:59.208] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:54:59.209] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:59.215] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:59.217] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:59.219] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:59.221] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:54:59.226] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:59.226] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:59.228] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:54:59.232] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:59.233] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 30.0314ms
+[2026-04-23 09:54:59.239] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:59.242] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:54:59.245] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 32.3595ms
+[2026-04-23 09:54:59.245] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:54:59.247] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:59.251] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:59.254] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:54:59.256] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:59.259] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:54:59.261] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 111.0439 ms
+[2026-04-23 09:54:59.263] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 27.308ms
+[2026-04-23 09:54:59.265] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 26.3866ms
+[2026-04-23 09:54:59.267] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 112.2344 ms
+[2026-04-23 09:54:59.270] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 28.1472ms
+[2026-04-23 09:54:59.272] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 139.6337ms
+[2026-04-23 09:54:59.274] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:59.277] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:54:59.280] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 131.2899ms
+[2026-04-23 09:54:59.281] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:54:59.291] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 96.1328 ms
+[2026-04-23 09:54:59.293] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 92.3513 ms
+[2026-04-23 09:54:59.300] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 92.6812 ms
+[2026-04-23 09:54:59.302] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 127.1006ms
+[2026-04-23 09:54:59.305] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 123.994ms
+[2026-04-23 09:54:59.308] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 116.5863ms
+[2026-04-23 09:55:01.235] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 09:55:01.244] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:01.248] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:55:01.249] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:01.252] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:01.254] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:01.256] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:55:01.267] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:01.269] [INF] [UserId:Anonymous] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:55:01.278] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:55:01.279] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:55:01.283] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:55:01.290] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 28.3765ms
+[2026-04-23 09:55:01.297] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:01.294] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 21.4661ms
+[2026-04-23 09:55:01.307] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 63.6509 ms
+[2026-04-23 09:55:01.310] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:55:01.314] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 78.9458ms
+[2026-04-23 09:55:01.317] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 64.7841 ms
+[2026-04-23 09:55:01.327] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 78.6379ms
+[2026-04-23 09:55:04.897] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:55:04.917] [INF] [UserId:] Executed DbCommand (10ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+[2026-04-23 09:55:04.928] [INF] [UserId:] Seat released: Schedule 90, Class: Economy, Count: 3
+[2026-04-23 09:55:05.179] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 09:55:05.185] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:05.185] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 09:55:05.188] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:55:05.190] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 09:55:05.194] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:05.195] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 09:55:05.197] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:05.200] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 09:55:05.200] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:05.202] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:05.206] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:05.212] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:05.214] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:05.215] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:05.216] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:55:05.218] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:05.219] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:55:05.236] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:05.231] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:55:05.232] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:55:05.234] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:05.221] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:05.260] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:55:05.246] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 09:55:05.248] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:55:05.244] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 34.6666ms
+[2026-04-23 09:55:05.272] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:55:05.266] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 09:55:05.268] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 09:55:05.269] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 44.0429ms
+[2026-04-23 09:55:05.264] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:55:05.274] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 89.6441 ms
+[2026-04-23 09:55:05.278] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 09:55:05.280] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 40.3091ms
+[2026-04-23 09:55:05.283] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:05.285] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 31.5054ms
+[2026-04-23 09:55:05.289] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 109.9145ms
+[2026-04-23 09:55:05.292] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 32.0154ms
+[2026-04-23 09:55:05.295] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 09:55:05.301] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 106.9240 ms
+[2026-04-23 09:55:05.303] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:05.311] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 09:55:05.315] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 102.2103 ms
+[2026-04-23 09:55:05.317] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 132.0432ms
+[2026-04-23 09:55:05.319] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 113.1828 ms
+[2026-04-23 09:55:05.322] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 121.8829 ms
+[2026-04-23 09:55:05.325] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 125.0557ms
+[2026-04-23 09:55:05.337] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 142.4549ms
+[2026-04-23 09:55:05.341] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 150.5644ms
+[2026-04-23 09:55:13.086] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights - null null
+[2026-04-23 09:55:13.096] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:13.104] [INF] [UserId:Anonymous] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22-04-2026 18:57:56', Current time (UTC): '23-04-2026 04:25:13'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[2026-04-23 09:55:13.126] [INF] [UserId:Anonymous] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '22-04-2026 18:57:56', Current time (UTC): '23-04-2026 04:25:13'.
+[2026-04-23 09:55:13.130] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetAllFlights (FlightService)'
+[2026-04-23 09:55:13.146] [INF] [UserId:Anonymous] Route matched with {action = "GetAllFlights", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllFlights() on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:13.179] [INF] [UserId:Anonymous] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+[2026-04-23 09:55:13.196] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[FlightService.Models.Flight, FlightService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FlightService.DTOs.FlightDto, FlightService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-23 09:55:13.218] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetAllFlights (FlightService) in 68.2384ms
+[2026-04-23 09:55:13.231] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetAllFlights (FlightService)'
+[2026-04-23 09:55:13.236] [INF] [UserId:Anonymous] HTTP GET /api/flights responded 200 in 140.4654 ms
+[2026-04-23 09:55:13.242] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights - 499 null application/json; charset=utf-8 156.301ms
+[2026-04-23 09:55:22.603] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights - null null
+[2026-04-23 09:55:22.613] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 09:55:22.617] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetAllFlights (FlightService)'
+[2026-04-23 09:55:22.621] [INF] [UserId:Anonymous] Route matched with {action = "GetAllFlights", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllFlights() on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:22.631] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+[2026-04-23 09:55:22.638] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[FlightService.Models.Flight, FlightService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FlightService.DTOs.FlightDto, FlightService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-23 09:55:22.643] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetAllFlights (FlightService) in 16.7088ms
+[2026-04-23 09:55:22.647] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetAllFlights (FlightService)'
+[2026-04-23 09:55:22.652] [INF] [UserId:Anonymous] HTTP GET /api/flights responded 200 in 39.1809 ms
+[2026-04-23 09:55:22.657] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights - 200 null application/json; charset=utf-8 53.7649ms
+[2026-04-23 09:55:22.866] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights - null null
+[2026-04-23 09:55:22.870] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetAllFlights (FlightService)'
+[2026-04-23 09:55:22.873] [INF] [UserId:Anonymous] Route matched with {action = "GetAllFlights", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllFlights() on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 09:55:22.879] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+[2026-04-23 09:55:22.884] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[FlightService.Models.Flight, FlightService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FlightService.DTOs.FlightDto, FlightService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2026-04-23 09:55:22.887] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetAllFlights (FlightService) in 11.7907ms
+[2026-04-23 09:55:22.890] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetAllFlights (FlightService)'
+[2026-04-23 09:55:22.892] [INF] [UserId:Anonymous] HTTP GET /api/flights responded 200 in 21.3610 ms
+[2026-04-23 09:55:22.895] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights - 200 null application/json; charset=utf-8 28.7031ms
+[2026-04-23 09:55:56.877] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:56:56.886] [INF] [UserId:] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:57:56.904] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:58:56.923] [INF] [UserId:] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 09:59:56.951] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:00:56.976] [INF] [UserId:] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:01:56.998] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:02:57.017] [INF] [UserId:] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:03:43.993] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 10:03:43.998] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 10:03:44.000] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 10:03:44.020] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:03:44.010] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 10:03:44.010] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:03:44.015] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:03:44.006] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 10:03:44.023] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:03:44.027] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:03:44.030] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:03:44.032] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:03:44.037] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:03:44.040] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:03:44.042] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:03:44.044] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:03:44.047] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:03:44.049] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:03:44.055] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:03:44.058] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:03:44.066] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:03:44.077] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:03:44.084] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 31.7481ms
+[2026-04-23 10:03:44.085] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:03:44.087] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 10:03:44.088] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:03:44.094] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:03:44.098] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 10:03:44.100] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 79.6999 ms
+[2026-04-23 10:03:44.103] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 22.5271ms
+[2026-04-23 10:03:44.106] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 47.9856ms
+[2026-04-23 10:03:44.107] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 10:03:44.110] [INF] [UserId:Anonymous] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:03:44.112] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 111.9783ms
+[2026-04-23 10:03:44.115] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:03:44.117] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:03:44.122] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 10:03:44.127] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:03:44.134] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 97.4570 ms
+[2026-04-23 10:03:44.136] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 126.0532 ms
+[2026-04-23 10:03:44.139] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 69.6677ms
+[2026-04-23 10:03:44.143] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 80.1641ms
+[2026-04-23 10:03:44.147] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 140.988ms
+[2026-04-23 10:03:44.151] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 157.539ms
+[2026-04-23 10:03:44.154] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:03:44.156] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:03:44.174] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 146.6358 ms
+[2026-04-23 10:03:44.176] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 161.3872 ms
+[2026-04-23 10:03:44.180] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 170.4212ms
+[2026-04-23 10:03:44.184] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 186.1904ms
+[2026-04-23 10:03:57.053] [INF] [UserId:] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:04:16.803] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 10:04:16.806] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 10:04:16.810] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 10:04:16.811] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:16.822] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:16.817] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 10:04:16.818] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 10:04:16.820] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:16.815] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:16.824] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:16.829] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:16.832] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:16.834] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:16.835] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:16.839] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:16.841] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:16.843] [INF] [UserId:Anonymous] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 10:04:16.844] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:16.845] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:16.847] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:16.849] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:16.852] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 10:04:16.858] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:04:16.861] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:04:16.864] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 10:04:16.866] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 28.4473ms
+[2026-04-23 10:04:16.870] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:04:16.873] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:04:16.876] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 10:04:16.878] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:16.880] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 25.7883ms
+[2026-04-23 10:04:16.883] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 25.4102ms
+[2026-04-23 10:04:16.884] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:04:16.885] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 24.3724ms
+[2026-04-23 10:04:16.887] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 76.8112 ms
+[2026-04-23 10:04:16.890] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:16.892] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:16.897] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:04:16.898] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:16.901] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 97.8517ms
+[2026-04-23 10:04:16.903] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 82.8207 ms
+[2026-04-23 10:04:16.904] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 88.9093 ms
+[2026-04-23 10:04:16.906] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 42.9107ms
+[2026-04-23 10:04:16.908] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 79.0738 ms
+[2026-04-23 10:04:16.915] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 105.9258ms
+[2026-04-23 10:04:16.918] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 111.6213ms
+[2026-04-23 10:04:16.920] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:16.923] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 106.3228ms
+[2026-04-23 10:04:16.935] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 102.8586 ms
+[2026-04-23 10:04:16.942] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 124.4752ms
+[2026-04-23 10:04:20.693] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - null null
+[2026-04-23 10:04:20.699] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:20.699] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - null null
+[2026-04-23 10:04:20.701] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:20.706] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:20.707] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:20.710] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:20.716] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:20.718] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:04:20.718] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/7 - null null
+[2026-04-23 10:04:20.719] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/6 - null null
+[2026-04-23 10:04:20.725] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:04:20.725] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:04:20.729] [INF] [UserId:] Request starting HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - null null
+[2026-04-23 10:04:20.730] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:20.735] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:20.738] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 24.0417ms
+[2026-04-23 10:04:20.742] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:04:20.747] [INF] [UserId:Anonymous] CORS policy execution successful.
+[2026-04-23 10:04:20.749] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:20.750] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:20.753] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:20.756] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 34.6721ms
+[2026-04-23 10:04:20.757] [INF] [UserId:Anonymous] Executing endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:20.759] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:20.761] [INF] [UserId:Anonymous] Route matched with {action = "GetFlight", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFlight(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:20.762] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/90 responded 200 in 63.5806 ms
+[2026-04-23 10:04:20.764] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:20.766] [INF] [UserId:Anonymous] Route matched with {action = "GetSchedule", controller = "Flights"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSchedule(Int32) on controller FlightService.Controllers.FlightsController (FlightService).
+[2026-04-23 10:04:20.772] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 10:04:20.775] [INF] [UserId:Anonymous] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[Aircraft], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[CrewAssignment], [f].[DepartureTime], [f].[Destination], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightNumber], [f].[Gate], [f].[Source], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt]
+FROM [Flights] AS [f]
+WHERE [f].[Id] = @__p_0
+[2026-04-23 10:04:20.775] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/90 - 200 null application/json; charset=utf-8 82.1336ms
+[2026-04-23 10:04:20.777] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/95 responded 200 in 71.9245 ms
+[2026-04-23 10:04:20.785] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 10:04:20.785] [INF] [UserId:Anonymous] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[Id] = @__id_0
+[2026-04-23 10:04:20.788] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightDto'.
+[2026-04-23 10:04:20.795] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/95 - 200 null application/json; charset=utf-8 95.0125ms
+[2026-04-23 10:04:20.797] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 28.1237ms
+[2026-04-23 10:04:20.801] [INF] [UserId:Anonymous] Executing OkObjectResult, writing value of type 'FlightService.DTOs.FlightScheduleDto'.
+[2026-04-23 10:04:20.803] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetFlight (FlightService) in 31.7177ms
+[2026-04-23 10:04:20.811] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:20.813] [INF] [UserId:Anonymous] Executed action FlightService.Controllers.FlightsController.GetSchedule (FlightService) in 31.926ms
+[2026-04-23 10:04:20.815] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetFlight (FlightService)'
+[2026-04-23 10:04:20.817] [INF] [UserId:Anonymous] HTTP GET /api/flights/7 responded 200 in 86.7311 ms
+[2026-04-23 10:04:20.819] [INF] [UserId:Anonymous] Executed endpoint 'FlightService.Controllers.FlightsController.GetSchedule (FlightService)'
+[2026-04-23 10:04:20.820] [INF] [UserId:Anonymous] HTTP GET /api/flights/6 responded 200 in 85.5194 ms
+[2026-04-23 10:04:20.823] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/7 - 200 null application/json; charset=utf-8 105.2969ms
+[2026-04-23 10:04:20.825] [INF] [UserId:Anonymous] HTTP GET /api/flights/schedules/96 responded 200 in 78.2936 ms
+[2026-04-23 10:04:20.828] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/6 - 200 null application/json; charset=utf-8 108.7607ms
+[2026-04-23 10:04:20.839] [INF] [UserId:] Request finished HTTP/1.1 GET http://localhost:5002/api/flights/schedules/96 - 200 null application/json; charset=utf-8 109.6115ms
+[2026-04-23 10:04:57.078] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:05:57.092] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:06:57.110] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:07:57.127] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:08:57.145] [INF] [UserId:] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:09:57.165] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:10:57.191] [INF] [UserId:] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+[2026-04-23 10:11:57.218] [INF] [UserId:] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'

@@ -1,0 +1,474 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookingService</name>
+    </assembly>
+    <members>
+        <member name="M:BookingService.Controllers.BookingsController.GetBookings(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all bookings, or filters by PNR, userId, flightId, or scheduleId.
+            [Allowed Roles: Public / Authorized Users]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.GetBooking(System.Int32)">
+            <summary>
+            Gets a booking by its ID.
+            [Allowed Roles: Passenger, Dealer, Admin]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.CreateBooking(BookingService.DTOs.CreateBookingDto)">
+            <summary>
+            Creates a new booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.AddPassengersToBooking(System.Int32,System.Collections.Generic.List{BookingService.DTOs.CreatePassengerDto})">
+            <summary>
+            Adds passengers to an existing booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.GetBookingPassengers(System.Int32)">
+            <summary>
+            Gets all passengers for a specific booking.
+            [Allowed Roles: Passenger, Dealer, Admin, GroundStaff, Staff]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.CancelBooking(System.Int32)">
+            <summary>
+            Cancels a booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.DeleteBooking(System.Int32)">
+            <summary>
+            Permanently deletes a booking record.
+            [Allowed Roles: Passenger, Dealer, Admin]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.CancelPassenger(System.Int32,BookingService.DTOs.CancelPassengerDto)">
+            <summary>
+            Cancels a specific passenger from a booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:BookingService.Controllers.BookingsController.GetOccupiedSeats(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Gets the occupied seats for a flight schedule.
+            [Allowed Roles: Passenger, Dealer, Admin]
+            </summary>
+        </member>
+        <member name="T:BookingService.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.AddTables">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddTables.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddTables.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddTables.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.addecolms">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.addecolms.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.addecolms.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.addecolms.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.AddScheduleIdToBooking">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddScheduleIdToBooking.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddScheduleIdToBooking.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddScheduleIdToBooking.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.AddSeatNumberToPassenger">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddSeatNumberToPassenger.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddSeatNumberToPassenger.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddSeatNumberToPassenger.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.AddTotalAmountToBooking">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddTotalAmountToBooking.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddTotalAmountToBooking.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddTotalAmountToBooking.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.RemoveUniqueAadharIndex">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.RemoveUniqueAadharIndex.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.RemoveUniqueAadharIndex.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.RemoveUniqueAadharIndex.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.SyncBookingModel">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.SyncBookingModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.SyncBookingModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.SyncBookingModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.AddPassengerFare">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassengerFare.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassengerFare.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassengerFare.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.RelaxAadharConstraint">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.RelaxAadharConstraint.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.RelaxAadharConstraint.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.RelaxAadharConstraint.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.AddPassengerPreferences">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassengerPreferences.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassengerPreferences.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassengerPreferences.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:BookingService.Migrations.AddPassportAndNationality">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassportAndNationality.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassportAndNationality.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Migrations.AddPassportAndNationality.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Fetches a booking by ID with eager-loaded passenger collection.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.GetByPNRAsync(System.String)">
+            <summary>
+            Looks up a booking by its PNR code with included passengers.
+            </summary>
+            <param name="pnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.AddAsync(BookingService.Models.Booking)">
+            <summary>
+            Inserts a new booking record and returns the saved entity with generated ID.
+            </summary>
+            <param name="booking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.UpdateAsync(BookingService.Models.Booking)">
+            <summary>
+            Updates an existing booking in the database and persists changes.
+            </summary>
+            <param name="booking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Removes a booking by ID. No-ops silently if booking doesn't exist.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.GetByUserIdAsync(System.Int32)">
+            <summary>
+            Retrieves all bookings belonging to a specific user.
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.GetByScheduleIdAsync(System.Int32)">
+            <summary>
+            Fetches all bookings for a flight schedule with included passengers.
+            </summary>
+            <param name="scheduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.GetByFlightIdAsync(System.Int32)">
+            <summary>
+            Retrieves all bookings for a flight ID with included passengers.
+            </summary>
+            <param name="flightId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.GetOccupiedSeatsAsync(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Returns distinct seat numbers from non-cancelled passengers in non-cancelled bookings for a flight/schedule.
+            </summary>
+            <param name="flightId"></param>
+            <param name="scheduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.BookingRepository.GetAllAsync">
+            <summary>
+            Retrieves all bookings from the database.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.GetPassengerByIdAsync(System.Int32)">
+            <summary>
+            Fetches a passenger by primary key ID.
+            </summary>
+            <param name="passengerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.GetPassengersByBookingIdAsync(System.Int32)">
+            <summary>
+            Retrieves all passengers linked to a specific booking.
+            </summary>
+            <param name="bookingId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.GetPassengerByAadharAsync(System.String)">
+            <summary>
+            Looks up a passenger by Aadhar card number for uniqueness checks.
+            </summary>
+            <param name="aadharCardNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.AddPassengerAsync(BookingService.Models.Passenger)">
+            <summary>
+            Inserts a new passenger record into the database.
+            </summary>
+            <param name="passenger"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.UpdatePassengerAsync(BookingService.Models.Passenger)">
+            <summary>
+            Updates an existing passenger record.
+            </summary>
+            <param name="passenger"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.DeletePassengerAsync(System.Int32)">
+            <summary>
+            Removes a passenger by ID. No-ops if not found.
+            </summary>
+            <param name="passengerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.IsAadharUniqueAsync(System.String,System.Nullable{System.Int32})">
+            <summary>
+             Checks if an Aadhar number is unique across all passengers. Optionally excludes a specific passenger ID.
+            </summary>
+            <param name="aadharCardNo"></param>
+            <param name="excludePassengerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Repositories.PassengerRepository.IsAadharDuplicateInScheduleAsync(System.String,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Checks if an Aadhar number already exists for any passenger on the same flight schedule via booking join.
+            </summary>
+            <param name="aadharCardNo"></param>
+            <param name="scheduleId"></param>
+            <param name="excludePassengerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.CreateBookingAsync(BookingService.DTOs.CreateBookingDto)">
+            <summary>
+            Legacy service method for booking creation. Validates flight/schedule
+            availability, seat capacity, and generates PNR. 
+            Books seats on FlightService and publishes BookingCreatedEvent.
+            </summary>
+            
+            <param name="dto"></param>
+            
+            <returns></returns>
+            
+            <exception cref="T:Shared.Exceptions.ConfigurationException"></exception>
+            <exception cref="T:Shared.Exceptions.ScheduleNotFoundException"></exception>
+            <exception cref="T:Shared.Exceptions.ServiceCommunicationException"></exception>
+            <exception cref="T:Shared.Exceptions.InvalidScheduleException"></exception>
+            <exception cref="T:Shared.Exceptions.FlightAlreadyDepartedException"></exception>
+            <exception cref="T:Shared.Exceptions.SeatsNotAvailableException"></exception>
+            <exception cref="T:Shared.Exceptions.FlightNotFoundException"></exception>
+            <exception cref="T:Shared.Exceptions.FlightCancelledException"></exception>
+            <exception cref="T:Shared.Exceptions.ServiceUnavailableException"></exception>
+            <exception cref="T:Shared.Exceptions.DomainValidationException"></exception>
+            <exception cref="T:Shared.Exceptions.BaggageWeightExceededException"></exception>
+            <exception cref="T:Shared.Exceptions.SeatCapacityExceededException"></exception>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.GetBookingAsync(System.Int32)">
+            <summary>
+            Retrieves a booking by ID with included passenger details. 
+            Throws BookingNotFoundException if not found.
+            </summary>
+            
+            <param name="id"></param>
+            
+            <returns></returns>
+            
+            <exception cref="T:Shared.Exceptions.BookingNotFoundException"></exception>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.CancelBookingAsync(System.Int32)">
+            <summary>
+            Cancels a booking and prevents double cancellation. Releases reserved seats via
+            ReleaseSeatReservationCommand and publishes BookingCancelledEvent.
+            </summary>
+            
+            <param name="id"></param>
+            
+            <returns></returns>
+            <exception cref="T:Shared.Exceptions.BookingNotFoundException"></exception>
+            <exception cref="T:Shared.Exceptions.BookingCancellationNotAllowedException"></exception>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.GetBookingHistoryAsync(System.Int32)">
+            <summary>
+            Returns simplified booking history for a user with essential fields (PNR, status, amount, date).
+            </summary>
+            
+            <param name="userId"></param>
+            
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.GetBookingsByScheduleAsync(System.Int32)">
+            <summary>
+            Retrieves all bookings for a schedule with nested passenger details including seat assignments.
+            </summary>
+            <param name="scheduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.GetOccupiedSeatsAsync(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Returns distinct occupied seat numbers from confirmed bookings for a flight or schedule.
+            </summary>
+            <param name="flightId"></param>
+            <param name="scheduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.UpdateBookingAsync(System.Int32,BookingService.Models.Booking)">
+            <summary>
+            Updates an existing booking with new data. Throws BookingNotFoundException if not found.
+            </summary>
+            <param name="id"></param>
+            <param name="booking"></param>
+            <returns></returns>
+            <exception cref="T:Shared.Exceptions.BookingNotFoundException"></exception>
+        </member>
+        <member name="M:BookingService.Services.BookingServiceImpl.GeneratePNR">
+            <summary>
+            generate PNR
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Services.PassengerService.GetPassengerAsync(System.Int32)">
+            <summary>
+            Retrieves a single passenger by ID. Returns null if not found with a warning log.
+            </summary>
+            
+            <param name="passengerId"></param>
+            
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Services.PassengerService.GetPassengersForBookingAsync(System.Int32)">
+            <summary>
+            Returns all passengers associated with a specific booking ID.
+            </summary>
+            
+            <param name="bookingId"></param>
+            
+            <returns></returns>
+        </member>
+        <member name="M:BookingService.Services.PassengerService.CreatePassengerAsync(System.Int32,BookingService.DTOs.CreatePassengerDto)">
+            <summary>
+            Creates a passenger linked to a booking. 
+            Validates booking existence and Aadhar uniqueness. Updates booking passenger counts.
+            </summary>
+            <param name="bookingId"></param>
+            <param name="dto"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:BookingService.Services.PassengerService.CancelPassengerAsync(System.Int32,BookingService.DTOs.CancelPassengerDto)">
+            <summary>
+            Cancels a passenger and updates booking counters (confirmed--, cancelled++).
+            Prevents cancellation of already-cancelled passengers.
+            </summary>
+            <param name="passengerId"></param>
+            <param name="dto"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:BookingService.Services.PassengerService.ValidateAadharNumberAsync(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Validates Aadhar number format (12 digits) and checks uniqueness in the database. 
+            Optionally excludes a specific passenger ID for updates.
+            </summary>
+            <param name="aadharCardNo"></param>
+            <param name="excludePassengerId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

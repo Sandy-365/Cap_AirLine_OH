@@ -1,0 +1,59 @@
+2026-08-03 17:05:38.309 +05:30 [WRN] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-08-03 17:05:38.576 +05:30 [WRN] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-08-03 17:05:38.612 +05:30 [WRN] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-08-03 17:07:35.345 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-03 17:07:35.436 +05:30 [INF] Now listening on: http://localhost:5003
+2026-08-03 17:07:35.440 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-03 17:07:35.442 +05:30 [INF] Hosting environment: Development
+2026-08-03 17:07:35.443 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\BookingService
+2026-08-03 17:22:06.795 +05:30 [WRN] No store type was specified for the decimal property 'BaggageWeight' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-08-03 17:22:06.852 +05:30 [WRN] No store type was specified for the decimal property 'TotalAmount' on entity type 'Booking'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-08-03 17:22:06.856 +05:30 [WRN] No store type was specified for the decimal property 'Fare' on entity type 'Passenger'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-08-03 17:22:07.490 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-03 17:22:07.501 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-03 17:22:07.524 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-03 17:22:07.609 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-03 17:22:07.630 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-03 17:22:07.638 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-03 17:22:07.658 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-03 17:22:07.673 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-03 17:22:07.684 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-03 17:22:07.756 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-03 17:22:07.825 +05:30 [INF] Now listening on: http://localhost:5003
+2026-08-03 17:22:07.830 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-03 17:22:07.831 +05:30 [INF] Hosting environment: Development
+2026-08-03 17:22:07.833 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\BookingService
+2026-08-03 17:25:29.725 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json - null null
+2026-08-03 17:25:30.005 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 283.1097ms
+2026-08-03 17:52:26.817 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5003/api/bookings - null null
+2026-08-03 17:52:26.829 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-03 17:52:27.004 +05:30 [INF] Executing endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+2026-08-03 17:52:27.045 +05:30 [INF] Route matched with {action = "GetBookings", controller = "Bookings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBookings() on controller BookingService.Controllers.BookingsController (BookingService).
+2026-08-03 17:52:27.895 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[BaggageWeight], [b].[CancelledPassengers], [b].[ConfirmedPassengers], [b].[CreatedAt], [b].[FlightId], [b].[PNR], [b].[PaymentStatus], [b].[ScheduleId], [b].[SeatClass], [b].[Status], [b].[TotalAmount], [b].[TotalPassengers], [b].[UpdatedAt], [b].[UserEmail], [b].[UserId], [b].[UserName]
+FROM [Bookings] AS [b]
+2026-08-03 17:52:28.144 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Object, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-08-03 17:52:28.217 +05:30 [INF] Executed action BookingService.Controllers.BookingsController.GetBookings (BookingService) in 1162.758ms
+2026-08-03 17:52:28.223 +05:30 [INF] Executed endpoint 'BookingService.Controllers.BookingsController.GetBookings (BookingService)'
+2026-08-03 17:52:28.239 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5003/api/bookings - 200 null application/json; charset=utf-8 1421.8556ms
+2026-08-03 17:53:51.485 +05:30 [INF] Application is shutting down...
