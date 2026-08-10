@@ -1,10 +1,10 @@
 {
   "SwaggerEndPoints": [
     {
-      "Key": "admin",
+      "Key": "backoffice",
       "Config": [
         {
-          "Name": "Admin API",
+          "Name": "BackOffice API",
           "Version": "v1",
           "Url": "http://localhost:5010/swagger/v1/swagger.json"
         }
@@ -21,32 +21,12 @@
       ]
     },
     {
-      "Key": "staff",
-      "Config": [
-        {
-          "Name": "Staff API",
-          "Version": "v1",
-          "Url": "http://localhost:5011/swagger/v1/swagger.json"
-        }
-      ]
-    },
-    {
       "Key": "flights",
       "Config": [
         {
-          "Name": "Flights API",
+          "Name": "FlightOps API (Flights, Bookings, CheckIns & Baggages)",
           "Version": "v1",
           "Url": "http://localhost:5002/swagger/v1/swagger.json"
-        }
-      ]
-    },
-    {
-      "Key": "bookings",
-      "Config": [
-        {
-          "Name": "Bookings API",
-          "Version": "v1",
-          "Url": "http://localhost:5003/swagger/v1/swagger.json"
         }
       ]
     },
@@ -57,16 +37,6 @@
           "Name": "Payments API",
           "Version": "v1",
           "Url": "http://localhost:5004/swagger/v1/swagger.json"
-        }
-      ]
-    },
-    {
-      "Key": "checkins",
-      "Config": [
-        {
-          "Name": "CheckIns & Baggages API",
-          "Version": "v1",
-          "Url": "http://localhost:5005/swagger/v1/swagger.json"
         }
       ]
     }

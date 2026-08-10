@@ -4,14 +4,10 @@ if ([string]::IsNullOrEmpty($rootDir)) {
 }
 
 $services = @(
-    @{ Name = "FlightService";     Path = Join-Path $rootDir "Services\FlightService";     Port = 5002 },
-    @{ Name = "BookingService";    Path = Join-Path $rootDir "Services\BookingService";    Port = 5003 },
+    @{ Name = "FlightOpsService";  Path = Join-Path $rootDir "Services\FlightOpsService";  Port = 5002 },
     @{ Name = "PaymentService";    Path = Join-Path $rootDir "Services\PaymentService";    Port = 5004 },
-    @{ Name = "CheckInService";    Path = Join-Path $rootDir "Services\CheckInService";    Port = 5005 },
-    @{ Name = "BaggageService";    Path = Join-Path $rootDir "Services\BaggageService";    Port = 5006 },
     @{ Name = "PassengerService";  Path = Join-Path $rootDir "Services\PassengerService";  Port = 5007 },
-    @{ Name = "AdminService";      Path = Join-Path $rootDir "Services\AdminService";      Port = 5010 },
-    @{ Name = "StaffService";      Path = Join-Path $rootDir "Services\StaffService";      Port = 5011 },
+    @{ Name = "BackOfficeService"; Path = Join-Path $rootDir "Services\BackOfficeService"; Port = 5010 },
     @{ Name = "ApiGateway";        Path = Join-Path $rootDir "ApiGateway";                 Port = 5000 }
 )
 
@@ -30,10 +26,8 @@ if ($wtCmd) {
             }
             $isFirst = $false
 
-            $wtArgs += "-p"
-            $wtArgs += "Command Prompt"
             $wtArgs += "--title"
-            $wtArgs += "$($svc.Name) [:$($svc.Port)]"
+            $wtArgs += "$($svc.Name)-$($svc.Port)"
             $wtArgs += "-d"
             $wtArgs += $svc.Path
             $wtArgs += "cmd"
@@ -54,10 +48,12 @@ if ($wtCmd) {
     foreach ($svc in $services) {
         if (Test-Path $svc.Path) {
             Write-Host "  Starting $($svc.Name) in CMD window..." -ForegroundColor Green
-            Start-Process cmd -ArgumentList "/k", "title $($svc.Name) [:$($svc.Port)] && cd /d `"$($svc.Path)`" && dotnet run"
+            Start-Process cmd -ArgumentList "/k", "title $($svc.Name)-$($svc.Port) && cd /d `"$($svc.Path)`" && dotnet run"
             Start-Sleep -Milliseconds 800
         }
     }
 }
+
+
 
 

@@ -42,6 +42,24 @@ public class PassengerAuthController : ControllerBase
     }
 
     /// <summary>
+    /// Generates a password reset OTP token and sends it via email.
+    /// [Allowed Roles: Public (None required)]
+    /// </summary>
+    [HttpPost("forgot-password")]
+    public async Task<IActionResult> ForgotPassword([FromBody] PassengerForgotPasswordDto dto)
+    {
+        try
+        {
+            await _authService.ForgotPasswordAsync(dto.Email);
+            return Ok(new { message = "If the email is registered, a password reset token has been sent." });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+    }
+
+    /// <summary>
     /// Resets passenger password using a valid OTP token. 
     /// [Allowed Roles: Public (None required)]
     /// </summary>

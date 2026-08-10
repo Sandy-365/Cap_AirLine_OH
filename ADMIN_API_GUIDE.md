@@ -1,5 +1,6 @@
 # SkyPass Admin Portal - Complete Step-by-Step API Guide & Role Matrix
-
+admin123
+superadmin@airline.com
 This guide provides a comprehensive, step-by-step walkthrough for using all **Admin APIs** in the SkyPass Microservices system, broken down by **Role Permissions**.
 
 ---

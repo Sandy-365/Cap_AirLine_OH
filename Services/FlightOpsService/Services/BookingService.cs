@@ -1,0 +1,407 @@
+using FlightOpsService.DTOs;
+using FlightOpsService.Models;
+using FlightOpsService.Repositories;
+using Shared.Exceptions;
+using Shared.Models;
+
+namespace FlightOpsService.Services;
+
+public interface IBookingService
+{
+    Task<BookingDto> CreateBookingAsync(CreateBookingDto dto);
+    Task<BookingDto> GetBookingAsync(int id);
+    Task CancelBookingAsync(int id);
+    Task<IEnumerable<BookingHistoryDto>> GetBookingHistoryAsync(int userId);
+    Task<IEnumerable<object>> GetBookingsByScheduleAsync(int scheduleId);
+    Task<IEnumerable<string>> GetOccupiedSeatsAsync(int flightId, int? scheduleId);
+    Task<BookingDto> UpdateBookingAsync(int id, Booking booking);
+    Task DeleteBookingAsync(int id);
+    Task<BookingDto> GetBookingByPnrAsync(string pnr);
+    Task<IEnumerable<object>> GetAllBookingsAsync();
+    Task<IEnumerable<object>> GetBookingsByFlightIdAsync(int flightId);
+}
+
+public class BookingServiceImpl : IBookingService
+{
+    private readonly IBookingRepository _repository;
+    private readonly IFlightService _flightService;
+    private readonly IFlightScheduleService _scheduleService;
+    private readonly ILogger<BookingServiceImpl> _logger;
+
+    public BookingServiceImpl(
+        IBookingRepository repository,
+        IFlightService flightService,
+        IFlightScheduleService scheduleService,
+        ILogger<BookingServiceImpl> logger)
+    {
+        _repository = repository;
+        _flightService = flightService;
+        _scheduleService = scheduleService;
+        _logger = logger;
+    }
+
+    /// <summary>
+    /// Creates a new booking. Validates flight/schedule availability in-process
+    /// and books seats directly without network calls.
+    /// </summary>
+    public async Task<BookingDto> CreateBookingAsync(CreateBookingDto dto)
+    {
+        _logger.LogInformation($"Starting booking creation for User {dto.UserId}, Flight {dto.FlightId}, Schedule {dto.ScheduleId}");
+
+        // ── Validate via schedule or flight in-process ──
+        if (dto.ScheduleId.HasValue)
+        {
+            FlightScheduleDto scheduleData;
+            try
+            {
+                scheduleData = await _scheduleService.GetScheduleAsync(dto.ScheduleId.Value);
+            }
+            catch (KeyNotFoundException)
+            {
+                throw new ScheduleNotFoundException(dto.ScheduleId.Value);
+            }
+
+            if (scheduleData.Status == "Cancelled" || scheduleData.Status == "Completed")
+            {
+                throw new InvalidScheduleException(
+                    dto.ScheduleId.Value, 
+                    $"Schedule status is '{scheduleData.Status}' and cannot be booked");
+            }
+
+            var nowIst = DateTime.UtcNow.AddHours(5.5);
+            if (scheduleData.DepartureTime < nowIst)
+            {
+                throw new FlightAlreadyDepartedException(
+                    dto.FlightId, 
+                    scheduleData.DepartureTime);
+            }
+
+            int availableSeatsForClass = dto.SeatClass switch
+            {
+                "Economy" => scheduleData.EconomySeats,
+                "Business" => scheduleData.BusinessSeats,
+                "First" => scheduleData.FirstSeats,
+                _ => 0
+            };
+            if (availableSeatsForClass < dto.PassengerCount)
+            {
+                throw new SeatsNotAvailableException(
+                    dto.FlightId,
+                    dto.ScheduleId,
+                    dto.SeatClass,
+                    dto.PassengerCount,
+                    availableSeatsForClass);
+            }
+        }
+        else
+        {
+            FlightDto flightData;
+            try
+            {
+                flightData = await _flightService.GetFlightAsync(dto.FlightId);
+            }
+            catch (KeyNotFoundException)
+            {
+                throw new FlightNotFoundException(dto.FlightId);
+            }
+
+            if (flightData.Status == "Cancelled")
+                throw new FlightCancelledException(dto.FlightId);
+
+            var nowIst = DateTime.UtcNow.AddHours(5.5);
+            if (flightData.DepartureTime < nowIst)
+                throw new FlightAlreadyDepartedException(dto.FlightId, flightData.DepartureTime);
+
+            int availableSeatsForClass = dto.SeatClass switch
+            {
+                "Economy" => flightData.EconomySeats,
+                "Business" => flightData.BusinessSeats,
+                "First" => flightData.FirstSeats,
+                _ => 0
+            };
+            if (availableSeatsForClass <= 0)
+            {
+                throw new SeatsNotAvailableException(
+                    dto.FlightId,
+                    null,
+                    dto.SeatClass,
+                    dto.PassengerCount,
+                    0);
+            }
+        }
+
+        // Validate seat class enum
+        if (!Enum.TryParse<SeatClass>(dto.SeatClass, out var seatClass))
+        {
+            throw new DomainValidationException(
+                nameof(CreateBookingDto.SeatClass),
+                dto.SeatClass,
+                $"Must be one of: {string.Join(", ", Enum.GetNames(typeof(SeatClass)))}");
+        }
+
+        if (dto.BaggageWeight < 0)
+        {
+            throw new DomainValidationException(
+                nameof(CreateBookingDto.BaggageWeight),
+                dto.BaggageWeight,
+                "Baggage weight cannot be negative");
+        }
+
+        if (dto.BaggageWeight > 100)
+        {
+            throw new BaggageWeightExceededException(dto.BaggageWeight, 100);
+        }
+
+        if (dto.UserId <= 0)
+        {
+            throw new DomainValidationException(
+                nameof(CreateBookingDto.UserId),
+                dto.UserId,
+                "User ID must be greater than 0");
+        }
+
+        var pnr = GeneratePNR();
+
+        var booking = new Booking
+        {
+            UserId = dto.UserId,
+            UserEmail = dto.UserEmail,
+            UserName = dto.UserName,
+            FlightId = dto.FlightId,
+            ScheduleId = dto.ScheduleId,
+            SeatClass = seatClass,
+            BaggageWeight = dto.BaggageWeight,
+            PNR = pnr,
+            Status = BookingStatus.Pending,
+            TotalPassengers = 0,
+            ConfirmedPassengers = 0,
+            CancelledPassengers = 0,
+            CreatedAt = DateTime.UtcNow,
+            TotalAmount = dto.TotalAmount
+        };
+
+        await _repository.AddAsync(booking);
+
+        // Book seat on schedule or flight in-process
+        try
+        {
+            if (dto.ScheduleId.HasValue)
+            {
+                await _scheduleService.BookScheduleSeatAsync(dto.ScheduleId.Value, dto.SeatClass, dto.PassengerCount);
+            }
+            else
+            {
+                await _flightService.BookSeatAsync(dto.FlightId, dto.SeatClass, dto.PassengerCount);
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to book seat for booking {BookingId}", booking.Id);
+            await _repository.DeleteAsync(booking.Id);
+            throw new SeatCapacityExceededException(
+                dto.FlightId,
+                dto.SeatClass,
+                dto.PassengerCount,
+                0);
+        }
+
+        _logger.LogInformation($"Booking {booking.Id} created with PNR: {pnr}");
+
+        return MapToDto(booking);
+    }
+
+    public async Task<BookingDto> GetBookingAsync(int id)
+    {
+        var booking = await _repository.GetByIdAsync(id);
+        if (booking == null)
+            throw new BookingNotFoundException(id);
+
+        return MapToDto(booking);
+    }
+
+    public async Task CancelBookingAsync(int id)
+    {
+        var booking = await _repository.GetByIdAsync(id);
+        if (booking == null)
+            throw new BookingNotFoundException(id);
+
+        if (booking.Status == BookingStatus.Cancelled)
+        {
+            throw new BookingCancellationNotAllowedException(
+                id, 
+                "Booking is already cancelled");
+        }
+
+        booking.Status = BookingStatus.Cancelled;
+        await _repository.UpdateAsync(booking);
+
+        // Release seats directly in-process
+        if (booking.ScheduleId.HasValue && booking.TotalPassengers > 0)
+        {
+            try
+            {
+                await _scheduleService.ReleaseScheduleSeatAsync(
+                    booking.ScheduleId.Value, 
+                    booking.SeatClass.ToString(), 
+                    booking.TotalPassengers);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Could not release seats for cancelled booking {BookingId}", id);
+            }
+        }
+    }
+
+    public async Task<IEnumerable<BookingHistoryDto>> GetBookingHistoryAsync(int userId)
+    {
+        var bookings = await _repository.GetByUserIdAsync(userId);
+        return bookings.Select(b => new BookingHistoryDto
+        {
+            Id = b.Id,
+            FlightId = b.FlightId,
+            ScheduleId = b.ScheduleId,
+            PNR = b.PNR,
+            Status = b.Status.ToString(),
+            CreatedAt = b.CreatedAt,
+            TotalAmount = b.TotalAmount
+        });
+    }
+
+    public async Task<IEnumerable<object>> GetBookingsByScheduleAsync(int scheduleId)
+    {
+        var bookings = await _repository.GetByScheduleIdAsync(scheduleId);
+        return bookings.Select(b => (object)new {
+            Id = b.Id,
+            PNR = b.PNR,
+            UserId = b.UserId,
+            SeatClass = b.SeatClass.ToString(),
+            Status = b.Status.ToString(),
+            PaymentStatus = b.PaymentStatus.ToString(),
+            Passengers = b.Passengers?.Select(p => (object)new {
+                p.Id,
+                p.Name,
+                p.Age,
+                p.Gender,
+                Status = p.Status.ToString(),
+                Seat = p.SeatNumber ?? "TBD"
+            }).ToList() ?? new List<object>()
+        }).ToList();
+    }
+
+    public async Task<IEnumerable<string>> GetOccupiedSeatsAsync(int flightId, int? scheduleId)
+    {
+        return await _repository.GetOccupiedSeatsAsync(flightId, scheduleId);
+    }
+
+    public async Task<BookingDto> UpdateBookingAsync(int id, Booking booking)
+    {
+        var existingBooking = await _repository.GetByIdAsync(id);
+        if (existingBooking == null)
+            throw new BookingNotFoundException(id);
+
+        await _repository.UpdateAsync(booking);
+        return MapToDto(booking);
+    }
+
+    public async Task DeleteBookingAsync(int id)
+    {
+        var booking = await _repository.GetByIdAsync(id);
+        if (booking == null)
+            throw new BookingNotFoundException(id);
+
+        await _repository.DeleteAsync(id);
+        _logger.LogInformation("Booking {BookingId} permanently deleted from database", id);
+    }
+
+    public async Task<BookingDto> GetBookingByPnrAsync(string pnr)
+    {
+        var booking = await _repository.GetByPNRAsync(pnr);
+        if (booking == null)
+            throw new PnrNotFoundException(pnr);
+
+        return MapToDto(booking);
+    }
+
+    public async Task<IEnumerable<object>> GetAllBookingsAsync()
+    {
+        var bookings = await _repository.GetAllAsync();
+        return bookings.Select(b => (object)new {
+            Id = b.Id,
+            PNR = b.PNR,
+            UserId = b.UserId,
+            FlightId = b.FlightId,
+            ScheduleId = b.ScheduleId,
+            SeatClass = b.SeatClass.ToString(),
+            Status = b.Status.ToString(),
+            PaymentStatus = b.PaymentStatus.ToString(),
+            TotalPassengers = b.TotalPassengers
+        }).ToList();
+    }
+
+    public async Task<IEnumerable<object>> GetBookingsByFlightIdAsync(int flightId)
+    {
+        var bookings = await _repository.GetByFlightIdAsync(flightId);
+        return bookings.Select(b => (object)new {
+            Id = b.Id,
+            PNR = b.PNR,
+            UserId = b.UserId,
+            SeatClass = b.SeatClass.ToString(),
+            Status = b.Status.ToString(),
+            PaymentStatus = b.PaymentStatus.ToString(),
+            Passengers = b.Passengers?.Select(p => (object)new {
+                p.Id,
+                p.Name,
+                p.Age,
+                p.Gender,
+                Status = p.Status.ToString(),
+                Seat = p.SeatNumber ?? "TBD"
+            }).ToList() ?? new List<object>()
+        }).ToList();
+    }
+
+    private string GeneratePNR()
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        return new string(Enumerable.Range(0, 6).Select(_ => chars[Random.Shared.Next(chars.Length)]).ToArray());
+    }
+
+    private BookingDto MapToDto(Booking booking)
+    {
+        return new BookingDto
+        {
+            Id = booking.Id,
+            UserId = booking.UserId,
+            FlightId = booking.FlightId,
+            ScheduleId = booking.ScheduleId,
+            SeatClass = booking.SeatClass.ToString(),
+            BaggageWeight = booking.BaggageWeight,
+            PNR = booking.PNR,
+            Status = booking.Status.ToString(),
+            PaymentStatus = booking.PaymentStatus.ToString(),
+            TotalPassengers = booking.TotalPassengers,
+            ConfirmedPassengers = booking.ConfirmedPassengers,
+            CancelledPassengers = booking.CancelledPassengers,
+            CreatedAt = booking.CreatedAt,
+            TotalAmount = booking.TotalAmount,
+            Passengers = booking.Passengers?.Select(p => new PassengerResponseDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Age = p.Age,
+                Gender = p.Gender,
+                AadharCardNo = p.AadharCardNo,
+                PassportNumber = p.PassportNumber,
+                Nationality = p.Nationality,
+                DietaryRequirements = p.DietaryRequirements,
+                MedicalNeeds = p.MedicalNeeds,
+                MedicalAlerts = p.MedicalAlerts,
+                Status = p.Status.ToString(),
+                Fare = p.Fare,
+                CancelledAt = p.CancelledAt,
+                CancellationReason = p.CancellationReason,
+                SeatNumber = p.SeatNumber,
+                CreatedAt = p.CreatedAt
+            }).ToList() ?? new List<PassengerResponseDto>()
+        };
+    }
+}

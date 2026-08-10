@@ -19,11 +19,13 @@
 
   <Project Path="Shared/Shared.csproj" />
 
+  <Project Path="Services/FlightOpsService/FlightOpsService.csproj" />
   <Project Path="Services/FlightService/FlightService.csproj" />
   <Project Path="Services/BookingService/BookingService.csproj" />
   <Project Path="Services/PaymentService/PaymentService.csproj" />
   <Project Path="Services/CheckInService/CheckInService.csproj" />
 
+  <Project Path="Services/BackOfficeService/BackOfficeService.csproj" />
   <Project Path="Services/AdminService/AdminService.csproj" />
   <Project Path="Services/StaffService/StaffService.csproj" />
   <Project Path="Services/PassengerService/PassengerService.csproj" />

@@ -241,6 +241,9 @@ public class PassengerAuthService : IPassengerAuthService
         var profile = await _repo.GetByEmailAsync(dto.Email)
             ?? throw new InvalidOperationException("Account not found.");
 
+        if (profile.ResetToken != dto.Token || profile.ResetTokenExpiry < DateTime.UtcNow)
+            throw new InvalidOperationException("Invalid or expired token.");
+
         profile.PasswordHash = PasswordHasher.Hash(dto.NewPassword);
         profile.ResetToken = null;
         profile.ResetTokenExpiry = null;

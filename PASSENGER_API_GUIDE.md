@@ -18,16 +18,13 @@ Welcome to the **Passenger Service** technical guide. This guide explains how to
 | :--- | :--- | :--- | :--- |
 | `/identity/passenger/login` | `POST` | **Public** (None) | Authenticate passenger credentials & obtain Bearer JWT token |
 | `/identity/passenger/register` | `POST` | **Public** (None) | Register a new passenger account |
+| `/identity/passenger/forgot-password` | `POST` | **Public** (None) | Generate and email a password reset OTP token |
 | `/identity/passenger/reset-password` | `POST` | **Public** (None) | Reset password using a valid OTP token |
 | `/passengers/users` | `GET` | `Admin`, `SuperAdmin`, `HR`, `Staff` | Retrieve all passenger accounts in the system |
 | `/passengers/users/{userId}` | `GET` | `Passenger` (own profile), `Admin`, `SuperAdmin`, `Staff` | Retrieve passenger profile by ID |
 | `/passengers/users/{userId}/profile` | `PUT` | `Passenger` (own profile), `Admin`, `SuperAdmin` | Update passenger profile details (name, email) |
 | `/passengers/users/{userId}/status` | `PUT` | `Admin`, `SuperAdmin`, `HR` | Activate or deactivate a passenger account |
 | `/passengers/users/{userId}` | `DELETE` | `Admin`, `SuperAdmin` | Permanently delete a passenger profile |
-| `/passengers/rewards/{userId}/balance` | `GET` | `Passenger` (own balance), `Admin`, `SuperAdmin` | Get total loyalty/reward points balance |
-| `/passengers/rewards/{userId}/history` | `GET` | `Passenger` (own history), `Admin`, `SuperAdmin` | View reward transaction history |
-| `/passengers/rewards/earn` | `POST` | `Admin`, `SuperAdmin`, `Staff` | Award reward points to a passenger |
-| `/passengers/rewards/redeem` | `POST` | `Passenger` (own points), `Admin`, `SuperAdmin` | Deduct reward points for booking redemption |
 
 ---
 
@@ -40,9 +37,6 @@ flowchart TD
     C -->|3. Set Authorization Header: Bearer token| D[Authenticated Passenger]
     D -->|GET /passengers/users/{userId}| E[View Profile]
     D -->|PUT /passengers/users/{userId}/profile| F[Update Profile]
-    D -->|GET /passengers/rewards/{userId}/balance| G[Check Reward Points]
-    D -->|POST /passengers/rewards/redeem| H[Redeem Points for Booking]
-    Admin[Admin / SuperAdmin / Staff] -->|POST /passengers/rewards/earn| I[Award Points to Passenger]
 ```
 
 ---
@@ -154,98 +148,7 @@ flowchart TD
 
 ---
 
-### Step 4: Loyalty & Reward Points Operations
-
-#### Check Reward Points Balance
-**Endpoint:** `GET http://localhost:5000/api/passengers/rewards/1001/balance`  
-**Authentication:** `Bearer <JWT_TOKEN>` (Passenger, Admin)
-
-#### Response (200 OK):
-```json
-{
-  "userId": 1001,
-  "totalPoints": 4500
-}
-```
-
-#### View Reward Transaction History
-**Endpoint:** `GET http://localhost:5000/api/passengers/rewards/1001/history`  
-**Authentication:** `Bearer <JWT_TOKEN>` (Passenger, Admin)
-
-#### Response (200 OK):
-```json
-[
-  {
-    "id": 501,
-    "userId": 1001,
-    "points": 5000,
-    "transactionType": "Earned",
-    "description": "Flight booking bonus - PNR: AB1234",
-    "createdAt": "2026-08-01T10:00:00Z"
-  },
-  {
-    "id": 502,
-    "userId": 1001,
-    "points": -500,
-    "transactionType": "Redeemed",
-    "description": "Discount applied on booking PNR: CD5678",
-    "createdAt": "2026-08-05T14:30:00Z"
-  }
-]
-```
-
-#### Earn Reward Points (Admin/Staff Only)
-**Endpoint:** `POST http://localhost:5000/api/passengers/rewards/earn`  
-**Authentication:** `Bearer <JWT_TOKEN>` (Admin, SuperAdmin, Staff)
-
-#### Request Body:
-```json
-{
-  "userId": 1001,
-  "points": 1000,
-  "transactionType": "Earned",
-  "bookingId": 204
-}
-```
-
-#### Response (200 OK):
-```json
-{
-  "id": 503,
-  "userId": 1001,
-  "points": 1000,
-  "transactionType": "Earned",
-  "bookingId": 204,
-  "createdAt": "2026-08-06T11:00:00Z"
-}
-```
-
-#### Redeem Reward Points
-**Endpoint:** `POST http://localhost:5000/api/passengers/rewards/redeem`  
-**Authentication:** `Bearer <JWT_TOKEN>` (Passenger, Admin)
-
-#### Request Body:
-```json
-{
-  "userId": 1001,
-  "points": 500
-}
-```
-
-#### Response (200 OK):
-```json
-{
-  "id": 504,
-  "userId": 1001,
-  "points": -500,
-  "transactionType": "Redeemed",
-  "createdAt": "2026-08-06T11:15:00Z"
-}
-```
-
----
-
-### Step 5: Password Reset via OTP
+### Step 4: Password Reset via OTP
 
 **Endpoint:** `POST http://localhost:5000/api/identity/passenger/reset-password`  
 **Authentication:** Public (No token required)

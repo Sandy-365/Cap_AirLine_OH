@@ -65,10 +65,6 @@ Content-Type: application/json
 3. **`PUT /passengers/users/{userId}/profile`** (Update passenger profile)
 4. **`PUT /passengers/users/{userId}/status`** (Activate/deactivate passenger account)
 5. **`DELETE /passengers/users/{userId}`** (Delete passenger profile)
-6. **`GET /passengers/rewards/{userId}/balance`** (Get reward points balance)
-7. **`GET /passengers/rewards/{userId}/history`** (Get reward transaction history)
-8. **`POST /passengers/rewards/earn`** (Award reward points)
-9. **`POST /passengers/rewards/redeem`** (Redeem reward points)
 
 #### `PassengerAuth` Group (`/identity/passenger/*`)
 1. **`POST /identity/passenger/login`** (Log in as passenger)

@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FlightOpsService</name>
+    </assembly>
+    <members>
+        <member name="M:FlightOpsService.Controllers.BaggagesController.GetAll(System.Nullable{System.Int32},System.String)">
+            <summary>
+            Retrieves all registered baggage, or tracks by trackingNumber or bookingId.
+            [Allowed Roles: Logged-in Users]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BaggagesController.GetBaggage(System.Int32)">
+            <summary>
+            Retrieves baggage tracking details by baggage ID.
+            [Allowed Roles: GroundStaff, Passenger, Dealer, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BaggagesController.AddBaggage(FlightOpsService.DTOs.AddBaggageDto)">
+            <summary>
+            Registers new checked baggage at the counter.
+            [Allowed Roles: GroundStaff, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BaggagesController.UpdateBaggageStatus(System.Int32,FlightOpsService.DTOs.UpdateBaggageStatusDto)">
+            <summary>
+            Updates baggage tracking status (CheckedIn, Loaded, Claimed, Lost).
+            [Allowed Roles: GroundStaff, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.GetBookings(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all bookings, or filters by PNR, userId, flightId, or scheduleId.
+            [Allowed Roles: Public / Authorized Users]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.GetBooking(System.Int32)">
+            <summary>
+            Gets a booking by its ID.
+            [Allowed Roles: Passenger, Dealer, Admin]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.CreateBooking(FlightOpsService.DTOs.CreateBookingDto)">
+            <summary>
+            Creates a new booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.AddPassengersToBooking(System.Int32,System.Collections.Generic.List{FlightOpsService.DTOs.CreatePassengerDto})">
+            <summary>
+            Adds passengers to an existing booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.GetBookingPassengers(System.Int32)">
+            <summary>
+            Gets all passengers for a specific booking.
+            [Allowed Roles: Passenger, Dealer, Admin, GroundStaff, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.CancelBooking(System.Int32)">
+            <summary>
+            Cancels a booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.DeleteBooking(System.Int32)">
+            <summary>
+            Permanently deletes a booking record.
+            [Allowed Roles: Passenger, Dealer, Admin]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.CancelPassenger(System.Int32,FlightOpsService.DTOs.CancelPassengerDto)">
+            <summary>
+            Cancels a specific passenger from a booking.
+            [Allowed Roles: Passenger, Dealer]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.GetOccupiedSeats(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Gets the occupied seats for a flight schedule.
+            [Allowed Roles: Passenger, Dealer, Admin]
+            </summary>
+        </member>
+        <member name="T:FlightOpsService.Controllers.CheckInsController">
+            <summary>
+            CheckIns Controller
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.CheckInsController.GetAll(System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all check-in records, or filters by bookingId.
+            [Allowed Roles: Logged-in Users]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.CheckInsController.GetCheckIn(System.Int32)">
+            <summary>
+            Retrieves a single check-in record by ID. Returns 404 if not found.
+            [Allowed Roles: Passenger, Admin, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.CheckInsController.GenerateBoardingPass(System.Int32)">
+            <summary>
+            Generates digital boarding pass details for a check-in record.
+            [Allowed Roles: Passenger, Admin, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.CheckInsController.OnlineCheckIn(FlightOpsService.DTOs.OnlineCheckInDto,System.String,System.String,System.Int32,System.DateTime,System.Decimal)">
+            <summary>
+            Passenger self-service Online Check-In.
+            [Allowed Roles: Passenger]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.CheckInsController.StaffCheckIn(FlightOpsService.DTOs.StaffCheckInDto)">
+            <summary>
+            Staff-initiated Check-In at airport counter.
+            [Allowed Roles: Admin, GroundStaff, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.GetAllFlights(System.String,System.String,System.String)">
+            <summary>
+            Retrieves all flights or searches flights if source, destination, or date are provided.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.GetFlight(System.Int32)">
+            <summary>
+            Retrieves a single flight by ID. Returns 404 if not found.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.CreateFlight(FlightOpsService.DTOs.CreateFlightDto)">
+            <summary>
+            Creates a new flight with route, schedule, pricing, and seat configuration. Sets initial status to Scheduled.
+            [Allowed Roles: Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.UpdateFlight(System.Int32,FlightOpsService.DTOs.UpdateFlightDto)">
+            <summary>
+            Updates flight details (departure/arrival times, gate, aircraft, crew). Only updates non-null fields.
+            [Allowed Roles: Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.DeleteFlight(System.Int32)">
+            <summary>
+            Permanently removes a flight from the system.
+            [Allowed Roles: Admin, SuperAdmin]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.BookSeat(System.Int32,FlightOpsService.DTOs.BookSeatDto)">
+            <summary>
+            Internal endpoint for booking seats on a flight template. Reduces available seat count.
+            [Allowed Roles: Internal Service Call / System]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.GetAllSchedules(System.String,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Retrieves all flight schedules, or searches schedules if source, destination, date, or flightId are provided.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.CreateSchedule(FlightOpsService.DTOs.CreateScheduleDto)">
+            <summary>
+            Creates a new flight schedule instance from a flight template.
+            [Allowed Roles: Admin, SuperAdmin, Staff]
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Controllers.FlightsController.BookScheduleSeat(System.Int32,FlightOpsService.DTOs.BookSeatDto)">
+            <summary>
+            Internal endpoint for booking seats on a specific schedule.
+            [Allowed Roles: Internal Service Call / System]
+            </summary>
+        </member>
+        <member name="T:FlightOpsService.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:FlightOpsService.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FlightOpsService.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FlightOpsService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FlightOpsService.Models.BookingPassenger">
+            <summary>
+            Represents a passenger on a booking (flight manifest passenger).
+            Renamed from Passenger to BookingPassenger to distinguish from auth-layer Passenger entity.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Fetches a booking by ID with eager-loaded passenger collection.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.GetByPNRAsync(System.String)">
+            <summary>
+            Looks up a booking by its PNR code with included passengers.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.AddAsync(FlightOpsService.Models.Booking)">
+            <summary>
+            Inserts a new booking record and returns the saved entity with generated ID.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.UpdateAsync(FlightOpsService.Models.Booking)">
+            <summary>
+            Updates an existing booking in the database and persists changes.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Removes a booking by ID. No-ops silently if booking doesn't exist.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.GetByUserIdAsync(System.Int32)">
+            <summary>
+            Retrieves all bookings belonging to a specific user.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.GetByScheduleIdAsync(System.Int32)">
+            <summary>
+            Fetches all bookings for a flight schedule with included passengers.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.GetByFlightIdAsync(System.Int32)">
+            <summary>
+            Retrieves all bookings for a flight ID with included passengers.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.GetOccupiedSeatsAsync(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Returns distinct seat numbers from non-cancelled passengers in non-cancelled bookings for a flight/schedule.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.BookingRepository.GetAllAsync">
+            <summary>
+            Retrieves all bookings from the database.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Fetches a flight by primary key ID.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.GetByFlightNumberAsync(System.String)">
+            <summary>
+            Looks up a flight by its flight number.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.AddAsync(FlightOpsService.Models.Flight)">
+            <summary>
+            Inserts a new flight and returns the saved entity.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.UpdateAsync(FlightOpsService.Models.Flight)">
+            <summary>
+            Updates an existing flight record.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Removes a flight by ID. No-ops if not found.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.GetAllAsync">
+            <summary>
+            Retrieves all flights from the database.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.SearchAsync(System.String,System.String,System.DateTime)">
+            <summary>
+            Searches flights by matching source, destination, and departure date.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.GetScheduleByIdAsync(System.Int32)">
+            <summary>
+            Fetches a schedule by ID with included Flight navigation property.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.GetSchedulesByFlightIdAsync(System.Int32)">
+            <summary>
+            Retrieves all schedules for a specific flight with flight details.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.AddScheduleAsync(FlightOpsService.Models.FlightSchedule)">
+            <summary>
+            Inserts a new flight schedule record.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.UpdateScheduleAsync(FlightOpsService.Models.FlightSchedule)">
+            <summary>
+            Updates an existing schedule record.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.DeleteScheduleAsync(System.Int32)">
+            <summary>
+            Removes a schedule by ID. No-ops if not found.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.SearchSchedulesAsync(System.String,System.String,System.DateTime)">
+            <summary>
+            Searches schedules by route and date. Excludes cancelled schedules.
+            Uses IST time conversion for accurate comparison.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.GetAllSchedulesAsync">
+            <summary>
+            Retrieves all schedules with flight navigation data.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.FlightRepository.GetExpiredSchedulesAsync">
+            <summary>
+            Finds schedules with past departure time that are not yet marked as Completed or Cancelled.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.GetPassengerByIdAsync(System.Int32)">
+            <summary>
+            Fetches a passenger by primary key ID.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.GetPassengersByBookingIdAsync(System.Int32)">
+            <summary>
+            Retrieves all passengers linked to a specific booking.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.GetPassengerByAadharAsync(System.String)">
+            <summary>
+            Looks up a passenger by Aadhar card number for uniqueness checks.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.AddPassengerAsync(FlightOpsService.Models.BookingPassenger)">
+            <summary>
+            Inserts a new passenger record into the database.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.UpdatePassengerAsync(FlightOpsService.Models.BookingPassenger)">
+            <summary>
+            Updates an existing passenger record.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.DeletePassengerAsync(System.Int32)">
+            <summary>
+            Removes a passenger by ID. No-ops if not found.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.IsAadharUniqueAsync(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Checks if an Aadhar number is unique across all passengers. Optionally excludes a specific passenger ID.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Repositories.PassengerRepository.IsAadharDuplicateInScheduleAsync(System.String,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Checks if an Aadhar number already exists for any passenger on the same flight schedule via booking join.
+            </summary>
+        </member>
+        <member name="M:FlightOpsService.Services.BookingServiceImpl.CreateBookingAsync(FlightOpsService.DTOs.CreateBookingDto)">
+            <summary>
+            Creates a new booking. Validates flight/schedule availability in-process
+            and books seats directly without network calls.
+            </summary>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>

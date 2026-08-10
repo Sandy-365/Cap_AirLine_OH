@@ -302,3 +302,14 @@ C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway\bin\Debug\net10.0\Serilog.Settings.Co
 C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway\bin\Debug\net10.0\Serilog.Sinks.Console.dll
 C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
 C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway\bin\Debug\net10.0\Serilog.Sinks.File.dll
+C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway\obj\Debug\net10.0\ApiGateway.sourcelink.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\appsettings.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ocelot.Development.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ocelot.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ocelot.SwaggerEndPoints.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.staticwebassets.endpoints.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.exe
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.deps.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.runtimeconfig.json
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.dll
+C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.pdb

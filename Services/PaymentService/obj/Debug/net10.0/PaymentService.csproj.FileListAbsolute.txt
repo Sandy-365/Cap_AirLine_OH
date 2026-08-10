@@ -525,3 +525,4 @@ C:\Users\sagar\Desktop\CAP_PROJ\Services\PaymentService\bin\Debug\net10.0\Serilo
 C:\Users\sagar\Desktop\CAP_PROJ\Services\PaymentService\bin\Debug\net10.0\Serilog.Sinks.File.dll
 C:\Users\sagar\Desktop\CAP_PROJ\Services\PaymentService\bin\Debug\net10.0\PaymentService.xml
 C:\Users\sagar\Desktop\CAP_PROJ\Services\PaymentService\obj\Debug\net10.0\PaymentService.xml
+C:\Users\sagar\Desktop\CAP_PROJ\Services\PaymentService\obj\Debug\net10.0\PaymentService.sourcelink.json

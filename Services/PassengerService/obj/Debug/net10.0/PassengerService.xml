@@ -16,6 +16,12 @@
             [Allowed Roles: Public (None required)]
             </summary>
         </member>
+        <member name="M:PassengerService.Controllers.PassengerAuthController.ForgotPassword(PassengerService.DTOs.PassengerForgotPasswordDto)">
+            <summary>
+            Generates a password reset OTP token and sends it via email.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
         <member name="M:PassengerService.Controllers.PassengerAuthController.ResetPassword(PassengerService.DTOs.PassengerResetPasswordDto)">
             <summary>
             Resets passenger password using a valid OTP token. 
@@ -50,30 +56,6 @@
             <summary>
             Permanently deletes a passenger profile.
             [Allowed Roles: Admin, SuperAdmin]
-            </summary>
-        </member>
-        <member name="M:PassengerService.Controllers.PassengersController.GetBalance(System.Int32)">
-            <summary>
-            Retrieves a passenger's total reward points balance.
-            [Allowed Roles: Passenger (own balance), Admin, SuperAdmin]
-            </summary>
-        </member>
-        <member name="M:PassengerService.Controllers.PassengersController.GetHistory(System.Int32)">
-            <summary>
-            Fetches the complete reward transaction history for a passenger.
-            [Allowed Roles: Passenger (own history), Admin, SuperAdmin]
-            </summary>
-        </member>
-        <member name="M:PassengerService.Controllers.PassengersController.EarnPoints(PassengerService.DTOs.EarnPointsRequest)">
-            <summary>
-            Awards reward points to a passenger.
-            [Allowed Roles: Admin, SuperAdmin, Staff]
-            </summary>
-        </member>
-        <member name="M:PassengerService.Controllers.PassengersController.RedeemPoints(PassengerService.DTOs.RedeemPointsRequest)">
-            <summary>
-            Deducts reward points from a passenger's balance for redemption.
-            [Allowed Roles: Passenger (own points), Admin, SuperAdmin]
             </summary>
         </member>
         <member name="T:PassengerService.Migrations.InitialCreatePassengerDB">

@@ -20,7 +20,7 @@
             "Key": "passenger-auth"
         },
         {
-            "DownstreamPathTemplate": "/api/auth/{everything}",
+            "DownstreamPathTemplate": "/api/backoffice/auth/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
@@ -35,16 +35,15 @@
                 "PUT",
                 "DELETE"
             ],
-            "SwaggerKey": "admin",
             "Key": "admin-auth"
         },
         {
-            "DownstreamPathTemplate": "/api/auth/{everything}",
+            "DownstreamPathTemplate": "/api/backoffice/auth/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5011
+                    "Port": 5010
                 }
             ],
             "UpstreamPathTemplate": "/identity/staff/{everything}",
@@ -54,7 +53,6 @@
                 "PUT",
                 "DELETE"
             ],
-            "SwaggerKey": "staff",
             "Key": "staff-auth"
         },
         {
@@ -82,7 +80,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5003
+                    "Port": 5002
                 }
             ],
             "UpstreamPathTemplate": "/bookings/{everything}",
@@ -92,7 +90,7 @@
                 "PUT",
                 "DELETE"
             ],
-            "SwaggerKey": "bookings",
+            "SwaggerKey": "flights",
             "Key": "bookings-all"
         },
         {
@@ -120,7 +118,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5005
+                    "Port": 5002
                 }
             ],
             "UpstreamPathTemplate": "/checkin/{everything}",
@@ -130,7 +128,7 @@
                 "PUT",
                 "DELETE"
             ],
-            "SwaggerKey": "checkins",
+            "SwaggerKey": "flights",
             "Key": "checkins-all"
         },
         {
@@ -139,7 +137,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5005
+                    "Port": 5002
                 }
             ],
             "UpstreamPathTemplate": "/baggage/{everything}",
@@ -149,7 +147,7 @@
                 "PUT",
                 "DELETE"
             ],
-            "SwaggerKey": "checkins",
+            "SwaggerKey": "flights",
             "Key": "baggages-route"
         },
         {
@@ -172,7 +170,7 @@
             "Key": "passengers-all"
         },
         {
-            "DownstreamPathTemplate": "/api/admin/{everything}",
+            "DownstreamPathTemplate": "/api/backoffice/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
@@ -187,16 +185,15 @@
                 "PUT",
                 "DELETE"
             ],
-            "SwaggerKey": "admin",
             "Key": "admin-all"
         },
         {
-            "DownstreamPathTemplate": "/api/Staff/{everything}",
+            "DownstreamPathTemplate": "/api/backoffice/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5011
+                    "Port": 5010
                 }
             ],
             "UpstreamPathTemplate": "/staff/{everything}",
@@ -206,8 +203,26 @@
                 "PUT",
                 "DELETE"
             ],
-            "SwaggerKey": "staff",
             "Key": "staff-all"
+        },
+        {
+            "DownstreamPathTemplate": "/api/backoffice/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5010
+                }
+            ],
+            "UpstreamPathTemplate": "/backoffice/{everything}",
+            "UpstreamHttpMethod": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ],
+            "SwaggerKey": "backoffice",
+            "Key": "backoffice-all"
         }
     ],
     "GlobalConfiguration": {
