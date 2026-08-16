@@ -7,9 +7,10 @@ public interface IPassengerAuthService
 {
     Task RegisterAsync(PassengerRegisterDto dto);
     Task<PassengerAuthResponseDto> VerifyAsync(PassengerVerifyDto dto);
+    Task<PassengerAuthResponseDto> ForceVerifyAsync(string email);
     Task ResendVerificationAsync(string email);
     Task<PassengerAuthResponseDto> LoginAsync(PassengerLoginDto dto);
-    Task ForgotPasswordAsync(string email);
+    Task<string?> ForgotPasswordAsync(string email);
     Task ResetPasswordAsync(PassengerResetPasswordDto dto);
     Task ChangePasswordAsync(PassengerChangePasswordDto dto);
     Task<PassengerProfileResponseDto?> GetUserAsync(int id);

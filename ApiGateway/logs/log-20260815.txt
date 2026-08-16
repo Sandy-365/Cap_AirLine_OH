@@ -1,0 +1,204 @@
+2026-08-15 14:02:34.772 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-15 14:02:34.891 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-15 14:02:34.893 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-15 14:02:34.894 +05:30 [INF] Hosting environment: Development
+2026-08-15 14:02:34.894 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-15 14:03:33.781 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2026-08-15 14:03:33.861 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 82.0772ms
+2026-08-15 14:03:33.870 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-15 14:03:34.007 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 134.7384ms
+2026-08-15 14:03:34.048 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-15 14:03:34.048 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-15 14:03:34.049 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-15 14:03:34.053 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-15 14:03:34.056 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-15 14:03:34.100 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 51.0878ms
+2026-08-15 14:03:34.100 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 51.7912ms
+2026-08-15 14:03:34.131 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 77.9661ms
+2026-08-15 14:03:34.131 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 81.8312ms
+2026-08-15 14:03:34.134 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 77.9356ms
+2026-08-15 14:03:34.308 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-15 14:03:34.368 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 14:03:34.373 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 14:03:34.851 +05:30 [INF] Received HTTP response headers after 470.2073ms - 200
+2026-08-15 14:03:34.855 +05:30 [INF] End processing HTTP request after 492.7149ms - 200
+2026-08-15 14:03:35.007 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 698.4908ms
+2026-08-15 14:03:44.590 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-15 14:03:44.610 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-15 14:03:44.617 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-15 14:03:45.187 +05:30 [INF] Received HTTP response headers after 563.1145ms - 200
+2026-08-15 14:03:45.194 +05:30 [INF] End processing HTTP request after 584.0324ms - 200
+2026-08-15 14:03:45.251 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 661.483ms
+2026-08-15 14:04:03.139 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+2026-08-15 14:04:03.301 +05:30 [INF] RequestId: 0HNNQKVIBM35P:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-15 14:04:03.308 +05:30 [INF] RequestId: 0HNNQKVIBM35P:00000004, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-15 14:04:03.721 +05:30 [INF] RequestId: 0HNNQKVIBM35P:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+2026-08-15 14:04:03.778 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 639.1659ms
+2026-08-15 14:04:03.789 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-15 14:06:58.635 +05:30 [INF] Application is shutting down...
+2026-08-15 14:45:58.586 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-15 14:45:58.671 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-15 14:45:58.673 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-15 14:45:58.674 +05:30 [INF] Hosting environment: Development
+2026-08-15 14:45:58.675 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-15 14:46:47.464 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-15 14:46:47.544 +05:30 [WRN] RequestId: 0HNNQLNNBAHGP:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-15 14:46:47.546 +05:30 [WRN] RequestId: 0HNNQLNNBAHGP:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-15 14:46:47.552 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 89.8335ms
+2026-08-15 14:46:55.605 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-15 14:46:55.670 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 14:46:55.676 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 14:46:56.090 +05:30 [INF] Received HTTP response headers after 406.7933ms - 200
+2026-08-15 14:46:56.094 +05:30 [INF] End processing HTTP request after 430.6285ms - 200
+2026-08-15 14:46:56.248 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 643.1103ms
+2026-08-15 14:49:40.236 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-15 14:49:40.247 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-15 14:49:40.251 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-15 14:49:40.771 +05:30 [INF] Received HTTP response headers after 514.3109ms - 200
+2026-08-15 14:49:40.774 +05:30 [INF] End processing HTTP request after 528.0725ms - 200
+2026-08-15 14:49:40.819 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 582.6816ms
+2026-08-15 14:50:53.617 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/register - application/json 180
+2026-08-15 14:50:53.638 +05:30 [INF] CORS policy execution failed.
+2026-08-15 14:50:53.648 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-15 14:50:53.815 +05:30 [INF] RequestId: 0HNNQLNNBAHGQ:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-15 14:50:53.833 +05:30 [INF] RequestId: 0HNNQLNNBAHGQ:00000002, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/register' in the route /identity/passenger/{everything}.
+2026-08-15 14:51:00.093 +05:30 [INF] RequestId: 0HNNQLNNBAHGQ:00000002, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/auth/register
+2026-08-15 14:51:00.144 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/register - 200 null application/json; charset=utf-8 6527.2105ms
+2026-08-15 14:51:00.154 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/register, Response status code: 200
+2026-08-15 14:52:17.383 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/login - application/json 69
+2026-08-15 14:52:17.392 +05:30 [INF] CORS policy execution failed.
+2026-08-15 14:52:17.418 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-15 14:52:17.433 +05:30 [INF] RequestId: 0HNNQLNNBAHGQ:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-15 14:52:17.436 +05:30 [INF] RequestId: 0HNNQLNNBAHGQ:00000003, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/login' in the route /identity/passenger/{everything}.
+2026-08-15 14:52:17.751 +05:30 [WRN] RequestId: 0HNNQLNNBAHGQ:00000003, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5007/api/auth/login
+2026-08-15 14:52:17.764 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/login - 401 null application/json; charset=utf-8 381.7006ms
+2026-08-15 14:52:17.770 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/login, Response status code: 401
+2026-08-15 15:06:35.764 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-15 15:06:35.937 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 173.5264ms
+2026-08-15 15:06:36.240 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-15 15:06:36.248 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-15 15:06:36.249 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-15 15:06:36.253 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-15 15:06:36.284 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 35.7484ms
+2026-08-15 15:06:36.690 +05:30 [INF] Received HTTP response headers after 423.1677ms - 200
+2026-08-15 15:06:36.692 +05:30 [INF] End processing HTTP request after 443.515ms - 200
+2026-08-15 15:06:36.723 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 482.7688ms
+2026-08-15 15:07:57.321 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/resend-verification - application/json 42
+2026-08-15 15:07:57.330 +05:30 [INF] CORS policy execution failed.
+2026-08-15 15:07:57.332 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-15 15:07:57.341 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-15 15:07:57.355 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000003, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/resend-verification' in the route /identity/passenger/{everything}.
+2026-08-15 15:08:02.204 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/auth/resend-verification
+2026-08-15 15:08:02.257 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/resend-verification - 200 null application/json; charset=utf-8 4935.7474ms
+2026-08-15 15:08:02.275 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/resend-verification, Response status code: 200
+2026-08-15 15:10:05.787 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/register - application/json 172
+2026-08-15 15:10:05.796 +05:30 [INF] CORS policy execution failed.
+2026-08-15 15:10:05.798 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-15 15:10:05.800 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-15 15:10:05.802 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000004, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/register' in the route /identity/passenger/{everything}.
+2026-08-15 15:10:10.285 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/auth/register
+2026-08-15 15:10:10.348 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/register - 200 null application/json; charset=utf-8 4560.231ms
+2026-08-15 15:10:10.366 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/register, Response status code: 200
+2026-08-15 15:10:51.806 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/resend-verification - application/json 42
+2026-08-15 15:10:51.810 +05:30 [INF] CORS policy execution failed.
+2026-08-15 15:10:51.811 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-15 15:10:51.814 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-15 15:10:51.816 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000005, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/resend-verification' in the route /identity/passenger/{everything}.
+2026-08-15 15:10:54.999 +05:30 [INF] RequestId: 0HNNQLNNBAHGR:00000005, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/auth/resend-verification
+2026-08-15 15:10:55.004 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/resend-verification - 200 null application/json; charset=utf-8 3198.1721ms
+2026-08-15 15:10:55.010 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/resend-verification, Response status code: 200
+2026-08-15 15:14:52.952 +05:30 [INF] Application is shutting down...
+2026-08-15 16:09:54.473 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-15 16:09:54.597 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-15 16:09:54.602 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-15 16:09:54.603 +05:30 [INF] Hosting environment: Development
+2026-08-15 16:09:54.605 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-15 16:10:44.438 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-15 16:10:44.653 +05:30 [WRN] RequestId: 0HNNQN6KFFK8M:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-15 16:10:44.655 +05:30 [WRN] RequestId: 0HNNQN6KFFK8M:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-15 16:10:44.663 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 227.6564ms
+2026-08-15 16:10:51.787 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-15 16:10:51.904 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 16:10:51.914 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 16:10:53.162 +05:30 [INF] Received HTTP response headers after 1238.3548ms - 200
+2026-08-15 16:10:53.201 +05:30 [INF] End processing HTTP request after 1308.7324ms - 200
+2026-08-15 16:10:54.165 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 2378.4261ms
+2026-08-15 16:14:34.932 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-15 16:14:35.078 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 146.3188ms
+2026-08-15 16:14:35.250 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-15 16:14:35.259 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 16:14:35.262 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 16:14:35.984 +05:30 [INF] Received HTTP response headers after 719.0889ms - 200
+2026-08-15 16:14:36.104 +05:30 [INF] End processing HTTP request after 844.458ms - 200
+2026-08-15 16:14:36.836 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 1586.0459ms
+2026-08-15 16:30:11.643 +05:30 [INF] Application is shutting down...
+2026-08-15 16:30:21.554 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-15 16:30:21.660 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-15 16:30:21.664 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-15 16:30:21.665 +05:30 [INF] Hosting environment: Development
+2026-08-15 16:30:21.666 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-15 16:31:03.094 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-15 16:31:03.378 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 287.4196ms
+2026-08-15 16:31:03.425 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-15 16:31:03.426 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-15 16:31:03.426 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-15 16:31:03.428 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-15 16:31:03.428 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-15 16:31:03.446 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 17.1737ms
+2026-08-15 16:31:03.469 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 41.4569ms
+2026-08-15 16:31:03.470 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 41.8821ms
+2026-08-15 16:31:03.496 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 70.0463ms
+2026-08-15 16:31:03.496 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 70.9609ms
+2026-08-15 16:31:03.979 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-15 16:31:03.994 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-15 16:31:04.038 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 43.5628ms
+2026-08-15 16:31:04.089 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 16:31:04.094 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-15 16:31:04.664 +05:30 [INF] Received HTTP response headers after 560.9474ms - 200
+2026-08-15 16:31:04.669 +05:30 [INF] End processing HTTP request after 588.9419ms - 200
+2026-08-15 16:31:04.864 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 884.9363ms
+2026-08-15 16:31:31.043 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/backoffice/auth/forgot-password - application/json 39
+2026-08-15 16:31:31.052 +05:30 [INF] CORS policy execution failed.
+2026-08-15 16:31:31.053 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-15 16:31:31.244 +05:30 [INF] RequestId: 0HNNQNHVLCB0K:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-15 16:31:31.253 +05:30 [INF] RequestId: 0HNNQNHVLCB0K:00000003, PreviousRequestId: -
+No authentication is required for the path '/backoffice/auth/forgot-password' in the route /backoffice/{everything}.
+2026-08-15 16:31:31.976 +05:30 [INF] RequestId: 0HNNQNHVLCB0K:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/backoffice/auth/forgot-password
+2026-08-15 16:31:32.010 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/backoffice/auth/forgot-password - 200 null application/json; charset=utf-8 967.2709ms
+2026-08-15 16:31:32.019 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/backoffice/auth/forgot-password, Response status code: 200
+2026-08-15 16:31:52.907 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-15 16:31:52.920 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-15 16:31:52.922 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-15 16:31:53.382 +05:30 [INF] Received HTTP response headers after 458.2991ms - 200
+2026-08-15 16:31:53.385 +05:30 [INF] End processing HTTP request after 465.3816ms - 200
+2026-08-15 16:31:53.427 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 519.3728ms

@@ -7,8 +7,14 @@ public class Booking : BaseEntity
     public int UserId { get; set; }
     public string UserEmail { get; set; } = "";
     public string UserName { get; set; } = "";
+    
+    // Foreign Keys & Navigation Properties
     public int FlightId { get; set; }
+    public Flight? Flight { get; set; }
+
     public int? ScheduleId { get; set; }
+    public FlightSchedule? Schedule { get; set; }
+
     public SeatClass SeatClass { get; set; }
     public decimal BaggageWeight { get; set; }
     public string PNR { get; set; } = "";

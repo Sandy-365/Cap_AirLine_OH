@@ -27,14 +27,23 @@ public class FlightsController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> GetAllFlights([FromQuery] string? source = null, [FromQuery] string? destination = null, [FromQuery] string? departureDate = null)
     {
-        if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(destination) && !string.IsNullOrEmpty(departureDate))
+        DateTime? parsedDate = null;
+        if (!string.IsNullOrWhiteSpace(departureDate))
         {
-            if (DateTime.TryParse(departureDate, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out var parsedDate))
+            if (DateTime.TryParse(departureDate, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out var d))
             {
-                var searchResults = await _flightService.SearchFlightsAsync(source, destination, parsedDate);
-                return Ok(searchResults);
+                parsedDate = d;
             }
-            return BadRequest(new { message = "Invalid departureDate format. Please use ISO-8601 (YYYY-MM-DD)." });
+            else
+            {
+                return BadRequest(new { message = "Invalid departureDate format. Please use ISO-8601 (YYYY-MM-DD)." });
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(source) || !string.IsNullOrWhiteSpace(destination) || parsedDate.HasValue)
+        {
+            var searchResults = await _flightService.SearchFlightsAsync(source, destination, parsedDate);
+            return Ok(searchResults);
         }
 
         var results = await _flightService.GetAllFlightsAsync();
@@ -147,20 +156,23 @@ public class FlightsController : ControllerBase
     [HttpGet("schedules")]
     public async Task<IActionResult> GetAllSchedules([FromQuery] string? source = null, [FromQuery] string? destination = null, [FromQuery] string? departureDate = null, [FromQuery] int? flightId = null)
     {
-        if (flightId.HasValue)
+        DateTime? parsedDate = null;
+        if (!string.IsNullOrWhiteSpace(departureDate))
         {
-            var flightResults = await _scheduleService.GetSchedulesByFlightIdAsync(flightId.Value);
-            return Ok(flightResults);
+            if (DateTime.TryParse(departureDate, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out var d))
+            {
+                parsedDate = d;
+            }
+            else
+            {
+                return BadRequest(new { message = "Invalid departureDate format. Please use ISO-8601 (YYYY-MM-DD)." });
+            }
         }
 
-        if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(destination) && !string.IsNullOrEmpty(departureDate))
+        if (!string.IsNullOrWhiteSpace(source) || !string.IsNullOrWhiteSpace(destination) || parsedDate.HasValue || flightId.HasValue)
         {
-            if (DateTime.TryParse(departureDate, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out var parsedDate))
-            {
-                var searchResults = await _scheduleService.SearchSchedulesAsync(source, destination, parsedDate);
-                return Ok(searchResults);
-            }
-            return BadRequest(new { message = "Invalid departureDate format. Please use ISO-8601 (YYYY-MM-DD)." });
+            var searchResults = await _scheduleService.SearchSchedulesAsync(source, destination, parsedDate, flightId);
+            return Ok(searchResults);
         }
 
         var results = await _scheduleService.GetAllSchedulesAsync();

@@ -1,5 +1,3 @@
-using System.Net;
-using System.Net.Mail;
 using BackOfficeService.Data;
 using BackOfficeService.DTOs;
 using BackOfficeService.Models;
@@ -13,13 +11,11 @@ public class BackofficeAuthService : IBackofficeAuthService
 {
     private readonly BackOfficeDbContext _db;
     private readonly ITokenService _tokenService;
-    private readonly IConfiguration _config;
 
-    public BackofficeAuthService(BackOfficeDbContext db, ITokenService tokenService, IConfiguration config)
+    public BackofficeAuthService(BackOfficeDbContext db, ITokenService tokenService)
     {
         _db = db;
         _tokenService = tokenService;
-        _config = config;
     }
 
     public async Task RegisterAsync(BackofficeRegisterDto dto)
@@ -32,9 +28,6 @@ public class BackofficeAuthService : IBackofficeAuthService
 
         if (existing != null)
         {
-            if (existing.IsEmailVerified)
-                throw new InvalidOperationException("Email already registered and verified.");
-
             profile = existing;
             profile.Name = dto.Name;
             profile.PasswordHash = PasswordHasher.Hash(dto.Password);
@@ -42,18 +35,9 @@ public class BackofficeAuthService : IBackofficeAuthService
             profile.RoleTitle = dto.RoleTitle ?? profile.RoleTitle;
             profile.AssignedAirportCode = dto.AssignedAirportCode ?? profile.AssignedAirportCode;
             profile.Role = requestedRole;
-
-            if (dto.ProvisionedByAdmin)
-            {
-                profile.IsEmailVerified = true;
-                profile.VerificationToken = null;
-                profile.VerificationTokenExpiry = null;
-            }
-            else
-            {
-                profile.VerificationToken = new Random().Next(100000, 999999).ToString();
-                profile.VerificationTokenExpiry = DateTime.UtcNow.AddMinutes(15);
-            }
+            profile.IsEmailVerified = true;
+            profile.VerificationToken = null;
+            profile.VerificationTokenExpiry = null;
             _db.BackofficeProfiles.Update(profile);
         }
         else
@@ -69,35 +53,20 @@ public class BackofficeAuthService : IBackofficeAuthService
                 Department = dto.Department ?? "",
                 RoleTitle = dto.RoleTitle ?? "",
                 AssignedAirportCode = dto.AssignedAirportCode ?? "",
-                IsEmailVerified = dto.ProvisionedByAdmin,
-                VerificationToken = dto.ProvisionedByAdmin ? null : new Random().Next(100000, 999999).ToString(),
-                VerificationTokenExpiry = dto.ProvisionedByAdmin ? null : DateTime.UtcNow.AddMinutes(15),
+                IsEmailVerified = true,
+                VerificationToken = null,
+                VerificationTokenExpiry = null,
                 CreatedAt = DateTime.UtcNow
             };
             await _db.BackofficeProfiles.AddAsync(profile);
         }
         await _db.SaveChangesAsync();
-
-        if (dto.ProvisionedByAdmin)
-        {
-            try { await SendWelcomeEmailAsync(dto.Email, dto.Name, dto.Password); }
-            catch (Exception ex) { Console.WriteLine($"[WARN] Welcome email send failed: {ex.Message}"); }
-        }
-        else
-        {
-            try { await SendOtpEmailAsync(dto.Email, dto.Name, profile.VerificationToken!); }
-            catch (Exception ex) { Console.WriteLine($"[WARN] Email send failed: {ex.Message}"); }
-        }
     }
 
     public async Task<BackofficeAuthResponseDto> VerifyAsync(BackofficeVerifyDto dto)
     {
         var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.ToLower())
             ?? throw new InvalidOperationException("Account not found.");
-
-        if (profile.IsEmailVerified) throw new InvalidOperationException("Already verified.");
-        if (profile.VerificationToken != dto.Token || profile.VerificationTokenExpiry < DateTime.UtcNow)
-            throw new InvalidOperationException("Invalid or expired OTP.");
 
         profile.IsEmailVerified = true;
         profile.VerificationToken = null;
@@ -111,14 +80,12 @@ public class BackofficeAuthService : IBackofficeAuthService
     public async Task ResendVerificationAsync(string email)
     {
         var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
-        if (profile == null || profile.IsEmailVerified) return;
+        if (profile == null) return;
 
-        profile.VerificationToken = new Random().Next(100000, 999999).ToString();
-        profile.VerificationTokenExpiry = DateTime.UtcNow.AddMinutes(15);
+        profile.IsEmailVerified = true;
+        profile.VerificationToken = null;
+        profile.VerificationTokenExpiry = null;
         await _db.SaveChangesAsync();
-
-        try { await SendOtpEmailAsync(email, profile.Name, profile.VerificationToken!); }
-        catch (Exception ex) { Console.WriteLine($"[WARN] Email send failed: {ex.Message}"); }
     }
 
     public async Task<BackofficeAuthResponseDto> LoginAsync(BackofficeLoginDto dto)
@@ -126,7 +93,6 @@ public class BackofficeAuthService : IBackofficeAuthService
         var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.ToLower())
             ?? throw new UnauthorizedAccessException("Invalid email or password.");
 
-        if (!profile.IsEmailVerified) throw new UnauthorizedAccessException("Please verify your email.");
         if (!profile.IsActive) throw new UnauthorizedAccessException("Account is deactivated.");
         if (!PasswordHasher.Verify(dto.Password, profile.PasswordHash))
             throw new UnauthorizedAccessException("Invalid email or password.");
@@ -135,30 +101,30 @@ public class BackofficeAuthService : IBackofficeAuthService
         return new BackofficeAuthResponseDto { UserId = profile.Id, Email = profile.Email, Name = profile.Name, Role = profile.Role, Token = token };
     }
 
-    public async Task ForgotPasswordAsync(string email)
+    public async Task<string> ForgotPasswordAsync(string email)
     {
-        var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
-        if (profile == null) return;
+        var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower())
+            ?? throw new InvalidOperationException("Account not found for the provided email.");
 
         profile.ResetToken = new Random().Next(100000, 999999).ToString();
         profile.ResetTokenExpiry = DateTime.UtcNow.AddMinutes(15);
         await _db.SaveChangesAsync();
 
-        try { await SendResetEmailAsync(email, profile.Name, profile.ResetToken!); }
-        catch (Exception ex) { Console.WriteLine($"[WARN] Email send failed: {ex.Message}"); }
+        return profile.ResetToken;
     }
 
     public async Task ResetPasswordAsync(BackofficeResetPasswordDto dto)
     {
         var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.ToLower())
-            ?? throw new InvalidOperationException("Account not found.");
+            ?? throw new InvalidOperationException("Account not found for the provided email.");
 
-        if (profile.ResetToken != dto.Token || profile.ResetTokenExpiry < DateTime.UtcNow)
-            throw new InvalidOperationException("Invalid or expired token.");
+        if (string.IsNullOrWhiteSpace(dto.Token) || profile.ResetToken != dto.Token || profile.ResetTokenExpiry < DateTime.UtcNow)
+            throw new InvalidOperationException("Invalid or expired OTP token.");
 
         profile.PasswordHash = PasswordHasher.Hash(dto.NewPassword);
         profile.ResetToken = null;
         profile.ResetTokenExpiry = null;
+        profile.UpdatedAt = DateTime.UtcNow;
         await _db.SaveChangesAsync();
     }
 
@@ -234,47 +200,5 @@ public class BackofficeAuthService : IBackofficeAuthService
         
         _db.BackofficeProfiles.Update(profile);
         await _db.SaveChangesAsync();
-    }
-
-    private async Task SendWelcomeEmailAsync(string toEmail, string name, string password)
-    {
-        var from = _config["EmailSettings:SenderEmail"]!;
-        var pwd = _config["EmailSettings:Password"]!;
-        var smtp = _config["EmailSettings:SmtpServer"]!;
-        var port = int.Parse(_config["EmailSettings:SmtpPort"]!);
-        using var client = new SmtpClient(smtp, port) { Credentials = new NetworkCredential(from, pwd), EnableSsl = true };
-        await client.SendMailAsync(new MailMessage(from, toEmail)
-        {
-            Subject = "SkyPass Backoffice - Account Created",
-            Body = $"Hi {name},\n\nYour account has been provisioned.\n\nEmail: {toEmail}\nTemporary Password: {password}\n\nPlease log in and change your password immediately.\n\nSkyPass Team"
-        });
-    }
-
-    private async Task SendOtpEmailAsync(string toEmail, string name, string otp)
-    {
-        var from = _config["EmailSettings:SenderEmail"]!;
-        var pwd = _config["EmailSettings:Password"]!;
-        var smtp = _config["EmailSettings:SmtpServer"]!;
-        var port = int.Parse(_config["EmailSettings:SmtpPort"]!);
-        using var client = new SmtpClient(smtp, port) { Credentials = new NetworkCredential(from, pwd), EnableSsl = true };
-        await client.SendMailAsync(new MailMessage(from, toEmail)
-        {
-            Subject = "SkyPass Backoffice - Verify Your Account",
-            Body = $"Hi {name},\n\nYour verification OTP is: {otp}\n\nExpires in 15 minutes.\n\nSkyPass Team"
-        });
-    }
-
-    private async Task SendResetEmailAsync(string toEmail, string name, string otp)
-    {
-        var from = _config["EmailSettings:SenderEmail"]!;
-        var pwd = _config["EmailSettings:Password"]!;
-        var smtp = _config["EmailSettings:SmtpServer"]!;
-        var port = int.Parse(_config["EmailSettings:SmtpPort"]!);
-        using var client = new SmtpClient(smtp, port) { Credentials = new NetworkCredential(from, pwd), EnableSsl = true };
-        await client.SendMailAsync(new MailMessage(from, toEmail)
-        {
-            Subject = "SkyPass Backoffice - Password Reset OTP",
-            Body = $"Hi {name},\n\nYour password reset OTP is: {otp}\n\nExpires in 15 minutes.\n\nSkyPass Team"
-        });
     }
 }

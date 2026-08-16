@@ -4,10 +4,18 @@ namespace FlightOpsService.Models;
 
 public class CheckIn : BaseEntity
 {
+    // Foreign Keys & Navigation Properties
     public int BookingId { get; set; }
-    public int PassengerId { get; set; } // Per-passenger check-in
+    public Booking? Booking { get; set; }
+
+    public int PassengerId { get; set; }
+    public BookingPassenger? Passenger { get; set; }
+
     public int UserId { get; set; }
+
     public int FlightId { get; set; }
+    public Flight? Flight { get; set; }
+
     public string SeatNumber { get; set; } = "";
     public string Gate { get; set; } = "";
     public string BoardingPass { get; set; } = "";

@@ -51,6 +51,8 @@ public class FlightOpsDbContext : DbContext
             entity.Property(e => e.EconomyPrice).HasColumnType("decimal(18,2)");
             entity.Property(e => e.BusinessPrice).HasColumnType("decimal(18,2)");
             entity.Property(e => e.FirstClassPrice).HasColumnType("decimal(18,2)");
+
+            // Foreign Key to Flight
             entity.HasOne(e => e.Flight)
                   .WithMany()
                   .HasForeignKey(e => e.FlightId)
@@ -71,11 +73,23 @@ public class FlightOpsDbContext : DbContext
             entity.Property(e => e.TotalAmount).HasColumnType("decimal(18,2)");
             entity.Property(e => e.BaggageWeight).HasColumnType("decimal(18,2)");
 
-            // One-to-Many relationship
+            // Foreign Key to Flight
+            entity.HasOne(e => e.Flight)
+                  .WithMany()
+                  .HasForeignKey(e => e.FlightId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            // Foreign Key to FlightSchedule
+            entity.HasOne(e => e.Schedule)
+                  .WithMany()
+                  .HasForeignKey(e => e.ScheduleId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            // One-to-Many relationship with Passengers
             entity.HasMany(e => e.Passengers)
-                .WithOne(p => p.Booking)
-                .HasForeignKey(p => p.BookingId)
-                .OnDelete(DeleteBehavior.Cascade);
+                  .WithOne(p => p.Booking)
+                  .HasForeignKey(p => p.BookingId)
+                  .OnDelete(DeleteBehavior.Cascade);
         });
 
         // ── BookingPassenger ──────────────────────────────────────────────────
@@ -105,6 +119,24 @@ public class FlightOpsDbContext : DbContext
             entity.Property(e => e.Gate).HasMaxLength(10);
             entity.Property(e => e.BoardingPass).IsRequired();
             entity.Property(e => e.QRCode).IsRequired();
+
+            // Foreign Key to Booking
+            entity.HasOne(e => e.Booking)
+                  .WithMany()
+                  .HasForeignKey(e => e.BookingId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            // Foreign Key to Passenger
+            entity.HasOne(e => e.Passenger)
+                  .WithMany()
+                  .HasForeignKey(e => e.PassengerId)
+                  .OnDelete(DeleteBehavior.Restrict);
+
+            // Foreign Key to Flight
+            entity.HasOne(e => e.Flight)
+                  .WithMany()
+                  .HasForeignKey(e => e.FlightId)
+                  .OnDelete(DeleteBehavior.Restrict);
         });
 
         // ── Baggage ───────────────────────────────────────────────────────────
@@ -115,6 +147,12 @@ public class FlightOpsDbContext : DbContext
             entity.HasIndex(e => e.TrackingNumber).IsUnique();
             entity.Property(e => e.Weight).HasColumnType("decimal(18,2)");
             entity.Property(e => e.Status).HasConversion<string>();
+
+            // Foreign Key to Booking
+            entity.HasOne(e => e.Booking)
+                  .WithMany()
+                  .HasForeignKey(e => e.BookingId)
+                  .OnDelete(DeleteBehavior.Restrict);
         });
     }
 }

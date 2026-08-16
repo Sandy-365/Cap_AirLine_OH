@@ -16,15 +16,33 @@
             [Allowed Roles: Public (None required)]
             </summary>
         </member>
+        <member name="M:PassengerService.Controllers.PassengerAuthController.Verify(PassengerService.DTOs.PassengerVerifyDto)">
+            <summary>
+            Verifies passenger email account using the OTP received via email and returns JWT token upon successful verification.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengerAuthController.ResendVerification(PassengerService.DTOs.PassengerForgotPasswordDto)">
+            <summary>
+            Resends verification OTP to the specified passenger email address.
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
+        <member name="M:PassengerService.Controllers.PassengerAuthController.ForceVerify(PassengerService.DTOs.PassengerForgotPasswordDto)">
+            <summary>
+            Directly verifies passenger email address and returns JWT token (bypasses OTP check for testing/convenience).
+            [Allowed Roles: Public (None required)]
+            </summary>
+        </member>
         <member name="M:PassengerService.Controllers.PassengerAuthController.ForgotPassword(PassengerService.DTOs.PassengerForgotPasswordDto)">
             <summary>
-            Generates a password reset OTP token and sends it via email.
+            Generates a password reset OTP token and returns it directly in the response so the website can alert it (no email required).
             [Allowed Roles: Public (None required)]
             </summary>
         </member>
         <member name="M:PassengerService.Controllers.PassengerAuthController.ResetPassword(PassengerService.DTOs.PassengerResetPasswordDto)">
             <summary>
-            Resets passenger password using a valid OTP token. 
+            Resets passenger password using the mandatory OTP token generated from forgot-password.
             [Allowed Roles: Public (None required)]
             </summary>
         </member>
@@ -199,14 +217,14 @@
         </member>
         <member name="M:PassengerService.Services.implementations.PassengerAuthService.ForgotPasswordAsync(System.String)">
             <summary>
-            Generates password reset OTP and emails it. Silent for non-existent emails.
+            Generates password reset OTP and returns it so the website can alert it.
             </summary>
             <param name="email"></param>
             <returns></returns>
         </member>
         <member name="M:PassengerService.Services.implementations.PassengerAuthService.ResetPasswordAsync(PassengerService.DTOs.PassengerResetPasswordDto)">
             <summary>
-            Validates reset OTP and updates password hash. Clears reset token after success.
+            Validates mandatory reset OTP and updates password hash. Clears reset token after success.
             </summary>
             <param name="dto"></param>
             <returns></returns>
@@ -255,15 +273,6 @@
         <member name="M:PassengerService.Services.implementations.PassengerAuthService.SendOtpEmailAsync(System.String,System.String,System.String)">
             <summary>
             Sends verification OTP email to passenger using configured SMTP settings.
-            </summary>
-            <param name="toEmail"></param>
-            <param name="name"></param>
-            <param name="otp"></param>
-            <returns></returns>
-        </member>
-        <member name="M:PassengerService.Services.implementations.PassengerAuthService.SendResetEmailAsync(System.String,System.String,System.String)">
-            <summary>
-            Sends password reset OTP email to passenger using configured SMTP settings.
             </summary>
             <param name="toEmail"></param>
             <param name="name"></param>

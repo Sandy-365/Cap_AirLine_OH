@@ -42,7 +42,52 @@ public class PassengerAuthController : ControllerBase
     }
 
     /// <summary>
-    /// Generates a password reset OTP token and sends it via email.
+    /// Verifies passenger email account using the OTP received via email and returns JWT token upon successful verification.
+    /// [Allowed Roles: Public (None required)]
+    /// </summary>
+    [HttpPost("verify")]
+    public async Task<IActionResult> Verify([FromBody] PassengerVerifyDto dto)
+    {
+        try
+        {
+            var result = await _authService.VerifyAsync(dto);
+            return Ok(result);
+        }
+        catch (InvalidOperationException ex) { return BadRequest(new { message = ex.Message }); }
+    }
+
+    /// <summary>
+    /// Resends verification OTP to the specified passenger email address.
+    /// [Allowed Roles: Public (None required)]
+    /// </summary>
+    [HttpPost("resend-verification")]
+    public async Task<IActionResult> ResendVerification([FromBody] PassengerForgotPasswordDto dto)
+    {
+        try
+        {
+            await _authService.ResendVerificationAsync(dto.Email);
+            return Ok(new { message = "If the account exists and is unverified, a new OTP has been sent." });
+        }
+        catch (Exception ex) { return BadRequest(new { message = ex.Message }); }
+    }
+
+    /// <summary>
+    /// Directly verifies passenger email address and returns JWT token (bypasses OTP check for testing/convenience).
+    /// [Allowed Roles: Public (None required)]
+    /// </summary>
+    [HttpPost("force-verify")]
+    public async Task<IActionResult> ForceVerify([FromBody] PassengerForgotPasswordDto dto)
+    {
+        try
+        {
+            var result = await _authService.ForceVerifyAsync(dto.Email);
+            return Ok(result);
+        }
+        catch (InvalidOperationException ex) { return BadRequest(new { message = ex.Message }); }
+    }
+
+    /// <summary>
+    /// Generates a password reset OTP token and returns it directly in the response so the website can alert it (no email required).
     /// [Allowed Roles: Public (None required)]
     /// </summary>
     [HttpPost("forgot-password")]
@@ -50,8 +95,13 @@ public class PassengerAuthController : ControllerBase
     {
         try
         {
-            await _authService.ForgotPasswordAsync(dto.Email);
-            return Ok(new { message = "If the email is registered, a password reset token has been sent." });
+            var token = await _authService.ForgotPasswordAsync(dto.Email);
+            return Ok(new { 
+                message = "Password reset OTP generated. Display this token to the user in an alert.",
+                token = token,
+                resetToken = token,
+                expiresInMinutes = 15
+            });
         }
         catch (Exception ex)
         {
@@ -60,7 +110,7 @@ public class PassengerAuthController : ControllerBase
     }
 
     /// <summary>
-    /// Resets passenger password using a valid OTP token. 
+    /// Resets passenger password using the mandatory OTP token generated from forgot-password.
     /// [Allowed Roles: Public (None required)]
     /// </summary>
     [HttpPost("reset-password")]

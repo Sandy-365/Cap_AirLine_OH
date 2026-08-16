@@ -31,7 +31,7 @@ public class BackofficeAuthController : ControllerBase
     }
 
     /// <summary>
-    /// Generates a password reset OTP token and emails it to the user.
+    /// Generates a password reset OTP token and returns it directly in the response so the website can display it in an alert (no email required).
     /// [Allowed Roles: Public (None required)]
     /// </summary>
     [HttpPost("forgot-password")]
@@ -39,8 +39,13 @@ public class BackofficeAuthController : ControllerBase
     {
         try
         {
-            await _authService.ForgotPasswordAsync(dto.Email);
-            return Ok(new { message = "If the email is registered, a password reset token has been sent." });
+            var token = await _authService.ForgotPasswordAsync(dto.Email);
+            return Ok(new { 
+                message = "Password reset OTP generated. Display this token to the user in an alert.",
+                token = token,
+                resetToken = token,
+                expiresInMinutes = 15
+            });
         }
         catch (Exception ex)
         {
@@ -49,7 +54,7 @@ public class BackofficeAuthController : ControllerBase
     }
 
     /// <summary>
-    /// Resets password using a valid OTP token.
+    /// Resets password using the mandatory OTP token generated from forgot-password.
     /// [Allowed Roles: Public (None required)]
     /// </summary>
     [HttpPost("reset-password")]

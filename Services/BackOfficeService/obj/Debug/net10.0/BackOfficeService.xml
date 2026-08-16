@@ -17,13 +17,13 @@
         </member>
         <member name="M:BackOfficeService.Controllers.BackofficeAuthController.ForgotPassword(BackOfficeService.DTOs.BackofficeForgotPasswordDto)">
             <summary>
-            Generates a password reset OTP token and emails it to the user.
+            Generates a password reset OTP token and returns it directly in the response so the website can display it in an alert (no email required).
             [Allowed Roles: Public (None required)]
             </summary>
         </member>
         <member name="M:BackOfficeService.Controllers.BackofficeAuthController.ResetPassword(BackOfficeService.DTOs.BackofficeResetPasswordDto)">
             <summary>
-            Resets password using a valid OTP token.
+            Resets password using the mandatory OTP token generated from forgot-password.
             [Allowed Roles: Public (None required)]
             </summary>
         </member>

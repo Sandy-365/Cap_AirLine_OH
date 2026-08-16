@@ -11,7 +11,7 @@ public interface IFlightService
     Task<FlightDto> GetFlightAsync(int id);
     Task<FlightDto> UpdateFlightAsync(int id, UpdateFlightDto dto);
     Task DeleteFlightAsync(int id);
-    Task<IEnumerable<FlightDto>> SearchFlightsAsync(string source, string destination, DateTime departureDate);
+    Task<IEnumerable<FlightDto>> SearchFlightsAsync(string? source, string? destination, DateTime? departureDate);
     Task<IEnumerable<FlightDto>> GetAllFlightsAsync();
     Task DelayFlightAsync(int flightId, DateTime newDepartureTime);
     Task CancelFlightAsync(int flightId);
@@ -99,7 +99,7 @@ public class FlightServiceImpl : IFlightService
         await _repository.DeleteAsync(id);
     }
 
-    public async Task<IEnumerable<FlightDto>> SearchFlightsAsync(string source, string destination, DateTime departureDate)
+    public async Task<IEnumerable<FlightDto>> SearchFlightsAsync(string? source, string? destination, DateTime? departureDate)
     {
         var flights = await _repository.SearchAsync(source, destination, departureDate);
         return flights.Select(MapToDto).ToList();

@@ -1,0 +1,47 @@
+2026-08-11 07:05:29.651 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-11 07:05:29.800 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-11 07:05:29.804 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-11 07:05:29.805 +05:30 [INF] Hosting environment: Development
+2026-08-11 07:05:29.806 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-11 07:06:53.588 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-11 07:06:53.700 +05:30 [WRN] RequestId: 0HNNN942T2H79:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-11 07:06:53.702 +05:30 [WRN] RequestId: 0HNNN942T2H79:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-11 07:06:53.712 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 126.3709ms
+2026-08-11 07:06:58.590 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-11 07:06:58.663 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-11 07:06:58.667 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-11 07:06:59.088 +05:30 [INF] Received HTTP response headers after 414.4505ms - 200
+2026-08-11 07:06:59.092 +05:30 [INF] End processing HTTP request after 434.5829ms - 200
+2026-08-11 07:06:59.237 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 647.3826ms
+2026-08-11 09:52:14.416 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-11 09:52:14.455 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-11 09:52:14.460 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-11 09:52:14.904 +05:30 [INF] Received HTTP response headers after 439.4828ms - 200
+2026-08-11 09:52:14.907 +05:30 [INF] End processing HTTP request after 452.6906ms - 200
+2026-08-11 09:52:14.958 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 542.7716ms
+2026-08-11 13:54:14.075 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - null null
+2026-08-11 13:54:14.263 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - 200 null text/html;charset=utf-8 188.3885ms
+2026-08-11 13:54:14.324 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-11 13:54:14.326 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-11 13:54:14.329 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-11 13:54:14.330 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-11 13:54:14.335 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-11 13:54:14.370 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 43.5429ms
+2026-08-11 13:54:14.370 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 45.8869ms
+2026-08-11 13:54:14.372 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 36.9111ms
+2026-08-11 13:54:14.374 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 44.8415ms
+2026-08-11 13:54:14.385 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 55.3397ms
+2026-08-11 13:54:14.861 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-11 13:54:14.868 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-11 13:54:14.875 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-11 13:54:14.881 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-11 13:54:14.882 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 13.8525ms
+2026-08-11 13:54:15.295 +05:30 [INF] Received HTTP response headers after 409.8458ms - 200
+2026-08-11 13:54:15.296 +05:30 [INF] End processing HTTP request after 421.1832ms - 200
+2026-08-11 13:54:15.320 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 459.4565ms
+2026-08-11 15:17:34.128 +05:30 [INF] Application is shutting down...

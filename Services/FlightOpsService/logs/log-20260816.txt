@@ -1,0 +1,103 @@
+2026-08-16 14:56:08.227 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-16 14:56:08.271 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-16 14:56:08.294 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-16 14:56:08.393 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-16 14:56:08.407 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-16 14:56:08.411 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-16 14:56:08.432 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-16 14:56:08.450 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-16 14:56:08.463 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-16 14:56:08.538 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 14:56:08.548 +05:30 [INF] ScheduleCompletionWorker started.
+2026-08-16 14:56:08.598 +05:30 [INF] Now listening on: http://localhost:5002
+2026-08-16 14:56:08.600 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 14:56:08.601 +05:30 [INF] Hosting environment: Development
+2026-08-16 14:56:08.602 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\FlightOpsService
+2026-08-16 14:56:08.922 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-16 14:56:09.189 +05:30 [INF] Executed DbCommand (46ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.219 +05:30 [INF] Schedule 11 (Flight 1) marked as Completed
+2026-08-16 14:56:09.233 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.237 +05:30 [INF] Schedule 12 (Flight 2) marked as Completed
+2026-08-16 14:56:09.247 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.252 +05:30 [INF] Schedule 13 (Flight 3) marked as Completed
+2026-08-16 14:56:09.261 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.266 +05:30 [INF] Schedule 14 (Flight 4) marked as Completed
+2026-08-16 14:56:09.277 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.280 +05:30 [INF] Schedule 15 (Flight 5) marked as Completed
+2026-08-16 14:56:09.289 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.291 +05:30 [INF] Schedule 16 (Flight 6) marked as Completed
+2026-08-16 14:56:09.300 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.304 +05:30 [INF] Schedule 17 (Flight 7) marked as Completed
+2026-08-16 14:56:09.313 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.316 +05:30 [INF] Schedule 19 (Flight 9) marked as Completed
+2026-08-16 14:56:09.327 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-16 14:56:09.330 +05:30 [INF] Schedule 20 (Flight 10) marked as Completed

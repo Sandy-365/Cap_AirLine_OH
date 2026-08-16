@@ -9,7 +9,7 @@ public interface IBackofficeAuthService
     Task<BackofficeAuthResponseDto> VerifyAsync(BackofficeVerifyDto dto);
     Task ResendVerificationAsync(string email);
     Task<BackofficeAuthResponseDto> LoginAsync(BackofficeLoginDto dto);
-    Task ForgotPasswordAsync(string email);
+    Task<string> ForgotPasswordAsync(string email);
     Task ResetPasswordAsync(BackofficeResetPasswordDto dto);
     Task<BackofficeProfile?> GetUserAsync(int id);
     Task<BackofficeProfile> UpdateProfileAsync(int id, BackofficeUpdateProfileDto dto);

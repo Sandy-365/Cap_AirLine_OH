@@ -13,7 +13,7 @@ public interface IFlightScheduleService
     Task DeleteScheduleAsync(int id);
     Task CancelScheduleAsync(int id);
     Task<IEnumerable<FlightScheduleDto>> GetSchedulesByFlightIdAsync(int flightId);
-    Task<IEnumerable<FlightScheduleDto>> SearchSchedulesAsync(string source, string destination, DateTime departureDate);
+    Task<IEnumerable<FlightScheduleDto>> SearchSchedulesAsync(string? source, string? destination, DateTime? departureDate, int? flightId = null);
     Task<IEnumerable<FlightScheduleDto>> GetAllSchedulesAsync();
     Task BookScheduleSeatAsync(int scheduleId, string seatClass, int count);
     Task ReleaseScheduleSeatAsync(int scheduleId, string seatClass, int count);
@@ -39,34 +39,33 @@ public class FlightScheduleService : IFlightScheduleService
         if (flight == null)
             throw new KeyNotFoundException($"Flight {dto.FlightId} not found");
 
-        if (dto.ArrivalTime <= dto.DepartureTime)
-            throw new ArgumentException($"ArrivalTime ({dto.ArrivalTime:yyyy-MM-dd HH:mm}) must be after DepartureTime ({dto.DepartureTime:yyyy-MM-dd HH:mm}).");
+        var econ = dto.EconomySeats > 0 ? dto.EconomySeats : flight.EconomySeats;
+        var bus = dto.BusinessSeats > 0 ? dto.BusinessSeats : flight.BusinessSeats;
+        var fst = dto.FirstSeats > 0 ? dto.FirstSeats : flight.FirstSeats;
+        var total = econ + bus + fst;
 
         var schedule = new FlightSchedule
         {
             FlightId = dto.FlightId,
             DepartureTime = dto.DepartureTime,
             ArrivalTime = dto.ArrivalTime,
-            Gate = string.IsNullOrEmpty(dto.Gate) ? flight.Gate : dto.Gate,
+            Gate = !string.IsNullOrEmpty(dto.Gate) ? dto.Gate : flight.Gate,
             Status = FlightStatus.Scheduled,
-            EconomySeats = dto.EconomySeats > 0 ? dto.EconomySeats : flight.EconomySeats,
-            BusinessSeats = dto.BusinessSeats > 0 ? dto.BusinessSeats : flight.BusinessSeats,
-            FirstSeats = dto.FirstSeats > 0 ? dto.FirstSeats : flight.FirstSeats,
-            TotalSeats = (dto.EconomySeats > 0 ? dto.EconomySeats : flight.EconomySeats)
-                       + (dto.BusinessSeats > 0 ? dto.BusinessSeats : flight.BusinessSeats)
-                       + (dto.FirstSeats > 0 ? dto.FirstSeats : flight.FirstSeats),
+            TotalSeats = total,
+            AvailableSeats = total,
+            EconomySeats = econ,
+            BusinessSeats = bus,
+            FirstSeats = fst,
             EconomyPrice = dto.EconomyPrice > 0 ? dto.EconomyPrice : flight.EconomyPrice,
             BusinessPrice = dto.BusinessPrice > 0 ? dto.BusinessPrice : flight.BusinessPrice,
             FirstClassPrice = dto.FirstClassPrice > 0 ? dto.FirstClassPrice : flight.FirstClassPrice,
             CreatedAt = DateTime.UtcNow
         };
 
-        schedule.AvailableSeats = schedule.TotalSeats;
-
         await _repository.AddScheduleAsync(schedule);
 
-        var saved = await _repository.GetScheduleByIdAsync(schedule.Id);
-        return MapToDto(saved!);
+        var created = await _repository.GetScheduleByIdAsync(schedule.Id);
+        return MapToDto(created ?? schedule);
     }
 
     public async Task<FlightScheduleDto> GetScheduleAsync(int id)
@@ -93,7 +92,7 @@ public class FlightScheduleService : IFlightScheduleService
         if (!string.IsNullOrEmpty(dto.Gate))
             schedule.Gate = dto.Gate;
 
-        if (!string.IsNullOrEmpty(dto.Status) && Enum.TryParse<FlightStatus>(dto.Status, out var status))
+        if (!string.IsNullOrEmpty(dto.Status) && Enum.TryParse<FlightStatus>(dto.Status, true, out var status))
             schedule.Status = status;
 
         if (dto.EconomyPrice.HasValue)
@@ -139,9 +138,9 @@ public class FlightScheduleService : IFlightScheduleService
         return schedules.Select(MapToDto);
     }
 
-    public async Task<IEnumerable<FlightScheduleDto>> SearchSchedulesAsync(string source, string destination, DateTime departureDate)
+    public async Task<IEnumerable<FlightScheduleDto>> SearchSchedulesAsync(string? source, string? destination, DateTime? departureDate, int? flightId = null)
     {
-        var schedules = await _repository.SearchSchedulesAsync(source, destination, departureDate);
+        var schedules = await _repository.SearchSchedulesAsync(source, destination, departureDate, flightId);
         return schedules.Select(MapToDto);
     }
 

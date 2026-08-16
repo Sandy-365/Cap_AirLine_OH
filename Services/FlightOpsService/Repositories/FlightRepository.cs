@@ -13,7 +13,7 @@ public interface IFlightRepository
     Task UpdateAsync(Flight flight);
     Task DeleteAsync(int id);
     Task<IEnumerable<Flight>> GetAllAsync();
-    Task<IEnumerable<Flight>> SearchAsync(string source, string destination, DateTime departureDate);
+    Task<IEnumerable<Flight>> SearchAsync(string? source, string? destination, DateTime? departureDate);
 
     // FlightSchedule methods
     Task<FlightSchedule?> GetScheduleByIdAsync(int id);
@@ -21,7 +21,7 @@ public interface IFlightRepository
     Task<FlightSchedule> AddScheduleAsync(FlightSchedule schedule);
     Task UpdateScheduleAsync(FlightSchedule schedule);
     Task DeleteScheduleAsync(int id);
-    Task<IEnumerable<FlightSchedule>> SearchSchedulesAsync(string source, string destination, DateTime departureDate);
+    Task<IEnumerable<FlightSchedule>> SearchSchedulesAsync(string? source, string? destination, DateTime? departureDate, int? flightId = null);
     Task<IEnumerable<FlightSchedule>> GetAllSchedulesAsync();
     Task<IEnumerable<FlightSchedule>> GetExpiredSchedulesAsync();
 }
@@ -92,15 +92,22 @@ public class FlightRepository : IFlightRepository
     }
 
     /// <summary>
-    /// Searches flights by matching source, destination, and departure date.
+    /// Flexible search for master flights by optional source, destination, and departure date filters.
     /// </summary>
-    public async Task<IEnumerable<Flight>> SearchAsync(string source, string destination, DateTime departureDate)
+    public async Task<IEnumerable<Flight>> SearchAsync(string? source, string? destination, DateTime? departureDate)
     {
-        return await _context.Flights
-            .Where(f => f.Source == source &&
-                        f.Destination == destination &&
-                        f.DepartureTime.Date == departureDate.Date)
-            .ToListAsync();
+        var query = _context.Flights.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(source))
+            query = query.Where(f => f.Source.ToLower().Contains(source.Trim().ToLower()));
+
+        if (!string.IsNullOrWhiteSpace(destination))
+            query = query.Where(f => f.Destination.ToLower().Contains(destination.Trim().ToLower()));
+
+        if (departureDate.HasValue)
+            query = query.Where(f => f.DepartureTime.Date == departureDate.Value.Date);
+
+        return await query.ToListAsync();
     }
 
     /// <summary>
@@ -157,18 +164,27 @@ public class FlightRepository : IFlightRepository
     }
 
     /// <summary>
-    /// Searches schedules by route and date. Excludes cancelled schedules.
-    /// Uses IST time conversion for accurate comparison.
+    /// Flexible search for flight schedules by route, date, and flightId. Excludes cancelled schedules.
     /// </summary>
-    public async Task<IEnumerable<FlightSchedule>> SearchSchedulesAsync(string source, string destination, DateTime departureDate)
+    public async Task<IEnumerable<FlightSchedule>> SearchSchedulesAsync(string? source, string? destination, DateTime? departureDate, int? flightId = null)
     {
-        return await _context.FlightSchedules
+        var query = _context.FlightSchedules
             .Include(s => s.Flight)
-            .Where(s => s.Flight!.Source == source &&
-                        s.Flight.Destination == destination &&
-                        s.DepartureTime.Date == departureDate.Date &&
-                        s.Status != FlightStatus.Cancelled)
-            .ToListAsync();
+            .Where(s => s.Status != FlightStatus.Cancelled);
+
+        if (flightId.HasValue)
+            query = query.Where(s => s.FlightId == flightId.Value);
+
+        if (!string.IsNullOrWhiteSpace(source))
+            query = query.Where(s => s.Flight!.Source.ToLower().Contains(source.Trim().ToLower()));
+
+        if (!string.IsNullOrWhiteSpace(destination))
+            query = query.Where(s => s.Flight!.Destination.ToLower().Contains(destination.Trim().ToLower()));
+
+        if (departureDate.HasValue)
+            query = query.Where(s => s.DepartureTime.Date == departureDate.Value.Date);
+
+        return await query.ToListAsync();
     }
 
     /// <summary>

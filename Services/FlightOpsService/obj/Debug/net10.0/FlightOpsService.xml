@@ -183,6 +183,18 @@
         <member name="M:FlightOpsService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys">
+            <inheritdoc />
+        </member>
+        <member name="M:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:FlightOpsService.Models.BookingPassenger">
             <summary>
             Represents a passenger on a booking (flight manifest passenger).
@@ -269,9 +281,9 @@
             Retrieves all flights from the database.
             </summary>
         </member>
-        <member name="M:FlightOpsService.Repositories.FlightRepository.SearchAsync(System.String,System.String,System.DateTime)">
+        <member name="M:FlightOpsService.Repositories.FlightRepository.SearchAsync(System.String,System.String,System.Nullable{System.DateTime})">
             <summary>
-            Searches flights by matching source, destination, and departure date.
+            Flexible search for master flights by optional source, destination, and departure date filters.
             </summary>
         </member>
         <member name="M:FlightOpsService.Repositories.FlightRepository.GetScheduleByIdAsync(System.Int32)">
@@ -299,10 +311,9 @@
             Removes a schedule by ID. No-ops if not found.
             </summary>
         </member>
-        <member name="M:FlightOpsService.Repositories.FlightRepository.SearchSchedulesAsync(System.String,System.String,System.DateTime)">
+        <member name="M:FlightOpsService.Repositories.FlightRepository.SearchSchedulesAsync(System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.Int32})">
             <summary>
-            Searches schedules by route and date. Excludes cancelled schedules.
-            Uses IST time conversion for accurate comparison.
+            Flexible search for flight schedules by route, date, and flightId. Excludes cancelled schedules.
             </summary>
         </member>
         <member name="M:FlightOpsService.Repositories.FlightRepository.GetAllSchedulesAsync">

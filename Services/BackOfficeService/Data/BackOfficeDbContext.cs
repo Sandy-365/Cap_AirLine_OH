@@ -10,7 +10,6 @@ public class BackOfficeDbContext : DbContext
     }
 
     public DbSet<BackofficeProfile> BackofficeProfiles { get; set; } = null!;
-    public DbSet<VisitorLog> VisitorLogs { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -20,11 +19,6 @@ public class BackOfficeDbContext : DbContext
         {
             entity.ToTable("BackofficeProfiles");
             entity.HasIndex(x => x.Email).IsUnique();
-        });
-
-        modelBuilder.Entity<VisitorLog>(entity =>
-        {
-            entity.ToTable("VisitorLogs");
         });
     }
 }

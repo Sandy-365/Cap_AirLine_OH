@@ -136,6 +136,8 @@ namespace FlightOpsService.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FlightId");
+
                     b.HasIndex("PNR")
                         .IsUnique();
 
@@ -280,6 +282,8 @@ namespace FlightOpsService.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("BookingId");
+
+                    b.HasIndex("FlightId");
 
                     b.HasIndex("PassengerId");
 
@@ -436,6 +440,35 @@ namespace FlightOpsService.Migrations
                     b.ToTable("FlightSchedules");
                 });
 
+            modelBuilder.Entity("FlightOpsService.Models.Baggage", b =>
+                {
+                    b.HasOne("FlightOpsService.Models.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+                });
+
+            modelBuilder.Entity("FlightOpsService.Models.Booking", b =>
+                {
+                    b.HasOne("FlightOpsService.Models.Flight", "Flight")
+                        .WithMany()
+                        .HasForeignKey("FlightId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FlightOpsService.Models.FlightSchedule", "Schedule")
+                        .WithMany()
+                        .HasForeignKey("ScheduleId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Flight");
+
+                    b.Navigation("Schedule");
+                });
+
             modelBuilder.Entity("FlightOpsService.Models.BookingPassenger", b =>
                 {
                     b.HasOne("FlightOpsService.Models.Booking", "Booking")
@@ -445,6 +478,33 @@ namespace FlightOpsService.Migrations
                         .IsRequired();
 
                     b.Navigation("Booking");
+                });
+
+            modelBuilder.Entity("FlightOpsService.Models.CheckIn", b =>
+                {
+                    b.HasOne("FlightOpsService.Models.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FlightOpsService.Models.Flight", "Flight")
+                        .WithMany()
+                        .HasForeignKey("FlightId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("FlightOpsService.Models.BookingPassenger", "Passenger")
+                        .WithMany()
+                        .HasForeignKey("PassengerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+
+                    b.Navigation("Flight");
+
+                    b.Navigation("Passenger");
                 });
 
             modelBuilder.Entity("FlightOpsService.Models.FlightSchedule", b =>

@@ -59,8 +59,9 @@ public class PassengerAuthService : IPassengerAuthService
             profile.Phone = dto.Phone ?? profile.Phone;
             profile.DateOfBirth = ParseNullableDate(dto.DateOfBirth) ?? profile.DateOfBirth;
             profile.Aadhar = dto.Aadhar ?? profile.Aadhar;
-            profile.VerificationToken = new Random().Next(100000, 999999).ToString();
-            profile.VerificationTokenExpiry = DateTime.UtcNow.AddMinutes(15);
+            profile.IsEmailVerified = true;
+            profile.VerificationToken = null;
+            profile.VerificationTokenExpiry = null;
             await _repo.UpdateAsync(profile);
         }
         else
@@ -76,17 +77,13 @@ public class PassengerAuthService : IPassengerAuthService
                 Phone = dto.Phone ?? "",
                 DateOfBirth = ParseNullableDate(dto.DateOfBirth),
                 Aadhar = dto.Aadhar ?? "",
-                IsEmailVerified = false,
-                VerificationToken = new Random().Next(100000, 999999).ToString(),
-                VerificationTokenExpiry = DateTime.UtcNow.AddMinutes(15),
+                IsEmailVerified = true,
+                VerificationToken = null,
+                VerificationTokenExpiry = null,
                 CreatedAt = DateTime.UtcNow
             };
             await _repo.AddAsync(profile);
         }
-
-        // Send OTP email
-        try { await SendOtpEmailAsync(dto.Email, dto.Name, profile.VerificationToken!); }
-        catch (Exception ex) { Console.WriteLine($"[WARN] Email send failed: {ex.Message}"); }
     }
 
     private static DateTime? ParseNullableDate(string? dateValue)
@@ -122,6 +119,27 @@ public class PassengerAuthService : IPassengerAuthService
 
         if (profile.VerificationToken != dto.Token || profile.VerificationTokenExpiry < DateTime.UtcNow)
             throw new InvalidOperationException("Invalid or expired OTP.");
+
+        profile.IsEmailVerified = true;
+        profile.VerificationToken = null;
+        profile.VerificationTokenExpiry = null;
+        await _repo.UpdateAsync(profile);
+
+        var token = _tokenService.GenerateToken(profile.Id, profile.Email, profile.Role);
+        return new PassengerAuthResponseDto
+        {
+            UserId = profile.Id,
+            Email = profile.Email,
+            Name = profile.Name,
+            Role = profile.Role,
+            Token = token
+        };
+    }
+
+    public async Task<PassengerAuthResponseDto> ForceVerifyAsync(string email)
+    {
+        var profile = await _repo.GetByEmailAsync(email)
+            ?? throw new InvalidOperationException("Account not found.");
 
         profile.IsEmailVerified = true;
         profile.VerificationToken = null;
@@ -183,9 +201,6 @@ public class PassengerAuthService : IPassengerAuthService
         var profile = await _repo.GetByEmailAsync(dto.Email)
             ?? throw new UnauthorizedAccessException("Invalid email or password.");
 
-        if (!profile.IsEmailVerified)
-            throw new UnauthorizedAccessException("Please verify your email before logging in.");
-
         if (!profile.IsActive)
             throw new UnauthorizedAccessException("Account is deactivated.");
 
@@ -209,29 +224,29 @@ public class PassengerAuthService : IPassengerAuthService
 
 
     /// <summary>
-    /// Generates password reset OTP and emails it. Silent for non-existent emails.
+    /// Generates password reset OTP and returns it so the website can alert it.
     /// </summary>
     /// <param name="email"></param>
     /// <returns></returns>
-    public async Task ForgotPasswordAsync(string email)
+    public async Task<string?> ForgotPasswordAsync(string email)
     {
         var profile = await _repo.GetByEmailAsync(email);
-        if (profile == null) return; // Silent for security
+        if (profile == null) return null;
 
         profile.ResetToken = new Random().Next(100000, 999999).ToString();
         profile.ResetTokenExpiry = DateTime.UtcNow.AddMinutes(15);
         await _repo.UpdateAsync(profile);
 
-        try { await SendResetEmailAsync(email, profile.Name, profile.ResetToken!); }
-        catch (Exception ex) { Console.WriteLine($"[WARN] Email send failed: {ex.Message}"); }
+        return profile.ResetToken;
     }
 
 
 
 
 
+
     /// <summary>
-    /// Validates reset OTP and updates password hash. Clears reset token after success.
+    /// Validates mandatory reset OTP and updates password hash. Clears reset token after success.
     /// </summary>
     /// <param name="dto"></param>
     /// <returns></returns>
@@ -239,14 +254,15 @@ public class PassengerAuthService : IPassengerAuthService
     public async Task ResetPasswordAsync(PassengerResetPasswordDto dto)
     {
         var profile = await _repo.GetByEmailAsync(dto.Email)
-            ?? throw new InvalidOperationException("Account not found.");
+            ?? throw new InvalidOperationException("Account not found for the provided email.");
 
-        if (profile.ResetToken != dto.Token || profile.ResetTokenExpiry < DateTime.UtcNow)
-            throw new InvalidOperationException("Invalid or expired token.");
+        if (string.IsNullOrWhiteSpace(dto.Token) || profile.ResetToken != dto.Token || profile.ResetTokenExpiry < DateTime.UtcNow)
+            throw new InvalidOperationException("Invalid or expired OTP token.");
 
         profile.PasswordHash = PasswordHasher.Hash(dto.NewPassword);
         profile.ResetToken = null;
         profile.ResetTokenExpiry = null;
+        profile.UpdatedAt = DateTime.UtcNow;
         await _repo.UpdateAsync(profile);
     }
 
@@ -418,60 +434,16 @@ public class PassengerAuthService : IPassengerAuthService
     /// <param name="name"></param>
     /// <param name="otp"></param>
     /// <returns></returns>
-    private async Task SendOtpEmailAsync(string toEmail, string name, string otp)
+    private Task SendOtpEmailAsync(string toEmail, string name, string otp)
     {
-        var email = _config["EmailSettings:SenderEmail"]!;
-        var pwd = _config["EmailSettings:Password"]!;
-        var smtp = _config["EmailSettings:SmtpServer"]!;
-        var port = int.Parse(_config["EmailSettings:SmtpPort"]!);
-
-        using var client = new SmtpClient(smtp, port)
-        {
-            Credentials = new NetworkCredential(email, pwd),
-            EnableSsl = true
-        };
-
-        var msg = new MailMessage(email, toEmail)
-        {
-            Subject = "SkyPass - Verify Your Account",
-            Body = $"Hi {name},\n\nYour OTP for verification is: {otp}\n\nThis OTP expires in 15 minutes.\n\nSkyPass Team",
-            IsBodyHtml = false
-        };
-        await client.SendMailAsync(msg);
+        Console.WriteLine($"[EMAIL DISABLED] OTP for {toEmail} ({name}): {otp}");
+        return Task.CompletedTask;
     }
 
-
-
-
-
-
-    /// <summary>
-    /// Sends password reset OTP email to passenger using configured SMTP settings.
-    /// </summary>
-    /// <param name="toEmail"></param>
-    /// <param name="name"></param>
-    /// <param name="otp"></param>
-    /// <returns></returns>
-    private async Task SendResetEmailAsync(string toEmail, string name, string otp)
+    private Task SendResetEmailAsync(string toEmail, string name, string otp)
     {
-        var email = _config["EmailSettings:SenderEmail"]!;
-        var pwd = _config["EmailSettings:Password"]!;
-        var smtp = _config["EmailSettings:SmtpServer"]!;
-        var port = int.Parse(_config["EmailSettings:SmtpPort"]!);
-
-        using var client = new SmtpClient(smtp, port)
-        {
-            Credentials = new NetworkCredential(email, pwd),
-            EnableSsl = true
-        };
-
-        var msg = new MailMessage(email, toEmail)
-        {
-            Subject = "SkyPass - Password Reset OTP",
-            Body = $"Hi {name},\n\nYour password reset OTP is: {otp}\n\nThis OTP expires in 15 minutes.\n\nSkyPass Team",
-            IsBodyHtml = false
-        };
-        await client.SendMailAsync(msg);
+        Console.WriteLine($"[EMAIL DISABLED] Reset OTP for {toEmail} ({name}): {otp}");
+        return Task.CompletedTask;
     }
 
     private static PassengerProfileResponseDto MapToResponseDto(PassengerProfile p)
