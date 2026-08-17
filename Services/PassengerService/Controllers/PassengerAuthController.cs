@@ -72,21 +72,6 @@ public class PassengerAuthController : ControllerBase
     }
 
     /// <summary>
-    /// Directly verifies passenger email address and returns JWT token (bypasses OTP check for testing/convenience).
-    /// [Allowed Roles: Public (None required)]
-    /// </summary>
-    [HttpPost("force-verify")]
-    public async Task<IActionResult> ForceVerify([FromBody] PassengerForgotPasswordDto dto)
-    {
-        try
-        {
-            var result = await _authService.ForceVerifyAsync(dto.Email);
-            return Ok(result);
-        }
-        catch (InvalidOperationException ex) { return BadRequest(new { message = ex.Message }); }
-    }
-
-    /// <summary>
     /// Generates a password reset OTP token and returns it directly in the response so the website can alert it (no email required).
     /// [Allowed Roles: Public (None required)]
     /// </summary>

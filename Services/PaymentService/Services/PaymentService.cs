@@ -45,12 +45,9 @@ public class PaymentServiceImpl : IPaymentService
         {
             var token = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].FirstOrDefault()?.Replace("Bearer ", "");
 
-            var bookingServiceUrl = _configuration["ServiceUrls:BookingService"];
-            if (string.IsNullOrEmpty(bookingServiceUrl))
-            {
-                _logger.LogWarning("BookingService URL not configured, skipping validation");
-                return;
-            }
+            var bookingServiceUrl = _configuration["ServiceUrls:FlightOpsService"] 
+                ?? _configuration["ServiceUrls:BookingService"] 
+                ?? "http://localhost:5002";
 
             var requestMessage = new HttpRequestMessage(System.Net.Http.HttpMethod.Get, $"{bookingServiceUrl}/api/bookings/{bookingId}");
             if (!string.IsNullOrEmpty(token))

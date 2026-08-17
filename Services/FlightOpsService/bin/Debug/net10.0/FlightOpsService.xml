@@ -4,30 +4,6 @@
         <name>FlightOpsService</name>
     </assembly>
     <members>
-        <member name="M:FlightOpsService.Controllers.BaggagesController.GetAll(System.Nullable{System.Int32},System.String)">
-            <summary>
-            Retrieves all registered baggage, or tracks by trackingNumber or bookingId.
-            [Allowed Roles: Logged-in Users]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.BaggagesController.GetBaggage(System.Int32)">
-            <summary>
-            Retrieves baggage tracking details by baggage ID.
-            [Allowed Roles: GroundStaff, Passenger, Dealer, Staff]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.BaggagesController.AddBaggage(FlightOpsService.DTOs.AddBaggageDto)">
-            <summary>
-            Registers new checked baggage at the counter.
-            [Allowed Roles: GroundStaff, Staff]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.BaggagesController.UpdateBaggageStatus(System.Int32,FlightOpsService.DTOs.UpdateBaggageStatusDto)">
-            <summary>
-            Updates baggage tracking status (CheckedIn, Loaded, Claimed, Lost).
-            [Allowed Roles: GroundStaff, Staff]
-            </summary>
-        </member>
         <member name="M:FlightOpsService.Controllers.BookingsController.GetBookings(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Retrieves all bookings, or filters by PNR, userId, flightId, or scheduleId.
@@ -46,28 +22,10 @@
             [Allowed Roles: Passenger, Dealer]
             </summary>
         </member>
-        <member name="M:FlightOpsService.Controllers.BookingsController.AddPassengersToBooking(System.Int32,System.Collections.Generic.List{FlightOpsService.DTOs.CreatePassengerDto})">
-            <summary>
-            Adds passengers to an existing booking.
-            [Allowed Roles: Passenger, Dealer]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.BookingsController.GetBookingPassengers(System.Int32)">
-            <summary>
-            Gets all passengers for a specific booking.
-            [Allowed Roles: Passenger, Dealer, Admin, GroundStaff, Staff]
-            </summary>
-        </member>
         <member name="M:FlightOpsService.Controllers.BookingsController.CancelBooking(System.Int32)">
             <summary>
             Cancels a booking.
             [Allowed Roles: Passenger, Dealer]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.BookingsController.DeleteBooking(System.Int32)">
-            <summary>
-            Permanently deletes a booking record.
-            [Allowed Roles: Passenger, Dealer, Admin]
             </summary>
         </member>
         <member name="M:FlightOpsService.Controllers.BookingsController.CancelPassenger(System.Int32,FlightOpsService.DTOs.CancelPassengerDto)">
@@ -99,22 +57,10 @@
             [Allowed Roles: Passenger, Admin, Staff]
             </summary>
         </member>
-        <member name="M:FlightOpsService.Controllers.CheckInsController.GenerateBoardingPass(System.Int32)">
+        <member name="M:FlightOpsService.Controllers.CheckInsController.CheckIn(FlightOpsService.DTOs.OnlineCheckInDto,System.String,System.String,System.Int32,System.DateTime,System.Decimal)">
             <summary>
-            Generates digital boarding pass details for a check-in record.
-            [Allowed Roles: Passenger, Admin, Staff]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.CheckInsController.OnlineCheckIn(FlightOpsService.DTOs.OnlineCheckInDto,System.String,System.String,System.Int32,System.DateTime,System.Decimal)">
-            <summary>
-            Passenger self-service Online Check-In.
-            [Allowed Roles: Passenger]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.CheckInsController.StaffCheckIn(FlightOpsService.DTOs.StaffCheckInDto)">
-            <summary>
-            Staff-initiated Check-In at airport counter.
-            [Allowed Roles: Admin, GroundStaff, Staff]
+            Performs passenger or staff counter Check-In.
+            [Allowed Roles: Passenger, Admin, GroundStaff, Staff]
             </summary>
         </member>
         <member name="M:FlightOpsService.Controllers.FlightsController.GetAllFlights(System.String,System.String,System.String)">
@@ -147,12 +93,6 @@
             [Allowed Roles: Admin, SuperAdmin]
             </summary>
         </member>
-        <member name="M:FlightOpsService.Controllers.FlightsController.BookSeat(System.Int32,FlightOpsService.DTOs.BookSeatDto)">
-            <summary>
-            Internal endpoint for booking seats on a flight template. Reduces available seat count.
-            [Allowed Roles: Internal Service Call / System]
-            </summary>
-        </member>
         <member name="M:FlightOpsService.Controllers.FlightsController.GetAllSchedules(System.String,System.String,System.String,System.Nullable{System.Int32})">
             <summary>
             Retrieves all flight schedules, or searches schedules if source, destination, date, or flightId are provided.
@@ -163,12 +103,6 @@
             <summary>
             Creates a new flight schedule instance from a flight template.
             [Allowed Roles: Admin, SuperAdmin, Staff]
-            </summary>
-        </member>
-        <member name="M:FlightOpsService.Controllers.FlightsController.BookScheduleSeat(System.Int32,FlightOpsService.DTOs.BookSeatDto)">
-            <summary>
-            Internal endpoint for booking seats on a specific schedule.
-            [Allowed Roles: Internal Service Call / System]
             </summary>
         </member>
         <member name="T:FlightOpsService.Migrations.InitialCreate">
@@ -223,7 +157,7 @@
         </member>
         <member name="M:FlightOpsService.Repositories.BookingRepository.DeleteAsync(System.Int32)">
             <summary>
-            Removes a booking by ID. No-ops silently if booking doesn't exist.
+            Removes a booking by ID (used for internal compensation/rollback). No-ops silently if booking doesn't exist.
             </summary>
         </member>
         <member name="M:FlightOpsService.Repositories.BookingRepository.GetByUserIdAsync(System.Int32)">

@@ -277,31 +277,31 @@ Content-Type: application/json
 
 ```json
 {
-  "userId": 42,
   "flightId": 1,
   "scheduleId": 81,
   "seatClass": "Economy",
   "baggageWeight": 23.0,
   "passengerCount": 2,
-  "userEmail": "ravi.kumar@gmail.com",
-  "userName": "Ravi Kumar",
   "totalAmount": 9000.00
 }
 ```
+
+> [!TIP]
+> `userId`, `userEmail`, and `userName` are **automatically extracted from your JWT Bearer token claims** by the backend! You do not need to manually pass them.
 
 ### Field Reference
 
 | Field | Type | Required | Value | Notes |
 |---|---|---|---|---|
-| `userId` | `int` | ✅ | `42` | From Step 2 login response |
 | `flightId` | `int` | ✅ | `1` | SP-101 from Step 3 |
 | `scheduleId` | `int?` | ✅ | `81` | Aug 23 schedule from Step 4 |
 | `seatClass` | `string` | ✅ | `"Economy"` | `"Economy"`, `"Business"`, or `"First"` |
 | `baggageWeight` | `decimal` | ✅ | `23.0` | Total bag weight in KG |
 | `passengerCount` | `int` | ✅ | `2` | Number of passengers |
-| `userEmail` | `string` | ✅ | `"ravi.kumar@gmail.com"` | For booking records |
-| `userName` | `string` | ✅ | `"Ravi Kumar"` | For booking records |
 | `totalAmount` | `decimal` | ✅ | `9000.00` | `economyPrice × passengerCount` = 4500 × 2 |
+| `userId` | `int?` | ❌ Optional | Auto | Extracted from JWT token (`sub`) |
+| `userEmail` | `string?` | ❌ Optional | Auto | Extracted from JWT token (`email`) |
+| `userName` | `string?` | ❌ Optional | Auto | Extracted from JWT token (`name`) |
 
 ### ✅ Success Response — `201 Created`
 

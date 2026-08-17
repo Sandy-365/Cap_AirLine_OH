@@ -57,31 +57,12 @@ public class CheckInsController : ControllerBase
     }
 
     /// <summary>
-    /// Generates digital boarding pass details for a check-in record.
-    /// [Allowed Roles: Passenger, Admin, Staff]
+    /// Performs passenger or staff counter Check-In.
+    /// [Allowed Roles: Passenger, Admin, GroundStaff, Staff]
     /// </summary>
-    [HttpGet("{id:int}/boarding-pass")]
-    [Authorize(Roles = "Passenger,Admin,Staff,GroundStaff")]
-    public async Task<IActionResult> GenerateBoardingPass(int id)
-    {
-        try
-        {
-            var result = await _checkInService.GenerateBoardingPassAsync(id);
-            return Ok(result);
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-    }
-
-    /// <summary>
-    /// Passenger self-service Online Check-In.
-    /// [Allowed Roles: Passenger]
-    /// </summary>
-    [HttpPost("online")]
-    [Authorize(Roles = "Passenger")]
-    public async Task<IActionResult> OnlineCheckIn(
+    [HttpPost]
+    [Authorize]
+    public async Task<IActionResult> CheckIn(
         [FromBody] OnlineCheckInDto dto,
         [FromQuery] string passengerName,
         [FromQuery] string flightNumber,
@@ -91,6 +72,16 @@ public class CheckInsController : ControllerBase
     {
         try
         {
+            if (!dto.UserId.HasValue || dto.UserId.Value <= 0)
+            {
+                var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+                    ?? User.FindFirst("sub")?.Value;
+                if (int.TryParse(userIdClaim, out var extractedUserId))
+                {
+                    dto.UserId = extractedUserId;
+                }
+            }
+
             var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
             var result = await _checkInService.OnlineCheckInAsync(dto, passengerName, flightNumber, flightId, departureTime, fare, token);
             return Ok(result);
@@ -100,23 +91,5 @@ public class CheckInsController : ControllerBase
             return BadRequest(new { message = ex.Message });
         }
     }
-
-    /// <summary>
-    /// Staff-initiated Check-In at airport counter.
-    /// [Allowed Roles: Admin, GroundStaff, Staff]
-    /// </summary>
-    [HttpPost("staff")]
-    [Authorize(Roles = "Admin,GroundStaff,Staff")]
-    public async Task<IActionResult> StaffCheckIn([FromBody] StaffCheckInDto dto)
-    {
-        try
-        {
-            var result = await _checkInService.StaffCheckInAsync(dto);
-            return Ok(result);
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
-    }
 }
+

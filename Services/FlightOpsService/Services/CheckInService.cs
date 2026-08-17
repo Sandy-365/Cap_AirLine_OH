@@ -9,7 +9,6 @@ public interface ICheckInService
     Task<CheckInDto> OnlineCheckInAsync(OnlineCheckInDto dto, string passengerName, string flightNumber, int flightId, DateTime departureTime, decimal fare, string token);
     Task<CheckInDto> StaffCheckInAsync(StaffCheckInDto dto);
     Task<CheckInDto> GetCheckInAsync(int id);
-    Task<BoardingPassDto> GenerateBoardingPassAsync(int checkInId);
     Task<IEnumerable<BoardingPassDto>> GetBoardingPassesByBookingAsync(int bookingId);
     Task<CheckInSummaryDto> GetSummaryAsync();
     Task<IEnumerable<CheckInDto>> GetAllCheckInsAsync();
@@ -55,7 +54,7 @@ public class CheckInServiceImpl : ICheckInService
         {
             BookingId = dto.BookingId,
             PassengerId = dto.PassengerId,
-            UserId = dto.UserId,
+            UserId = dto.UserId ?? 0,
             FlightId = flightId,
             SeatNumber = seatNumber,
             Gate = "TBD",
@@ -106,22 +105,6 @@ public class CheckInServiceImpl : ICheckInService
         var checkIn = await _repository.GetByIdAsync(id);
         if (checkIn == null) throw new KeyNotFoundException($"Check-in {id} not found");
         return MapToDto(checkIn);
-    }
-
-    public async Task<BoardingPassDto> GenerateBoardingPassAsync(int checkInId)
-    {
-        var checkIn = await _repository.GetByIdAsync(checkInId);
-        if (checkIn == null) throw new KeyNotFoundException($"Check-in {checkInId} not found");
-
-        var parts = checkIn.BoardingPass.Split('|');
-        return new BoardingPassDto
-        {
-            PassengerName = parts[0],
-            FlightNumber = parts[1],
-            SeatNumber = checkIn.SeatNumber,
-            Gate = checkIn.Gate,
-            QRCode = checkIn.QRCode
-        };
     }
 
     public async Task<IEnumerable<BoardingPassDto>> GetBoardingPassesByBookingAsync(int bookingId)

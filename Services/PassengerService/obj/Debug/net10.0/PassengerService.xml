@@ -28,12 +28,6 @@
             [Allowed Roles: Public (None required)]
             </summary>
         </member>
-        <member name="M:PassengerService.Controllers.PassengerAuthController.ForceVerify(PassengerService.DTOs.PassengerForgotPasswordDto)">
-            <summary>
-            Directly verifies passenger email address and returns JWT token (bypasses OTP check for testing/convenience).
-            [Allowed Roles: Public (None required)]
-            </summary>
-        </member>
         <member name="M:PassengerService.Controllers.PassengerAuthController.ForgotPassword(PassengerService.DTOs.PassengerForgotPasswordDto)">
             <summary>
             Generates a password reset OTP token and returns it directly in the response so the website can alert it (no email required).
@@ -68,12 +62,6 @@
             <summary>
             Activates or deactivates a passenger account.
             [Allowed Roles: Admin, SuperAdmin, HR]
-            </summary>
-        </member>
-        <member name="M:PassengerService.Controllers.PassengersController.DeleteUser(System.Int32)">
-            <summary>
-            Permanently deletes a passenger profile.
-            [Allowed Roles: Admin, SuperAdmin]
             </summary>
         </member>
         <member name="T:PassengerService.Migrations.InitialCreatePassengerDB">
@@ -257,18 +245,6 @@
             <param name="isActive"></param>
             <returns></returns>
             <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
-        </member>
-        <member name="M:PassengerService.Services.implementations.PassengerAuthService.DeleteUserAsync(System.Int32)">
-            <summary>
-            oft-deletes a passenger by marking account as inactive.
-            </summary>
-            
-            <param name="id"></param>
-            
-            <returns></returns>
-            
-            <exception cref="T:System.Collections.Generic.KeyNotFoundException"></exception>
-            
         </member>
         <member name="M:PassengerService.Services.implementations.PassengerAuthService.SendOtpEmailAsync(System.String,System.String,System.String)">
             <summary>

@@ -64,7 +64,7 @@ public class BookingRepository : IBookingRepository
     }
 
     /// <summary>
-    /// Removes a booking by ID. No-ops silently if booking doesn't exist.
+    /// Removes a booking by ID (used for internal compensation/rollback). No-ops silently if booking doesn't exist.
     /// </summary>
     public async Task DeleteAsync(int id)
     {

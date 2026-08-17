@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "PaymentService.Controllers.PaymentsController",
+    "Method": "ProcessPayment",
+    "RelativePath": "api/Payments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PaymentService.DTOs.ProcessPaymentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaymentService.Controllers.PaymentsController",
     "Method": "GetPayment",
     "RelativePath": "api/Payments/{id}",
     "HttpMethod": "GET",
@@ -26,70 +42,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PaymentService.Controllers.PaymentsController",
-    "Method": "CreateOrder",
-    "RelativePath": "api/Payments/create-order",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PaymentService.DTOs.CreateOrderDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PaymentService.Controllers.PaymentsController",
-    "Method": "ProcessPayment",
-    "RelativePath": "api/Payments/process",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PaymentService.DTOs.ProcessPaymentDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PaymentService.Controllers.PaymentsController",
-    "Method": "ReportFailure",
-    "RelativePath": "api/Payments/report-failure",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PaymentService.DTOs.ReportFailureDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PaymentService.Controllers.PaymentsController",
-    "Method": "VerifyPayment",
-    "RelativePath": "api/Payments/verify",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PaymentService.DTOs.VerifySignatureDto",
         "IsRequired": true
       }
     ],

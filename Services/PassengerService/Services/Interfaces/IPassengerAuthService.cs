@@ -7,7 +7,6 @@ public interface IPassengerAuthService
 {
     Task RegisterAsync(PassengerRegisterDto dto);
     Task<PassengerAuthResponseDto> VerifyAsync(PassengerVerifyDto dto);
-    Task<PassengerAuthResponseDto> ForceVerifyAsync(string email);
     Task ResendVerificationAsync(string email);
     Task<PassengerAuthResponseDto> LoginAsync(PassengerLoginDto dto);
     Task<string?> ForgotPasswordAsync(string email);
@@ -17,5 +16,4 @@ public interface IPassengerAuthService
     Task<PassengerProfileResponseDto> UpdateProfileAsync(int id, PassengerUpdateProfileDto dto);
     Task<List<PassengerProfileResponseDto>> GetAllPassengersAsync();
     Task UpdateUserStatusAsync(int id, bool isActive);
-    Task DeleteUserAsync(int id);
 }

@@ -132,25 +132,6 @@
             "Key": "checkins-all"
         },
         {
-            "DownstreamPathTemplate": "/api/baggages/{everything}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "localhost",
-                    "Port": 5002
-                }
-            ],
-            "UpstreamPathTemplate": "/baggage/{everything}",
-            "UpstreamHttpMethod": [
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE"
-            ],
-            "SwaggerKey": "flights",
-            "Key": "baggages-route"
-        },
-        {
             "DownstreamPathTemplate": "/api/passengers/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [

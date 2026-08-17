@@ -24,7 +24,7 @@
       "Key": "flights",
       "Config": [
         {
-          "Name": "FlightOps API (Flights, Bookings, CheckIns & Baggages)",
+          "Name": "FlightOps API (Flights, Bookings, CheckIns)",
           "Version": "v1",
           "Url": "http://localhost:5002/swagger/v1/swagger.json"
         }

@@ -1,0 +1,272 @@
+[
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeAuthController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/backoffice/auth/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeAuthController",
+    "Method": "Login",
+    "RelativePath": "api/backoffice/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeAuthController",
+    "Method": "Register",
+    "RelativePath": "api/backoffice/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeAuthController",
+    "Method": "ResendVerification",
+    "RelativePath": "api/backoffice/auth/resend-verification",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeForgotPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeAuthController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/backoffice/auth/reset-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeResetPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeAuthController",
+    "Method": "Verify",
+    "RelativePath": "api/backoffice/auth/verify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeVerifyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "GetBookingReport",
+    "RelativePath": "api/backoffice/booking-report",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "GetDashboard",
+    "RelativePath": "api/backoffice/dashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "ProvisionUser",
+    "RelativePath": "api/backoffice/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "GetRevenueReport",
+    "RelativePath": "api/backoffice/revenue-report",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "ProvisionUser",
+    "RelativePath": "api/backoffice/users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "GetUsers",
+    "RelativePath": "api/backoffice/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roles",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "GetUser",
+    "RelativePath": "api/backoffice/users/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/backoffice/users/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/backoffice/users/{userId}/profile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeUpdateProfileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BackOfficeService.Controllers.BackofficeController",
+    "Method": "UpdateUserStatus",
+    "RelativePath": "api/backoffice/users/{userId}/status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "BackOfficeService.DTOs.BackofficeUpdateStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

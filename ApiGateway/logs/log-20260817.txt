@@ -1,0 +1,398 @@
+2026-08-17 15:03:17.004 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 15:03:17.193 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-17 15:03:17.196 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 15:03:17.197 +05:30 [INF] Hosting environment: Development
+2026-08-17 15:03:17.198 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-17 15:04:52.737 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2026-08-17 15:04:52.824 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 92.1386ms
+2026-08-17 15:04:52.988 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-17 15:04:53.061 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:04:53.065 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:04:53.505 +05:30 [INF] Received HTTP response headers after 433.9175ms - 200
+2026-08-17 15:04:53.509 +05:30 [INF] End processing HTTP request after 453.3332ms - 200
+2026-08-17 15:04:53.706 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 717.9108ms
+2026-08-17 15:05:08.118 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - null null
+2026-08-17 15:05:08.307 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:05:08.315 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000003, PreviousRequestId: -
+No authentication is required for the path '/backoffice/booking-report' in the route /backoffice/{everything}.
+2026-08-17 15:05:08.461 +05:30 [WRN] RequestId: 0HNNS8B563MFN:00000003, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/backoffice/booking-report
+2026-08-17 15:05:08.505 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - 401 0 null 387.8966ms
+2026-08-17 15:05:08.511 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/backoffice/booking-report, Response status code: 401
+2026-08-17 15:05:29.561 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - application/json 66
+2026-08-17 15:05:29.569 +05:30 [INF] CORS policy execution failed.
+2026-08-17 15:05:29.571 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-17 15:05:29.581 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:05:29.582 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000004, PreviousRequestId: -
+No authentication is required for the path '/backoffice/auth/login' in the route /backoffice/{everything}.
+2026-08-17 15:05:30.442 +05:30 [WRN] RequestId: 0HNNS8B563MFN:00000004, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/backoffice/auth/login
+2026-08-17 15:05:30.485 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - 401 null application/json; charset=utf-8 923.6912ms
+2026-08-17 15:05:30.493 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/backoffice/auth/login, Response status code: 401
+2026-08-17 15:05:35.617 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - application/json 65
+2026-08-17 15:05:35.625 +05:30 [INF] CORS policy execution failed.
+2026-08-17 15:05:35.627 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-17 15:05:35.638 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:05:35.641 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000005, PreviousRequestId: -
+No authentication is required for the path '/backoffice/auth/login' in the route /backoffice/{everything}.
+2026-08-17 15:05:36.078 +05:30 [WRN] RequestId: 0HNNS8B563MFN:00000005, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/backoffice/auth/login
+2026-08-17 15:05:36.090 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - 401 null application/json; charset=utf-8 472.9942ms
+2026-08-17 15:05:36.096 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/backoffice/auth/login, Response status code: 401
+2026-08-17 15:05:49.147 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - application/json 66
+2026-08-17 15:05:49.162 +05:30 [INF] CORS policy execution failed.
+2026-08-17 15:05:49.163 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-17 15:05:49.168 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:05:49.171 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000006, PreviousRequestId: -
+No authentication is required for the path '/backoffice/auth/login' in the route /backoffice/{everything}.
+2026-08-17 15:05:49.488 +05:30 [WRN] RequestId: 0HNNS8B563MFN:00000006, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/backoffice/auth/login
+2026-08-17 15:05:49.497 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - 401 null application/json; charset=utf-8 350.2015ms
+2026-08-17 15:05:49.600 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/backoffice/auth/login, Response status code: 401
+2026-08-17 15:05:58.470 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - application/json 65
+2026-08-17 15:05:58.477 +05:30 [INF] CORS policy execution failed.
+2026-08-17 15:05:58.478 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-17 15:05:58.481 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:05:58.482 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000007, PreviousRequestId: -
+No authentication is required for the path '/backoffice/auth/login' in the route /backoffice/{everything}.
+2026-08-17 15:05:58.868 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000007, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/backoffice/auth/login
+2026-08-17 15:05:58.890 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/backoffice/auth/login - 200 null application/json; charset=utf-8 419.8872ms
+2026-08-17 15:05:58.899 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/backoffice/auth/login, Response status code: 200
+2026-08-17 15:07:36.380 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - null null
+2026-08-17 15:07:36.425 +05:30 [INF] Failed to validate the token.
+System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoder.Decode(ReadOnlySpan`1 strSpan, Span`1 output, Boolean needReplace, Int32 decodedLength)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoder.Decode(ReadOnlySpan`1 strSpan, Span`1 output)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2026-08-17 15:07:36.456 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+2026-08-17 15:07:36.460 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:07:36.461 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000008, PreviousRequestId: -
+No authentication is required for the path '/backoffice/booking-report' in the route /backoffice/{everything}.
+2026-08-17 15:07:36.551 +05:30 [WRN] RequestId: 0HNNS8B563MFN:00000008, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/backoffice/booking-report
+2026-08-17 15:07:36.559 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - 401 0 null 178.1271ms
+2026-08-17 15:07:36.563 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/backoffice/booking-report, Response status code: 401
+2026-08-17 15:07:40.112 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - null null
+2026-08-17 15:07:40.121 +05:30 [INF] Failed to validate the token.
+System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoder.Decode(ReadOnlySpan`1 strSpan, Span`1 output, Boolean needReplace, Int32 decodedLength)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoder.Decode(ReadOnlySpan`1 strSpan, Span`1 output)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2026-08-17 15:07:40.132 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+2026-08-17 15:07:40.137 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000009, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:07:40.140 +05:30 [INF] RequestId: 0HNNS8B563MFN:00000009, PreviousRequestId: -
+No authentication is required for the path '/backoffice/booking-report' in the route /backoffice/{everything}.
+2026-08-17 15:07:40.197 +05:30 [WRN] RequestId: 0HNNS8B563MFN:00000009, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/backoffice/booking-report
+2026-08-17 15:07:40.199 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - 401 0 null 87.2804ms
+2026-08-17 15:07:40.208 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/backoffice/booking-report, Response status code: 401
+2026-08-17 15:07:46.656 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - null null
+2026-08-17 15:07:46.663 +05:30 [INF] Failed to validate the token.
+System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoder.Decode(ReadOnlySpan`1 strSpan, Span`1 output, Boolean needReplace, Int32 decodedLength)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoder.Decode(ReadOnlySpan`1 strSpan, Span`1 output)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2026-08-17 15:07:46.679 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+2026-08-17 15:07:46.684 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:07:46.687 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000A, PreviousRequestId: -
+No authentication is required for the path '/backoffice/booking-report' in the route /backoffice/{everything}.
+2026-08-17 15:07:46.733 +05:30 [WRN] RequestId: 0HNNS8B563MFN:0000000A, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5010/api/backoffice/booking-report
+2026-08-17 15:07:46.736 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - 401 0 null 80.5553ms
+2026-08-17 15:07:46.747 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/backoffice/booking-report, Response status code: 401
+2026-08-17 15:08:14.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - null null
+2026-08-17 15:08:14.479 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000B, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:08:14.482 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000B, PreviousRequestId: -
+No authentication is required for the path '/backoffice/booking-report' in the route /backoffice/{everything}.
+2026-08-17 15:08:15.391 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000B, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/backoffice/booking-report
+2026-08-17 15:08:15.401 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/backoffice/booking-report - 200 null application/json; charset=utf-8 1065.3591ms
+2026-08-17 15:08:15.406 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/backoffice/booking-report, Response status code: 200
+2026-08-17 15:08:38.928 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/backoffice/dashboard - null null
+2026-08-17 15:08:38.942 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000C, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:08:38.943 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000C, PreviousRequestId: -
+No authentication is required for the path '/backoffice/dashboard' in the route /backoffice/{everything}.
+2026-08-17 15:08:39.483 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000C, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/backoffice/dashboard
+2026-08-17 15:08:39.497 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/backoffice/dashboard - 200 null application/json; charset=utf-8 569.4835ms
+2026-08-17 15:08:39.503 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/backoffice/dashboard, Response status code: 200
+2026-08-17 15:08:52.186 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/backoffice/users - null null
+2026-08-17 15:08:52.194 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000D, PreviousRequestId: -
+Rate limiting is disabled for route '/backoffice/{everything}' via the EnableRateLimiting option.
+2026-08-17 15:08:52.197 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000D, PreviousRequestId: -
+No authentication is required for the path '/backoffice/users' in the route /backoffice/{everything}.
+2026-08-17 15:08:52.299 +05:30 [INF] RequestId: 0HNNS8B563MFN:0000000D, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5010/api/backoffice/users
+2026-08-17 15:08:52.316 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/backoffice/users - 200 null application/json; charset=utf-8 129.5408ms
+2026-08-17 15:08:52.325 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/backoffice/users, Response status code: 200
+2026-08-17 15:11:12.332 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-17 15:11:12.539 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 206.8163ms
+2026-08-17 15:11:12.651 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-17 15:11:12.658 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:11:12.660 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:11:12.681 +05:30 [INF] Received HTTP response headers after 19.7942ms - 200
+2026-08-17 15:11:12.682 +05:30 [INF] End processing HTTP request after 24.4971ms - 200
+2026-08-17 15:11:12.697 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 45.8273ms
+2026-08-17 15:15:59.788 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 15:15:59.801 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:15:59.808 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:16:00.053 +05:30 [INF] Received HTTP response headers after 242.9945ms - 200
+2026-08-17 15:16:00.055 +05:30 [INF] End processing HTTP request after 254.3366ms - 200
+2026-08-17 15:16:00.083 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 295.3246ms
+2026-08-17 15:16:06.899 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-17 15:16:06.910 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-17 15:16:06.914 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-17 15:16:07.158 +05:30 [INF] Received HTTP response headers after 239.8594ms - 200
+2026-08-17 15:16:07.161 +05:30 [INF] End processing HTTP request after 251.409ms - 200
+2026-08-17 15:16:07.182 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 283.7239ms
+2026-08-17 15:16:12.375 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-17 15:16:12.386 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:16:12.390 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:16:12.432 +05:30 [INF] Received HTTP response headers after 35.2168ms - 200
+2026-08-17 15:16:12.435 +05:30 [INF] End processing HTTP request after 49.703ms - 200
+2026-08-17 15:16:12.446 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 70.8644ms
+2026-08-17 15:24:36.470 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=BackOffice+API+-+v1 - null null
+2026-08-17 15:24:36.476 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=BackOffice+API+-+v1 - 200 null text/html;charset=utf-8 6.3067ms
+2026-08-17 15:24:36.595 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-17 15:24:36.598 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:24:36.599 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 15:24:37.210 +05:30 [INF] Received HTTP response headers after 609.9435ms - 200
+2026-08-17 15:24:37.216 +05:30 [INF] End processing HTTP request after 617.3802ms - 200
+2026-08-17 15:24:37.228 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 632.8252ms
+2026-08-17 15:24:49.294 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 15:24:49.305 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:24:49.309 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:24:49.362 +05:30 [INF] Received HTTP response headers after 46.1306ms - 200
+2026-08-17 15:24:49.365 +05:30 [INF] End processing HTTP request after 60.3811ms - 200
+2026-08-17 15:24:49.375 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 81.4796ms
+2026-08-17 15:34:12.354 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 15:34:12.366 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:34:12.369 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:34:12.392 +05:30 [INF] Received HTTP response headers after 20.6306ms - 200
+2026-08-17 15:34:12.394 +05:30 [INF] End processing HTTP request after 28.0621ms - 200
+2026-08-17 15:34:12.400 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 46.7844ms
+2026-08-17 15:52:11.991 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-17 15:52:12.000 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 9.1979ms
+2026-08-17 15:52:12.310 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 15:52:12.319 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:52:12.321 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:52:12.876 +05:30 [INF] Received HTTP response headers after 553.756ms - 200
+2026-08-17 15:52:12.879 +05:30 [INF] End processing HTTP request after 560.6072ms - 200
+2026-08-17 15:52:12.890 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 579.3539ms
+2026-08-17 15:52:29.447 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-17 15:52:29.456 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 9.6464ms
+2026-08-17 15:52:29.514 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-17 15:52:29.515 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-17 15:52:29.516 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-17 15:52:29.516 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-17 15:52:29.518 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-17 15:52:29.540 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 25.1932ms
+2026-08-17 15:52:29.540 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 26.2653ms
+2026-08-17 15:52:29.549 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 30.7686ms
+2026-08-17 15:52:29.552 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 35.9776ms
+2026-08-17 15:52:29.576 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 59.9576ms
+2026-08-17 15:52:29.725 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 15:52:29.731 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-17 15:52:29.734 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:52:29.738 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 15:52:29.740 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 8.0841ms
+2026-08-17 15:52:29.792 +05:30 [INF] Received HTTP response headers after 48.3013ms - 200
+2026-08-17 15:52:29.798 +05:30 [INF] End processing HTTP request after 64.1512ms - 200
+2026-08-17 15:52:29.813 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 87.6678ms
+2026-08-17 15:52:38.719 +05:30 [INF] Application is shutting down...
+2026-08-17 15:52:44.897 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 15:52:44.990 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-17 15:52:44.992 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 15:52:44.993 +05:30 [INF] Hosting environment: Development
+2026-08-17 15:52:44.994 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-17 15:53:02.207 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-17 15:53:02.434 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 229.2936ms
+2026-08-17 15:53:19.148 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2026-08-17 15:53:19.167 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 18.4398ms
+2026-08-17 15:53:19.182 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-17 15:53:19.199 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 16.9852ms
+2026-08-17 15:53:24.386 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-17 15:53:24.392 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 5.4664ms
+2026-08-17 15:53:31.458 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-17 15:53:31.507 +05:30 [WRN] RequestId: 0HNNS962ABVQH:00000005, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-17 15:53:31.509 +05:30 [WRN] RequestId: 0HNNS962ABVQH:00000005, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-17 15:53:31.511 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 53.7827ms
+2026-08-17 15:58:46.571 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-17 15:58:46.578 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 6.2092ms
+2026-08-17 16:04:32.876 +05:30 [INF] Application is shutting down...
+2026-08-17 16:04:41.059 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 16:04:41.158 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-17 16:04:41.161 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 16:04:41.162 +05:30 [INF] Hosting environment: Development
+2026-08-17 16:04:41.162 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-17 16:08:23.248 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-17 16:08:23.475 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 230.5988ms
+2026-08-17 16:08:23.587 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-17 16:08:23.647 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 16:08:23.650 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 16:08:23.773 +05:30 [INF] Received HTTP response headers after 115.7137ms - 200
+2026-08-17 16:08:23.776 +05:30 [INF] End processing HTTP request after 135.9598ms - 200
+2026-08-17 16:08:23.947 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 359.9541ms
+2026-08-17 16:08:31.512 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:08:31.529 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:08:31.535 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:08:32.040 +05:30 [INF] Received HTTP response headers after 497.8974ms - 200
+2026-08-17 16:08:32.044 +05:30 [INF] End processing HTTP request after 515.5798ms - 200
+2026-08-17 16:08:32.095 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 582.448ms
+2026-08-17 16:08:52.371 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-17 16:08:52.386 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-17 16:08:52.392 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-17 16:08:52.436 +05:30 [INF] Received HTTP response headers after 39.4948ms - 200
+2026-08-17 16:08:52.439 +05:30 [INF] End processing HTTP request after 52.4877ms - 200
+2026-08-17 16:08:52.493 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 122.3963ms
+2026-08-17 16:08:56.822 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - null null
+2026-08-17 16:08:56.833 +05:30 [INF] Start processing HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-17 16:08:56.839 +05:30 [INF] Sending HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-17 16:08:57.241 +05:30 [INF] Received HTTP response headers after 396.8138ms - 200
+2026-08-17 16:08:57.244 +05:30 [INF] End processing HTTP request after 411.9212ms - 200
+2026-08-17 16:08:57.248 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - 200 null null 426.2903ms
+2026-08-17 16:09:00.714 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:09:00.726 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:09:00.733 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:09:00.789 +05:30 [INF] Received HTTP response headers after 51.9205ms - 200
+2026-08-17 16:09:00.795 +05:30 [INF] End processing HTTP request after 68.9129ms - 200
+2026-08-17 16:09:00.810 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 96.6458ms
+2026-08-17 16:09:23.455 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-17 16:09:23.465 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 10.3734ms
+2026-08-17 16:09:23.526 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-17 16:09:23.529 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-17 16:09:23.534 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-17 16:09:23.534 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-17 16:09:23.538 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-17 16:09:23.600 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 70.4369ms
+2026-08-17 16:09:23.600 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 62.0579ms
+2026-08-17 16:09:23.601 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 73.6474ms
+2026-08-17 16:09:23.603 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 68.4113ms
+2026-08-17 16:09:23.616 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 82.0165ms
+2026-08-17 16:09:23.864 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:09:23.869 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-17 16:09:23.875 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:09:23.883 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:09:23.883 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 14.0869ms
+2026-08-17 16:09:23.917 +05:30 [INF] Received HTTP response headers after 27.0294ms - 200
+2026-08-17 16:09:23.919 +05:30 [INF] End processing HTTP request after 43.6283ms - 200
+2026-08-17 16:09:23.925 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 60.9105ms
+2026-08-17 16:09:26.240 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-17 16:09:26.250 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 9.3134ms
+2026-08-17 16:09:26.287 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-17 16:09:26.289 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-17 16:09:26.291 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-17 16:09:26.292 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-17 16:09:26.292 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-17 16:09:26.297 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 9.9918ms
+2026-08-17 16:09:26.305 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 16.4487ms
+2026-08-17 16:09:26.319 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 27.766ms
+2026-08-17 16:09:26.329 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 37.4062ms
+2026-08-17 16:09:26.337 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 45.9889ms
+2026-08-17 16:09:26.503 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:09:26.510 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-17 16:09:26.513 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:09:26.535 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:09:26.521 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 10.5448ms
+2026-08-17 16:09:26.582 +05:30 [INF] Received HTTP response headers after 42.5541ms - 200
+2026-08-17 16:09:26.589 +05:30 [INF] End processing HTTP request after 76.0814ms - 200
+2026-08-17 16:09:26.594 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 91.6477ms
+2026-08-17 16:18:54.607 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:18:54.611 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:18:54.612 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:18:54.625 +05:30 [INF] Received HTTP response headers after 11.9394ms - 200
+2026-08-17 16:18:54.627 +05:30 [INF] End processing HTTP request after 15.5113ms - 200
+2026-08-17 16:18:54.634 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 26.606ms
+2026-08-17 16:20:55.012 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-17 16:20:55.026 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 13.7846ms
+2026-08-17 16:20:55.415 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:20:55.509 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:20:55.718 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:20:55.808 +05:30 [INF] Received HTTP response headers after 83.003ms - 200
+2026-08-17 16:20:55.997 +05:30 [INF] End processing HTTP request after 487.1124ms - 200
+2026-08-17 16:20:56.141 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 726.6545ms
+2026-08-17 16:21:05.522 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-17 16:21:05.533 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 16:21:05.540 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-17 16:21:05.580 +05:30 [INF] Received HTTP response headers after 36.0641ms - 200
+2026-08-17 16:21:05.584 +05:30 [INF] End processing HTTP request after 51.0939ms - 200
+2026-08-17 16:21:05.592 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 69.5814ms
+2026-08-17 16:21:25.382 +05:30 [INF] Application is shutting down...
+2026-08-17 16:21:32.159 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 16:21:32.350 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-17 16:21:32.364 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 16:21:32.369 +05:30 [INF] Hosting environment: Development
+2026-08-17 16:21:32.371 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-17 16:21:32.599 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:21:32.702 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:21:32.707 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:21:32.846 +05:30 [INF] Received HTTP response headers after 132.9553ms - 200
+2026-08-17 16:21:32.852 +05:30 [INF] End processing HTTP request after 152.7502ms - 200
+2026-08-17 16:21:33.028 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 429.7019ms
+2026-08-17 16:21:43.637 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-17 16:21:43.805 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 167.7028ms
+2026-08-17 16:21:43.842 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-17 16:21:43.842 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-17 16:21:43.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-17 16:21:43.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-17 16:21:43.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-17 16:21:43.871 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 27.0903ms
+2026-08-17 16:21:43.882 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 39.7657ms
+2026-08-17 16:21:43.882 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 40.1283ms
+2026-08-17 16:21:43.887 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 42.2928ms
+2026-08-17 16:21:43.910 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 65.7477ms
+2026-08-17 16:21:44.143 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-17 16:21:44.147 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-17 16:21:44.155 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:21:44.166 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 17.9076ms
+2026-08-17 16:21:44.178 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-17 16:21:44.209 +05:30 [INF] Received HTTP response headers after 18.6818ms - 200
+2026-08-17 16:21:44.219 +05:30 [INF] End processing HTTP request after 64.0217ms - 200
+2026-08-17 16:21:44.236 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 93.2389ms
+2026-08-17 16:23:48.860 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-17 16:23:48.867 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-17 16:23:48.870 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-17 16:23:48.927 +05:30 [INF] Received HTTP response headers after 54.8173ms - 200
+2026-08-17 16:23:48.933 +05:30 [INF] End processing HTTP request after 65.4927ms - 200
+2026-08-17 16:23:48.979 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 118.2611ms
+2026-08-17 16:23:54.893 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - null null
+2026-08-17 16:23:54.898 +05:30 [INF] Start processing HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-17 16:23:54.900 +05:30 [INF] Sending HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-17 16:23:54.927 +05:30 [INF] Received HTTP response headers after 24.433ms - 200
+2026-08-17 16:23:54.932 +05:30 [INF] End processing HTTP request after 34.0425ms - 200
+2026-08-17 16:23:54.935 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - 200 null null 41.8231ms
+2026-08-17 16:24:12.675 +05:30 [INF] Application is shutting down...

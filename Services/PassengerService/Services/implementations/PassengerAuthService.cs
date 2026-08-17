@@ -136,32 +136,6 @@ public class PassengerAuthService : IPassengerAuthService
         };
     }
 
-    public async Task<PassengerAuthResponseDto> ForceVerifyAsync(string email)
-    {
-        var profile = await _repo.GetByEmailAsync(email)
-            ?? throw new InvalidOperationException("Account not found.");
-
-        profile.IsEmailVerified = true;
-        profile.VerificationToken = null;
-        profile.VerificationTokenExpiry = null;
-        await _repo.UpdateAsync(profile);
-
-        var token = _tokenService.GenerateToken(profile.Id, profile.Email, profile.Role);
-        return new PassengerAuthResponseDto
-        {
-            UserId = profile.Id,
-            Email = profile.Email,
-            Name = profile.Name,
-            Role = profile.Role,
-            Token = token
-        };
-    }
-
-
-
-
-
-
     /// <summary>
     /// Generates fresh OTP for unverified accounts and sends via email.
     /// No-ops for verified or non-existent accounts.
@@ -398,34 +372,6 @@ public class PassengerAuthService : IPassengerAuthService
         profile.UpdatedAt = DateTime.UtcNow;
         await _repo.UpdateAsync(profile);
     }
-
-
-
-
-
-    /// <summary>
-    /// oft-deletes a passenger by marking account as inactive.
-    /// </summary>
-    /// 
-    /// <param name="id"></param>
-    /// 
-    /// <returns></returns>
-    /// 
-    /// <exception cref="KeyNotFoundException"></exception>
-    /// 
-    public async Task DeleteUserAsync(int id)
-    {
-        var profile = await _repo.GetByIdAsync(id) ?? throw new KeyNotFoundException("User not found");
-        // We'll need a Delete method in repo
-        // For now, let's just mark as inactive if repo doesn't have Delete
-        profile.IsActive = false;
-        await _repo.UpdateAsync(profile);
-    }
-
-
-
-
-
 
     /// <summary>
     /// Sends verification OTP email to passenger using configured SMTP settings.

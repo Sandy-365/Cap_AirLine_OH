@@ -1,12 +1,5 @@
 namespace BackOfficeService.DTOs;
 
-public class DashboardDto
-{
-    public int TotalBookings { get; set; }
-    public decimal TotalRevenue { get; set; }
-    public int ActiveFlights { get; set; }
-    public int TotalUsers { get; set; }
-}
 
 public class BookingReportDto
 {

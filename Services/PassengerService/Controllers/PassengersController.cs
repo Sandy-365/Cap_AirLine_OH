@@ -73,16 +73,5 @@ public class PassengersController : ControllerBase
         await _authService.UpdateUserStatusAsync(userId, dto.IsActive);
         return Ok(new { message = "Status updated" });
     }
-
-    /// <summary>
-    /// Permanently deletes a passenger profile.
-    /// [Allowed Roles: Admin, SuperAdmin]
-    /// </summary>
-    [HttpDelete("users/{userId}")]
-    [Authorize(Roles = "Admin,SuperAdmin")]
-    public async Task<IActionResult> DeleteUser(int userId)
-    {
-        await _authService.DeleteUserAsync(userId);
-        return Ok(new { message = "User deleted" });
-    }
 }
+

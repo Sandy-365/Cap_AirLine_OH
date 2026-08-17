@@ -1,0 +1,1296 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FlightOpsService API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Baggages": {
+      "get": {
+        "tags": [
+          "Baggages"
+        ],
+        "summary": "Retrieves all registered baggage, or tracks by trackingNumber or bookingId.\r\n[Allowed Roles: Logged-in Users]",
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "trackingNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Baggages"
+        ],
+        "summary": "Registers new checked baggage at the counter.\r\n[Allowed Roles: GroundStaff, Staff]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddBaggageDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddBaggageDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddBaggageDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Baggages/{id}": {
+      "get": {
+        "tags": [
+          "Baggages"
+        ],
+        "summary": "Retrieves baggage tracking details by baggage ID.\r\n[Allowed Roles: GroundStaff, Passenger, Dealer, Staff]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Baggages/{id}/status": {
+      "put": {
+        "tags": [
+          "Baggages"
+        ],
+        "summary": "Updates baggage tracking status (CheckedIn, Loaded, Claimed, Lost).\r\n[Allowed Roles: GroundStaff, Staff]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBaggageStatusDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBaggageStatusDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBaggageStatusDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bookings": {
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Retrieves all bookings, or filters by PNR, userId, flightId, or scheduleId.\r\n[Allowed Roles: Public / Authorized Users]",
+        "parameters": [
+          {
+            "name": "pnr",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "flightId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "scheduleId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Creates a new booking.\r\n[Allowed Roles: Passenger, Dealer]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookingDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookingDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookingDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bookings/{id}": {
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Gets a booking by its ID.\r\n[Allowed Roles: Passenger, Dealer, Admin]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Permanently deletes a booking record.\r\n[Allowed Roles: Passenger, Dealer, Admin]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bookings/{bookingId}/passengers": {
+      "post": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Adds passengers to an existing booking.\r\n[Allowed Roles: Passenger, Dealer]",
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CreatePassengerDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CreatePassengerDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CreatePassengerDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Gets all passengers for a specific booking.\r\n[Allowed Roles: Passenger, Dealer, Admin, GroundStaff, Staff]",
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bookings/{id}/cancel": {
+      "post": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Cancels a booking.\r\n[Allowed Roles: Passenger, Dealer]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bookings/passengers/{passengerId}/cancel": {
+      "post": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Cancels a specific passenger from a booking.\r\n[Allowed Roles: Passenger, Dealer]",
+        "parameters": [
+          {
+            "name": "passengerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelPassengerDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelPassengerDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelPassengerDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bookings/occupied-seats": {
+      "get": {
+        "tags": [
+          "Bookings"
+        ],
+        "summary": "Gets the occupied seats for a flight schedule.\r\n[Allowed Roles: Passenger, Dealer, Admin]",
+        "parameters": [
+          {
+            "name": "flightId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "scheduleId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CheckIns": {
+      "get": {
+        "tags": [
+          "CheckIns"
+        ],
+        "summary": "Retrieves all check-in records, or filters by bookingId.\r\n[Allowed Roles: Logged-in Users]",
+        "parameters": [
+          {
+            "name": "bookingId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CheckIns/{id}": {
+      "get": {
+        "tags": [
+          "CheckIns"
+        ],
+        "summary": "Retrieves a single check-in record by ID. Returns 404 if not found.\r\n[Allowed Roles: Passenger, Admin, Staff]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CheckIns/{id}/boarding-pass": {
+      "get": {
+        "tags": [
+          "CheckIns"
+        ],
+        "summary": "Generates digital boarding pass details for a check-in record.\r\n[Allowed Roles: Passenger, Admin, Staff]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CheckIns/online": {
+      "post": {
+        "tags": [
+          "CheckIns"
+        ],
+        "summary": "Passenger self-service Online Check-In.\r\n[Allowed Roles: Passenger]",
+        "parameters": [
+          {
+            "name": "passengerName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flightNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flightId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "departureTime",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "fare",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OnlineCheckInDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OnlineCheckInDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OnlineCheckInDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CheckIns/staff": {
+      "post": {
+        "tags": [
+          "CheckIns"
+        ],
+        "summary": "Staff-initiated Check-In at airport counter.\r\n[Allowed Roles: Admin, GroundStaff, Staff]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StaffCheckInDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StaffCheckInDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StaffCheckInDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Flights": {
+      "get": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Retrieves all flights or searches flights if source, destination, or date are provided.\r\n[Allowed Roles: Public (None required)]",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "departureDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Creates a new flight with route, schedule, pricing, and seat configuration. Sets initial status to Scheduled.\r\n[Allowed Roles: Admin, SuperAdmin]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFlightDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFlightDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFlightDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Flights/{id}": {
+      "get": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Retrieves a single flight by ID. Returns 404 if not found.\r\n[Allowed Roles: Public (None required)]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Updates flight details (departure/arrival times, gate, aircraft, crew). Only updates non-null fields.\r\n[Allowed Roles: Admin, SuperAdmin]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFlightDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFlightDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFlightDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Permanently removes a flight from the system.\r\n[Allowed Roles: Admin, SuperAdmin]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Flights/{id}/book-seat": {
+      "post": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Internal endpoint for booking seats on a flight template. Reduces available seat count.\r\n[Allowed Roles: Internal Service Call / System]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSeatDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSeatDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSeatDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Flights/schedules": {
+      "get": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Retrieves all flight schedules, or searches schedules if source, destination, date, or flightId are provided.\r\n[Allowed Roles: Public (None required)]",
+        "parameters": [
+          {
+            "name": "source",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "departureDate",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flightId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Creates a new flight schedule instance from a flight template.\r\n[Allowed Roles: Admin, SuperAdmin, Staff]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateScheduleDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateScheduleDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateScheduleDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Flights/schedules/{id}/book-seat": {
+      "post": {
+        "tags": [
+          "Flights"
+        ],
+        "summary": "Internal endpoint for booking seats on a specific schedule.\r\n[Allowed Roles: Internal Service Call / System]",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSeatDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSeatDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookSeatDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddBaggageDto": {
+        "type": "object",
+        "properties": {
+          "bookingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "weight": {
+            "type": "number",
+            "format": "double"
+          },
+          "passengerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "flightNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BookSeatDto": {
+        "type": "object",
+        "properties": {
+          "seatClass": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CancelPassengerDto": {
+        "required": [
+          "cancellationReason"
+        ],
+        "type": "object",
+        "properties": {
+          "cancellationReason": {
+            "maxLength": 500,
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateBookingDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flightId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scheduleId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "seatClass": {
+            "type": "string",
+            "nullable": true
+          },
+          "baggageWeight": {
+            "type": "number",
+            "format": "double"
+          },
+          "passengerCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateFlightDto": {
+        "type": "object",
+        "properties": {
+          "flightNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "departureTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "arrivalTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "aircraft": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "economySeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "businessSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "economyPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "businessPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "firstClassPrice": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePassengerDto": {
+        "required": [
+          "aadharCardNo",
+          "age",
+          "gender",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 100,
+            "minLength": 2,
+            "type": "string"
+          },
+          "age": {
+            "maximum": 120,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "gender": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "aadharCardNo": {
+            "minLength": 1,
+            "pattern": "^\\d{12}$",
+            "type": "string"
+          },
+          "passportNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "nationality": {
+            "type": "string",
+            "nullable": true
+          },
+          "dietaryRequirements": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicalNeeds": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicalAlerts": {
+            "type": "string",
+            "nullable": true
+          },
+          "seatNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "fare": {
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateScheduleDto": {
+        "type": "object",
+        "properties": {
+          "flightId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "departureTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "arrivalTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gate": {
+            "type": "string",
+            "nullable": true
+          },
+          "economySeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "businessSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstSeats": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "economyPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "businessPrice": {
+            "type": "number",
+            "format": "double"
+          },
+          "firstClassPrice": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "OnlineCheckInDto": {
+        "type": "object",
+        "properties": {
+          "bookingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "passengerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seatNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StaffCheckInDto": {
+        "type": "object",
+        "properties": {
+          "bookingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "passengerId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flightId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seatNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "gate": {
+            "type": "string",
+            "nullable": true
+          },
+          "passengerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "flightNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "fare": {
+            "type": "number",
+            "format": "double"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateBaggageStatusDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateFlightDto": {
+        "type": "object",
+        "properties": {
+          "departureTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "arrivalTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gate": {
+            "type": "string",
+            "nullable": true
+          },
+          "aircraft": {
+            "type": "string",
+            "nullable": true
+          },
+          "crewAssignment": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter token as: Bearer {your token}",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

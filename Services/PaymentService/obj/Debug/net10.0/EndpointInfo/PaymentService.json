@@ -5,104 +5,12 @@
     "version": "v1"
   },
   "paths": {
-    "/api/Payments/create-order": {
-      "post": {
-        "tags": [
-          "Payments"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateOrderDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateOrderDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateOrderDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Payments/verify": {
-      "post": {
-        "tags": [
-          "Payments"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/VerifySignatureDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/VerifySignatureDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/VerifySignatureDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Payments/process": {
-      "post": {
-        "tags": [
-          "Payments"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProcessPaymentDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProcessPaymentDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProcessPaymentDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Payments/{id}": {
       "get": {
         "tags": [
           "Payments"
         ],
+        "summary": "Retrieves payment transaction details by payment ID.\r\n[Allowed Roles: Passenger, Dealer, Admin, SuperAdmin]",
         "parameters": [
           {
             "name": "id",
@@ -114,6 +22,38 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Payments": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "summary": "Processes or creates a new payment for a booking using Razorpay gateway integration.\r\n[Allowed Roles: Passenger, Dealer]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProcessPaymentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProcessPaymentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProcessPaymentDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -126,6 +66,7 @@
         "tags": [
           "Payments"
         ],
+        "summary": "Initiates a refund for a processed payment transaction.\r\n[Allowed Roles: Admin, SuperAdmin, FinancialAdmin]",
         "parameters": [
           {
             "name": "id",
@@ -143,55 +84,10 @@
           }
         }
       }
-    },
-    "/api/Payments/report-failure": {
-      "post": {
-        "tags": [
-          "Payments"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReportFailureDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReportFailureDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReportFailureDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
     }
   },
   "components": {
     "schemas": {
-      "CreateOrderDto": {
-        "type": "object",
-        "properties": {
-          "bookingId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
       "ProcessPaymentDto": {
         "type": "object",
         "properties": {
@@ -204,70 +100,6 @@
             "format": "double"
           },
           "paymentMethod": {
-            "type": "string",
-            "nullable": true
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userEmail": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ReportFailureDto": {
-        "type": "object",
-        "properties": {
-          "bookingId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userEmail": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
-            "type": "string",
-            "nullable": true
-          },
-          "reason": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "VerifySignatureDto": {
-        "type": "object",
-        "properties": {
-          "bookingId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          },
-          "razorpayOrderId": {
-            "type": "string",
-            "nullable": true
-          },
-          "razorpayPaymentId": {
-            "type": "string",
-            "nullable": true
-          },
-          "razorpaySignature": {
             "type": "string",
             "nullable": true
           },

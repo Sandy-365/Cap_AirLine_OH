@@ -30,6 +30,7 @@ public class BackofficeAuthController : ControllerBase
         catch (UnauthorizedAccessException ex) { return Unauthorized(new { message = ex.Message }); }
     }
 
+
     /// <summary>
     /// Generates a password reset OTP token and returns it directly in the response so the website can display it in an alert (no email required).
     /// [Allowed Roles: Public (None required)]

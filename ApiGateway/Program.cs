@@ -73,10 +73,63 @@ app.UseCors("DefaultPolicy");
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerForOcelotUI(options =>
-    {
-        options.PathToSwaggerGenerator = "/swagger/docs";
-    });
+    app.UseSwaggerForOcelotUI(
+        options => { options.PathToSwaggerGenerator = "/swagger/docs"; },
+        uiOptions =>
+        {
+            uiOptions.HeadContent = @"
+<script>
+(function() {
+    function getRank(el) {
+        var text = (el.innerText || el.textContent || '').toLowerCase();
+        if (text.indexOf('/login') !== -1 || text.indexOf(' login ') !== -1 || text.indexOf('login') !== -1) {
+            if (text.indexOf('resend') === -1 && text.indexOf('reset') === -1) return 10;
+        }
+        if (text.indexOf('/register') !== -1 || text.indexOf('register') !== -1) return 20;
+        if (text.indexOf('resend-verification') !== -1 || text.indexOf('resend verification') !== -1) return 40;
+        if (text.indexOf('force-verify') !== -1) return 35;
+        if (text.indexOf('/verify') !== -1 || text.indexOf('verify') !== -1) return 30;
+        if (text.indexOf('forgot-password') !== -1 || text.indexOf('forgot password') !== -1) return 50;
+        if (text.indexOf('reset-password') !== -1 || text.indexOf('reset password') !== -1) return 60;
+        if (text.indexOf('change-password') !== -1 || text.indexOf('change password') !== -1) return 70;
+        return 999;
+    }
+
+    function sortOps() {
+        var sections = document.querySelectorAll('.opblock-tag-section');
+        sections.forEach(function(section) {
+            var ops = Array.from(section.querySelectorAll('.opblock'));
+            if (ops.length <= 1) return;
+            var parent = ops[0].parentElement;
+            if (!parent) return;
+
+            var sorted = ops.slice().sort(function(a, b) {
+                return getRank(a) - getRank(b);
+            });
+
+            var changed = false;
+            for (var i = 0; i < ops.length; i++) {
+                if (ops[i] !== sorted[i]) {
+                    changed = true;
+                    break;
+                }
+            }
+
+            if (changed) {
+                sorted.forEach(function(el) {
+                    parent.appendChild(el);
+                });
+            }
+        });
+    }
+
+    setInterval(sortOps, 250);
+    window.addEventListener('DOMContentLoaded', sortOps);
+    window.addEventListener('load', sortOps);
+})();
+</script>";
+        }
+    );
 }
 
 app.UseAuthentication();

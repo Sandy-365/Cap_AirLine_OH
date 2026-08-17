@@ -33,7 +33,6 @@ builder.Services.AddScoped<IFlightRepository, FlightRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IPassengerRepository, PassengerRepository>();
 builder.Services.AddScoped<ICheckInRepository, CheckInRepository>();
-builder.Services.AddScoped<IBaggageRepository, BaggageRepository>();
 
 // ── Services Registration ─────────────────────────────────────────────────────
 builder.Services.AddScoped<IFlightService, FlightServiceImpl>();
@@ -41,7 +40,6 @@ builder.Services.AddScoped<IFlightScheduleService, FlightScheduleService>();
 builder.Services.AddScoped<IBookingService, BookingServiceImpl>();
 builder.Services.AddScoped<IPassengerService, PassengerService>();
 builder.Services.AddScoped<ICheckInService, CheckInServiceImpl>();
-builder.Services.AddScoped<IBaggageService, BaggageServiceImpl>();
 
 // ── Hosted Services ───────────────────────────────────────────────────────────
 builder.Services.AddHostedService<ScheduleCompletionWorker>();

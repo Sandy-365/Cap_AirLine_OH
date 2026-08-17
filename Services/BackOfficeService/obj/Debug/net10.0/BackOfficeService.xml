@@ -32,21 +32,9 @@
             Common Backoffice Management Controller for Admin &amp; Staff users.
             </summary>
         </member>
-        <member name="M:BackOfficeService.Controllers.BackofficeController.GetDashboard">
-            <summary>
-            Aggregates dashboard metrics (total bookings, revenue, active flights, total users).
-            [Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]
-            </summary>
-        </member>
         <member name="M:BackOfficeService.Controllers.BackofficeController.GetBookingReport(System.DateTime,System.DateTime)">
             <summary>
             Fetches booking data from FlightOpsService and filters results by date range.
-            [Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]
-            </summary>
-        </member>
-        <member name="M:BackOfficeService.Controllers.BackofficeController.GetRevenueReport(System.DateTime,System.DateTime)">
-            <summary>
-            Retrieves confirmed bookings from FlightOpsService, groups by date, and calculates daily revenue.
             [Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]
             </summary>
         </member>
@@ -62,12 +50,6 @@
             [Allowed Roles: SuperAdmin, Admin, HR]
             </summary>
         </member>
-        <member name="M:BackOfficeService.Controllers.BackofficeController.GetUser(System.Int32)">
-            <summary>
-            Retrieves a backoffice user profile by ID. Returns 404 if not found.
-            [Allowed Roles: SuperAdmin (any user), Admin / HR / Staff (own profile)]
-            </summary>
-        </member>
         <member name="M:BackOfficeService.Controllers.BackofficeController.UpdateProfile(System.Int32,BackOfficeService.DTOs.BackofficeUpdateProfileDto)">
             <summary>
             Updates a backoffice user's profile information.
@@ -78,12 +60,6 @@
             <summary>
             Activates or deactivates a backoffice user account.
             [Allowed Roles: SuperAdmin, HR]
-            </summary>
-        </member>
-        <member name="M:BackOfficeService.Controllers.BackofficeController.DeleteUser(System.Int32)">
-            <summary>
-            Permanently deletes a backoffice user profile.
-            [Allowed Roles: SuperAdmin Only]
             </summary>
         </member>
         <member name="P:BackOfficeService.DTOs.BackofficeRegisterDto.Role">
@@ -103,12 +79,6 @@
         </member>
         <member name="M:BackOfficeService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
-        </member>
-        <member name="M:BackOfficeService.Services.Implementations.BackofficeServiceImpl.GetDashboardAsync">
-            <summary>
-            Aggregates dashboard metrics by querying FlightOpsService and PassengerService over HTTP,
-            and counting backoffice users directly from BackofficeProfiles table.
-            </summary>
         </member>
         <member name="T:Program">
             <summary>

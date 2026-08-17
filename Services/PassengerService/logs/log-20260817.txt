@@ -1,0 +1,137 @@
+2026-08-17 15:04:33.878 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 15:04:33.930 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-17 15:04:33.950 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-17 15:04:34.070 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-17 15:04:34.083 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 15:04:34.088 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-17 15:04:34.103 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-17 15:04:34.111 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-17 15:04:34.119 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-17 15:04:34.179 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 15:04:34.234 +05:30 [INF] Now listening on: http://localhost:5007
+2026-08-17 15:04:34.237 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 15:04:34.238 +05:30 [INF] Hosting environment: Development
+2026-08-17 15:04:34.239 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\PassengerService
+2026-08-17 15:08:39.293 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/api/auth/users - null null
+2026-08-17 15:08:39.415 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-08-17 15:08:39.468 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/api/auth/users - 404 0 null 177.9085ms
+2026-08-17 15:08:39.479 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5007/api/auth/users, Response status code: 404
+2026-08-17 15:15:59.821 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 15:16:00.050 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 229.3869ms
+2026-08-17 15:24:49.323 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 15:24:49.361 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.5713ms
+2026-08-17 15:27:35.560 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 15:27:35.567 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.4073ms
+2026-08-17 15:34:12.380 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 15:34:12.391 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.8438ms
+2026-08-17 15:51:23.562 +05:30 [INF] Application is shutting down...
+2026-08-17 15:51:34.442 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 15:51:34.513 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-17 15:51:34.565 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-17 15:51:34.720 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-17 15:51:34.746 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 15:51:34.753 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-17 15:51:34.778 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-17 15:51:34.790 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-17 15:51:34.798 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-17 15:51:35.077 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 15:51:35.151 +05:30 [INF] Now listening on: http://localhost:5007
+2026-08-17 15:51:35.159 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 15:51:35.168 +05:30 [INF] Hosting environment: Development
+2026-08-17 15:51:35.173 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\PassengerService
+2026-08-17 15:52:12.416 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 15:52:12.874 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 458.4933ms
+2026-08-17 15:52:29.757 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 15:52:29.791 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.7204ms
+2026-08-17 16:04:40.712 +05:30 [INF] Application is shutting down...
+2026-08-17 16:04:50.171 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 16:04:50.221 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-17 16:04:50.242 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-17 16:04:50.356 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-17 16:04:50.369 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 16:04:50.373 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-17 16:04:50.393 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-17 16:04:50.401 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-17 16:04:50.408 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-17 16:04:50.471 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-17 16:04:50.528 +05:30 [INF] Now listening on: http://localhost:5007
+2026-08-17 16:04:50.531 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-17 16:04:50.533 +05:30 [INF] Hosting environment: Development
+2026-08-17 16:04:50.534 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\PassengerService
+2026-08-17 16:08:31.623 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:08:32.036 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 415.2109ms
+2026-08-17 16:09:00.748 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:09:00.783 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 35.4943ms
+2026-08-17 16:09:23.892 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:09:23.917 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.4466ms
+2026-08-17 16:09:26.543 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:09:26.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 39.0879ms
+2026-08-17 16:18:54.617 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:18:54.624 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.4632ms
+2026-08-17 16:20:55.751 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:20:55.792 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 41.4594ms
+2026-08-17 16:21:32.815 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:21:32.831 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.467ms
+2026-08-17 16:21:44.194 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - null null
+2026-08-17 16:21:44.209 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5007/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.0853ms
+2026-08-17 16:26:17.960 +05:30 [INF] Application is shutting down...

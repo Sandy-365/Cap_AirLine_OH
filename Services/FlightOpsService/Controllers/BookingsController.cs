@@ -102,6 +102,33 @@ public class BookingsController : ControllerBase
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
+        // Automatically populate user identity from JWT claims if not explicitly provided
+        if (!dto.UserId.HasValue || dto.UserId.Value <= 0 || User.IsInRole("Passenger"))
+        {
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+                ?? User.FindFirst("sub")?.Value
+                ?? User.FindFirst("userId")?.Value;
+
+            if (int.TryParse(userIdClaim, out var extractedUserId))
+            {
+                dto.UserId = extractedUserId;
+            }
+        }
+
+        if (string.IsNullOrWhiteSpace(dto.UserEmail))
+        {
+            dto.UserEmail = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+                ?? User.FindFirst("email")?.Value
+                ?? "";
+        }
+
+        if (string.IsNullOrWhiteSpace(dto.UserName))
+        {
+            dto.UserName = User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value
+                ?? User.FindFirst("name")?.Value
+                ?? dto.UserEmail;
+        }
+
         try
         {
             var result = await _bookingService.CreateBookingAsync(dto);
@@ -160,69 +187,6 @@ public class BookingsController : ControllerBase
     }
 
     /// <summary>
-    /// Adds passengers to an existing booking.
-    /// [Allowed Roles: Passenger, Dealer]
-    /// </summary>
-    [HttpPost("{bookingId:int}/passengers")]
-    [Authorize(Roles = "Passenger,Dealer")]
-    public async Task<IActionResult> AddPassengersToBooking(int bookingId, [FromBody] List<CreatePassengerDto> passengers)
-    {
-        try
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            if (passengers == null || passengers.Count == 0)
-                return BadRequest(new { message = "At least one passenger is required" });
-
-            var addedPassengers = new List<PassengerResponseDto>();
-
-            foreach (var passengerDto in passengers)
-            {
-                var passenger = await _passengerService.CreatePassengerAsync(bookingId, passengerDto);
-                addedPassengers.Add(passenger);
-            }
-
-            return CreatedAtAction(nameof(GetBookingPassengers), new { bookingId = bookingId }, addedPassengers);
-        }
-        catch (DomainValidationException ex)
-        {
-            _logger.LogWarning($"Validation error: {ex.Message}");
-            return BadRequest(new { message = ex.Message, errorCode = "VALIDATION_ERROR", propertyName = ex.PropertyName });
-        }
-        catch (InvalidOperationException ex)
-        {
-            _logger.LogWarning($"Invalid operation: {ex.Message}");
-            return BadRequest(new { message = ex.Message });
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError($"Error adding passengers: {ex.Message}");
-            return StatusCode(500, new { message = "Internal server error" });
-        }
-    }
-
-    /// <summary>
-    /// Gets all passengers for a specific booking.
-    /// [Allowed Roles: Passenger, Dealer, Admin, GroundStaff, Staff]
-    /// </summary>
-    [HttpGet("{bookingId:int}/passengers")]
-    [Authorize(Roles = "Passenger,Dealer,Admin,GroundStaff,Staff")]
-    public async Task<IActionResult> GetBookingPassengers(int bookingId)
-    {
-        try
-        {
-            var passengers = await _passengerService.GetPassengersForBookingAsync(bookingId);
-            return Ok(passengers);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError($"Error getting passengers: {ex.Message}");
-            return StatusCode(500, new { message = "Internal server error" });
-        }
-    }
-
-    /// <summary>
     /// Cancels a booking.
     /// [Allowed Roles: Passenger, Dealer]
     /// </summary>
@@ -242,30 +206,6 @@ public class BookingsController : ControllerBase
         catch (BookingCancellationNotAllowedException ex)
         {
             return BadRequest(new { message = ex.Message });
-        }
-    }
-
-    /// <summary>
-    /// Permanently deletes a booking record.
-    /// [Allowed Roles: Passenger, Dealer, Admin]
-    /// </summary>
-    [HttpDelete("{id:int}")]
-    [Authorize(Roles = "Passenger,Dealer,Admin")]
-    public async Task<IActionResult> DeleteBooking(int id)
-    {
-        try
-        {
-            await _bookingService.DeleteBookingAsync(id);
-            return Ok(new { message = "Booking deleted permanently" });
-        }
-        catch (BookingNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError($"Error deleting booking: {ex.Message}");
-            return StatusCode(500, new { message = "Internal server error" });
         }
     }
 

@@ -63,30 +63,6 @@ public class BackofficeAuthService : IBackofficeAuthService
         await _db.SaveChangesAsync();
     }
 
-    public async Task<BackofficeAuthResponseDto> VerifyAsync(BackofficeVerifyDto dto)
-    {
-        var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == dto.Email.ToLower())
-            ?? throw new InvalidOperationException("Account not found.");
-
-        profile.IsEmailVerified = true;
-        profile.VerificationToken = null;
-        profile.VerificationTokenExpiry = null;
-        await _db.SaveChangesAsync();
-
-        var token = _tokenService.GenerateToken(profile.Id, profile.Email, profile.Role);
-        return new BackofficeAuthResponseDto { UserId = profile.Id, Email = profile.Email, Name = profile.Name, Role = profile.Role, Token = token };
-    }
-
-    public async Task ResendVerificationAsync(string email)
-    {
-        var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Email.ToLower() == email.ToLower());
-        if (profile == null) return;
-
-        profile.IsEmailVerified = true;
-        profile.VerificationToken = null;
-        profile.VerificationTokenExpiry = null;
-        await _db.SaveChangesAsync();
-    }
 
     public async Task<BackofficeAuthResponseDto> LoginAsync(BackofficeLoginDto dto)
     {
@@ -128,10 +104,6 @@ public class BackofficeAuthService : IBackofficeAuthService
         await _db.SaveChangesAsync();
     }
 
-    public async Task<BackofficeProfile?> GetUserAsync(int id)
-    {
-        return await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Id == id);
-    }
 
     public async Task<BackofficeProfile> UpdateProfileAsync(int id, BackofficeUpdateProfileDto dto)
     {
@@ -177,13 +149,6 @@ public class BackofficeAuthService : IBackofficeAuthService
         profile.IsActive = isActive;
         profile.UpdatedAt = DateTime.UtcNow;
         _db.BackofficeProfiles.Update(profile);
-        await _db.SaveChangesAsync();
-    }
-
-    public async Task DeleteUserAsync(int id)
-    {
-        var profile = await _db.BackofficeProfiles.FirstOrDefaultAsync(u => u.Id == id) ?? throw new KeyNotFoundException("User not found");
-        _db.BackofficeProfiles.Remove(profile);
         await _db.SaveChangesAsync();
     }
 

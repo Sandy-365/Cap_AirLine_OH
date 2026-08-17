@@ -1,15 +1,15 @@
 [
   {
     "ContainingType": "PassengerService.Controllers.PassengerAuthController",
-    "Method": "ChangePassword",
-    "RelativePath": "api/auth/change-password",
+    "Method": "ForceVerify",
+    "RelativePath": "api/auth/force-verify",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "PassengerService.DTOs.PassengerChangePasswordDto",
+        "Type": "PassengerService.DTOs.PassengerForgotPasswordDto",
         "IsRequired": true
       }
     ],
@@ -65,22 +65,6 @@
   },
   {
     "ContainingType": "PassengerService.Controllers.PassengerAuthController",
-    "Method": "Verify",
-    "RelativePath": "api/auth/register-verify",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PassengerService.DTOs.PassengerVerifyDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengerAuthController",
     "Method": "ResendVerification",
     "RelativePath": "api/auth/resend-verification",
     "HttpMethod": "POST",
@@ -113,8 +97,34 @@
   },
   {
     "ContainingType": "PassengerService.Controllers.PassengerAuthController",
+    "Method": "Verify",
+    "RelativePath": "api/auth/verify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PassengerService.DTOs.PassengerVerifyDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PassengerService.Controllers.PassengersController",
+    "Method": "GetUsers",
+    "RelativePath": "api/Passengers/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PassengerService.Controllers.PassengersController",
     "Method": "GetUser",
-    "RelativePath": "api/auth/user/{userId}",
+    "RelativePath": "api/Passengers/users/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -128,9 +138,25 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PassengerService.Controllers.PassengerAuthController",
+    "ContainingType": "PassengerService.Controllers.PassengersController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Passengers/users/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PassengerService.Controllers.PassengersController",
     "Method": "UpdateProfile",
-    "RelativePath": "api/auth/user/{userId}/profile",
+    "RelativePath": "api/Passengers/users/{userId}/profile",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -149,35 +175,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "PassengerService.Controllers.PassengerAuthController",
-    "Method": "GetUsers",
-    "RelativePath": "api/auth/users",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengerAuthController",
-    "Method": "DeleteUser",
-    "RelativePath": "api/auth/users/{userId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengerAuthController",
+    "ContainingType": "PassengerService.Controllers.PassengersController",
     "Method": "UpdateUserStatus",
-    "RelativePath": "api/auth/users/{userId}/status",
+    "RelativePath": "api/Passengers/users/{userId}/status",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -194,125 +194,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengersController",
-    "Method": "InternalUpsert",
-    "RelativePath": "api/Passengers/internal-upsert",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PassengerService.DTOs.UpsertPassengerProfileDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengersController",
-    "Method": "GetBalance",
-    "RelativePath": "api/Passengers/rewards/{userId}/balance",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "PassengerService.DTOs.RewardBalanceDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengersController",
-    "Method": "GetHistory",
-    "RelativePath": "api/Passengers/rewards/{userId}/history",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[PassengerService.DTOs.RewardDto, PassengerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengersController",
-    "Method": "EarnPoints",
-    "RelativePath": "api/Passengers/rewards/earn",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "PassengerService.Controllers.EarnPointsRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "PassengerService.DTOs.RewardDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengersController",
-    "Method": "RedeemPoints",
-    "RelativePath": "api/Passengers/rewards/redeem",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "PassengerService.Controllers.RedeemPointsRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "PassengerService.DTOs.RewardDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   }
 ]

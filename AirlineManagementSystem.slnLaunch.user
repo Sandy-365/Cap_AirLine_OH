@@ -8,47 +8,7 @@
         "DebugTarget": "http"
       },
       {
-        "Path": "Services\\AdminService\\AdminService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
-        "Path": "Services\\AgentService\\AgentService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
-        "Path": "Services\\BaggageService\\BaggageService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
-        "Path": "Services\\BookingService\\BookingService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
-        "Path": "Services\\CheckInService\\CheckInService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
-        "Path": "Services\\FlightService\\FlightService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
-        "Path": "Services\\NotificationService\\NotificationService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
         "Path": "Services\\PaymentService\\PaymentService.csproj",
-        "Action": "Start",
-        "DebugTarget": "http"
-      },
-      {
-        "Path": "Services\\StaffService\\StaffService.csproj",
         "Action": "Start",
         "DebugTarget": "http"
       },
@@ -58,14 +18,19 @@
         "DebugTarget": "http"
       },
       {
-        "Path": "Services\\RefundService\\RefundService.csproj",
+        "Path": "Services\\BackOfficeService\\BackOfficeService.csproj",
         "Action": "Start",
-        "DebugTarget": "RefundService"
+        "DebugTarget": "http"
       },
       {
-        "Path": "Services\\SagaService\\SagaService.csproj",
+        "Path": "Services\\FlightOpsService\\FlightOpsService.csproj",
         "Action": "Start",
-        "DebugTarget": "SagaService"
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "Shared\\Shared.csproj",
+        "Action": "Start",
+        "DebugTarget": "Shared"
       }
     ]
   }

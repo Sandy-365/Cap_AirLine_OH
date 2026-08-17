@@ -15,7 +15,6 @@ public interface IBookingService
     Task<IEnumerable<object>> GetBookingsByScheduleAsync(int scheduleId);
     Task<IEnumerable<string>> GetOccupiedSeatsAsync(int flightId, int? scheduleId);
     Task<BookingDto> UpdateBookingAsync(int id, Booking booking);
-    Task DeleteBookingAsync(int id);
     Task<BookingDto> GetBookingByPnrAsync(string pnr);
     Task<IEnumerable<object>> GetAllBookingsAsync();
     Task<IEnumerable<object>> GetBookingsByFlightIdAsync(int flightId);
@@ -152,21 +151,22 @@ public class BookingServiceImpl : IBookingService
             throw new BaggageWeightExceededException(dto.BaggageWeight, 100);
         }
 
-        if (dto.UserId <= 0)
+        var effectiveUserId = dto.UserId ?? 0;
+        if (effectiveUserId <= 0)
         {
             throw new DomainValidationException(
                 nameof(CreateBookingDto.UserId),
-                dto.UserId,
-                "User ID must be greater than 0");
+                effectiveUserId,
+                "User ID could not be identified from the request or token.");
         }
 
         var pnr = GeneratePNR();
 
         var booking = new Booking
         {
-            UserId = dto.UserId,
-            UserEmail = dto.UserEmail,
-            UserName = dto.UserName,
+            UserId = effectiveUserId,
+            UserEmail = dto.UserEmail ?? "",
+            UserName = dto.UserName ?? "",
             FlightId = dto.FlightId,
             ScheduleId = dto.ScheduleId,
             SeatClass = seatClass,
@@ -301,16 +301,6 @@ public class BookingServiceImpl : IBookingService
 
         await _repository.UpdateAsync(booking);
         return MapToDto(booking);
-    }
-
-    public async Task DeleteBookingAsync(int id)
-    {
-        var booking = await _repository.GetByIdAsync(id);
-        if (booking == null)
-            throw new BookingNotFoundException(id);
-
-        await _repository.DeleteAsync(id);
-        _logger.LogInformation("Booking {BookingId} permanently deleted from database", id);
     }
 
     public async Task<BookingDto> GetBookingByPnrAsync(string pnr)

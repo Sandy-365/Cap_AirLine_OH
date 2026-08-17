@@ -20,7 +20,6 @@ public class FlightOpsDbContext : DbContext
 
     // CheckIn domain
     public DbSet<CheckIn> CheckIns { get; set; } = null!;
-    public DbSet<Baggage> Baggages { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -136,22 +135,6 @@ public class FlightOpsDbContext : DbContext
             entity.HasOne(e => e.Flight)
                   .WithMany()
                   .HasForeignKey(e => e.FlightId)
-                  .OnDelete(DeleteBehavior.Restrict);
-        });
-
-        // ── Baggage ───────────────────────────────────────────────────────────
-        modelBuilder.Entity<Baggage>(entity =>
-        {
-            entity.HasKey(e => e.Id);
-            entity.HasIndex(e => e.BookingId);
-            entity.HasIndex(e => e.TrackingNumber).IsUnique();
-            entity.Property(e => e.Weight).HasColumnType("decimal(18,2)");
-            entity.Property(e => e.Status).HasConversion<string>();
-
-            // Foreign Key to Booking
-            entity.HasOne(e => e.Booking)
-                  .WithMany()
-                  .HasForeignKey(e => e.BookingId)
                   .OnDelete(DeleteBehavior.Restrict);
         });
     }

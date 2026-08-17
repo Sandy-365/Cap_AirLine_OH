@@ -1,0 +1,664 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "BackOffice API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/backoffice/register": {
+      "post": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Provision / register a new user account (Admin, HR, Staff, Dealer, etc.).\r\n[Allowed Roles: SuperAdmin, Admin, HR]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/booking-report": {
+      "get": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Fetches booking data from FlightOpsService and filters results by date range.\r\n[Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/dashboard": {
+      "get": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Aggregates dashboard metrics (total bookings, revenue, active flights, total users).\r\n[Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/revenue-report": {
+      "get": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Retrieves confirmed bookings from FlightOpsService, groups by date, and calculates daily revenue.\r\n[Allowed Roles: SuperAdmin, Admin, HR, FinancialAdmin]",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/users": {
+      "get": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Retrieves all backoffice users, optionally filtered by roles.\r\n[Allowed Roles: SuperAdmin, Admin, HR]",
+        "parameters": [
+          {
+            "name": "roles",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Provision / register a new user account (Admin, HR, Staff, Dealer, etc.).\r\n[Allowed Roles: SuperAdmin, Admin, HR]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/users/{userId}": {
+      "delete": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Permanently deletes a backoffice user profile.\r\n[Allowed Roles: SuperAdmin Only]",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Retrieves a backoffice user profile by ID. Returns 404 if not found.\r\n[Allowed Roles: SuperAdmin (any user), Admin / HR / Staff (own profile)]",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/users/{userId}/profile": {
+      "put": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Updates a backoffice user's profile information.\r\n[Allowed Roles: SuperAdmin, Admin, HR, or account owner]",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeUpdateProfileDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeUpdateProfileDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeUpdateProfileDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/users/{userId}/status": {
+      "put": {
+        "tags": [
+          "Backoffice"
+        ],
+        "summary": "Activates or deactivates a backoffice user account.\r\n[Allowed Roles: SuperAdmin, HR]",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeUpdateStatusDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeUpdateStatusDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeUpdateStatusDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/auth/login": {
+      "post": {
+        "tags": [
+          "BackofficeAuth"
+        ],
+        "summary": "Common Login endpoint for all backoffice roles (Admin, Staff, SuperAdmin, HR, Dealers, GroundStaff).\r\n[Allowed Roles: Public (None required)]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeLoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeLoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeLoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/auth/register": {
+      "post": {
+        "tags": [
+          "BackofficeAuth"
+        ],
+        "summary": "Registers a new backoffice staff/admin account.\r\n[Allowed Roles: Public or Admin]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/auth/verify": {
+      "post": {
+        "tags": [
+          "BackofficeAuth"
+        ],
+        "summary": "Verifies backoffice account.\r\n[Allowed Roles: Public (None required)]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeVerifyDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeVerifyDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeVerifyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/auth/resend-verification": {
+      "post": {
+        "tags": [
+          "BackofficeAuth"
+        ],
+        "summary": "Resends verification for unverified backoffice accounts.\r\n[Allowed Roles: Public (None required)]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeForgotPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeForgotPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeForgotPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/auth/forgot-password": {
+      "post": {
+        "tags": [
+          "BackofficeAuth"
+        ],
+        "summary": "Generates a password reset OTP token and returns it directly in the response so the website can display it in an alert (no email required).\r\n[Allowed Roles: Public (None required)]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeForgotPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeForgotPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeForgotPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/backoffice/auth/reset-password": {
+      "post": {
+        "tags": [
+          "BackofficeAuth"
+        ],
+        "summary": "Resets password using the mandatory OTP token generated from forgot-password.\r\n[Allowed Roles: Public (None required)]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeResetPasswordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeResetPasswordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackofficeResetPasswordDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BackofficeForgotPasswordDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BackofficeLoginDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BackofficeRegisterDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "department": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignedAirportCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "description": "Role to assign: SuperAdmin, Admin, HR, FinancialAdmin, Staff, GroundStaff, Dealer, etc.",
+            "nullable": true
+          },
+          "provisionedByAdmin": {
+            "type": "boolean",
+            "description": "When true, account is auto-verified (no OTP email). Use when provisioned by an Admin/SuperAdmin."
+          }
+        },
+        "additionalProperties": false
+      },
+      "BackofficeResetPasswordDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "newPassword": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BackofficeUpdateProfileDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "department": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignedAirportCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "aadharNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "nationality": {
+            "type": "string",
+            "nullable": true
+          },
+          "passportNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BackofficeUpdateStatusDto": {
+        "type": "object",
+        "properties": {
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BackofficeVerifyDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter token as: Bearer {your token}",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

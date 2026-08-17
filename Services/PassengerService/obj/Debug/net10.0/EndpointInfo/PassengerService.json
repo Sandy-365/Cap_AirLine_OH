@@ -5,11 +5,44 @@
     "version": "v1"
   },
   "paths": {
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "PassengerAuth"
+        ],
+        "summary": "Authenticates passenger credentials and returns JWT token. \r\n[Allowed Roles: Public (None required)]",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PassengerLoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PassengerLoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PassengerLoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/auth/register": {
       "post": {
         "tags": [
           "PassengerAuth"
         ],
+        "summary": "Registers a new passenger account with email, password, and optional profile fields.\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -36,11 +69,12 @@
         }
       }
     },
-    "/api/auth/register-verify": {
+    "/api/auth/verify": {
       "post": {
         "tags": [
           "PassengerAuth"
         ],
+        "summary": "Verifies passenger email account using the OTP received via email and returns JWT token upon successful verification.\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -72,6 +106,7 @@
         "tags": [
           "PassengerAuth"
         ],
+        "summary": "Resends verification OTP to the specified passenger email address.\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -98,26 +133,27 @@
         }
       }
     },
-    "/api/auth/login": {
+    "/api/auth/force-verify": {
       "post": {
         "tags": [
           "PassengerAuth"
         ],
+        "summary": "Directly verifies passenger email address and returns JWT token (bypasses OTP check for testing/convenience).\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PassengerLoginDto"
+                "$ref": "#/components/schemas/PassengerForgotPasswordDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PassengerLoginDto"
+                "$ref": "#/components/schemas/PassengerForgotPasswordDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PassengerLoginDto"
+                "$ref": "#/components/schemas/PassengerForgotPasswordDto"
               }
             }
           }
@@ -134,6 +170,7 @@
         "tags": [
           "PassengerAuth"
         ],
+        "summary": "Generates a password reset OTP token and returns it directly in the response so the website can alert it (no email required).\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -165,6 +202,7 @@
         "tags": [
           "PassengerAuth"
         ],
+        "summary": "Resets passenger password using the mandatory OTP token generated from forgot-password.\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -191,53 +229,12 @@
         }
       }
     },
-    "/api/auth/change-password": {
-      "post": {
-        "tags": [
-          "PassengerAuth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerChangePasswordDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerChangePasswordDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerChangePasswordDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/auth/user/{userId}": {
+    "/api/Passengers/users": {
       "get": {
         "tags": [
-          "PassengerAuth"
+          "Passengers"
         ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
+        "summary": "Retrieves all passengers.\r\n[Allowed Roles: Admin, SuperAdmin, HR, Staff]",
         "responses": {
           "200": {
             "description": "OK"
@@ -245,107 +242,34 @@
         }
       }
     },
-    "/api/auth/user/{userId}/profile": {
-      "put": {
-        "tags": [
-          "PassengerAuth"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerUpdateProfileDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerUpdateProfileDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerUpdateProfileDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/auth/users": {
-      "get": {
-        "tags": [
-          "PassengerAuth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/auth/users/{userId}/status": {
-      "put": {
-        "tags": [
-          "PassengerAuth"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerUpdateStatusDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerUpdateStatusDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerUpdateStatusDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/auth/users/{userId}": {
+    "/api/Passengers/users/{userId}": {
       "delete": {
         "tags": [
-          "PassengerAuth"
+          "Passengers"
         ],
+        "summary": "Permanently deletes a passenger profile.\r\n[Allowed Roles: Admin, SuperAdmin]",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Passengers"
+        ],
+        "summary": "Retrieves a passenger profile by ID.\r\n[Allowed Roles: Passenger (own profile), Admin, SuperAdmin, Staff]",
         "parameters": [
           {
             "name": "userId",
@@ -364,11 +288,12 @@
         }
       }
     },
-    "/api/Passengers/rewards/{userId}/balance": {
-      "get": {
+    "/api/Passengers/users/{userId}/profile": {
+      "put": {
         "tags": [
           "Passengers"
         ],
+        "summary": "Updates a passenger's profile information.\r\n[Allowed Roles: Passenger (own profile), Admin, SuperAdmin]",
         "parameters": [
           {
             "name": "userId",
@@ -380,35 +305,38 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardBalanceDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardBalanceDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardBalanceDto"
-                }
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PassengerUpdateProfileDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PassengerUpdateProfileDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PassengerUpdateProfileDto"
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
     },
-    "/api/Passengers/rewards/{userId}/history": {
-      "get": {
+    "/api/Passengers/users/{userId}/status": {
+      "put": {
         "tags": [
           "Passengers"
         ],
+        "summary": "Activates or deactivates a passenger account.\r\n[Allowed Roles: Admin, SuperAdmin, HR]",
         "parameters": [
           {
             "name": "userId",
@@ -420,155 +348,21 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RewardDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RewardDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RewardDto"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Passengers/rewards/earn": {
-      "post": {
-        "tags": [
-          "Passengers"
-        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EarnPointsRequest"
+                "$ref": "#/components/schemas/PassengerUpdateStatusDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/EarnPointsRequest"
+                "$ref": "#/components/schemas/PassengerUpdateStatusDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/EarnPointsRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardDto"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Passengers/rewards/redeem": {
-      "post": {
-        "tags": [
-          "Passengers"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RedeemPointsRequest"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RedeemPointsRequest"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RedeemPointsRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardDto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardDto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RewardDto"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Passengers/internal-upsert": {
-      "post": {
-        "tags": [
-          "Passengers"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpsertPassengerProfileDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpsertPassengerProfileDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpsertPassengerProfileDto"
+                "$ref": "#/components/schemas/PassengerUpdateStatusDto"
               }
             }
           }
@@ -583,47 +377,6 @@
   },
   "components": {
     "schemas": {
-      "EarnPointsRequest": {
-        "type": "object",
-        "properties": {
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "points": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "transactionType": {
-            "type": "string",
-            "nullable": true
-          },
-          "bookingId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PassengerChangePasswordDto": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "currentPassword": {
-            "type": "string",
-            "nullable": true
-          },
-          "newPassword": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "PassengerForgotPasswordDto": {
         "type": "object",
         "properties": {
@@ -703,6 +456,14 @@
             "type": "string",
             "nullable": true
           },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
           "email": {
             "type": "string",
             "nullable": true
@@ -717,6 +478,33 @@
           },
           "aadhar": {
             "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "passportNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "nationality": {
+            "type": "string",
+            "nullable": true
+          },
+          "profileImage": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "travelPreferences": {
+            "$ref": "#/components/schemas/TravelPreferencesDto"
+          },
+          "savedPassengers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SavedPassengerDto"
+            },
             "nullable": true
           }
         },
@@ -745,85 +533,18 @@
         },
         "additionalProperties": false
       },
-      "RedeemPointsRequest": {
+      "SavedPassengerDto": {
         "type": "object",
         "properties": {
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "points": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "RewardBalanceDto": {
-        "type": "object",
-        "properties": {
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "totalPoints": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "RewardDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "points": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "transactionType": {
+          "name": {
             "type": "string",
             "nullable": true
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpsertPassengerProfileDto": {
-        "type": "object",
-        "properties": {
-          "userId": {
+          "age": {
             "type": "integer",
             "format": "int32"
           },
-          "firstName": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastName": {
-            "type": "string",
-            "nullable": true
-          },
-          "phone": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateOfBirth": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "nationality": {
+          "gender": {
             "type": "string",
             "nullable": true
           },
@@ -832,6 +553,40 @@
             "nullable": true
           },
           "passportNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "nationality": {
+            "type": "string",
+            "nullable": true
+          },
+          "dietaryRequirements": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicalNeeds": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicalAlerts": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TravelPreferencesDto": {
+        "type": "object",
+        "properties": {
+          "mealType": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicalNeeds": {
+            "type": "string",
+            "nullable": true
+          },
+          "medicalAlerts": {
             "type": "string",
             "nullable": true
           }

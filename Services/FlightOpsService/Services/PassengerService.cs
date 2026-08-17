@@ -7,8 +7,6 @@ namespace FlightOpsService.Services;
 public interface IPassengerService
 {
     Task<PassengerResponseDto?> GetPassengerAsync(int passengerId);
-    Task<List<PassengerResponseDto>> GetPassengersForBookingAsync(int bookingId);
-    Task<PassengerResponseDto> CreatePassengerAsync(int bookingId, CreatePassengerDto dto);
     Task CancelPassengerAsync(int passengerId, CancelPassengerDto dto);
     Task<bool> ValidateAadharNumberAsync(string aadharCardNo, int? excludePassengerId = null);
 }
@@ -38,54 +36,6 @@ public class PassengerService : IPassengerService
             _logger.LogWarning($"Passenger with ID {passengerId} not found");
             return null;
         }
-
-        return MapToResponseDto(passenger);
-    }
-
-    public async Task<List<PassengerResponseDto>> GetPassengersForBookingAsync(int bookingId)
-    {
-        var passengers = await _passengerRepository.GetPassengersByBookingIdAsync(bookingId);
-        return passengers.Select(MapToResponseDto).ToList();
-    }
-
-    public async Task<PassengerResponseDto> CreatePassengerAsync(int bookingId, CreatePassengerDto dto)
-    {
-        var booking = await _bookingRepository.GetByIdAsync(bookingId);
-        if (booking == null)
-        {
-            throw new InvalidOperationException($"Booking with ID {bookingId} not found");
-        }
-
-        if (!await ValidateAadharNumberAsync(dto.AadharCardNo))
-        {
-            throw new InvalidOperationException("This Aadhar card number is already registered");
-        }
-
-        var passenger = new BookingPassenger
-        {
-            BookingId = bookingId,
-            Name = dto.Name,
-            Age = dto.Age,
-            Gender = dto.Gender,
-            AadharCardNo = dto.AadharCardNo,
-            PassportNumber = dto.PassportNumber,
-            Nationality = dto.Nationality,
-            DietaryRequirements = dto.DietaryRequirements,
-            MedicalNeeds = dto.MedicalNeeds,
-            MedicalAlerts = dto.MedicalAlerts,
-            SeatNumber = dto.SeatNumber,
-            Fare = dto.Fare,
-            Status = BookingPassengerStatus.Confirmed
-        };
-
-        await _passengerRepository.AddPassengerAsync(passenger);
-
-        booking.TotalPassengers++;
-        booking.ConfirmedPassengers++;
-        booking.UpdatedAt = DateTime.UtcNow;
-        await _bookingRepository.UpdateAsync(booking);
-
-        _logger.LogInformation($"Passenger {passenger.Id} created for booking {bookingId}");
 
         return MapToResponseDto(passenger);
     }

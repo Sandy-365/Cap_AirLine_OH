@@ -1,16 +1,25 @@
+using System.Text.Json.Serialization;
+
 namespace FlightOpsService.DTOs;
 
 public class CreateBookingDto
 {
-    public int UserId { get; set; }
     public int FlightId { get; set; }
     public int? ScheduleId { get; set; }
-    public string SeatClass { get; set; } = "";
+    public string SeatClass { get; set; } = "Economy";
     public decimal BaggageWeight { get; set; }
     public int PassengerCount { get; set; } = 1;
-    public string UserEmail { get; set; } = "";
-    public string UserName { get; set; } = "";
     public decimal TotalAmount { get; set; }
+
+    // Auto-populated internally from JWT token claims (hidden from Swagger request body)
+    [JsonIgnore]
+    public int? UserId { get; set; }
+
+    [JsonIgnore]
+    public string? UserEmail { get; set; }
+
+    [JsonIgnore]
+    public string? UserName { get; set; }
 }
 
 public class BookingDto

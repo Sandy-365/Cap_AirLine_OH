@@ -125,28 +125,6 @@ public class FlightsController : ControllerBase
         }
     }
 
-    /// <summary>
-    /// Internal endpoint for booking seats on a flight template. Reduces available seat count.
-    /// [Allowed Roles: Internal Service Call / System]
-    /// </summary>
-    [HttpPost("{id:int}/book-seat")]
-    public async Task<IActionResult> BookSeat(int id, [FromBody] BookSeatDto dto)
-    {
-        try
-        {
-            await _flightService.BookSeatAsync(id, dto.SeatClass, dto.Count);
-            return Ok(new { message = "Seat booked successfully" });
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
-    }
-
     // ─── Schedule Endpoints ───
 
     /// <summary>
@@ -197,28 +175,6 @@ public class FlightsController : ControllerBase
             return NotFound(new { message = ex.Message });
         }
         catch (Exception ex)
-        {
-            return BadRequest(new { message = ex.Message });
-        }
-    }
-
-    /// <summary>
-    /// Internal endpoint for booking seats on a specific schedule.
-    /// [Allowed Roles: Internal Service Call / System]
-    /// </summary>
-    [HttpPost("schedules/{id:int}/book-seat")]
-    public async Task<IActionResult> BookScheduleSeat(int id, [FromBody] BookSeatDto dto)
-    {
-        try
-        {
-            await _scheduleService.BookScheduleSeatAsync(id, dto.SeatClass, dto.Count);
-            return Ok(new { message = "Seat booked on schedule successfully" });
-        }
-        catch (KeyNotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (InvalidOperationException ex)
         {
             return BadRequest(new { message = ex.Message });
         }

@@ -43,6 +43,31 @@ public class PaymentsController : ControllerBase
     [Authorize(Roles = "Passenger,Dealer")]
     public async Task<IActionResult> ProcessPayment([FromBody] ProcessPaymentDto dto)
     {
+        // Automatically populate user identity from JWT claims if not provided
+        if (!dto.UserId.HasValue || dto.UserId.Value <= 0)
+        {
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value
+                ?? User.FindFirst("sub")?.Value;
+            if (int.TryParse(userIdClaim, out var extractedId))
+            {
+                dto.UserId = extractedId;
+            }
+        }
+
+        if (string.IsNullOrWhiteSpace(dto.UserEmail))
+        {
+            dto.UserEmail = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+                ?? User.FindFirst("email")?.Value
+                ?? "";
+        }
+
+        if (string.IsNullOrWhiteSpace(dto.UserName))
+        {
+            dto.UserName = User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value
+                ?? User.FindFirst("name")?.Value
+                ?? dto.UserEmail;
+        }
+
         try
         {
             var result = await _paymentService.ProcessPaymentAsync(dto);

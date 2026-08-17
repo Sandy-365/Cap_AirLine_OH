@@ -3,3 +3,790 @@
 2026-08-16 14:55:41.646 +05:30 [INF] Application started. Press Ctrl+C to shut down.
 2026-08-16 14:55:41.647 +05:30 [INF] Hosting environment: Development
 2026-08-16 14:55:41.647 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-16 14:57:18.308 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2026-08-16 14:57:18.379 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 73.7447ms
+2026-08-16 14:57:18.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2026-08-16 14:57:18.510 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 122.1215ms
+2026-08-16 14:57:18.525 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2026-08-16 14:57:18.526 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2026-08-16 14:57:18.526 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.css - null null
+2026-08-16 14:57:18.562 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 23649 text/css 37.4141ms
+2026-08-16 14:57:18.562 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.css - 200 152 text/css 36.7434ms
+2026-08-16 14:57:18.591 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2026-08-16 14:57:18.584 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.js - null null
+2026-08-16 14:57:18.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 55.9685ms
+2026-08-16 14:57:18.604 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 13.6024ms
+2026-08-16 14:57:18.607 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.js - 200 null application/javascript;charset=utf-8 22.9443ms
+2026-08-16 14:57:19.010 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-16 14:57:19.067 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 14:57:19.072 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 14:57:19.534 +05:30 [INF] Received HTTP response headers after 454.6055ms - 200
+2026-08-16 14:57:19.537 +05:30 [INF] End processing HTTP request after 475.9267ms - 200
+2026-08-16 14:57:19.704 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 693.2191ms
+2026-08-16 15:13:34.253 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 15:13:34.259 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 15:13:34.261 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 15:13:34.508 +05:30 [INF] Received HTTP response headers after 245.4548ms - 200
+2026-08-16 15:13:34.510 +05:30 [INF] End processing HTTP request after 251.2869ms - 200
+2026-08-16 15:13:34.529 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 276.2458ms
+2026-08-16 15:16:34.932 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/login - application/json 69
+2026-08-16 15:16:35.128 +05:30 [INF] CORS policy execution failed.
+2026-08-16 15:16:35.157 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 15:16:35.340 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-16 15:16:35.347 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000001, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/login' in the route /identity/passenger/{everything}.
+2026-08-16 15:16:38.173 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000001, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/auth/login
+2026-08-16 15:16:38.328 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/login - 200 null application/json; charset=utf-8 3396.0736ms
+2026-08-16 15:16:38.860 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/login, Response status code: 200
+2026-08-16 15:17:34.014 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 15:17:34.030 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 15:17:34.036 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 15:17:34.502 +05:30 [INF] Received HTTP response headers after 459.4857ms - 200
+2026-08-16 15:17:34.505 +05:30 [INF] End processing HTTP request after 474.474ms - 200
+2026-08-16 15:17:34.540 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 526.2925ms
+2026-08-16 15:17:48.124 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+2026-08-16 15:17:48.291 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 15:17:48.315 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000003, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 15:17:48.890 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+2026-08-16 15:17:48.925 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 801.602ms
+2026-08-16 15:17:48.935 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 15:18:50.136 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-20 - null null
+2026-08-16 15:18:50.156 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 15:18:50.159 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000004, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 15:18:50.475 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000004, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-20
+2026-08-16 15:18:50.484 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-20 - 200 null application/json; charset=utf-8 347.5379ms
+2026-08-16 15:18:50.490 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 15:18:59.747 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-23 - null null
+2026-08-16 15:18:59.760 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 15:18:59.762 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000005, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 15:18:59.808 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000005, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-23
+2026-08-16 15:18:59.813 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-23 - 200 null application/json; charset=utf-8 66.2722ms
+2026-08-16 15:18:59.821 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 15:19:04.706 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-15 - null null
+2026-08-16 15:19:04.716 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 15:19:04.719 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000006, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 15:19:04.767 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-15
+2026-08-16 15:19:04.776 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-15 - 200 null application/json; charset=utf-8 69.9343ms
+2026-08-16 15:19:04.783 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 15:19:15.573 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-16 - null null
+2026-08-16 15:19:15.590 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 15:19:15.596 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000007, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 15:19:15.641 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000007, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-16
+2026-08-16 15:19:15.650 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights?source=Delhi&destination=Mumbai&departureDate=2026-08-16 - 200 null application/json; charset=utf-8 77.1119ms
+2026-08-16 15:19:15.656 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 15:19:22.985 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights?departureDate=2026-08-16 - null null
+2026-08-16 15:19:22.993 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000008, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 15:19:22.997 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000008, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 15:19:23.045 +05:30 [INF] RequestId: 0HNNRF28HTA3J:00000008, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights?departureDate=2026-08-16
+2026-08-16 15:19:23.051 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights?departureDate=2026-08-16 - 200 null application/json; charset=utf-8 66.4497ms
+2026-08-16 15:19:23.058 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 16:04:17.202 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 16:04:17.599 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-16 16:04:17.705 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 16:04:17.714 +05:30 [INF] Hosting environment: Development
+2026-08-16 16:04:17.722 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-16 16:04:48.394 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - null null
+2026-08-16 16:04:48.394 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-16 16:04:48.946 +05:30 [WRN] RequestId: 0HNNRG7VIGH4K:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-16 16:04:48.965 +05:30 [WRN] RequestId: 0HNNRG7VIGH4K:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-16 16:04:48.987 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 null null 605.9255ms
+2026-08-16 16:04:49.002 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - 200 null text/html;charset=utf-8 621.5791ms
+2026-08-16 16:04:49.243 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 16:04:49.252 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.6255ms
+2026-08-16 16:04:49.275 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-08-16 16:04:49.364 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.6216ms
+2026-08-16 16:04:50.367 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 16:04:50.433 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:04:50.438 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:04:54.560 +05:30 [INF] HTTP request failed after 4115.6302ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 16:04:54.576 +05:30 [INF] HTTP request failed after 4149.1788ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 16:04:54.599 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5002)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-16 16:04:54.710 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 500 null text/plain; charset=utf-8 4343.9953ms
+2026-08-16 16:04:57.434 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-16 16:04:57.444 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 16:04:57.447 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 16:05:01.504 +05:30 [INF] HTTP request failed after 4055.7513ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5010)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 16:05:01.516 +05:30 [INF] HTTP request failed after 4071.6701ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5010)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 16:05:01.522 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5010)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-16 16:05:01.547 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 500 null text/plain; charset=utf-8 4113.2029ms
+2026-08-16 16:22:02.714 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 16:22:02.855 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-16 16:22:02.893 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 16:22:02.893 +05:30 [INF] Hosting environment: Development
+2026-08-16 16:22:02.894 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-16 16:22:08.191 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=BackOffice+API+-+v1 - null null
+2026-08-16 16:22:08.437 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=BackOffice+API+-+v1 - 200 null text/html;charset=utf-8 253.5636ms
+2026-08-16 16:22:08.449 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 16:22:08.456 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 6.9738ms
+2026-08-16 16:22:08.460 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-08-16 16:22:08.514 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.4356ms
+2026-08-16 16:22:08.674 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-16 16:22:08.683 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2026-08-16 16:22:08.725 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 41.9418ms
+2026-08-16 16:22:08.754 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 16:22:08.757 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 16:22:12.823 +05:30 [INF] HTTP request failed after 4062.1909ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5010)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 16:22:12.828 +05:30 [INF] HTTP request failed after 4078.3094ms
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5010)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 16:22:12.837 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:5010)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.InjectNewHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-16 16:22:12.870 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 500 null text/plain; charset=utf-8 4195.724ms
+2026-08-16 16:23:15.355 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 16:23:15.609 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-16 16:23:15.848 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 16:23:15.852 +05:30 [INF] Hosting environment: Development
+2026-08-16 16:23:15.854 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-16 16:23:21.204 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=BackOffice+API+-+v1 - null null
+2026-08-16 16:23:21.656 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=BackOffice+API+-+v1 - 200 null text/html;charset=utf-8 465.6834ms
+2026-08-16 16:23:21.670 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-08-16 16:23:21.677 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 16:23:21.738 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 59.9908ms
+2026-08-16 16:23:21.770 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 100.2667ms
+2026-08-16 16:23:22.032 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - null null
+2026-08-16 16:23:22.111 +05:30 [INF] Start processing HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 16:23:22.123 +05:30 [INF] Sending HTTP request GET http://localhost:5010/swagger/v1/swagger.json
+2026-08-16 16:23:22.364 +05:30 [INF] Received HTTP response headers after 222.9302ms - 200
+2026-08-16 16:23:22.387 +05:30 [INF] End processing HTTP request after 283.3484ms - 200
+2026-08-16 16:23:22.680 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/backoffice - 200 null null 647.3825ms
+2026-08-16 16:23:27.795 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 16:23:27.804 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 16:23:27.808 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 16:23:28.040 +05:30 [INF] Received HTTP response headers after 226.165ms - 200
+2026-08-16 16:23:28.046 +05:30 [INF] End processing HTTP request after 242.5991ms - 200
+2026-08-16 16:23:28.090 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 294.2568ms
+2026-08-16 16:23:36.284 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-16 16:23:36.302 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 18.1577ms
+2026-08-16 16:23:36.364 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-16 16:23:36.365 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2026-08-16 16:23:36.371 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.227ms
+2026-08-16 16:23:36.396 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.7769ms
+2026-08-16 16:23:36.442 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 16:23:36.450 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 16:23:36.453 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 16:23:36.475 +05:30 [INF] Received HTTP response headers after 19.9425ms - 200
+2026-08-16 16:23:36.484 +05:30 [INF] End processing HTTP request after 33.8355ms - 200
+2026-08-16 16:23:36.528 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 86.0026ms
+2026-08-16 16:24:39.979 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/login - application/json 70
+2026-08-16 16:24:40.001 +05:30 [INF] CORS policy execution failed.
+2026-08-16 16:24:40.007 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 16:24:40.326 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:24:40.337 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000005, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/login' in the route /identity/passenger/{everything}.
+2026-08-16 16:24:43.025 +05:30 [WRN] RequestId: 0HNNRGIB72AKL:00000005, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5007/api/auth/login
+2026-08-16 16:24:43.050 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/login - 401 null application/json; charset=utf-8 3070.6359ms
+2026-08-16 16:24:43.056 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/login, Response status code: 401
+2026-08-16 16:24:54.897 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/login - application/json 69
+2026-08-16 16:24:54.910 +05:30 [INF] CORS policy execution failed.
+2026-08-16 16:24:54.914 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 16:24:54.920 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000006, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:24:54.965 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000006, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/login' in the route /identity/passenger/{everything}.
+2026-08-16 16:24:55.645 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000006, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/auth/login
+2026-08-16 16:24:55.661 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/login - 200 null application/json; charset=utf-8 764.0924ms
+2026-08-16 16:24:55.669 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/login, Response status code: 200
+2026-08-16 16:25:51.064 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/passengers/users - null null
+2026-08-16 16:25:51.261 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/passengers/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:25:51.263 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000007, PreviousRequestId: -
+No authentication is required for the path '/passengers/users' in the route /passengers/{everything}.
+2026-08-16 16:25:51.451 +05:30 [WRN] RequestId: 0HNNRGIB72AKL:00000007, PreviousRequestId: -
+403 Forbidden status code of request URI: http://localhost:5007/api/passengers/users
+2026-08-16 16:25:51.453 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/passengers/users - 403 0 null 389.0674ms
+2026-08-16 16:25:51.459 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/passengers/users, Response status code: 403
+2026-08-16 16:26:16.548 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 16:26:16.555 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:26:16.559 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:26:16.826 +05:30 [INF] Received HTTP response headers after 262.7537ms - 200
+2026-08-16 16:26:16.829 +05:30 [INF] End processing HTTP request after 273.7948ms - 200
+2026-08-16 16:26:16.940 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 391.9573ms
+2026-08-16 16:26:30.221 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+2026-08-16 16:26:30.234 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000009, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:26:30.237 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000009, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 16:26:30.891 +05:30 [INF] RequestId: 0HNNRGIB72AKL:00000009, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+2026-08-16 16:26:30.917 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 696.9512ms
+2026-08-16 16:26:30.933 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 16:27:27.277 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights - null null
+2026-08-16 16:27:27.282 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:27:27.283 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000A, PreviousRequestId: -
+No authentication is required for the path '/flights' in the route /flights/{everything}.
+2026-08-16 16:27:27.328 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000A, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights
+2026-08-16 16:27:27.348 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights - 200 null application/json; charset=utf-8 71.7975ms
+2026-08-16 16:27:27.361 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights, Response status code: 200
+2026-08-16 16:28:19.811 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights/schedules?departureDate=2026-08-16 - null null
+2026-08-16 16:28:19.820 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000B, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:28:19.822 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000B, PreviousRequestId: -
+No authentication is required for the path '/flights/schedules' in the route /flights/{everything}.
+2026-08-16 16:28:20.146 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000B, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights/schedules?departureDate=2026-08-16
+2026-08-16 16:28:20.152 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights/schedules?departureDate=2026-08-16 - 200 null application/json; charset=utf-8 341.6285ms
+2026-08-16 16:28:20.157 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights/schedules, Response status code: 200
+2026-08-16 16:28:33.172 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights/schedules?source=1&departureDate=2026-08-16 - null null
+2026-08-16 16:28:33.177 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000C, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:28:33.178 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000C, PreviousRequestId: -
+No authentication is required for the path '/flights/schedules' in the route /flights/{everything}.
+2026-08-16 16:28:33.255 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000C, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights/schedules?source=1&departureDate=2026-08-16
+2026-08-16 16:28:33.261 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights/schedules?source=1&departureDate=2026-08-16 - 200 null application/json; charset=utf-8 89.5926ms
+2026-08-16 16:28:33.272 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights/schedules, Response status code: 200
+2026-08-16 16:28:37.629 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights/schedules?source=1 - null null
+2026-08-16 16:28:37.641 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000D, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:28:37.645 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000D, PreviousRequestId: -
+No authentication is required for the path '/flights/schedules' in the route /flights/{everything}.
+2026-08-16 16:28:37.720 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000D, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights/schedules?source=1
+2026-08-16 16:28:37.725 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights/schedules?source=1 - 200 null application/json; charset=utf-8 95.7882ms
+2026-08-16 16:28:37.735 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights/schedules, Response status code: 200
+2026-08-16 16:28:46.671 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/flights/schedules?flightId=1 - null null
+2026-08-16 16:28:46.683 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000E, PreviousRequestId: -
+Rate limiting is disabled for route '/flights/{everything}' via the EnableRateLimiting option.
+2026-08-16 16:28:46.686 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000E, PreviousRequestId: -
+No authentication is required for the path '/flights/schedules' in the route /flights/{everything}.
+2026-08-16 16:28:46.732 +05:30 [INF] RequestId: 0HNNRGIB72AKL:0000000E, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5002/api/flights/schedules?flightId=1
+2026-08-16 16:28:46.738 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/flights/schedules?flightId=1 - 200 null application/json; charset=utf-8 66.8319ms
+2026-08-16 16:28:46.745 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/flights/schedules, Response status code: 200
+2026-08-16 16:39:32.807 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 16:39:32.816 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 16:39:32.818 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 16:39:32.863 +05:30 [INF] Received HTTP response headers after 43.3251ms - 200
+2026-08-16 16:39:32.865 +05:30 [INF] End processing HTTP request after 49.217ms - 200
+2026-08-16 16:39:32.878 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 70.3158ms
+2026-08-16 16:43:32.820 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 16:43:32.835 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:43:32.846 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:43:32.894 +05:30 [INF] Received HTTP response headers after 45.3154ms - 200
+2026-08-16 16:43:32.896 +05:30 [INF] End processing HTTP request after 60.8835ms - 200
+2026-08-16 16:43:32.962 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 142.4566ms
+2026-08-16 16:53:28.727 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 16:53:28.816 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-16 16:53:28.819 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 16:53:28.820 +05:30 [INF] Hosting environment: Development
+2026-08-16 16:53:28.820 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-16 16:54:26.901 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2026-08-16 16:54:26.990 +05:30 [WRN] RequestId: 0HNNRH3N7VTT0:00000001, PreviousRequestId: -
+DownstreamRouteFinderMiddleware setting pipeline errors because DownstreamRouteFinder returned the following ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+2026-08-16 16:54:26.992 +05:30 [WRN] RequestId: 0HNNRH3N7VTT0:00000001, PreviousRequestId: -
+ResponderMiddleware found 1 error ->
+UnableToFindDownstreamRouteError: Failed to match route configuration for upstream: GET /
+Setting error response for request: GET /
+2026-08-16 16:54:26.998 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 0 null 98.2419ms
+2026-08-16 16:54:35.464 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - null null
+2026-08-16 16:54:36.756 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - 200 null text/html;charset=utf-8 1291.5982ms
+2026-08-16 16:54:37.718 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 16:54:38.689 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:54:39.025 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:54:41.214 +05:30 [INF] Received HTTP response headers after 1859.5914ms - 200
+2026-08-16 16:54:41.488 +05:30 [INF] End processing HTTP request after 2815.2832ms - 200
+2026-08-16 16:54:42.124 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 4405.4277ms
+2026-08-16 16:59:16.821 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - null null
+2026-08-16 16:59:16.854 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=FlightOps+API+%28Flights%2C+Bookings%2C+CheckIns+%26+Baggages%29+-+v1 - 200 null text/html;charset=utf-8 32.8346ms
+2026-08-16 16:59:16.990 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 16:59:16.999 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:59:17.002 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 16:59:17.476 +05:30 [INF] Received HTTP response headers after 472.0025ms - 200
+2026-08-16 16:59:17.484 +05:30 [INF] End processing HTTP request after 484.6943ms - 200
+2026-08-16 16:59:17.533 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 543.1896ms
+2026-08-16 17:01:42.127 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/bookings - application/json 137
+2026-08-16 17:01:42.141 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:01:42.145 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:01:42.208 +05:30 [INF] RequestId: 0HNNRH3N7VTT4:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:01:42.213 +05:30 [INF] RequestId: 0HNNRH3N7VTT4:00000001, PreviousRequestId: -
+No authentication is required for the path '/bookings' in the route /bookings/{everything}.
+2026-08-16 17:01:42.443 +05:30 [WRN] RequestId: 0HNNRH3N7VTT4:00000001, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5002/api/bookings
+2026-08-16 17:01:42.475 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/bookings - 401 0 null 348.2272ms
+2026-08-16 17:01:42.482 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/bookings, Response status code: 401
+2026-08-16 17:01:50.714 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 17:01:50.720 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:01:50.723 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:01:50.825 +05:30 [INF] HTTP request failed after 96.7554ms
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 17:01:50.840 +05:30 [INF] HTTP request failed after 120.2117ms
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 17:01:50.851 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-16 17:01:50.874 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 500 null text/plain; charset=utf-8 160.0322ms
+2026-08-16 17:01:53.483 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-16 17:01:53.492 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 6.6999ms
+2026-08-16 17:01:53.836 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 17:01:53.840 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:01:53.844 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:01:53.883 +05:30 [INF] HTTP request failed after 36.9148ms
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 17:01:53.898 +05:30 [INF] HTTP request failed after 58.3046ms
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 17:01:53.914 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-16 17:01:53.935 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 500 null text/plain; charset=utf-8 99.0769ms
+2026-08-16 17:02:21.216 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-16 17:02:21.223 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 6.619ms
+2026-08-16 17:02:21.557 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 17:02:21.615 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:02:21.620 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:02:21.649 +05:30 [INF] HTTP request failed after 25.8359ms
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 17:02:21.656 +05:30 [INF] HTTP request failed after 41.2669ms
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+2026-08-16 17:02:21.669 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.Net.Http.HttpIOException: The response ended prematurely. (ResponseEnded)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at Microsoft.Extensions.Http.Logging.LoggingScopeHttpMessageHandler.<SendCoreAsync>g__Core|4_0(HttpRequestMessage request, Boolean useAsync, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at MMLib.SwaggerForOcelot.Repositories.DownstreamSwaggerDocsRepository.GetSwaggerJsonAsync(RouteOptions route, SwaggerEndPointOptions endPoint, String docsVersion)
+   at MMLib.SwaggerForOcelot.Middleware.SwaggerForOcelotMiddleware.Invoke(HttpContext context, ISwaggerEndPointProvider swaggerEndPointRepository, IDownstreamSwaggerDocsRepository downstreamSwaggerDocs)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.InvokeCore(HttpContext context, PathString matchedPath, PathString remainingPath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-16 17:02:21.679 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 500 null text/plain; charset=utf-8 122.3338ms
+2026-08-16 17:02:58.750 +05:30 [INF] Application is shutting down...
+2026-08-16 17:03:45.737 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-16 17:03:45.867 +05:30 [INF] Now listening on: http://localhost:5000
+2026-08-16 17:03:45.870 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-16 17:03:45.872 +05:30 [INF] Hosting environment: Development
+2026-08-16 17:03:45.873 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway
+2026-08-16 17:04:26.588 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - null null
+2026-08-16 17:04:26.763 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html?urls.primaryName=Passengers+API+-+v1 - 200 null text/html;charset=utf-8 177.8521ms
+2026-08-16 17:04:26.870 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 17:04:26.924 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:04:26.928 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:04:27.355 +05:30 [INF] Received HTTP response headers after 421.078ms - 200
+2026-08-16 17:04:27.364 +05:30 [INF] End processing HTTP request after 444.8694ms - 200
+2026-08-16 17:04:27.582 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 712.3595ms
+2026-08-16 17:04:50.452 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/identity/passenger/login - application/json 69
+2026-08-16 17:04:50.473 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:04:50.476 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:04:50.637 +05:30 [INF] RequestId: 0HNNRH99URIDL:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/identity/passenger/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:04:50.657 +05:30 [INF] RequestId: 0HNNRH99URIDL:00000003, PreviousRequestId: -
+No authentication is required for the path '/identity/passenger/login' in the route /identity/passenger/{everything}.
+2026-08-16 17:04:52.579 +05:30 [INF] RequestId: 0HNNRH99URIDL:00000003, PreviousRequestId: -
+200 OK status code of request URI: http://localhost:5007/api/auth/login
+2026-08-16 17:04:52.617 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/identity/passenger/login - 200 null application/json; charset=utf-8 2165.0435ms
+2026-08-16 17:04:52.906 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/identity/passenger/login, Response status code: 200
+2026-08-16 17:04:59.609 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 17:04:59.620 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 17:04:59.626 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 17:05:00.027 +05:30 [INF] Received HTTP response headers after 397.0028ms - 200
+2026-08-16 17:05:00.030 +05:30 [INF] End processing HTTP request after 409.843ms - 200
+2026-08-16 17:05:00.059 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 449.7102ms
+2026-08-16 17:05:40.896 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/bookings - application/json 139
+2026-08-16 17:05:40.906 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:05:40.910 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:05:41.068 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000001, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:05:41.070 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000001, PreviousRequestId: -
+No authentication is required for the path '/bookings' in the route /bookings/{everything}.
+2026-08-16 17:05:42.298 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000001, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5002/api/bookings
+2026-08-16 17:05:42.316 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/bookings - 201 null application/json; charset=utf-8 1419.6637ms
+2026-08-16 17:05:42.322 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/bookings, Response status code: 201
+2026-08-16 17:07:33.025 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - application/json 318
+2026-08-16 17:07:33.045 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:07:33.049 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:07:33.064 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000002, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:07:33.065 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000002, PreviousRequestId: -
+No authentication is required for the path '/bookings/1/passengers' in the route /bookings/{everything}.
+2026-08-16 17:07:33.483 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000002, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5002/api/bookings/1/passengers
+2026-08-16 17:07:33.490 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - 201 null application/json; charset=utf-8 465.2133ms
+2026-08-16 17:07:33.507 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/bookings/1/passengers, Response status code: 201
+2026-08-16 17:07:57.513 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - application/json 631
+2026-08-16 17:07:57.518 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:07:57.521 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:07:57.526 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000003, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:07:57.529 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000003, PreviousRequestId: -
+No authentication is required for the path '/bookings/1/passengers' in the route /bookings/{everything}.
+2026-08-16 17:07:57.664 +05:30 [WRN] RequestId: 0HNNRH99URIDN:00000003, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/bookings/1/passengers
+2026-08-16 17:07:57.674 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - 400 null application/json; charset=utf-8 160.0383ms
+2026-08-16 17:07:57.680 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/bookings/1/passengers, Response status code: 400
+2026-08-16 17:08:06.591 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - application/json 631
+2026-08-16 17:08:06.596 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:08:06.597 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:08:06.604 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000004, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:08:06.613 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000004, PreviousRequestId: -
+No authentication is required for the path '/bookings/1/passengers' in the route /bookings/{everything}.
+2026-08-16 17:08:06.940 +05:30 [WRN] RequestId: 0HNNRH99URIDN:00000004, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5002/api/bookings/1/passengers
+2026-08-16 17:08:06.952 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - 400 null application/json; charset=utf-8 361.3832ms
+2026-08-16 17:08:06.958 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/bookings/1/passengers, Response status code: 400
+2026-08-16 17:08:23.804 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - application/json 631
+2026-08-16 17:08:23.839 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:08:23.842 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:08:23.849 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000005, PreviousRequestId: -
+Rate limiting is disabled for route '/bookings/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:08:23.851 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000005, PreviousRequestId: -
+No authentication is required for the path '/bookings/1/passengers' in the route /bookings/{everything}.
+2026-08-16 17:08:24.022 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000005, PreviousRequestId: -
+201 Created status code of request URI: http://localhost:5002/api/bookings/1/passengers
+2026-08-16 17:08:24.034 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/bookings/1/passengers - 201 null application/json; charset=utf-8 228.8112ms
+2026-08-16 17:08:24.039 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/bookings/1/passengers, Response status code: 201
+2026-08-16 17:09:36.026 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - null null
+2026-08-16 17:09:36.050 +05:30 [INF] Start processing HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-16 17:09:36.054 +05:30 [INF] Sending HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-16 17:09:36.406 +05:30 [INF] Received HTTP response headers after 350.3108ms - 200
+2026-08-16 17:09:36.410 +05:30 [INF] End processing HTTP request after 359.5211ms - 200
+2026-08-16 17:09:36.418 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - 200 null null 391.3528ms
+2026-08-16 17:10:06.621 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/payments - application/json 68
+2026-08-16 17:10:06.627 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:10:06.631 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:10:06.634 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000007, PreviousRequestId: -
+Rate limiting is disabled for route '/payments/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:10:06.641 +05:30 [INF] RequestId: 0HNNRH99URIDN:00000007, PreviousRequestId: -
+No authentication is required for the path '/payments' in the route /payments/{everything}.
+2026-08-16 17:10:06.789 +05:30 [WRN] RequestId: 0HNNRH99URIDN:00000007, PreviousRequestId: -
+401 Unauthorized status code of request URI: http://localhost:5004/api/payments
+2026-08-16 17:10:06.792 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/payments - 401 0 null 171.7903ms
+2026-08-16 17:10:06.800 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/payments, Response status code: 401
+2026-08-16 17:10:16.055 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 17:10:16.093 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:10:16.112 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:10:16.150 +05:30 [INF] Received HTTP response headers after 35.9624ms - 200
+2026-08-16 17:10:16.154 +05:30 [INF] End processing HTTP request after 61.3341ms - 200
+2026-08-16 17:10:16.168 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 113.0555ms
+2026-08-16 17:10:29.773 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - null null
+2026-08-16 17:10:29.785 +05:30 [INF] Start processing HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-16 17:10:29.795 +05:30 [INF] Sending HTTP request GET http://localhost:5004/swagger/v1/swagger.json
+2026-08-16 17:10:29.847 +05:30 [INF] Received HTTP response headers after 46.8415ms - 200
+2026-08-16 17:10:29.865 +05:30 [INF] End processing HTTP request after 80.4364ms - 200
+2026-08-16 17:10:29.869 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/payments - 200 null null 96.1359ms
+2026-08-16 17:10:41.156 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/payments - application/json 68
+2026-08-16 17:10:41.165 +05:30 [INF] CORS policy execution failed.
+2026-08-16 17:10:41.168 +05:30 [INF] Request origin http://localhost:5000 does not have permission to access the resource.
+2026-08-16 17:10:41.171 +05:30 [INF] RequestId: 0HNNRH99URIDN:0000000A, PreviousRequestId: -
+Rate limiting is disabled for route '/payments/{everything}' via the EnableRateLimiting option.
+2026-08-16 17:10:41.176 +05:30 [INF] RequestId: 0HNNRH99URIDN:0000000A, PreviousRequestId: -
+No authentication is required for the path '/payments' in the route /payments/{everything}.
+2026-08-16 17:10:46.070 +05:30 [WRN] RequestId: 0HNNRH99URIDN:0000000A, PreviousRequestId: -
+400 Bad Request status code of request URI: http://localhost:5004/api/payments
+2026-08-16 17:10:46.090 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/payments - 400 null application/json; charset=utf-8 4933.8153ms
+2026-08-16 17:10:46.099 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5000/payments, Response status code: 400
+2026-08-16 17:11:16.465 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - null null
+2026-08-16 17:11:16.473 +05:30 [INF] Start processing HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 17:11:16.476 +05:30 [INF] Sending HTTP request GET http://localhost:5002/swagger/v1/swagger.json
+2026-08-16 17:11:16.513 +05:30 [INF] Received HTTP response headers after 35.241ms - 200
+2026-08-16 17:11:16.515 +05:30 [INF] End processing HTTP request after 41.3788ms - 200
+2026-08-16 17:11:16.523 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/flights - 200 null null 58.0443ms
+2026-08-16 17:11:45.602 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - null null
+2026-08-16 17:11:45.608 +05:30 [INF] Start processing HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:11:45.611 +05:30 [INF] Sending HTTP request GET http://localhost:5007/swagger/v1/swagger.json
+2026-08-16 17:11:45.633 +05:30 [INF] Received HTTP response headers after 19.7992ms - 200
+2026-08-16 17:11:45.637 +05:30 [INF] End processing HTTP request after 28.8339ms - 200
+2026-08-16 17:11:45.647 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/docs/v1/passengers - 200 null null 44.726ms
