@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{612DF51F-5F5E-5D1E-AAEA-621F70E1955E}|Services\\PassengerService\\PassengerService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\passengerservice\\controllers\\passengerauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{612DF51F-5F5E-5D1E-AAEA-621F70E1955E}|Services\\PassengerService\\PassengerService.csproj|solutionrelative:services\\passengerservice\\controllers\\passengerauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PassengerAuthController.cs",
-              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
-              "RelativeDocumentMoniker": "Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
-              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
-              "RelativeToolTip": "Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-17T06:47:55.538Z",
-              "EditorCaption": ""
             }
           ]
         }

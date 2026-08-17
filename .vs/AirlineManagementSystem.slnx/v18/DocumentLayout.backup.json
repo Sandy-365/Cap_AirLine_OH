@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9948C97-54C6-E11F-4B64-5280E5B091E7}|Services\\FlightOpsService\\FlightOpsService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\flightopsservice\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9948C97-54C6-E11F-4B64-5280E5B091E7}|Services\\FlightOpsService\\FlightOpsService.csproj|solutionrelative:services\\flightopsservice\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9948C97-54C6-E11F-4B64-5280E5B091E7}|Services\\FlightOpsService\\FlightOpsService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\flightopsservice\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9948C97-54C6-E11F-4B64-5280E5B091E7}|Services\\FlightOpsService\\FlightOpsService.csproj|solutionrelative:services\\flightopsservice\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9948C97-54C6-E11F-4B64-5280E5B091E7}|Services\\FlightOpsService\\FlightOpsService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\flightopsservice\\controllers\\flightscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9948C97-54C6-E11F-4B64-5280E5B091E7}|Services\\FlightOpsService\\FlightOpsService.csproj|solutionrelative:services\\flightopsservice\\controllers\\flightscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{612DF51F-5F5E-5D1E-AAEA-621F70E1955E}|Services\\PassengerService\\PassengerService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\passengerservice\\controllers\\passengerauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{612DF51F-5F5E-5D1E-AAEA-621F70E1955E}|Services\\PassengerService\\PassengerService.csproj|solutionrelative:services\\passengerservice\\controllers\\passengerauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,40 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BookingService.cs",
-              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\FlightOpsService\\Services\\BookingService.cs",
-              "RelativeDocumentMoniker": "Services\\FlightOpsService\\Services\\BookingService.cs",
-              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\FlightOpsService\\Services\\BookingService.cs",
-              "RelativeToolTip": "Services\\FlightOpsService\\Services\\BookingService.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAUwAoAAAAVAAAAAAAAAA==",
+              "Title": "PassengerAuthController.cs",
+              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
+              "RelativeDocumentMoniker": "Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
+              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
+              "RelativeToolTip": "Services\\PassengerService\\Controllers\\PassengerAuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T11:03:22.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BookingsController.cs",
-              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\FlightOpsService\\Controllers\\BookingsController.cs",
-              "RelativeDocumentMoniker": "Services\\FlightOpsService\\Controllers\\BookingsController.cs",
-              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\FlightOpsService\\Controllers\\BookingsController.cs",
-              "RelativeToolTip": "Services\\FlightOpsService\\Controllers\\BookingsController.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAwwIUAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T11:02:42.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FlightsController.cs",
-              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\FlightOpsService\\Controllers\\FlightsController.cs",
-              "RelativeDocumentMoniker": "Services\\FlightOpsService\\Controllers\\FlightsController.cs",
-              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\FlightOpsService\\Controllers\\FlightsController.cs",
-              "RelativeToolTip": "Services\\FlightOpsService\\Controllers\\FlightsController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-16T10:59:18.621Z",
+              "WhenOpened": "2026-08-17T06:47:55.538Z",
               "EditorCaption": ""
             }
           ]

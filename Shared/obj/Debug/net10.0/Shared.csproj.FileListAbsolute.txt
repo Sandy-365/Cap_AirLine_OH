@@ -31,7 +31,6 @@ C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\Shared.csproj.AssemblyR
 C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\Shared.AssemblyInfoInputs.cache
 C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\Shared.AssemblyInfo.cs
-C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\Shared.csproj.CoreCompileInputs.cache
 C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\Shared.dll
 C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\refint\Shared.dll
 C:\Users\sagar\Desktop\CAP_PROJ\Shared\obj\Debug\net10.0\Shared.pdb
