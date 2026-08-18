@@ -256,4 +256,28 @@ public class BookingsController : ControllerBase
             return StatusCode(500, new { message = "Internal server error" });
         }
     }
+
+    /// <summary>
+    /// Confirms booking payment and transitions booking status to Confirmed.
+    /// [Allowed Roles: Authorized Users / Payment Service]
+    /// </summary>
+    [HttpPost("{id:int}/confirm-payment")]
+    [Authorize]
+    public async Task<IActionResult> ConfirmPayment(int id, [FromQuery] string? transactionId = null, [FromQuery] string? paymentMethod = null)
+    {
+        try
+        {
+            await _bookingService.ConfirmPaymentAsync(id, transactionId, paymentMethod);
+            return Ok(new { message = "Booking payment confirmed successfully", bookingId = id, status = "Confirmed", paymentStatus = "Success" });
+        }
+        catch (BookingNotFoundException ex)
+        {
+            return NotFound(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error confirming payment for booking {BookingId}", id);
+            return StatusCode(500, new { message = "Internal server error" });
+        }
+    }
 }

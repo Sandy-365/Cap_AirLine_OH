@@ -9,7 +9,6 @@ public interface IFlightScheduleService
 {
     Task<FlightScheduleDto> CreateScheduleAsync(CreateScheduleDto dto);
     Task<FlightScheduleDto> GetScheduleAsync(int id);
-    Task<FlightScheduleDto> UpdateScheduleAsync(int id, UpdateScheduleDto dto);
     Task DeleteScheduleAsync(int id);
     Task CancelScheduleAsync(int id);
     Task<IEnumerable<FlightScheduleDto>> GetSchedulesByFlightIdAsync(int flightId);
@@ -74,46 +73,6 @@ public class FlightScheduleService : IFlightScheduleService
         if (schedule == null)
             throw new KeyNotFoundException($"Schedule {id} not found");
 
-        return MapToDto(schedule);
-    }
-
-    public async Task<FlightScheduleDto> UpdateScheduleAsync(int id, UpdateScheduleDto dto)
-    {
-        var schedule = await _repository.GetScheduleByIdAsync(id);
-        if (schedule == null)
-            throw new KeyNotFoundException($"Schedule {id} not found");
-
-        if (dto.DepartureTime.HasValue)
-            schedule.DepartureTime = dto.DepartureTime.Value;
-
-        if (dto.ArrivalTime.HasValue)
-            schedule.ArrivalTime = dto.ArrivalTime.Value;
-
-        if (!string.IsNullOrEmpty(dto.Gate))
-            schedule.Gate = dto.Gate;
-
-        if (!string.IsNullOrEmpty(dto.Status) && Enum.TryParse<FlightStatus>(dto.Status, true, out var status))
-            schedule.Status = status;
-
-        if (dto.EconomyPrice.HasValue)
-            schedule.EconomyPrice = dto.EconomyPrice.Value;
-
-        if (dto.BusinessPrice.HasValue)
-            schedule.BusinessPrice = dto.BusinessPrice.Value;
-
-        if (dto.FirstClassPrice.HasValue)
-            schedule.FirstClassPrice = dto.FirstClassPrice.Value;
-
-        if (dto.EconomySeats.HasValue)
-            schedule.EconomySeats = dto.EconomySeats.Value;
-
-        if (dto.BusinessSeats.HasValue)
-            schedule.BusinessSeats = dto.BusinessSeats.Value;
-
-        if (dto.FirstSeats.HasValue)
-            schedule.FirstSeats = dto.FirstSeats.Value;
-
-        await _repository.UpdateScheduleAsync(schedule);
         return MapToDto(schedule);
     }
 

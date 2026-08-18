@@ -34,18 +34,6 @@
         <member name="M:PaymentService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
-        <member name="T:PaymentService.Migrations.AddUpdatedAtToBaseEntity">
-            <inheritdoc />
-        </member>
-        <member name="M:PaymentService.Migrations.AddUpdatedAtToBaseEntity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PaymentService.Migrations.AddUpdatedAtToBaseEntity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PaymentService.Migrations.AddUpdatedAtToBaseEntity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
         <member name="T:Program">
             <summary>
             Auto-generated public partial Program class for top-level statement apps.

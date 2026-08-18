@@ -7,10 +7,8 @@ namespace FlightOpsService.Services;
 public interface ICheckInService
 {
     Task<CheckInDto> OnlineCheckInAsync(OnlineCheckInDto dto, string passengerName, string flightNumber, int flightId, DateTime departureTime, decimal fare, string token);
-    Task<CheckInDto> StaffCheckInAsync(StaffCheckInDto dto);
     Task<CheckInDto> GetCheckInAsync(int id);
     Task<IEnumerable<BoardingPassDto>> GetBoardingPassesByBookingAsync(int bookingId);
-    Task<CheckInSummaryDto> GetSummaryAsync();
     Task<IEnumerable<CheckInDto>> GetAllCheckInsAsync();
 }
 
@@ -71,35 +69,6 @@ public class CheckInServiceImpl : ICheckInService
         return MapToDto(checkIn);
     }
 
-    public async Task<CheckInDto> StaffCheckInAsync(StaffCheckInDto dto)
-    {
-        var existing = await _repository.GetByPassengerIdAsync(dto.PassengerId);
-        if (existing != null) return MapToDto(existing);
-
-        var seatNumber = !string.IsNullOrWhiteSpace(dto.SeatNumber) ? dto.SeatNumber : GenerateSeatNumber();
-        var qrCode = GenerateQRCode($"{dto.FlightNumber}-{seatNumber}");
-
-        var checkIn = new CheckIn
-        {
-            BookingId = dto.BookingId,
-            PassengerId = dto.PassengerId,
-            UserId = dto.UserId, 
-            FlightId = dto.FlightId,
-            SeatNumber = seatNumber,
-            Gate = dto.Gate ?? "G1",
-            BoardingPass = $"{dto.PassengerName}|{dto.FlightNumber}|{seatNumber}",
-            QRCode = qrCode,
-            CheckInTime = DateTime.UtcNow,
-            IsCheckedIn = true,
-            CreatedAt = DateTime.UtcNow
-        };
-
-        await _repository.AddAsync(checkIn);
-
-        _logger.LogInformation("Staff Check-in completed for Passenger {PassengerId}", dto.PassengerId);
-        return MapToDto(checkIn);
-    }
-
     public async Task<CheckInDto> GetCheckInAsync(int id)
     {
         var checkIn = await _repository.GetByIdAsync(id);
@@ -121,17 +90,6 @@ public class CheckInServiceImpl : ICheckInService
                 QRCode = c.QRCode
             };
         });
-    }
-
-    public async Task<CheckInSummaryDto> GetSummaryAsync()
-    {
-        var all = await _repository.GetAllAsync();
-        var today = DateTime.UtcNow.Date;
-        return new CheckInSummaryDto
-        {
-            TotalCheckIns = all.Count(),
-            TodayCheckIns = all.Count(c => c.CheckInTime.Date == today)
-        };
     }
 
     public async Task<IEnumerable<CheckInDto>> GetAllCheckInsAsync()

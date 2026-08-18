@@ -14,10 +14,10 @@ public interface IBookingService
     Task<IEnumerable<BookingHistoryDto>> GetBookingHistoryAsync(int userId);
     Task<IEnumerable<object>> GetBookingsByScheduleAsync(int scheduleId);
     Task<IEnumerable<string>> GetOccupiedSeatsAsync(int flightId, int? scheduleId);
-    Task<BookingDto> UpdateBookingAsync(int id, Booking booking);
     Task<BookingDto> GetBookingByPnrAsync(string pnr);
     Task<IEnumerable<object>> GetAllBookingsAsync();
     Task<IEnumerable<object>> GetBookingsByFlightIdAsync(int flightId);
+    Task ConfirmPaymentAsync(int bookingId, string? transactionId = null, string? paymentMethod = null);
 }
 
 public class BookingServiceImpl : IBookingService
@@ -46,6 +46,8 @@ public class BookingServiceImpl : IBookingService
     public async Task<BookingDto> CreateBookingAsync(CreateBookingDto dto)
     {
         _logger.LogInformation($"Starting booking creation for User {dto.UserId}, Flight {dto.FlightId}, Schedule {dto.ScheduleId}");
+
+        decimal unitPrice = 0;
 
         // ── Validate via schedule or flight in-process ──
         if (dto.ScheduleId.HasValue)
@@ -91,6 +93,13 @@ public class BookingServiceImpl : IBookingService
                     dto.PassengerCount,
                     availableSeatsForClass);
             }
+
+            unitPrice = dto.SeatClass switch
+            {
+                "Business" => scheduleData.BusinessPrice,
+                "First" => scheduleData.FirstClassPrice,
+                _ => scheduleData.EconomyPrice
+            };
         }
         else
         {
@@ -127,6 +136,13 @@ public class BookingServiceImpl : IBookingService
                     dto.PassengerCount,
                     0);
             }
+
+            unitPrice = dto.SeatClass switch
+            {
+                "Business" => flightData.BusinessPrice,
+                "First" => flightData.FirstClassPrice,
+                _ => flightData.EconomyPrice
+            };
         }
 
         // Validate seat class enum
@@ -160,7 +176,57 @@ public class BookingServiceImpl : IBookingService
                 "User ID could not be identified from the request or token.");
         }
 
+        int effectivePassengerCount = (dto.Passengers != null && dto.Passengers.Count > 0)
+            ? dto.Passengers.Count
+            : Math.Max(1, dto.PassengerCount);
+
+        decimal calculatedTotalAmount = unitPrice * effectivePassengerCount;
+
         var pnr = GeneratePNR();
+
+        var passengerList = new List<BookingPassenger>();
+
+        if (dto.Passengers != null && dto.Passengers.Count > 0)
+        {
+            foreach (var p in dto.Passengers)
+            {
+                passengerList.Add(new BookingPassenger
+                {
+                    Name = string.IsNullOrWhiteSpace(p.Name) ? (dto.UserName ?? "Passenger") : p.Name,
+                    Age = p.Age > 0 ? p.Age : 30,
+                    Gender = string.IsNullOrWhiteSpace(p.Gender) ? "Male" : p.Gender,
+                    AadharCardNo = p.AadharCardNo ?? "",
+                    PassportNumber = p.PassportNumber ?? "",
+                    Nationality = string.IsNullOrWhiteSpace(p.Nationality) ? "Indian" : p.Nationality,
+                    DietaryRequirements = p.DietaryRequirements ?? "Standard",
+                    MedicalNeeds = p.MedicalNeeds ?? "None",
+                    Status = BookingPassengerStatus.Confirmed,
+                    Fare = unitPrice,
+                    SeatNumber = p.SeatNumber,
+                    CreatedAt = DateTime.UtcNow
+                });
+            }
+        }
+        else
+        {
+            for (int i = 0; i < effectivePassengerCount; i++)
+            {
+                passengerList.Add(new BookingPassenger
+                {
+                    Name = i == 0 ? (dto.UserName ?? "Primary Passenger") : $"Passenger {i + 1}",
+                    Age = 30,
+                    Gender = "Male",
+                    AadharCardNo = "",
+                    PassportNumber = "",
+                    Nationality = "Indian",
+                    DietaryRequirements = "Standard",
+                    MedicalNeeds = "None",
+                    Status = BookingPassengerStatus.Confirmed,
+                    Fare = unitPrice,
+                    CreatedAt = DateTime.UtcNow
+                });
+            }
+        }
 
         var booking = new Booking
         {
@@ -173,11 +239,12 @@ public class BookingServiceImpl : IBookingService
             BaggageWeight = dto.BaggageWeight,
             PNR = pnr,
             Status = BookingStatus.Pending,
-            TotalPassengers = 0,
-            ConfirmedPassengers = 0,
+            TotalPassengers = effectivePassengerCount,
+            ConfirmedPassengers = effectivePassengerCount,
             CancelledPassengers = 0,
             CreatedAt = DateTime.UtcNow,
-            TotalAmount = dto.TotalAmount
+            TotalAmount = calculatedTotalAmount,
+            Passengers = passengerList
         };
 
         await _repository.AddAsync(booking);
@@ -187,11 +254,11 @@ public class BookingServiceImpl : IBookingService
         {
             if (dto.ScheduleId.HasValue)
             {
-                await _scheduleService.BookScheduleSeatAsync(dto.ScheduleId.Value, dto.SeatClass, dto.PassengerCount);
+                await _scheduleService.BookScheduleSeatAsync(dto.ScheduleId.Value, dto.SeatClass, effectivePassengerCount);
             }
             else
             {
-                await _flightService.BookSeatAsync(dto.FlightId, dto.SeatClass, dto.PassengerCount);
+                await _flightService.BookSeatAsync(dto.FlightId, dto.SeatClass, effectivePassengerCount);
             }
         }
         catch (Exception ex)
@@ -201,7 +268,7 @@ public class BookingServiceImpl : IBookingService
             throw new SeatCapacityExceededException(
                 dto.FlightId,
                 dto.SeatClass,
-                dto.PassengerCount,
+                effectivePassengerCount,
                 0);
         }
 
@@ -291,16 +358,6 @@ public class BookingServiceImpl : IBookingService
     public async Task<IEnumerable<string>> GetOccupiedSeatsAsync(int flightId, int? scheduleId)
     {
         return await _repository.GetOccupiedSeatsAsync(flightId, scheduleId);
-    }
-
-    public async Task<BookingDto> UpdateBookingAsync(int id, Booking booking)
-    {
-        var existingBooking = await _repository.GetByIdAsync(id);
-        if (existingBooking == null)
-            throw new BookingNotFoundException(id);
-
-        await _repository.UpdateAsync(booking);
-        return MapToDto(booking);
     }
 
     public async Task<BookingDto> GetBookingByPnrAsync(string pnr)
@@ -393,5 +450,17 @@ public class BookingServiceImpl : IBookingService
                 CreatedAt = p.CreatedAt
             }).ToList() ?? new List<PassengerResponseDto>()
         };
+    }
+
+    public async Task ConfirmPaymentAsync(int bookingId, string? transactionId = null, string? paymentMethod = null)
+    {
+        var booking = await _repository.GetByIdAsync(bookingId);
+        if (booking == null)
+            throw new BookingNotFoundException(bookingId);
+
+        booking.Status = BookingStatus.Confirmed;
+        booking.PaymentStatus = PaymentStatus.Success;
+        await _repository.UpdateAsync(booking);
+        _logger.LogInformation("Booking {BookingId} confirmed with status Confirmed and payment status Success", bookingId);
     }
 }

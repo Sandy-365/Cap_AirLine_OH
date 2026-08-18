@@ -1,15 +1,6 @@
 <Solution>
   <Folder Name="/Solution Items/">
-    <File Path="backOfficeService_APi_Guide.md" />
-    <File Path="Booking_Process_Guide.md" />
-    <File Path="flightOpsService_API_Guide.md" />
-    <File Path="INTERVIEW_MASTER_GUIDE.md" />
-    <File Path="PASSENGER_API_GUIDE.md" />
-    <File Path="PAYMENT_API_GUIDE.md" />
     <File Path="launchSettings.json" />
-    <File Path="Start-AllServices.ps1" />
-    <File Path="Start-AllServices.cmd" />
-    <File Path="CleanOldDatabases.cmd" />
   </Folder>
   <Folder Name="/Services/">
     <Project Path="Services/BackOfficeService/BackOfficeService.csproj" />
@@ -19,6 +10,10 @@
   </Folder>
   <Folder Name="/Gateways/">
     <Project Path="ApiGateway/ApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/BackOfficeService.Tests/BackOfficeService.Tests.csproj" />
+    <Project Path="Tests/PassengerService.Tests/PassengerService.Tests.csproj" />
   </Folder>
   <Project Path="Shared/Shared.csproj" />
 </Solution>

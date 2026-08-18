@@ -30,8 +30,6 @@ builder.Services.AddDbContext<PassengerDbContext>(options =>
            .ConfigureWarnings(w => w.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning)));
 
 
-builder.Services.AddScoped<IRewardRepository, RewardRepository>();
-builder.Services.AddScoped<IRewardService, RewardServiceImpl>();
 builder.Services.AddScoped<IPassengerProfileRepository, PassengerProfileRepository>();
 builder.Services.AddScoped<IPassengerAuthService, PassengerAuthService>();
 builder.Services.AddSingleton<ITokenService>(new JwtTokenService(

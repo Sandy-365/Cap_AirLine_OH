@@ -40,6 +40,12 @@
             [Allowed Roles: Passenger, Dealer, Admin]
             </summary>
         </member>
+        <member name="M:FlightOpsService.Controllers.BookingsController.ConfirmPayment(System.Int32,System.String,System.String)">
+            <summary>
+            Confirms booking payment and transitions booking status to Confirmed.
+            [Allowed Roles: Authorized Users / Payment Service]
+            </summary>
+        </member>
         <member name="T:FlightOpsService.Controllers.CheckInsController">
             <summary>
             CheckIns Controller
@@ -115,18 +121,6 @@
             <inheritdoc />
         </member>
         <member name="M:FlightOpsService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys">
-            <inheritdoc />
-        </member>
-        <member name="M:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:FlightOpsService.Migrations.UpdateFlightOpsForeignKeys.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:FlightOpsService.Models.BookingPassenger">

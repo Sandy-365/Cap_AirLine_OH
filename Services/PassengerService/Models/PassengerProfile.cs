@@ -1,6 +1,5 @@
 using Shared.Models;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PassengerService.Models;
 
@@ -38,7 +37,4 @@ public class PassengerProfile : BaseEntity
 
     // Relationships
     public List<SavedPassenger> SavedPassengers { get; set; } = new();
-
-    [NotMapped]
-    public List<PassengerService.Models.Reward> Rewards { get; set; } = new();
 }

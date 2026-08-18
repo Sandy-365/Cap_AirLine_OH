@@ -80,6 +80,45 @@ if (app.Environment.IsDevelopment())
             uiOptions.HeadContent = @"
 <script>
 (function() {
+    function getTagRank(section) {
+        var tagHeader = section.querySelector('.opblock-tag');
+        if (!tagHeader) return 999;
+        var text = (tagHeader.innerText || tagHeader.textContent || '').trim().toLowerCase();
+        if (text.indexOf('flight') !== -1) return 10;
+        if (text.indexOf('booking') !== -1) return 20;
+        if (text.indexOf('checkin') !== -1 || text.indexOf('check-in') !== -1) return 30;
+        if (text.indexOf('auth') !== -1) return 5;
+        if (text.indexOf('passenger') !== -1) return 15;
+        if (text.indexOf('payment') !== -1) return 10;
+        if (text.indexOf('backoffice') !== -1) return 25;
+        return 500;
+    }
+
+    function sortTagSections() {
+        var sections = Array.from(document.querySelectorAll('.opblock-tag-section'));
+        if (sections.length <= 1) return;
+        var parent = sections[0].parentElement;
+        if (!parent) return;
+
+        var sorted = sections.slice().sort(function(a, b) {
+            return getTagRank(a) - getTagRank(b);
+        });
+
+        var changed = false;
+        for (var i = 0; i < sections.length; i++) {
+            if (sections[i] !== sorted[i]) {
+                changed = true;
+                break;
+            }
+        }
+
+        if (changed) {
+            sorted.forEach(function(el) {
+                parent.appendChild(el);
+            });
+        }
+    }
+
     function getRank(el) {
         var text = (el.innerText || el.textContent || '').toLowerCase();
         if (text.indexOf('/login') !== -1 || text.indexOf(' login ') !== -1 || text.indexOf('login') !== -1) {
@@ -96,6 +135,7 @@ if (app.Environment.IsDevelopment())
     }
 
     function sortOps() {
+        sortTagSections();
         var sections = document.querySelectorAll('.opblock-tag-section');
         sections.forEach(function(section) {
             var ops = Array.from(section.querySelectorAll('.opblock'));

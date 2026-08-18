@@ -100,6 +100,8 @@ builder.Services.AddSwaggerGen(options =>
     {
         options.IncludeXmlComments(xmlPath);
     }
+
+    options.DocumentFilter<FlightOpsTagOrderFilter>();
 });
 
 // ── CORS Configuration ────────────────────────────────────────────────────────
@@ -151,3 +153,16 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public class FlightOpsTagOrderFilter : Swashbuckle.AspNetCore.SwaggerGen.IDocumentFilter
+{
+    public void Apply(OpenApiDocument swaggerDoc, Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext context)
+    {
+        swaggerDoc.Tags = new List<OpenApiTag>
+        {
+            new OpenApiTag { Name = "Flights", Description = "Flight operations, schedules, and route management" },
+            new OpenApiTag { Name = "Bookings", Description = "Ticket bookings and reservations" },
+            new OpenApiTag { Name = "CheckIns", Description = "Online and airport counter check-in" }
+        };
+    }
+}

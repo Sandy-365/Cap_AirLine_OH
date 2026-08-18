@@ -1,11 +1,7 @@
-using BackOfficeService.Data;
 using BackOfficeService.DTOs;
-using BackOfficeService.Models;
 using BackOfficeService.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Shared.Security;
 
 namespace BackOfficeService.Controllers;
 
@@ -18,16 +14,13 @@ public class BackofficeController : ControllerBase
 {
     private readonly IBackofficeService _backofficeService;
     private readonly IBackofficeAuthService _authService;
-    private readonly BackOfficeDbContext _context;
 
     public BackofficeController(
         IBackofficeService backofficeService,
-        IBackofficeAuthService authService,
-        BackOfficeDbContext context)
+        IBackofficeAuthService authService)
     {
         _backofficeService = backofficeService;
         _authService = authService;
-        _context = context;
     }
 
     /// <summary>
@@ -54,7 +47,6 @@ public class BackofficeController : ControllerBase
     {
         try
         {
-            dto.ProvisionedByAdmin = true;
             await _authService.RegisterAsync(dto);
             return Ok(new { message = "User registered successfully." });
         }
@@ -102,4 +94,3 @@ public class BackofficeController : ControllerBase
         return Ok(new { message = "Status updated" });
     }
 }
-

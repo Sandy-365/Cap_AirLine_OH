@@ -9,7 +9,6 @@ public class PassengerDbContext : DbContext
     {
     }
 
-    public DbSet<Reward> Rewards { get; set; } = null!;
     public DbSet<PassengerProfile> PassengerProfiles { get; set; } = null!;
     public DbSet<SavedPassenger> SavedPassengers { get; set; } = null!;
 
@@ -22,13 +21,5 @@ public class PassengerDbContext : DbContext
             .WithOne(s => s.Profile)
             .HasForeignKey(s => s.PassengerProfileId)
             .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<Reward>(entity =>
-        {
-            entity.HasKey(e => e.Id);
-            entity.HasIndex(e => e.UserId);
-            entity.Property(e => e.Points).IsRequired();
-            entity.Property(e => e.TransactionType).IsRequired().HasMaxLength(50);
-        });
     }
 }

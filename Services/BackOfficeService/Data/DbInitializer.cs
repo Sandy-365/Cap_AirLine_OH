@@ -27,11 +27,8 @@ public static class DbInitializer
                 {
                     Email = superAdminEmail,
                     Name = "Super Admin",
-                    FirstName = "Super",
-                    LastName = "Admin",
                     PasswordHash = PasswordHasher.Hash(defaultPassword),
                     Role = "SuperAdmin",
-                    IsEmailVerified = true,
                     IsActive = true,
                     Department = "Technology",
                     RoleTitle = "System SuperAdmin",
@@ -50,7 +47,6 @@ public static class DbInitializer
                 // Force reset password to admin123 on startup
                 existingSuperAdmin.PasswordHash = PasswordHasher.Hash(defaultPassword);
                 existingSuperAdmin.IsActive = true;
-                existingSuperAdmin.IsEmailVerified = true;
                 context.SaveChanges();
                 logger.LogInformation($"SuperAdmin password updated to '{defaultPassword}' for {superAdminEmail}.");
             }

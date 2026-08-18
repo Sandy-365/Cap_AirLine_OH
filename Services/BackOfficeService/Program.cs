@@ -1,4 +1,6 @@
 using BackOfficeService.Data;
+using BackOfficeService.Repositories.Implementations;
+using BackOfficeService.Repositories.Interfaces;
 using BackOfficeService.Services.Implementations;
 using BackOfficeService.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -28,7 +30,8 @@ builder.Services.AddDbContext<BackOfficeDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
            .ConfigureWarnings(w => w.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning)));
 
-// Services
+// Repositories & Services
+builder.Services.AddScoped<IBackofficeProfileRepository, BackofficeProfileRepository>();
 builder.Services.AddHttpClient<IBackofficeService, BackofficeServiceImpl>();
 builder.Services.AddScoped<IBackofficeService, BackofficeServiceImpl>();
 builder.Services.AddScoped<IBackofficeAuthService, BackofficeAuthService>();

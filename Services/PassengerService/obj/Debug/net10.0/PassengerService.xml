@@ -64,76 +64,16 @@
             [Allowed Roles: Admin, SuperAdmin, HR]
             </summary>
         </member>
-        <member name="T:PassengerService.Migrations.InitialCreatePassengerDB">
+        <member name="T:PassengerService.Migrations.InitialCreate">
             <inheritdoc />
         </member>
-        <member name="M:PassengerService.Migrations.InitialCreatePassengerDB.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:PassengerService.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:PassengerService.Migrations.InitialCreatePassengerDB.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:PassengerService.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:PassengerService.Migrations.InitialCreatePassengerDB.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:PassengerService.Migrations.AddProfileFields">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddProfileFields.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddProfileFields.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddProfileFields.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:PassengerService.Migrations.FixPendingChanges">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.FixPendingChanges.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.FixPendingChanges.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.FixPendingChanges.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:PassengerService.Migrations.AddProfileImageToPassenger">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddProfileImageToPassenger.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddProfileImageToPassenger.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddProfileImageToPassenger.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.AddTravelPreferencesAndSavedPassengersFinal.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:PassengerService.Migrations.UpdateSavedPassengerFields">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.UpdateSavedPassengerFields.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.UpdateSavedPassengerFields.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:PassengerService.Migrations.UpdateSavedPassengerFields.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:PassengerService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.PassengerProfileRepository.GetByIdAsync(System.Int32)" -->
@@ -165,10 +105,6 @@
             
             <returns></returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.AddAsync(PassengerService.Models.Reward)" -->
-        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.GetByUserIdAsync(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.GetTotalPointsAsync(System.Int32)" -->
-        <!-- Badly formed XML comment ignored for member "M:PassengerService.Repositories.implementations.RewardRepository.GetAllAsync" -->
         <member name="M:PassengerService.Services.implementations.PassengerAuthService.RegisterAsync(PassengerService.DTOs.PassengerRegisterDto)">
             <summary>
             Creates or updates a passenger profile with hashed password, OTP token, and profile fields. 
@@ -227,15 +163,6 @@
              <returns></returns>
         </member>
         <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.PassengerAuthService.UpdateProfileAsync(System.Int32,PassengerService.DTOs.PassengerUpdateProfileDto)" -->
-        <member name="M:PassengerService.Services.implementations.PassengerAuthService.ChangePasswordAsync(PassengerService.DTOs.PassengerChangePasswordDto)">
-             <summary>
-            Verifies current password and updates to new password hash. Throws if current password is incorrect.
-             </summary>
-             <param name="dto"></param>
-             <returns></returns>
-             <exception cref="T:System.InvalidOperationException"></exception>
-             <exception cref="T:System.UnauthorizedAccessException"></exception>
-        </member>
         <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.PassengerAuthService.GetAllPassengersAsync" -->
         <member name="M:PassengerService.Services.implementations.PassengerAuthService.UpdateUserStatusAsync(System.Int32,System.Boolean)">
             <summary>
@@ -254,31 +181,6 @@
             <param name="name"></param>
             <param name="otp"></param>
             <returns></returns>
-        </member>
-        <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.RewardServiceImpl.EarnPointsAsync(System.Int32,System.Int32,System.String,System.Nullable{System.Int32})" -->
-        <!-- Badly formed XML comment ignored for member "M:PassengerService.Services.implementations.RewardServiceImpl.GetBalanceAsync(System.Int32)" -->
-        <member name="M:PassengerService.Services.implementations.RewardServiceImpl.GetHistoryAsync(System.Int32)">
-            <summary>
-            Returns all reward transactions for a user, showing 
-            points earned and redeemed with transaction types.
-            </summary>
-            
-            <param name="userId"></param>
-            
-            <returns>Task of IEnumerable of RewardDto</returns>
-            
-        </member>
-        <member name="M:PassengerService.Services.implementations.RewardServiceImpl.RedeemPointsAsync(System.Int32,System.Int32)">
-            <summary>
-             Deducts points from user balance after validating sufficient points. Creates a negative-point redemption transaction.
-            </summary>
-            
-            <param name="userId"></param>
-            <param name="points"></param>
-            
-            <returns>Task of RewardDto</returns>
-            
-            <exception cref="T:System.InvalidOperationException"></exception>
         </member>
         <member name="T:Program">
             <summary>

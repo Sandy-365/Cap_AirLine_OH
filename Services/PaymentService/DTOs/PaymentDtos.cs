@@ -5,10 +5,11 @@ namespace PaymentService.DTOs;
 public class ProcessPaymentDto
 {
     public int BookingId { get; set; }
-    public decimal Amount { get; set; }
     public string PaymentMethod { get; set; } = "Card";
 
-    // Auto-populated internally from JWT token claims (hidden from Swagger request body)
+    // Auto-populated internally from booking details and JWT claims
+    [JsonIgnore]
+    public decimal? Amount { get; set; }
     [JsonIgnore]
     public int? UserId { get; set; }
 

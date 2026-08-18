@@ -39,7 +39,7 @@ public class PaymentServiceImpl : IPaymentService
         _logger = logger;
     }
 
-    private async Task ValidateBookingAsync(int bookingId)
+    private async Task<decimal> ValidateBookingAsync(int bookingId)
     {
         try
         {
@@ -62,6 +62,18 @@ public class PaymentServiceImpl : IPaymentService
                 _logger.LogError("Booking validation failed: {StatusCode}", bookingResponse.StatusCode);
                 throw new InvalidOperationException($"Booking {bookingId} does not exist or is not accessible");
             }
+
+            var content = await bookingResponse.Content.ReadAsStringAsync();
+            using var doc = System.Text.Json.JsonDocument.Parse(content);
+            if (doc.RootElement.TryGetProperty("totalAmount", out var totalAmountProp))
+            {
+                return totalAmountProp.GetDecimal();
+            }
+            if (doc.RootElement.TryGetProperty("TotalAmount", out var totalAmountPropCap))
+            {
+                return totalAmountPropCap.GetDecimal();
+            }
+            return 0;
         }
         catch (HttpRequestException ex)
         {
@@ -70,12 +82,46 @@ public class PaymentServiceImpl : IPaymentService
         }
     }
 
+    private async Task NotifyBookingPaymentSuccessAsync(int bookingId, string transactionId, string paymentMethod)
+    {
+        try
+        {
+            var token = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].FirstOrDefault()?.Replace("Bearer ", "");
+            var bookingServiceUrl = _configuration["ServiceUrls:FlightOpsService"] 
+                ?? _configuration["ServiceUrls:BookingService"] 
+                ?? "http://localhost:5002";
+
+            var url = $"{bookingServiceUrl}/api/bookings/{bookingId}/confirm-payment?transactionId={Uri.EscapeDataString(transactionId)}&paymentMethod={Uri.EscapeDataString(paymentMethod)}";
+            var requestMessage = new HttpRequestMessage(System.Net.Http.HttpMethod.Post, url);
+            if (!string.IsNullOrEmpty(token))
+            {
+                requestMessage.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            }
+
+            _logger.LogInformation("Calling FlightOpsService to confirm payment for Booking {BookingId} at {Url}", bookingId, url);
+            var response = await _httpClient.SendAsync(requestMessage);
+            if (response.IsSuccessStatusCode)
+            {
+                _logger.LogInformation("Successfully updated booking {BookingId} status to Confirmed & Paid", bookingId);
+            }
+            else
+            {
+                _logger.LogWarning("Failed to update booking {BookingId} status. Status code: {StatusCode}", bookingId, response.StatusCode);
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error while notifying booking payment confirmation for Booking {BookingId}", bookingId);
+        }
+    }
+
     public async Task<object> CreateOrderAsync(CreateOrderDto dto)
     {
         _logger.LogInformation("CreateOrderAsync called for BookingId={BookingId}, Amount={Amount}", dto.BookingId, dto.Amount);
 
         // 1. Validate Booking
-        await ValidateBookingAsync(dto.BookingId);
+        var bookingTotal = await ValidateBookingAsync(dto.BookingId);
+        decimal finalAmount = (dto.Amount > 0) ? dto.Amount : bookingTotal;
 
         // 2. Initialize RazorPay Client
         string? key = _configuration["Razorpay:KeyId"];
@@ -88,15 +134,15 @@ public class PaymentServiceImpl : IPaymentService
         }
 
         // 3. Validate amount
-        if (dto.Amount <= 0)
+        if (finalAmount <= 0)
         {
-            _logger.LogError("Invalid amount {Amount} for BookingId={BookingId}", dto.Amount, dto.BookingId);
-            throw new InvalidOperationException($"Invalid payment amount: {dto.Amount}. Amount must be greater than 0.");
+            _logger.LogError("Invalid amount {Amount} for BookingId={BookingId}", finalAmount, dto.BookingId);
+            throw new InvalidOperationException($"Invalid payment amount: {finalAmount}. Amount must be greater than 0.");
         }
 
         // 4. Define RazorPay Order Options
-        int amountInPaise = (int)(dto.Amount * 100);
-        _logger.LogInformation("Creating Razorpay order: BookingId={BookingId}, Amount={Amount}, AmountInPaise={Paise}", dto.BookingId, dto.Amount, amountInPaise);
+        int amountInPaise = (int)(finalAmount * 100);
+        _logger.LogInformation("Creating Razorpay order: BookingId={BookingId}, Amount={Amount}, AmountInPaise={Paise}", dto.BookingId, finalAmount, amountInPaise);
         Dictionary<string, object> options = new Dictionary<string, object>();
         options.Add("amount", amountInPaise); // amount in paise MUST be int
         options.Add("currency", "INR");
@@ -173,24 +219,29 @@ public class PaymentServiceImpl : IPaymentService
         await _repository.AddAsync(payment);
         _logger.LogInformation("Payment record saved: PaymentId={PaymentId}, Amount={Amount}", payment.Id, dto.Amount);
 
-        // Publish PaymentSuccessEvent so Saga can confirm the booking and trigger rewards
-
-        _logger.LogInformation("PaymentSuccessEvent published for BookingId={BookingId}", dto.BookingId);
+        // Notify FlightOpsService to confirm booking and update PaymentStatus to Success/Paid
+        await NotifyBookingPaymentSuccessAsync(dto.BookingId, dto.RazorpayPaymentId, "RazorPay");
 
         return MapToDto(payment);
     }
 
     public async Task<PaymentDto> ProcessPaymentAsync(ProcessPaymentDto dto)
     {
-        // Validate booking exists
-        await ValidateBookingAsync(dto.BookingId);
+        // Validate booking exists and get its authoritative total amount
+        var bookingTotal = await ValidateBookingAsync(dto.BookingId);
+
+        decimal finalAmount = (dto.Amount.HasValue && dto.Amount.Value > 0) ? dto.Amount.Value : bookingTotal;
+        if (finalAmount <= 0)
+        {
+            finalAmount = bookingTotal > 0 ? bookingTotal : 0;
+        }
 
         var transactionId = Guid.NewGuid().ToString();
 
         var payment = new PaymentService.Models.Payment
         {
             BookingId = dto.BookingId,
-            Amount = dto.Amount,
+            Amount = finalAmount,
             PaymentMethod = dto.PaymentMethod,
             TransactionId = transactionId,
             Status = PaymentStatus.Success,
@@ -198,6 +249,10 @@ public class PaymentServiceImpl : IPaymentService
         };
 
         await _repository.AddAsync(payment);
+        _logger.LogInformation("Payment record saved: PaymentId={PaymentId}, Amount={Amount}", payment.Id, finalAmount);
+
+        // Notify FlightOpsService to confirm booking and update PaymentStatus to Success/Paid
+        await NotifyBookingPaymentSuccessAsync(dto.BookingId, transactionId, dto.PaymentMethod);
 
         return MapToDto(payment);
     }

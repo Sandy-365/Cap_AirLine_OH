@@ -270,3 +270,62 @@ WHERE [Id] = @p1;
 2026-08-17 16:21:05.579 +05:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 15.8117 ms
 2026-08-17 16:21:05.586 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.8923ms
 2026-08-17 16:26:06.034 +05:30 [INF] Application is shutting down...
+2026-08-17 23:35:23.056 +05:30 [INF] Executed DbCommand (656ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [Airline_BackOfficeDB];
+2026-08-17 23:35:23.648 +05:30 [INF] Executed DbCommand (509ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Airline_BackOfficeDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2026-08-17 23:35:23.701 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 23:35:23.706 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-17 23:35:23.765 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-17 23:35:23.918 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-17 23:35:23.949 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-17 23:35:23.966 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-17 23:35:24.031 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-17 23:35:24.050 +05:30 [INF] Applying migration '20260817174355_InitialCreate'.
+2026-08-17 23:35:24.084 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [BackofficeProfiles] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(256) NOT NULL,
+    [PasswordHash] nvarchar(max) NOT NULL,
+    [Name] nvarchar(150) NOT NULL,
+    [Role] nvarchar(50) NOT NULL,
+    [IsActive] bit NOT NULL,
+    [ResetToken] nvarchar(max) NULL,
+    [ResetTokenExpiry] datetime2 NULL,
+    [Department] nvarchar(100) NOT NULL,
+    [RoleTitle] nvarchar(100) NOT NULL,
+    [AssignedAirportCode] nvarchar(100) NOT NULL,
+    [PhoneNumber] nvarchar(20) NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NULL,
+    CONSTRAINT [PK_BackofficeProfiles] PRIMARY KEY ([Id])
+);
+2026-08-17 23:35:24.118 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_BackofficeProfiles_Email] ON [BackofficeProfiles] ([Email]);
+2026-08-17 23:35:24.146 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260817174355_InitialCreate', N'9.0.0');
+2026-08-17 23:35:24.199 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result

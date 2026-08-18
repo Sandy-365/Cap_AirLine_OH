@@ -12,5 +12,4 @@ public interface IBackofficeAuthService
     Task<BackofficeProfile> UpdateProfileAsync(int id, BackofficeUpdateProfileDto dto);
     Task<List<BackofficeProfile>> GetAllUsersAsync(string[]? roles = null);
     Task UpdateUserStatusAsync(int id, bool isActive);
-    Task ChangePasswordAsync(int id, BackofficeChangePasswordDto dto);
 }

@@ -320,29 +320,6 @@ public class PassengerAuthService : IPassengerAuthService
 
 
     /// <summary>
-    ///Verifies current password and updates to new password hash. Throws if current password is incorrect.
-    /// </summary>
-    /// <param name="dto"></param>
-    /// <returns></returns>
-    /// <exception cref="InvalidOperationException"></exception>
-    /// <exception cref="UnauthorizedAccessException"></exception>
-    public async Task ChangePasswordAsync(PassengerChangePasswordDto dto)
-    {
-        var profile = await _repo.GetByEmailAsync(dto.Email)
-            ?? throw new InvalidOperationException("Account not found.");
-
-        if (!PasswordHasher.Verify(dto.CurrentPassword, profile.PasswordHash))
-            throw new UnauthorizedAccessException("Current password is incorrect.");
-
-        profile.PasswordHash = PasswordHasher.Hash(dto.NewPassword);
-        profile.UpdatedAt = DateTime.UtcNow;
-        await _repo.UpdateAsync(profile);
-    }
-
-
-
-
-    /// <summary>
     /// Retrieves all passenger profiles from the database.
     /// </summary>
     /// 
@@ -353,10 +330,6 @@ public class PassengerAuthService : IPassengerAuthService
         var profiles = await _repo.GetAllAsync();
         return profiles.Select(MapToResponseDto).ToList();
     }
-
-
-
-
 
     /// <summary>
     /// Toggles passenger account active status and updates timestamp.
@@ -383,12 +356,6 @@ public class PassengerAuthService : IPassengerAuthService
     private Task SendOtpEmailAsync(string toEmail, string name, string otp)
     {
         Console.WriteLine($"[EMAIL DISABLED] OTP for {toEmail} ({name}): {otp}");
-        return Task.CompletedTask;
-    }
-
-    private Task SendResetEmailAsync(string toEmail, string name, string otp)
-    {
-        Console.WriteLine($"[EMAIL DISABLED] Reset OTP for {toEmail} ({name}): {otp}");
         return Task.CompletedTask;
     }
 

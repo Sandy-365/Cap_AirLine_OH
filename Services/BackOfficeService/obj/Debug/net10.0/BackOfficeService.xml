@@ -65,9 +65,6 @@
         <member name="P:BackOfficeService.DTOs.BackofficeRegisterDto.Role">
             <summary>Role to assign: SuperAdmin, Admin, HR, FinancialAdmin, Staff, GroundStaff, Dealer, etc.</summary>
         </member>
-        <member name="P:BackOfficeService.DTOs.BackofficeRegisterDto.ProvisionedByAdmin">
-            <summary>When true, account is auto-verified (no OTP email). Use when provisioned by an Admin/SuperAdmin.</summary>
-        </member>
         <member name="T:BackOfficeService.Migrations.InitialCreate">
             <inheritdoc />
         </member>

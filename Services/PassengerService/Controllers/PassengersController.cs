@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PassengerService.DTOs;
-using PassengerService.Models;
-using PassengerService.Repositories.Interfaces;
 using PassengerService.Services.Interfaces;
 using System.Security.Claims;
 
@@ -12,12 +10,10 @@ namespace PassengerService.Controllers;
 [Route("api/[controller]")]
 public class PassengersController : ControllerBase
 {
-    private readonly IPassengerProfileRepository _profileRepository;
     private readonly IPassengerAuthService _authService;
 
-    public PassengersController(IPassengerProfileRepository profileRepository, IPassengerAuthService authService)
+    public PassengersController(IPassengerAuthService authService)
     {
-        _profileRepository = profileRepository;
         _authService = authService;
     }
 
