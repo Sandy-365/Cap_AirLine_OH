@@ -1,0 +1,345 @@
+2026-08-20 08:23:00.059 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-20 08:23:00.120 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-20 08:23:00.145 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-20 08:23:00.291 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-20 08:23:00.314 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-20 08:23:00.321 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-20 08:23:00.343 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-20 08:23:00.367 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-20 08:23:00.379 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-20 08:23:00.497 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 08:23:00.514 +05:30 [INF] ScheduleCompletionWorker started.
+2026-08-20 08:23:00.617 +05:30 [INF] Now listening on: http://localhost:5002
+2026-08-20 08:23:00.620 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 08:23:00.622 +05:30 [INF] Hosting environment: Development
+2026-08-20 08:23:00.626 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\FlightOpsService
+2026-08-20 08:23:01.156 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:23:01.581 +05:30 [INF] Executed DbCommand (90ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.603 +05:30 [INF] Schedule 1 (Flight 2) marked as Completed
+2026-08-20 08:23:01.641 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.645 +05:30 [INF] Schedule 2 (Flight 3) marked as Completed
+2026-08-20 08:23:01.671 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.674 +05:30 [INF] Schedule 3 (Flight 4) marked as Completed
+2026-08-20 08:23:01.684 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.690 +05:30 [INF] Schedule 4 (Flight 5) marked as Completed
+2026-08-20 08:23:01.703 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.706 +05:30 [INF] Schedule 5 (Flight 6) marked as Completed
+2026-08-20 08:23:01.717 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.722 +05:30 [INF] Schedule 6 (Flight 7) marked as Completed
+2026-08-20 08:23:01.732 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.737 +05:30 [INF] Schedule 7 (Flight 8) marked as Completed
+2026-08-20 08:23:01.749 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.754 +05:30 [INF] Schedule 8 (Flight 9) marked as Completed
+2026-08-20 08:23:01.774 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.779 +05:30 [INF] Schedule 9 (Flight 10) marked as Completed
+2026-08-20 08:23:01.790 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.794 +05:30 [INF] Schedule 10 (Flight 11) marked as Completed
+2026-08-20 08:23:01.806 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.811 +05:30 [INF] Schedule 11 (Flight 4) marked as Completed
+2026-08-20 08:23:01.821 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.825 +05:30 [INF] Schedule 12 (Flight 5) marked as Completed
+2026-08-20 08:23:01.839 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.844 +05:30 [INF] Schedule 13 (Flight 6) marked as Completed
+2026-08-20 08:23:01.874 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.880 +05:30 [INF] Schedule 14 (Flight 7) marked as Completed
+2026-08-20 08:23:01.906 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.911 +05:30 [INF] Schedule 15 (Flight 8) marked as Completed
+2026-08-20 08:23:01.926 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.932 +05:30 [INF] Schedule 16 (Flight 9) marked as Completed
+2026-08-20 08:23:01.953 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.958 +05:30 [INF] Schedule 17 (Flight 10) marked as Completed
+2026-08-20 08:23:01.982 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:01.987 +05:30 [INF] Schedule 18 (Flight 11) marked as Completed
+2026-08-20 08:23:01.999 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:02.015 +05:30 [INF] Schedule 19 (Flight 12) marked as Completed
+2026-08-20 08:23:02.071 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[@p15='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Int32), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p7='?' (DbType = Int32), @p8='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?' (Size = 10), @p12='?' (Size = 4000), @p13='?' (DbType = Int32), @p14='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [FlightSchedules] SET [ArrivalTime] = @p0, [AvailableSeats] = @p1, [BusinessPrice] = @p2, [BusinessSeats] = @p3, [CreatedAt] = @p4, [DepartureTime] = @p5, [EconomyPrice] = @p6, [EconomySeats] = @p7, [FirstClassPrice] = @p8, [FirstSeats] = @p9, [FlightId] = @p10, [Gate] = @p11, [Status] = @p12, [TotalSeats] = @p13, [UpdatedAt] = @p14
+OUTPUT 1
+WHERE [Id] = @p15;
+2026-08-20 08:23:02.088 +05:30 [INF] Schedule 20 (Flight 13) marked as Completed
+2026-08-20 08:23:53.830 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-08-20 08:23:54.352 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 525.8995ms
+2026-08-20 08:24:02.352 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:24:12.826 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - null null
+2026-08-20 08:24:12.854 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5002/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.0375ms
+2026-08-20 08:25:02.421 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:26:02.440 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:27:02.465 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:28:02.489 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:29:02.509 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:30:02.580 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:31:02.593 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:32:02.620 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:33:02.660 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:34:02.687 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:35:02.704 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:36:02.766 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:37:02.823 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:38:02.891 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:39:02.923 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:40:02.942 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:41:02.973 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:42:03.058 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:43:03.077 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:44:03.100 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:45:03.118 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:46:03.145 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:47:03.165 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:48:03.189 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:49:03.210 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:50:03.222 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:51:03.246 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:52:03.261 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:53:03.292 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:54:03.313 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:55:03.352 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [f].[Id], [f].[ArrivalTime], [f].[AvailableSeats], [f].[BusinessPrice], [f].[BusinessSeats], [f].[CreatedAt], [f].[DepartureTime], [f].[EconomyPrice], [f].[EconomySeats], [f].[FirstClassPrice], [f].[FirstSeats], [f].[FlightId], [f].[Gate], [f].[Status], [f].[TotalSeats], [f].[UpdatedAt], [f0].[Id], [f0].[Aircraft], [f0].[ArrivalTime], [f0].[AvailableSeats], [f0].[BusinessPrice], [f0].[BusinessSeats], [f0].[CreatedAt], [f0].[CrewAssignment], [f0].[DepartureTime], [f0].[Destination], [f0].[EconomyPrice], [f0].[EconomySeats], [f0].[FirstClassPrice], [f0].[FirstSeats], [f0].[FlightNumber], [f0].[Gate], [f0].[Source], [f0].[Status], [f0].[TotalSeats], [f0].[UpdatedAt]
+FROM [FlightSchedules] AS [f]
+INNER JOIN [Flights] AS [f0] ON [f].[FlightId] = [f0].[Id]
+WHERE [f].[DepartureTime] < GETUTCDATE() AND [f].[Status] <> N'Completed' AND [f].[Status] <> N'Cancelled'
+2026-08-20 08:56:02.270 +05:30 [INF] Application is shutting down...

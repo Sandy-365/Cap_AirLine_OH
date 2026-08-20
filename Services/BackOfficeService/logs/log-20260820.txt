@@ -1,0 +1,52 @@
+2026-08-20 08:22:35.268 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-20 08:22:35.366 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-08-20 08:22:35.401 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-08-20 08:22:35.503 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-08-20 08:22:35.525 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-08-20 08:22:35.531 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-08-20 08:22:35.556 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-08-20 08:22:35.574 +05:30 [INF] No migrations were applied. The database is already up to date.
+2026-08-20 08:22:35.592 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-08-20 08:22:35.986 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[@__ToLower_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AssignedAirportCode], [b].[CreatedAt], [b].[Department], [b].[Email], [b].[IsActive], [b].[Name], [b].[PasswordHash], [b].[PhoneNumber], [b].[ResetToken], [b].[ResetTokenExpiry], [b].[Role], [b].[RoleTitle], [b].[UpdatedAt]
+FROM [BackofficeProfiles] AS [b]
+WHERE LOWER([b].[Email]) = @__ToLower_0
+2026-08-20 08:22:36.616 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [BackofficeProfiles] SET [PasswordHash] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2026-08-20 08:22:36.628 +05:30 [INF] SuperAdmin password updated to 'admin123' for superadmin@airline.com.
+2026-08-20 08:22:36.720 +05:30 [INF] User profile is available. Using 'C:\Users\sagar\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-20 08:22:36.813 +05:30 [INF] Now listening on: http://localhost:5010
+2026-08-20 08:22:36.814 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-20 08:22:36.816 +05:30 [INF] Hosting environment: Development
+2026-08-20 08:22:36.817 +05:30 [INF] Content root path: C:\Users\sagar\Desktop\CAP_PROJ\Services\BackOfficeService
+2026-08-20 08:23:26.690 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-20 08:23:27.080 +05:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 327.9394 ms
+2026-08-20 08:23:27.098 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 412.2582ms
+2026-08-20 08:24:07.681 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - null null
+2026-08-20 08:24:07.699 +05:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 12.8229 ms
+2026-08-20 08:24:07.704 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5010/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.2238ms
+2026-08-20 08:55:57.038 +05:30 [INF] Application is shutting down...

@@ -1,64 +1,82 @@
-using Serilog;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-
 using PassengerService.Data;
-using PassengerService.Repositories.Interfaces;
 using PassengerService.Repositories.implementations;
-using PassengerService.Services.Interfaces;
+using PassengerService.Repositories.Interfaces;
 using PassengerService.Services.implementations;
+using PassengerService.Services.Interfaces;
+using Serilog;
 using Shared.Configuration;
 using Shared.Security;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Serilog
 builder.Host.UseSerilog((ctx, lc) => lc
     .MinimumLevel.Information()
     .WriteTo.Console()
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
-    .Enrich.FromLogContext()
-    .Enrich.WithEnvironmentName()
-    .Enrich.WithThreadId());
+    .Enrich.FromLogContext());
 
+// JWT Settings
+var jwtSettings = builder.Configuration
+    .GetSection("JwtSettings")
+    .Get<JwtSettings>() ?? new JwtSettings();
 
-var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>() ?? new JwtSettings();
-
+// Database
 builder.Services.AddDbContext<PassengerDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
            .ConfigureWarnings(w => w.Ignore(Microsoft.EntityFrameworkCore.Diagnostics.RelationalEventId.PendingModelChangesWarning)));
 
-
+// Repositories & Services
 builder.Services.AddScoped<IPassengerProfileRepository, PassengerProfileRepository>();
 builder.Services.AddScoped<IPassengerAuthService, PassengerAuthService>();
+
+// JWT Token Service
 builder.Services.AddSingleton<ITokenService>(new JwtTokenService(
     jwtSettings.Key,
     jwtSettings.Issuer,
     jwtSettings.Audience,
     jwtSettings.ExpirationMinutes));
 
+// Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(jwtSettings.Key)),
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(jwtSettings.Key)),
+
             ValidateIssuer = true,
             ValidIssuer = jwtSettings.Issuer,
+
             ValidateAudience = true,
             ValidAudience = jwtSettings.Audience,
+
             ValidateLifetime = true
         };
     });
 
+// Authorization
 builder.Services.AddAuthorization();
+
+// Controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
+// Swagger
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "PassengerService Web API", Version = "v1" });
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "PassengerService Web API",
+        Version = "v1"
+    });
 
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -81,55 +99,44 @@ builder.Services.AddSwaggerGen(options =>
                     Id = "Bearer"
                 }
             },
-            new List<string>()
+            Array.Empty<string>()
         }
-    });
-
-    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    if (File.Exists(xmlPath))
-    {
-        options.IncludeXmlComments(xmlPath);
-    }
-
-    options.OrderActionsBy(apiDesc =>
-    {
-        var path = apiDesc.RelativePath?.ToLower() ?? "";
-        var method = apiDesc.HttpMethod?.ToUpper() ?? "";
-        var controller = apiDesc.ActionDescriptor.RouteValues.TryGetValue("controller", out var c) ? c : "";
-
-        int rank = 99;
-        if (path.EndsWith("/login") || path.Contains("login")) rank = 10;
-        else if (path.EndsWith("/register") || path.Contains("register")) rank = 20;
-        else if (path.EndsWith("/verify") || path.Contains("/verify")) rank = 30;
-        else if (path.Contains("resend-verification")) rank = 40;
-        else if (path.Contains("force-verify")) rank = 50;
-        else if (path.Contains("forgot-password")) rank = 60;
-        else if (path.Contains("reset-password")) rank = 70;
-        else if (path.Contains("change-password")) rank = 80;
-
-        return $"{controller}_{rank:D2}_{path}_{method}";
     });
 });
 
-var corsSettings = builder.Configuration.GetSection("CorsSettings");
-var allowedOrigins = corsSettings.GetSection("AllowedOrigins").Get<string[]>() ?? Array.Empty<string>();
+// CORS
+var allowedOrigins = builder.Configuration
+    .GetSection("CorsSettings:AllowedOrigins")
+    .Get<string[]>() ?? Array.Empty<string>();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("DefaultPolicy", policy =>
     {
-        policy.WithOrigins(allowedOrigins)
-            .AllowAnyMethod()
-            .AllowAnyHeader();
+        if (allowedOrigins.Length > 0)
+        {
+            policy.WithOrigins(allowedOrigins)
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
+        else
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        }
     });
 });
 
 var app = builder.Build();
 
+// Serilog Request Logging
+app.UseSerilogRequestLogging();
 
+// Global Exception Middleware
 app.UseMiddleware<Shared.Middleware.GlobalExceptionMiddleware>();
 
+// Database Migration with Retry
 for (int i = 0; i < 10; i++)
 {
     try
@@ -139,6 +146,7 @@ for (int i = 0; i < 10; i++)
             var dbContext = scope.ServiceProvider.GetRequiredService<PassengerDbContext>();
             dbContext.Database.Migrate();
         }
+
         Console.WriteLine("Database migrated successfully.");
         break;
     }
@@ -149,72 +157,20 @@ for (int i = 0; i < 10; i++)
     }
 }
 
-
-
+// Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.HeadContent = @"
-<script>
-(function() {
-    function getRank(el) {
-        var text = (el.innerText || el.textContent || '').toLowerCase();
-        if (text.indexOf('/login') !== -1 || text.indexOf(' login ') !== -1 || text.indexOf('login') !== -1) {
-            if (text.indexOf('resend') === -1 && text.indexOf('reset') === -1) return 10;
-        }
-        if (text.indexOf('/register') !== -1 || text.indexOf('register') !== -1) return 20;
-        if (text.indexOf('resend-verification') !== -1 || text.indexOf('resend verification') !== -1) return 40;
-        if (text.indexOf('force-verify') !== -1) return 35;
-        if (text.indexOf('/verify') !== -1 || text.indexOf('verify') !== -1) return 30;
-        if (text.indexOf('forgot-password') !== -1 || text.indexOf('forgot password') !== -1) return 50;
-        if (text.indexOf('reset-password') !== -1 || text.indexOf('reset password') !== -1) return 60;
-        if (text.indexOf('change-password') !== -1 || text.indexOf('change password') !== -1) return 70;
-        return 999;
-    }
-
-    function sortOps() {
-        var sections = document.querySelectorAll('.opblock-tag-section');
-        sections.forEach(function(section) {
-            var ops = Array.from(section.querySelectorAll('.opblock'));
-            if (ops.length <= 1) return;
-            var parent = ops[0].parentElement;
-            if (!parent) return;
-
-            var sorted = ops.slice().sort(function(a, b) {
-                return getRank(a) - getRank(b);
-            });
-
-            var changed = false;
-            for (var i = 0; i < ops.length; i++) {
-                if (ops[i] !== sorted[i]) {
-                    changed = true;
-                    break;
-                }
-            }
-
-            if (changed) {
-                sorted.forEach(function(el) {
-                    parent.appendChild(el);
-                });
-            }
-        });
-    }
-
-    setInterval(sortOps, 250);
-    window.addEventListener('DOMContentLoaded', sortOps);
-    window.addEventListener('load', sortOps);
-})();
-</script>";
-    });
+    app.UseSwaggerUI();
 }
 
+// Middleware Pipeline
 app.UseHttpsRedirection();
 app.UseCors("DefaultPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Controllers
 app.MapControllers();
 
 app.Run();
-
