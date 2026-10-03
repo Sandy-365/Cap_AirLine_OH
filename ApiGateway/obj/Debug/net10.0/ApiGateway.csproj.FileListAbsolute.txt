@@ -313,3 +313,4 @@ C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.deps.json
 C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.runtimeconfig.json
 C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.dll
 C:\Users\sagar\Desktop\CAP_PROJ\bin\TestBuild\ApiGateway.pdb
+C:\Users\sagar\Desktop\CAP_PROJ\ApiGateway\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

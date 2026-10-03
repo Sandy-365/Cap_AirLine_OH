@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04CB10A9-E818-6D97-E0BB-395E18937E32}|Services\\BackOfficeService\\BackOfficeService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\backofficeservice\\controllers\\backofficeauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04CB10A9-E818-6D97-E0BB-395E18937E32}|Services\\BackOfficeService\\BackOfficeService.csproj|solutionrelative:services\\backofficeservice\\controllers\\backofficeauthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04CB10A9-E818-6D97-E0BB-395E18937E32}|Services\\BackOfficeService\\BackOfficeService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\backofficeservice\\services\\implementations\\backofficeauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04CB10A9-E818-6D97-E0BB-395E18937E32}|Services\\BackOfficeService\\BackOfficeService.csproj|solutionrelative:services\\backofficeservice\\services\\implementations\\backofficeauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04CB10A9-E818-6D97-E0BB-395E18937E32}|Services\\BackOfficeService\\BackOfficeService.csproj|c:\\users\\sagar\\desktop\\cap_proj\\services\\backofficeservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04CB10A9-E818-6D97-E0BB-395E18937E32}|Services\\BackOfficeService\\BackOfficeService.csproj|solutionrelative:services\\backofficeservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BackofficeAuthController.cs",
+              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\BackOfficeService\\Controllers\\BackofficeAuthController.cs",
+              "RelativeDocumentMoniker": "Services\\BackOfficeService\\Controllers\\BackofficeAuthController.cs",
+              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\BackOfficeService\\Controllers\\BackofficeAuthController.cs",
+              "RelativeToolTip": "Services\\BackOfficeService\\Controllers\\BackofficeAuthController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAQwD0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-21T00:23:45.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BackofficeAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\BackOfficeService\\Services\\implementations\\BackofficeAuthService.cs",
+              "RelativeDocumentMoniker": "Services\\BackOfficeService\\Services\\implementations\\BackofficeAuthService.cs",
+              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\BackOfficeService\\Services\\implementations\\BackofficeAuthService.cs",
+              "RelativeToolTip": "Services\\BackOfficeService\\Services\\implementations\\BackofficeAuthService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T11:15:16.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\BackOfficeService\\Program.cs",
+              "RelativeDocumentMoniker": "Services\\BackOfficeService\\Program.cs",
+              "ToolTip": "C:\\Users\\sagar\\Desktop\\CAP_PROJ\\Services\\BackOfficeService\\Program.cs",
+              "RelativeToolTip": "Services\\BackOfficeService\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-20T09:51:04.477Z"
             }
           ]
         }

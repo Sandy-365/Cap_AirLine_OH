@@ -77,6 +77,202 @@
         <member name="M:BackOfficeService.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository">
+            <summary>
+            Repository implementation for performing CRUD and query operations on back-office user profiles in the database.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository.#ctor(BackOfficeService.Data.BackOfficeDbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository"/> class.
+            </summary>
+            <param name="db">The database context for the BackOffice service.</param>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Retrieves a back-office user profile by its unique identifier.
+            </summary>
+            <param name="id">The unique profile ID.</param>
+            <returns>A task representing the asynchronous operation that yields the profile if found; otherwise, null.</returns>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository.GetByEmailAsync(System.String)">
+            <summary>
+            Retrieves a back-office user profile by its email address (case-insensitive).
+            </summary>
+            <param name="email">The email address of the user profile.</param>
+            <returns>A task representing the asynchronous operation that yields the profile if found; otherwise, null.</returns>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository.GetAllAsync(System.String[])">
+            <summary>
+            Retrieves all back-office user profiles from the database, with optional filtering by role.
+            </summary>
+            <param name="roles">An optional array of role names to filter the results by.</param>
+            <returns>A task representing the asynchronous operation that yields a list of <see cref="T:BackOfficeService.Models.BackofficeProfile"/> records.</returns>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository.AddAsync(BackOfficeService.Models.BackofficeProfile)">
+            <summary>
+            Adds a new back-office user profile entity to the database.
+            </summary>
+            <param name="profile">The profile entity to add.</param>
+            <returns>A task representing the asynchronous save operation.</returns>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository.UpdateAsync(BackOfficeService.Models.BackofficeProfile)">
+            <summary>
+            Updates an existing back-office user profile entity in the database.
+            </summary>
+            <param name="profile">The modified profile entity to update.</param>
+            <returns>A task representing the asynchronous update operation.</returns>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Implementations.BackofficeProfileRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Deletes a back-office user profile from the database by its identifier if it exists.
+            </summary>
+            <param name="id">The unique identifier of the profile to delete.</param>
+            <returns>A task representing the asynchronous deletion operation.</returns>
+        </member>
+        <member name="T:BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository">
+            <summary>
+            Interface for back-office user profile repository operations.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository.GetByIdAsync(System.Int32)">
+            <summary>
+            Retrieves a back-office user profile by ID.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository.GetByEmailAsync(System.String)">
+            <summary>
+            Retrieves a back-office user profile by email address (case-insensitive).
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository.GetAllAsync(System.String[])">
+            <summary>
+            Retrieves all back-office user profiles, optionally filtered by roles.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository.AddAsync(BackOfficeService.Models.BackofficeProfile)">
+            <summary>
+            Adds a new back-office user profile entity.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository.UpdateAsync(BackOfficeService.Models.BackofficeProfile)">
+            <summary>
+            Updates an existing back-office user profile entity.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository.DeleteAsync(System.Int32)">
+            <summary>
+            Deletes a back-office user profile entity by ID.
+            </summary>
+        </member>
+        <member name="T:BackOfficeService.Services.Implementations.BackofficeAuthService">
+            <summary>
+            Service implementation for managing back-office user authentication, registration, password lifecycle, and profile management.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.#ctor(BackOfficeService.Repositories.Interfaces.IBackofficeProfileRepository,Shared.Security.ITokenService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BackOfficeService.Services.Implementations.BackofficeAuthService"/> class.
+            </summary>
+            <param name="repo">The repository for accessing and managing back-office user profile data.</param>
+            <param name="tokenService">The service used to generate JWT authentication tokens.</param>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.RegisterAsync(BackOfficeService.DTOs.BackofficeRegisterDto)">
+            <summary>
+            Registers a new back-office user profile or updates an existing profile with new details and role.
+            </summary>
+            <param name="dto">The registration data transfer object containing user information, role, and credentials.</param>
+            <returns>A task representing the asynchronous registration operation.</returns>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.LoginAsync(BackOfficeService.DTOs.BackofficeLoginDto)">
+            <summary>
+            Authenticates a back-office user using their email and password credentials, returning a JWT token upon success.
+            </summary>
+            <param name="dto">The login credentials transfer object containing email and password.</param>
+            <returns>A task representing the asynchronous operation that yields an authentication response containing user info and JWT token.</returns>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown if the account does not exist, is deactivated, or password verification fails.</exception>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.ForgotPasswordAsync(System.String)">
+            <summary>
+            Generates a 6-digit one-time password (OTP) reset token with a 15-minute expiration for password reset requests.
+            </summary>
+            <param name="email">The email address of the back-office user requesting a password reset.</param>
+            <returns>A task representing the asynchronous operation that yields the generated reset token.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if no user account is associated with the provided email.</exception>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.ResetPasswordAsync(BackOfficeService.DTOs.BackofficeResetPasswordDto)">
+            <summary>
+            Resets the user's password using the verified OTP reset token.
+            </summary>
+            <param name="dto">The password reset data transfer object containing email, reset token, and new password.</param>
+            <returns>A task representing the asynchronous password reset operation.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if the account is not found, the OTP token is invalid, or the token has expired.</exception>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.UpdateProfileAsync(System.Int32,BackOfficeService.DTOs.BackofficeUpdateProfileDto)">
+            <summary>
+            Updates the profile information of a back-office user.
+            </summary>
+            <param name="id">The unique identifier of the user to update.</param>
+            <param name="dto">The profile update data transfer object containing modified user details.</param>
+            <returns>A task representing the asynchronous operation that yields the updated <see cref="T:BackOfficeService.Models.BackofficeProfile"/>.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown if no user profile is found matching the provided identifier.</exception>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.GetAllUsersAsync(System.String[])">
+            <summary>
+            Retrieves all back-office user profiles, optionally filtered by specified roles.
+            </summary>
+            <param name="roles">An optional array of role names to filter by. If null or empty, all users are returned.</param>
+            <returns>A task representing the asynchronous operation that yields a list of <see cref="T:BackOfficeService.Models.BackofficeProfile"/> records.</returns>
+        </member>
+        <member name="M:BackOfficeService.Services.Implementations.BackofficeAuthService.UpdateUserStatusAsync(System.Int32,System.Boolean)">
+            <summary>
+            Updates the active/inactive status of a back-office user account.
+            </summary>
+            <param name="id">The unique identifier of the user whose status is to be updated.</param>
+            <param name="isActive">The new active status value (true for active, false for deactivated).</param>
+            <returns>A task representing the asynchronous update operation.</returns>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">Thrown if no user profile is found matching the provided identifier.</exception>
+        </member>
+        <member name="T:BackOfficeService.Services.Interfaces.IBackofficeAuthService">
+            <summary>
+            Interface for back-office authentication, registration, password lifecycle, and profile management operations.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Interfaces.IBackofficeAuthService.RegisterAsync(BackOfficeService.DTOs.BackofficeRegisterDto)">
+            <summary>
+            Registers a new back-office user profile or updates an existing profile with new details and role.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Interfaces.IBackofficeAuthService.LoginAsync(BackOfficeService.DTOs.BackofficeLoginDto)">
+            <summary>
+            Authenticates a back-office user with email and password, returning user details and JWT token.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Interfaces.IBackofficeAuthService.ForgotPasswordAsync(System.String)">
+            <summary>
+            Generates a 6-digit OTP reset token for password reset.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Interfaces.IBackofficeAuthService.ResetPasswordAsync(BackOfficeService.DTOs.BackofficeResetPasswordDto)">
+            <summary>
+            Resets the user's password using the verified OTP reset token.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Interfaces.IBackofficeAuthService.UpdateProfileAsync(System.Int32,BackOfficeService.DTOs.BackofficeUpdateProfileDto)">
+            <summary>
+            Updates the profile information of a back-office user.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Interfaces.IBackofficeAuthService.GetAllUsersAsync(System.String[])">
+            <summary>
+            Retrieves all back-office user profiles, optionally filtered by specified roles.
+            </summary>
+        </member>
+        <member name="M:BackOfficeService.Services.Interfaces.IBackofficeAuthService.UpdateUserStatusAsync(System.Int32,System.Boolean)">
+            <summary>
+            Updates the active/inactive status of a back-office user account.
+            </summary>
+        </member>
         <member name="T:Program">
             <summary>
             Auto-generated public partial Program class for top-level statement apps.

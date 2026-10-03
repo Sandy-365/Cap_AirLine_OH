@@ -1,22 +1,6 @@
 [
   {
     "ContainingType": "PassengerService.Controllers.PassengerAuthController",
-    "Method": "ForceVerify",
-    "RelativePath": "api/auth/force-verify",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PassengerService.DTOs.PassengerForgotPasswordDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengerAuthController",
     "Method": "ForgotPassword",
     "RelativePath": "api/auth/forgot-password",
     "HttpMethod": "POST",
@@ -126,22 +110,6 @@
     "Method": "GetUser",
     "RelativePath": "api/Passengers/users/{userId}",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PassengerService.Controllers.PassengersController",
-    "Method": "DeleteUser",
-    "RelativePath": "api/Passengers/users/{userId}",
-    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [

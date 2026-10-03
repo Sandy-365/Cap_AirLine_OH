@@ -10,7 +10,6 @@
         "tags": [
           "PassengerAuth"
         ],
-        "summary": "Authenticates passenger credentials and returns JWT token. \r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -42,7 +41,6 @@
         "tags": [
           "PassengerAuth"
         ],
-        "summary": "Registers a new passenger account with email, password, and optional profile fields.\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -74,7 +72,6 @@
         "tags": [
           "PassengerAuth"
         ],
-        "summary": "Verifies passenger email account using the OTP received via email and returns JWT token upon successful verification.\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -106,39 +103,6 @@
         "tags": [
           "PassengerAuth"
         ],
-        "summary": "Resends verification OTP to the specified passenger email address.\r\n[Allowed Roles: Public (None required)]",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerForgotPasswordDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerForgotPasswordDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PassengerForgotPasswordDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/auth/force-verify": {
-      "post": {
-        "tags": [
-          "PassengerAuth"
-        ],
-        "summary": "Directly verifies passenger email address and returns JWT token (bypasses OTP check for testing/convenience).\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -170,7 +134,6 @@
         "tags": [
           "PassengerAuth"
         ],
-        "summary": "Generates a password reset OTP token and returns it directly in the response so the website can alert it (no email required).\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -202,7 +165,6 @@
         "tags": [
           "PassengerAuth"
         ],
-        "summary": "Resets passenger password using the mandatory OTP token generated from forgot-password.\r\n[Allowed Roles: Public (None required)]",
         "requestBody": {
           "content": {
             "application/json": {
@@ -234,7 +196,6 @@
         "tags": [
           "Passengers"
         ],
-        "summary": "Retrieves all passengers.\r\n[Allowed Roles: Admin, SuperAdmin, HR, Staff]",
         "responses": {
           "200": {
             "description": "OK"
@@ -243,33 +204,10 @@
       }
     },
     "/api/Passengers/users/{userId}": {
-      "delete": {
-        "tags": [
-          "Passengers"
-        ],
-        "summary": "Permanently deletes a passenger profile.\r\n[Allowed Roles: Admin, SuperAdmin]",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "get": {
         "tags": [
           "Passengers"
         ],
-        "summary": "Retrieves a passenger profile by ID.\r\n[Allowed Roles: Passenger (own profile), Admin, SuperAdmin, Staff]",
         "parameters": [
           {
             "name": "userId",
@@ -293,7 +231,6 @@
         "tags": [
           "Passengers"
         ],
-        "summary": "Updates a passenger's profile information.\r\n[Allowed Roles: Passenger (own profile), Admin, SuperAdmin]",
         "parameters": [
           {
             "name": "userId",
@@ -336,7 +273,6 @@
         "tags": [
           "Passengers"
         ],
-        "summary": "Activates or deactivates a passenger account.\r\n[Allowed Roles: Admin, SuperAdmin, HR]",
         "parameters": [
           {
             "name": "userId",

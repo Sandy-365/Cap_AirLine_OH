@@ -21,11 +21,6 @@ builder.Host.UseSerilog((ctx, lc) => lc
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
     .Enrich.FromLogContext());
 
-// JWT Settings
-var jwtSettings = builder.Configuration
-    .GetSection("JwtSettings")
-    .Get<JwtSettings>() ?? new JwtSettings();
-
 // Database
 builder.Services.AddDbContext<BackOfficeDbContext>(options =>
     options.UseSqlServer(
@@ -37,6 +32,13 @@ builder.Services.AddScoped<IBackofficeProfileRepository, BackofficeProfileReposi
 // Services
 builder.Services.AddHttpClient<IBackofficeService, BackofficeServiceImpl>();
 builder.Services.AddScoped<IBackofficeAuthService, BackofficeAuthService>();
+
+
+// JWT Settings
+var jwtSettings = builder.Configuration
+    .GetSection("JwtSettings")
+    .Get<JwtSettings>() ?? new JwtSettings();
+
 
 // JWT Token Service
 builder.Services.AddSingleton<ITokenService>(new JwtTokenService(

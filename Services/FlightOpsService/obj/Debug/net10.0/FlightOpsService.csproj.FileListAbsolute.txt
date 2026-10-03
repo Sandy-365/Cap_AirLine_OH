@@ -180,3 +180,4 @@ C:\Users\sagar\Desktop\CAP_PROJ\Services\FlightOpsService\bin\Debug\net10.0\runt
 C:\Users\sagar\Desktop\CAP_PROJ\Services\FlightOpsService\bin\Debug\net10.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\sagar\Desktop\CAP_PROJ\Services\FlightOpsService\bin\Debug\net10.0\Shared.dll
 C:\Users\sagar\Desktop\CAP_PROJ\Services\FlightOpsService\bin\Debug\net10.0\Shared.pdb
+C:\Users\sagar\Desktop\CAP_PROJ\Services\FlightOpsService\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

@@ -95,23 +95,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          },
           "paymentMethod": {
-            "type": "string",
-            "nullable": true
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userEmail": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
             "type": "string",
             "nullable": true
           }
